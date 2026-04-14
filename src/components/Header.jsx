@@ -10,69 +10,59 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
     { href: "/", label: "Home" },
     {
-        href: "/digital-workers", 
-        label: "Digital Workers",
+        href: "/product-engineering", 
+        label: "Product Engineering",
         subLinks: [
-            { href: "/digital-workers/whatsapp-sales-agents", label: "WhatsApp Sales Agents" },
-            { href: "/digital-workers/real-estate-agents", label: "Real Estate Agents" },
-            { href: "/digital-workers/finance-procurement-agents", label: "Finance & Procurement" },
-            { href: "/digital-workers/customer-service-agents", label: "Customer Service" },
-            { href: "/digital-workers/hr-onboarding-agents", label: "HR & Onboarding" },
+            { href: "/product-engineering/web-applications", label: "Web Applications" },
+            { href: "/product-engineering/mobile-applications", label: "Mobile Applications" },
+            { href: "/product-engineering/saas-mvp", label: "SaaS & MVP Builds" },
+            { href: "/product-engineering/product-modernisation", label: "Product Modernisation" },
         ]
     },
     {
-        href: "/platform",
-        label: "Platform",
+        href: "/data-platforms",
+        label: "Data Platforms",
         subLinks: [
-            { href: "/platform/zoho-agentic-ai", label: "Zoho Agentic AI" },
-            { href: "/platform/n8n-orchestration", label: "n8n Orchestration" },
-            { href: "/platform/multilingual-llm", label: "Multilingual LLM" },
-            { href: "/platform/custom-ai-development", label: "Custom AI Development" },
-            { href: "/platform/data-analytics", label: "Data Analytics" },
+            { href: "/data-platforms/databricks", label: "Databricks Consulting" },
+            { href: "/data-platforms/microsoft-fabric", label: "Microsoft Fabric" },
+            { href: "/data-platforms/snowflake", label: "Snowflake Consulting" },
+            { href: "/data-platforms/business-intelligence", label: "Business Intelligence" },
         ]
     },
     {
-        href: "/product-studio",
-        label: "Product Studio",
+        href: "/ai-agents",
+        label: "AI Agents",
         subLinks: [
-            { href: "/product-studio/ai-mvp", label: "AI MVP Development" },
-            { href: "/product-studio/custom-saas", label: "Custom SaaS Products" },
-            { href: "/product-studio/legacy-modernization", label: "Legacy Modernization" },
-            { href: "/product-studio/scaling-maintenance", label: "Scaling & Maintenance" },
+            { href: "/ai-agents/rag-document-intelligence", label: "RAG & Document Intelligence" },
+            { href: "/ai-agents/copilots-digital-workers", label: "Copilots & Digital Workers" },
+            { href: "/ai-agents/workflow-automation", label: "Workflow Automation" },
         ]
+    },
+    { 
+        href: "/business-systems", 
+        label: "Business Systems" 
     },
     {
         href: "/industries",
         label: "Industries",
         subLinks: [
-            { href: "/industries/fnb-hospitality", label: "FNB & Hospitality" },
-            { href: "/industries/healthcare", label: "Healthcare" },
-            { href: "/industries/logistics", label: "Logistics" },
-            { href: "/industries/professional-services", label: "Professional Services" },
-            { href: "/industries/real-estate", label: "Real Estate" },
-            { href: "/industries/retail-ecommerce", label: "Retail & E-commerce" },
+            { href: "/industries/financial-services-wealth", label: "Financial Services" },
+            { href: "/industries/healthcare-aged-care", label: "Healthcare & Aged Care" },
+            { href: "/industries/resources-mining-logistics", label: "Resources & Logistics" },
         ]
     },
-    { href: "/ai", label: "AI" },
     {
-        href: "javascript:void(0)",
-        label: "Solutions",
+        href: "/why-fi-digital",
+        label: "Why Us",
         subLinks: [
-            { href: "/marketing-automation", label: "Marketing" },
-            { href: "/sales", label: "Sales" },
-            { href: "/service", label: "Service" },
+            { href: "/why-fi-digital/global-delivery", label: "Global Delivery" },
+            { href: "/why-fi-digital/partnerships", label: "Partnerships" },
+            { href: "/why-fi-digital/australian-compliance", label: "Australian Compliance" },
         ]
     },
-    { 
-        href: "/case-studies", 
-        label: "Case study",
-        subLinks: [
-            { href: "/casestudy/wallan-trading-co-digital-transformation-zoho", label: "Wallan Trading Co" }
-        ]
-    },
-    { href: "/about", label: "About" },
-    
+    { href: "/case-studies", label: "Case Studies" },
     { href: "/contact", label: "Contact" },
+    { href: "/book-discovery", label: "Book a Discovery" },
 ];
 
 export default function Header() {
