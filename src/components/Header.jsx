@@ -10,69 +10,61 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
     { href: "/", label: "Home" },
     {
-        href: "/digital-workers", 
-        label: "Digital Workers",
+        href: "/product-engineering",
+        label: "Product Engineering",
         subLinks: [
-            { href: "/digital-workers/whatsapp-sales-agents", label: "WhatsApp Sales Agents" },
-            { href: "/digital-workers/real-estate-agents", label: "Real Estate Agents" },
-            { href: "/digital-workers/finance-procurement-agents", label: "Finance & Procurement" },
-            { href: "/digital-workers/customer-service-agents", label: "Customer Service" },
-            { href: "/digital-workers/hr-onboarding-agents", label: "HR & Onboarding" },
+            { href: "/product-engineering/web-applications", label: "Web Application Development" },
+            { href: "/product-engineering/mobile-applications", label: "Mobile Application Development" },
+            { href: "/product-engineering/saas-mvp", label: "SaaS & MVP Builds" },
+            { href: "/product-engineering/product-modernisation", label: "Product Modernisation" },
         ]
     },
     {
-        href: "/platform",
-        label: "Platform",
+        href: "/data-platforms",
+        label: "Data Platforms",
         subLinks: [
-            { href: "/platform/zoho-agentic-ai", label: "Zoho Agentic AI" },
-            { href: "/platform/n8n-orchestration", label: "n8n Orchestration" },
-            { href: "/platform/multilingual-llm", label: "Multilingual LLM" },
-            { href: "/platform/custom-ai-development", label: "Custom AI Development" },
-            { href: "/platform/data-analytics", label: "Data Analytics" },
+            { href: "/data-platforms/databricks", label: "Databricks Consulting" },
+            { href: "/data-platforms/microsoft-fabric", label: "Microsoft Fabric Consulting" },
+            { href: "/data-platforms/snowflake", label: "Snowflake Consulting" },
+            { href: "/data-platforms/business-intelligence", label: "Business Intelligence & Reporting" },
         ]
     },
     {
-        href: "/product-studio",
-        label: "Product Studio",
+        href: "/ai-agents",
+        label: "AI Agents",
         subLinks: [
-            { href: "/product-studio/ai-mvp", label: "AI MVP Development" },
-            { href: "/product-studio/custom-saas", label: "Custom SaaS Products" },
-            { href: "/product-studio/legacy-modernization", label: "Legacy Modernization" },
-            { href: "/product-studio/scaling-maintenance", label: "Scaling & Maintenance" },
+            { href: "/ai-agents/rag-document-intelligence", label: "RAG & Document Intelligence" },
+            { href: "/ai-agents/copilots-digital-workers", label: "Copilots & Digital Workers" },
+            { href: "/ai-agents/workflow-automation", label: "Workflow Automation" },
+        ]
+    },
+    {
+        href: "/business-systems",
+        label: "Business Systems",
+        subLinks: [
+            { href: "/zoho-consultants", label: "Zoho Consultants" },
         ]
     },
     {
         href: "/industries",
         label: "Industries",
         subLinks: [
-            { href: "/industries/fnb-hospitality", label: "FNB & Hospitality" },
-            { href: "/industries/healthcare", label: "Healthcare" },
-            { href: "/industries/logistics", label: "Logistics" },
-            { href: "/industries/professional-services", label: "Professional Services" },
-            { href: "/industries/real-estate", label: "Real Estate" },
-            { href: "/industries/retail-ecommerce", label: "Retail & E-commerce" },
+            { href: "/industries/financial-services-wealth", label: "Financial Services & Wealth" },
+            { href: "/industries/healthcare-aged-care", label: "Healthcare & Aged Care" },
+            { href: "/industries/resources-mining-logistics", label: "Resources, Mining & Logistics" },
         ]
     },
-    { href: "/ai", label: "AI" },
     {
-        href: "javascript:void(0)",
-        label: "Solutions",
+        href: "/why-fi-digital",
+        label: "Why FI Digital",
         subLinks: [
-            { href: "/marketing-automation", label: "Marketing" },
-            { href: "/sales", label: "Sales" },
-            { href: "/service", label: "Service" },
+            { href: "/why-fi-digital/global-delivery", label: "Global Delivery Model" },
+            { href: "/why-fi-digital/partnerships", label: "Partnerships & Certifications" },
+            { href: "/why-fi-digital/australian-compliance", label: "Australian Compliance & Data Residency" },
         ]
     },
-    { 
-        href: "/case-studies", 
-        label: "Case study",
-        subLinks: [
-            { href: "/casestudy/wallan-trading-co-digital-transformation-zoho", label: "Wallan Trading Co" }
-        ]
-    },
-    { href: "/about", label: "About" },
-    
-    { href: "/contact", label: "Contact" },
+    { href: "/case-studies", label: "Case Studies" },
+    { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {
@@ -131,29 +123,29 @@ export default function Header() {
                     style={{
                         maxWidth: "1440px",
                         margin: "0 auto",
-                        padding: "0 1.5rem",
+                        padding: "0.5rem 1.5rem",
                         width: "100%",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        height: "100%",
+                        flexWrap: "wrap",
+                        minHeight: "80px",
                     }}
                 >
                     {/* Logo — Left */}
-                    <Link href="/" aria-label="FI Digital – Home" style={{ display: "flex", alignItems: "center", height: "100%", textDecoration: "none", minWidth: "200px" }}>
+                    <Link href="/" aria-label="FI Digital – Home" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: "200px", marginRight: "2rem" }}>
                         <Logo variant="theme" width="200px" height="60px" />
                     </Link>
 
-                    {/* Desktop Nav — Center/Right */}
-                    <div style={{ display: "flex", alignItems: "center", gap: "2rem", height: "100%" }}>
-                        <nav
-                            className="nav-desktop"
-                            aria-label="Main navigation"
-                            style={{ display: "flex", alignItems: "center", gap: "0.5rem", height: "100%" }}
-                        >
+                    {/* Desktop Nav — Center */}
+                    <nav
+                        className="nav-desktop"
+                        aria-label="Main navigation"
+                        style={{ display: "flex", alignItems: "center", justifyContent: "center", alignContent: "center", flexWrap: "wrap", gap: "0 0.5rem", flex: 1 }}
+                    >
                             {navLinks.map((link) => (
-                                <div key={link.label} className="nav-item-wrapper" style={{ height: "100%", position: "relative" }}>
-                                    <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
+                                <div key={link.label} className="nav-item-wrapper" style={{ position: "relative" }}>
+                                    <div style={{ display: "flex", alignItems: "center" }}>
                                         <Link
                                             href={link.href}
                                             className={`nav-link ${pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? "active" : ""}`}
@@ -166,8 +158,7 @@ export default function Header() {
                                                 display: "flex",
                                                 alignItems: "center",
                                                 gap: "0.4rem",
-                                                height: "100%",
-                                                padding: "0 1rem",
+                                                padding: "0.25rem 0.75rem",
                                                 whiteSpace: "nowrap"
                                             }}
                                         >
@@ -203,34 +194,50 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        <div className="header-actions-desktop" style={{ display: "flex", alignItems: "center", gap: "1.25rem", borderLeft: "1px solid var(--border)", paddingLeft: "1.25rem", height: "30px" }}>
-                            <ThemeToggle />
-                        </div>
-
-                        {/* Mobile Hamburger */}
-                        <button
-                            className="nav-mobile-btn"
-                            onClick={() => setMobileOpen((o) => !o)}
-                            aria-expanded={mobileOpen}
-                            aria-label="Toggle mobile menu"
-                            style={{
-                                display: "none",
-                                background: "none",
-                                border: "none",
-                                cursor: "pointer",
-                                padding: "0.5rem",
-                                color: "var(--text)",
-                                position: "relative",
-                                zIndex: 1001
+                    {/* Desktop Actions — Right */}
+                    <div className="header-actions-desktop" style={{ display: "flex", alignItems: "center", gap: "1.25rem", borderLeft: "1px solid var(--border)", paddingLeft: "1.25rem", marginLeft: "1rem" }}>
+                        <ThemeToggle />
+                        <Link 
+                            href="/book-discovery" 
+                            style={{ 
+                                padding: "0.5rem 1.25rem", 
+                                borderRadius: "8px", 
+                                background: "var(--primary)", 
+                                color: "#fff", 
+                                textDecoration: "none", 
+                                fontSize: "0.85rem", 
+                                fontWeight: "600", 
+                                whiteSpace: "nowrap" 
                             }}
                         >
-                            <div className={`hamburger ${mobileOpen ? "open" : ""}`}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </button>
+                            Book a Discovery Session
+                        </Link>
                     </div>
+
+                    {/* Mobile Hamburger */}
+                    <button
+                        className="nav-mobile-btn"
+                        onClick={() => setMobileOpen((o) => !o)}
+                        aria-expanded={mobileOpen}
+                        aria-label="Toggle mobile menu"
+                        style={{
+                            display: "none",
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            padding: "0.5rem",
+                            color: "var(--text)",
+                            position: "relative",
+                            zIndex: 1001,
+                            marginLeft: "auto"
+                        }}
+                    >
+                        <div className={`hamburger ${mobileOpen ? "open" : ""}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
                 </div>
             </header>
 
