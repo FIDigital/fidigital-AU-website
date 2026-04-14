@@ -43,8 +43,8 @@ const navLinks = [
         label: "Business Systems" 
     },
     {
-        href: "/industries",
-        label: "Industries",
+        href: "/business-systems",
+        label: "Business Systems",
         subLinks: [
             { href: "/industries/financial-services-wealth", label: "Financial Services" },
             { href: "/industries/healthcare-aged-care", label: "Healthcare & Aged Care" },
@@ -121,29 +121,29 @@ export default function Header() {
                     style={{
                         maxWidth: "1440px",
                         margin: "0 auto",
-                        padding: "0 1.5rem",
+                        padding: "0.5rem 1.5rem",
                         width: "100%",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        height: "100%",
+                        flexWrap: "wrap",
+                        minHeight: "80px",
                     }}
                 >
                     {/* Logo — Left */}
-                    <Link href="/" aria-label="FI Digital – Home" style={{ display: "flex", alignItems: "center", height: "100%", textDecoration: "none", minWidth: "200px" }}>
+                    <Link href="/" aria-label="FI Digital – Home" style={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: "200px", marginRight: "2rem" }}>
                         <Logo variant="theme" width="200px" height="60px" />
                     </Link>
 
-                    {/* Desktop Nav — Center/Right */}
-                    <div style={{ display: "flex", alignItems: "center", gap: "2rem", height: "100%" }}>
-                        <nav
-                            className="nav-desktop"
-                            aria-label="Main navigation"
-                            style={{ display: "flex", alignItems: "center", gap: "0.5rem", height: "100%" }}
-                        >
+                    {/* Desktop Nav — Center */}
+                    <nav
+                        className="nav-desktop"
+                        aria-label="Main navigation"
+                        style={{ display: "flex", alignItems: "center", justifyContent: "center", alignContent: "center", flexWrap: "wrap", gap: "0 0.5rem", flex: 1 }}
+                    >
                             {navLinks.map((link) => (
-                                <div key={link.label} className="nav-item-wrapper" style={{ height: "100%", position: "relative" }}>
-                                    <div style={{ display: "flex", alignItems: "center", height: "100%" }}>
+                                <div key={link.label} className="nav-item-wrapper" style={{ position: "relative" }}>
+                                    <div style={{ display: "flex", alignItems: "center" }}>
                                         <Link
                                             href={link.href}
                                             className={`nav-link ${pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? "active" : ""}`}
@@ -156,8 +156,7 @@ export default function Header() {
                                                 display: "flex",
                                                 alignItems: "center",
                                                 gap: "0.4rem",
-                                                height: "100%",
-                                                padding: "0 1rem",
+                                                padding: "0.25rem 0.75rem",
                                                 whiteSpace: "nowrap"
                                             }}
                                         >
@@ -193,34 +192,50 @@ export default function Header() {
                             ))}
                         </nav>
 
-                        <div className="header-actions-desktop" style={{ display: "flex", alignItems: "center", gap: "1.25rem", borderLeft: "1px solid var(--border)", paddingLeft: "1.25rem", height: "30px" }}>
-                            <ThemeToggle />
-                        </div>
-
-                        {/* Mobile Hamburger */}
-                        <button
-                            className="nav-mobile-btn"
-                            onClick={() => setMobileOpen((o) => !o)}
-                            aria-expanded={mobileOpen}
-                            aria-label="Toggle mobile menu"
-                            style={{
-                                display: "none",
-                                background: "none",
-                                border: "none",
-                                cursor: "pointer",
-                                padding: "0.5rem",
-                                color: "var(--text)",
-                                position: "relative",
-                                zIndex: 1001
+                    {/* Desktop Actions — Right */}
+                    <div className="header-actions-desktop" style={{ display: "flex", alignItems: "center", gap: "1.25rem", borderLeft: "1px solid var(--border)", paddingLeft: "1.25rem", marginLeft: "1rem" }}>
+                        <ThemeToggle />
+                        <Link 
+                            href="/book-discovery" 
+                            style={{ 
+                                padding: "0.5rem 1.25rem", 
+                                borderRadius: "8px", 
+                                background: "var(--primary)", 
+                                color: "#fff", 
+                                textDecoration: "none", 
+                                fontSize: "0.85rem", 
+                                fontWeight: "600", 
+                                whiteSpace: "nowrap" 
                             }}
                         >
-                            <div className={`hamburger ${mobileOpen ? "open" : ""}`}>
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </button>
+                            Book a Discovery Session
+                        </Link>
                     </div>
+
+                    {/* Mobile Hamburger */}
+                    <button
+                        className="nav-mobile-btn"
+                        onClick={() => setMobileOpen((o) => !o)}
+                        aria-expanded={mobileOpen}
+                        aria-label="Toggle mobile menu"
+                        style={{
+                            display: "none",
+                            background: "none",
+                            border: "none",
+                            cursor: "pointer",
+                            padding: "0.5rem",
+                            color: "var(--text)",
+                            position: "relative",
+                            zIndex: 1001,
+                            marginLeft: "auto"
+                        }}
+                    >
+                        <div className={`hamburger ${mobileOpen ? "open" : ""}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </button>
                 </div>
             </header>
 
