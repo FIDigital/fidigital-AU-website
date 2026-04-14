@@ -10,11 +10,11 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
     { href: "/", label: "Home" },
     {
-        href: "/product-engineering",
+        href: "/product-engineering", 
         label: "Product Engineering",
         subLinks: [
-            { href: "/product-engineering/web-applications", label: "Web Application Development" },
-            { href: "/product-engineering/mobile-applications", label: "Mobile Application Development" },
+            { href: "/product-engineering/web-applications", label: "Web Applications" },
+            { href: "/product-engineering/mobile-applications", label: "Mobile Applications" },
             { href: "/product-engineering/saas-mvp", label: "SaaS & MVP Builds" },
             { href: "/product-engineering/product-modernisation", label: "Product Modernisation" },
         ]
@@ -24,9 +24,9 @@ const navLinks = [
         label: "Data Platforms",
         subLinks: [
             { href: "/data-platforms/databricks", label: "Databricks Consulting" },
-            { href: "/data-platforms/microsoft-fabric", label: "Microsoft Fabric Consulting" },
+            { href: "/data-platforms/microsoft-fabric", label: "Microsoft Fabric" },
             { href: "/data-platforms/snowflake", label: "Snowflake Consulting" },
-            { href: "/data-platforms/business-intelligence", label: "Business Intelligence & Reporting" },
+            { href: "/data-platforms/business-intelligence", label: "Business Intelligence" },
         ]
     },
     {
@@ -38,33 +38,31 @@ const navLinks = [
             { href: "/ai-agents/workflow-automation", label: "Workflow Automation" },
         ]
     },
+    { 
+        href: "/business-systems", 
+        label: "Business Systems" 
+    },
     {
         href: "/business-systems",
         label: "Business Systems",
         subLinks: [
-            { href: "/zoho-consultants", label: "Zoho Consultants" },
-        ]
-    },
-    {
-        href: "/industries",
-        label: "Industries",
-        subLinks: [
-            { href: "/industries/financial-services-wealth", label: "Financial Services & Wealth" },
+            { href: "/industries/financial-services-wealth", label: "Financial Services" },
             { href: "/industries/healthcare-aged-care", label: "Healthcare & Aged Care" },
-            { href: "/industries/resources-mining-logistics", label: "Resources, Mining & Logistics" },
+            { href: "/industries/resources-mining-logistics", label: "Resources & Logistics" },
         ]
     },
     {
         href: "/why-fi-digital",
-        label: "Why FI Digital",
+        label: "Why Us",
         subLinks: [
-            { href: "/why-fi-digital/global-delivery", label: "Global Delivery Model" },
-            { href: "/why-fi-digital/partnerships", label: "Partnerships & Certifications" },
-            { href: "/why-fi-digital/australian-compliance", label: "Australian Compliance & Data Residency" },
+            { href: "/why-fi-digital/global-delivery", label: "Global Delivery" },
+            { href: "/why-fi-digital/partnerships", label: "Partnerships" },
+            { href: "/why-fi-digital/australian-compliance", label: "Australian Compliance" },
         ]
     },
     { href: "/case-studies", label: "Case Studies" },
-    { href: "/contact", label: "Contact Us" },
+    { href: "/contact", label: "Contact" },
+    { href: "/book-discovery", label: "Book a Discovery" },
 ];
 
 export default function Header() {
