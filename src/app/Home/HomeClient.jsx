@@ -116,9 +116,9 @@ function HomeHero() {
           transform: "translateY(10px)",
         }}
       >
-        FI Digital UAE: AI Agent Architects <br />
+        We Build Software. We Engineer Data. We Deploy AI. <br />
         <span style={{ background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-          for Enterprise Transformation
+          We Modernise Systems.
         </span>
       </h1>
 
@@ -142,15 +142,7 @@ function HomeHero() {
           transform: "translateY(10px)",
         }}
       >
-        Welcome to FI Digital UAE, where Australian Zoho expertise meets Middle
-        Eastern ambition. We&apos;ve spent a decade implementing Zoho CRM across
-        Asia Pacific. Now we&apos;re bringing that experience to the UAE,
-        reimagined for the AI era. Our mission: architect intelligent agent
-        systems that automate enterprise operations while keeping human insight
-        at the center. We combine Zoho&apos;s enterprise reliability with
-        Claude&apos;s reasoning, n8n&apos;s orchestration, and LangChain&apos;s
-        context awareness to build agents that actually work in Arabic, across
-        multiple currencies, and within UAE regulatory frameworks.
+        FI Digital is an engineering-led transformation partner for Australian enterprise. Custom products. Governed data platforms. AI agents that reason and act. Business systems that actually work together. 200+ engineers across Melbourne, Sydney, India, UAE, and London. Ten years in production. Australian data residency on every engagement.
       </p>
 
       <div
@@ -174,30 +166,6 @@ function HomeHero() {
         </Link>
       </div>
 
-      {/* Quick stats row */}
-      <div
-        className="hero-reveal"
-        style={{
-          display: "flex",
-          gap: "2.5rem",
-          flexWrap: "wrap",
-          textAlign: "left",
-          opacity: 0,
-          transform: "translateY(10px)",
-        }}
-      >
-        {[
-          { num: "80+", label: "Enterprise Clients" },
-          { num: "13+", label: "Years in Market" },
-          { num: "AED 2M+", label: "Client Value Created" },
-          { num: "99.1%", label: "Avg Automation Accuracy" },
-        ].map(s => (
-          <div key={s.label}>
-            <div style={{ fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 900, fontFamily: "'Plus Jakarta Sans', sans-serif", background: "linear-gradient(135deg, #1D4ED8, #6366F1)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>{s.num}</div>
-            <div style={{ fontSize: "0.78rem", color: "var(--text-muted)", fontWeight: 600 }}>{s.label}</div>
-          </div>
-        ))}
-      </div>
     </div>
   </div>
 </section>
