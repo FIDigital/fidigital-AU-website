@@ -39,9 +39,10 @@ const navLinks = [
         ]
     },
     {
-        href: "/zoho-consultants",
-        label: "Zoho",
+        href: "/business-systems",
+        label: "Business Systems",
         subLinks: [
+            { href: "/business-systems", label: "Modernisation Hub" },
             { href: "/zoho-consultants/", label: "Zoho Consultants" },
             { href: "/zoho-partners-australia/", label: "Zoho Partners Australia" },
             { href: "/zoho-implementation-specialist/", label: "Implementation Specialist" },
@@ -81,6 +82,15 @@ const navLinks = [
             { href: "/content/", label: "Content" },
             { href: "/support/", label: "Support" },
             { href: "/build/", label: "Build" },
+        ]
+    },
+    {
+        href: "javascript:void(0)",
+        label: "Industries",
+        subLinks: [
+            { href: "/financial-services-wealth", label: "Financial Services & Wealth Management" },
+            { href: "/healthcare-aged-care", label: "Healthcare & Aged Care" },
+            { href: "/resources-mining-logistics", label: "Resources, Mining & Logistics" },
         ]
     },
     {
