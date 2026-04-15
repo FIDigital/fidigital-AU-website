@@ -85,79 +85,22 @@ export default function RootLayout({
 }) {
   const organizationJsonLd = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ITService"],
-    "@id": "https://fidigital.ae/#organization",
-    "name": "FI Digital",
-    "legalName": "FI Digital UAE",
-    "alternateName": ["FI Digital Dubai", "FI Digital UAE"],
-    "description": "AI Agent Architects & Zoho Ecosystem Experts. We build bilingual AI agents and enterprise Zoho implementations for UAE businesses.",
-    "url": "https://fidigital.ae",
-    "logo": "https://fidigital.ae/images/logo.png",
-    "foundingDate": "2020",
-    "foundingLocation": "Sydney, Australia",
-    "slogan": "Intelligent Automation & Zoho Architecture for the UAE",
-    "knowsAbout": [
-      "Artificial Intelligence", "Zoho CRM",
-      "WhatsApp Business API", "n8n Automation",
-      "Enterprise Software", "Arabic AI",
-      "Business Process Automation"
-    ],
-    "serviceType": [
-      "AI Agent Development",
-      "Zoho Implementation",
-      "Enterprise Automation",
-      "WhatsApp Business Integration",
-      "Custom Software Development"
-    ],
-    "areaServed": {
-      "@type": "Country",
-      "name": "United Arab Emirates"
+    "@type": "Organization",
+    "name": "FI Digital Australia",
+    "legalName": "Digital Synergy Ventures Pty Ltd",
+    "url": "https://fidigital.com.au",
+    "logo": "https://fidigital.com.au/images/logo.png",
+    "description": "Software engineering, data platforms, AI automation, and business systems modernisation for Australian enterprises",
+    "foundingDate": "2016",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": 200 },
+    "address": { 
+      "@type": "PostalAddress", 
+      "addressLocality": "Melbourne", 
+      "addressRegion": "VIC", 
+      "addressCountry": "AU" 
     },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Business Bay",
-      "addressLocality": "Dubai",
-      "addressCountry": "AE"
-    },
-    "contactPoint": [
-      {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "email": "info@fidigital.ae",
-        "availableLanguage": ["English", "Arabic"]
-      }
-    ],
-    "sameAs": [
-      "https://linkedin.com/company/fidigital",
-      "https://fidigital.com.au"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "FI Digital Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "name": "AI & Zoho Readiness Audit",
-          "description": "Complimentary 45-minute diagnostic with 15-20 page report",
-          "price": "0",
-          "priceCurrency": "AED"
-        },
-        {
-          "@type": "Offer",
-          "name": "Discovery Sprint",
-          "description": "2-week diagnostic and implementation roadmap",
-          "priceRange": "AED 15,000 - 25,000",
-          "priceCurrency": "AED"
-        },
-        {
-          "@type": "Offer",
-          "name": "Project-Based Implementation",
-          "description": "Full Zoho + AI implementation (6-16 weeks)",
-          "priceRange": "AED 50,000 - 500,000+",
-          "priceCurrency": "AED"
-        }
-      ]
-    }
+    "areaServed": ["AU", "NZ", "GB", "AE", "IN"],
+    "knowsAbout": ["Product Engineering", "Data Engineering", "AI Agents", "Zoho", "Databricks", "Snowflake"]
   };
 
   return (

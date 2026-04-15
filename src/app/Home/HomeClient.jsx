@@ -16,7 +16,13 @@ import {
   Shield,
   Settings,
   CheckCircle2,
-  ChevronDown
+  ChevronDown,
+  PenTool,
+  Hammer,
+  LayoutDashboard,
+  ShieldCheck,
+  Award,
+  FileText
 } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -198,942 +204,801 @@ function HomeHero() {
   );
 }
 
-
-function EcosystemSection() {
-  return (
-    <section id="ecosystem" style={{ background: 'var(--bg-secondary)', padding: '40px 1.5rem' }}>
-      <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
-          <div>
-            <div className="section-label">Our Technology Ecosystem</div>
-            <h2 className="section-title" style={{ marginBottom: '1.5rem' }}>What Technology Stack Does FI Digital Use?</h2>
-            <p className="section-desc" style={{ marginBottom: '2rem', color: 'var(--text-muted)', lineHeight: 1.7 }}>
-              The foundation of modern enterprise transformation is orchestration across best of breed tools. Zoho
-              provides the operational backbone CRM, Finance, HR, Customer Support all GDPR and ISO certified.
-              We bridge it to Claude and Gemini through n8n, creating an &apos;AI Agent Mesh&apos;
-              that handles complex reasoning and maintains data sovereignty within UAE boundaries.
-            </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '130px', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: '20px', transition: 'all 0.3s ease' }}>
-                <div style={{ height: '44px', width: '100%', position: 'relative', marginBottom: '0.75rem' }}>
-                  <Image
-                    src="/images/new-zoho-logo.png"
-                    alt="Zoho Logo"
-                    fill
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>
-                <h3 style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Zoho</h3>
-              </div>
-              <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '130px', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: '20px', transition: 'all 0.3s ease' }}>
-                <div style={{ height: '44px', width: '100%', position: 'relative', marginBottom: '0.75rem' }}>
-                  <Image
-                    src="/images/claude.png"
-                    alt="Claude AI Logo"
-                    fill
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>
-                <h3 style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Claude</h3>
-              </div>
-              <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '130px', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: '20px', transition: 'all 0.3s ease' }}>
-                <div style={{ height: '44px', width: '100%', position: 'relative', marginBottom: '0.75rem' }}>
-                  <Image
-                    src="/images/n8n.png"
-                    alt="n8n Logo"
-                    fill
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>
-                <h3 style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>n8n.io</h3>
-              </div>
-              <div className="card" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '130px', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: '20px', transition: 'all 0.3s ease' }}>
-                <div style={{ height: '44px', width: '100%', position: 'relative', marginBottom: '0.75rem' }}>
-                  <Image
-                    src="https://avatars.githubusercontent.com/u/126733545"
-                    alt="LangChain Logo"
-                    fill
-                    style={{ objectFit: 'contain', borderRadius: '6px' }}
-                  />
-                </div>
-                <h3 style={{ fontSize: '0.78rem', fontWeight: 800, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>LangChain</h3>
-              </div>
-            </div>
-          </div>
-          <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', border: '1px solid var(--border)' }}>
-            <Image
-              src="/img/ecosystem_mockup.png"
-              alt="Technology Ecosystem Mesh"
-              width={800}
-              height={800}
-              style={{ width: '100%', height: 'auto', display: 'block' }}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function PillarRow({ pillar, index }) {
-  const cardRef = useRef(null);
-  const isEven = index % 2 === 0;
-
-  useGSAP(() => {
-    gsap.from(cardRef.current, {
-      x: isEven ? -50 : 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: "top bottom-=100",
-        toggleActions: "play none none none"
-      }
-    });
-  }, { scope: cardRef });
-
-  return (
-    <div 
-      ref={cardRef}
-      className={`pillar-row ${isEven ? 'row' : 'row-reverse'}`}
-      style={{
-        display: 'flex',
-        flexDirection: isEven ? 'row' : 'row-reverse',
-        gap: '4rem',
-        alignItems: 'center'
-      }}
-    >
-      {/* Visual Side */}
-      <div style={{ flex: '1.2', position: 'relative', height: '450px', borderRadius: '32px', overflow: 'hidden', border: '1px solid var(--border)', background: pillar.isLogo ? 'radial-gradient(circle at center, rgba(29, 78, 216, 0.08) 0%, var(--bg-secondary) 70%)' : 'transparent', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}>
-        {pillar.isLogo ? (
-          <div style={{ width: '70%', height: '70%', position: 'relative', filter: 'drop-shadow(0 15px 30px rgba(0,0,0,0.06))' }}>
-            <Image src={pillar.image} alt={pillar.title} fill style={{ objectFit: 'contain' }} />
-          </div>
-        ) : (
-          <>
-            <Image src={pillar.image} alt={pillar.title} fill style={{ objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)' }} />
-          </>
-        )}
-      </div>
-
-      {/* Content Side */}
-      <div style={{ flex: '1' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div className="icon-box" style={{ width: '56px', height: '56px', background: 'var(--hover-bg)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>{pillar.icon}</div>
-          <h3 style={{ fontSize: '1.8rem', fontWeight: 900, lineHeight: 1.1 }}>{pillar.title}</h3>
-        </div>
-        <p style={{ fontWeight: 800, color: 'var(--primary)', marginBottom: '1rem', fontSize: '1.1rem' }}>{pillar.subtitle}</p>
-        <p style={{ marginBottom: '1.2rem', lineHeight: 1.7, fontSize: '1.05rem', color: 'var(--text)' }}>{pillar.content}</p>
-        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '2rem' }}>{pillar.details}</p>
-        
-        <div style={{ background: 'var(--bg-secondary)', padding: '1.5rem', borderRadius: '16px', border: '1px solid var(--border)' }}>
-          <h4 style={{ fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.6 }}>Quick Stats</h4>
-          <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '0.85rem', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
-            {pillar.stats.map(s => (
-              <li key={s} style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 600, alignItems: 'center' }}>
-                <CheckCircle2 size={16} className="text-primary" style={{ flexShrink: 0 }} /> {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <style jsx>{`
-        @media (max-width: 900px) {
-          .pillar-row {
-            flex-direction: column !important;
-            gap: 2.5rem !important;
-          }
-          .pillar-row > div:first-child {
-            width: 100% !important;
-            height: 300px !important;
-          }
-        }
-      `}</style>
-    </div>
-  );
-}
-
-function PillarsSection() {
+function FourPillarsSection() {
   const pillars = [
     {
-      id: "pillar-1",
-      title: "Pillar 1: AI Agent Architecture",
-      subtitle: "Transparent, Governance First AI",
-      icon: <Bot className="text-primary" />,
-      content: "We architect transparent, governance first AI agents that reason through business logic, manage approvals, and integrate seamlessly with Zoho. No black box risks.",
-      details: "Built on Claude for reasoning and Gemini for volume. Fully compliant with ISO and UAE regulations with explicit audit trails. Cycle time reduction from hours to minutes.",
-      stats: ["40+ Deployed Workflows", "87% Qualification Accuracy", "Arabic Support: Gulf, Levantine, Egyptian"],
-      image: "/img/pillar_ai.png"
+      title: "Product Engineering",
+      icon: <Code size={32} />,
+      link: "/product-engineering",
+      content: "Product Engineering builds the software your business runs on. Not templates. Not configurations. Custom web applications, native mobile apps, internal workflow tools, SaaS platforms, and customer portals designed around your specific operational logic. We use React, React Native, Python, and FastAPI to build products that create genuine competitive advantage."
     },
     {
-      id: "pillar-2",
-      title: "Pillar 2: Zoho Architecture & Governance",
-      subtitle: "Clean, Scalable, AI Ready Instances",
-      icon: <Shield className="text-success" />,
-      content: "Zoho implementations fail from customization chaos. We architect clean, governed instances designed for scale and AI integration.",
-      details: "Handling VAT, labor law compliance, and data sovereignty in the architecture phase. Assistance across 80+ Zoho instances with a 94% retention rate.",
-      stats: ["80+ Implementations", "Single Source of Truth", "VAT & Labor Law Built in"],
-      image: "/images/new-zoho-logo.png",
-      isLogo: true
+      title: "Data Platforms & Intelligence",
+      icon: <Database size={32} />,
+      link: "/data-platforms",
+      content: "Data Platforms and Intelligence builds the foundation everything else depends on. We design and deploy governed data platforms on Databricks, Snowflake, and Microsoft Fabric. Lakehouse architecture. Medallion pipelines. BI dashboards that your board actually trusts. ESG reporting that satisfies regulators. This is not a data warehouse migration exercise. This is building the analytical nervous system your organisation needs to make decisions at speed."
     },
     {
-      id: "pillar-3",
-      title: "Pillar 3: Enterprise Automation",
-      subtitle: "Engineering Discipline for Workflow",
-      icon: <Settings className="text-secondary" />,
-      content: "Automation in the enterprise means engineering discipline: process mapping, transparent decision trees, and error handling.",
-      details: "Using n8n as the orchestration spine. Organizations see payback in 3-4 months through freed capacity and reduced risk. Team of 6 operates like 8.5.",
-      stats: ["200+ Hours/Month Saved", "n8n Orchestration Spine", "Payback in 3-4 Months"],
-      image: "/img/pillar_automation_v2.png"
+      title: "AI Agents & Automation",
+      icon: <Network size={32} />,
+      link: "/ai-agents",
+      content: "AI Agents and Automation takes your data and puts it to work. We build governed AI systems using Claude, GPT-4o, LangChain, and n8n that go beyond chatbots. Our AI agents read documents, extract structured data, reason about business rules, make decisions within guardrails, and execute workflows autonomously. RAG pipelines retrieve your institutional knowledge. Copilots assist your team. Digital workers handle the repetitive tasks that consume your best people."
+    },
+    {
+      title: "Business Systems Modernisation",
+      icon: <Settings size={32} />,
+      link: "/business-systems",
+      content: "Business Systems Modernisation protects your existing investment. Zoho CRM, Books, Inventory, Creator, and Desk form the operational backbone for hundreds of Australian businesses. We are an award-winning Zoho Premium Partner. But modernisation means more than Zoho. It means cleaning up integrations, layering AI on top of legacy workflows, connecting your CRM to your data platform, and making your operational systems work together instead of against each other."
     }
   ];
 
   return (
-    <section id="pillars" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
-      <div className="container" style={{ maxWidth: '1200px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-          <div className="section-label">Core Expertise</div>
-          <h2 className="section-title">What are the Three Core Pillars of FI Digital&apos;s AI Architecture?</h2>
+    <section id="four-pillars" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)' }}>
+      <div className="container" style={{ maxWidth: '1400px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div className="section-label">Four Pillars</div>
+          <h2 className="section-title">What We Do</h2>
+          <p style={{ maxWidth: '850px', margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.7 }}>
+            Most technology firms do one thing well. We do four, and we connect them. FI Digital operates across four integrated service lines, each designed to solve a different layer of the enterprise technology challenge.
+          </p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-          {pillars.map((pillar, idx) => (
-            <PillarRow key={pillar.id} pillar={pillar} index={idx} />
+        <div className="pillars-grid layout-4-col">
+          {pillars.map((pillar) => (
+            <div key={pillar.title} className="pillar-modern-card hover-lift" style={{ 
+              padding: '2.5rem 2rem', 
+              background: 'var(--card-bg)', 
+              borderRadius: '24px', 
+              border: '1px solid var(--border)',
+              display: 'flex',
+              flexDirection: 'column',
+              boxShadow: 'var(--card-shadow)',
+              position: 'relative',
+              minHeight: '100%'
+            }}>
+              <div style={{ 
+                width: '64px', 
+                height: '64px', 
+                background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%)', 
+                color: 'var(--primary)', 
+                borderRadius: '16px', 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                marginBottom: '1.5rem',
+                flexShrink: 0
+              }}>
+                {pillar.icon}
+              </div>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.3, color: 'var(--text)', marginBottom: '1rem' }}>
+                {pillar.title}
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.7, margin: 0, flex: 1, marginBottom: '2rem' }}>
+                {pillar.content}
+              </p>
+              <Link href={pillar.link} style={{ 
+                display: 'inline-flex', 
+                alignItems: 'center', 
+                gap: '0.5rem', 
+                color: 'var(--primary)', 
+                background: 'rgba(29, 78, 216, 0.08)',
+                padding: '0.75rem 1.25rem',
+                borderRadius: '12px',
+                fontWeight: 800, 
+                fontSize: '0.95rem', 
+                textDecoration: 'none', 
+                transition: 'all 0.3s ease', 
+                marginTop: 'auto',
+                alignSelf: 'flex-start'
+              }} className="pillar-link hover-link-shift">
+                Learn More <ArrowRight size={16} />
+              </Link>
+            </div>
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .layout-4-col {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: repeat(1, 1fr);
+        }
+        
+        @media (min-width: 640px) {
+          .layout-4-col {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .layout-4-col {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+
+        .hover-lift { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: rgba(29, 78, 216, 0.3); }
+      `}</style>
     </section>
   );
 }
 
-// ResultsSection removed and ported to NextStepsSection banner
+function TechStackSection() {
+  const logos = [
+    { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
+    { name: "Python", src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" },
+    { name: "Databricks", src: "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" },
+    { name: "Snowflake", src: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" },
+    { name: "Microsoft Fabric", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+    { name: "Claude (Anthropic)", src: "/images/claude.png" },
+    { name: "GPT-4o (OpenAI)", src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
+    { name: "LangChain", src: "https://avatars.githubusercontent.com/u/126733545" },
+    { name: "n8n", src: "/images/n8n.png" },
+    { name: "Zoho", src: "/images/new-zoho-logo.png" },
+    { name: "AWS", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+    { name: "Microsoft Azure", src: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" }
+  ];
 
-function IndustryCard({ ind, index }) {
-  const [expanded, setExpanded] = useState(false);
-  const contentRef = useRef(null);
-  const cardRef = useRef(null);
-  const isEven = index % 2 === 0;
-
-  useGSAP(() => {
-    // Reveal animation
-    gsap.from(cardRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "power4.out",
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: "top bottom-=100",
-        toggleActions: "play none none none"
-      }
-    });
-
-    // Expansion animation
-    if (expanded) {
-      gsap.to(contentRef.current, {
-        height: "auto",
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out"
-      });
-    } else {
-      gsap.to(contentRef.current, {
-        height: 120,
-        opacity: 0.7,
-        duration: 0.5,
-        ease: "power2.inOut"
-      });
-    }
-  }, { dependencies: [expanded], scope: cardRef });
+  const marqueeItems = [...logos, ...logos, ...logos];
 
   return (
-    <div 
-      ref={cardRef}
-      className={`industry-card-wrapper ${isEven ? 'row' : 'row-reverse'}`}
-      style={{ 
-        display: 'flex',
-        flexDirection: isEven ? 'row' : 'row-reverse',
-        gap: '4rem',
-        alignItems: 'center',
-        marginBottom: '6rem',
-        width: '100%'
-      }}
-    >
-      {/* Image Column */}
-      <div style={{ flex: '1', position: 'relative', height: '400px', borderRadius: '32px', overflow: 'hidden', boxShadow: 'var(--card-shadow)', border: '1px solid var(--border)' }}>
-        <Image
-          src={ind.image}
-          alt={ind.title}
-          fill
-          style={{ objectFit: 'cover' }}
-        />
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(to top, rgba(0,0,0,0.4), transparent)'
-        }} />
+    <section id="tech-stack" style={{ padding: '100px 0', background: 'var(--bg)', overflow: 'hidden' }}>
+      <div className="container" style={{ maxWidth: '1000px', textAlign: 'center', marginBottom: '5rem' }}>
+        <div className="section-label">Technology Stack</div>
+        <h2 className="section-title">The Platforms That Matter</h2>
+        <p style={{ margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8 }}>
+          We build on the platforms that matter. React and React Native for front-end experiences. Python and FastAPI for backend intelligence. Databricks for lakehouse architecture. Snowflake for cloud-native analytics. Microsoft Fabric for unified enterprise intelligence. Claude and GPT-4o for reasoning and language understanding. LangChain for agent orchestration. n8n for workflow automation. Zoho for business operations. AWS and Azure for Australian-hosted infrastructure.
+          <br/><br/>
+          This is not a collection of logos. It is an integrated engineering ecosystem where every component has a specific job and they all talk to each other. Deployed in production across Financial Services, Healthcare, Resources, and Logistics. <strong style={{ color: 'var(--text)' }}>Australian data residency guaranteed.</strong>
+        </p>
       </div>
 
-      {/* Content Column */}
-      <div style={{ flex: '1.2', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-        <h3 style={{ 
-          fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', 
-          fontWeight: 900, 
-          color: 'var(--text)', 
-          marginBottom: '1.5rem',
-          lineHeight: 1.1
-        }}>
-          {ind.title}
-        </h3>
-        
-        <div 
-          ref={contentRef}
-          style={{ 
-            height: 120, 
-            overflow: 'hidden', 
-            opacity: 0.7,
-            fontSize: '1.1rem', 
-            color: 'var(--text-muted)', 
-            lineHeight: 1.8, 
-            marginBottom: '2rem',
-            position: 'relative',
-            width: '100%'
-          }}
-        >
-          {ind.desc}
-          {!expanded && (
-            <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: '60px',
-              background: `linear-gradient(to bottom, transparent, var(--bg-secondary))`,
-              pointerEvents: 'none'
-            }} />
-          )}
+      <div className="marquee-wrapper">
+        <div className="marquee">
+          {marqueeItems.map((logo, idx) => (
+            <div key={`${logo.name}-${idx}`} className="marquee-item">
+              <img 
+                src={logo.src} 
+                alt={logo.name} 
+                className="tech-logo"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+              <span className="logo-fallback" style={{ display: 'none', fontWeight: 800, fontSize: '1.2rem', color: 'var(--text-muted)' }}>
+                {logo.name}
+              </span>
+            </div>
+          ))}
         </div>
-        
-        <button 
-          onClick={() => setExpanded(!expanded)}
-          className="btn-secondary"
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '0.75rem', 
-            fontWeight: 800,
-            padding: '0.75rem 1.5rem',
-            fontSize: '1rem',
-            borderRadius: '12px'
-          }}
-        >
-          {expanded ? 'Show Less' : 'Explore Case Study'}
-          <ChevronDown size={20} style={{ 
-            transform: expanded ? 'rotate(180deg)' : 'none', 
-            transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)' 
-          }} />
-        </button>
       </div>
 
       <style jsx>{`
-        @media (max-width: 900px) {
-          .industry-card-wrapper {
-            flex-direction: column !important;
-            gap: 2rem !important;
-            margin-bottom: 4rem !important;
-          }
-          .industry-card-wrapper > div {
-            width: 100% !important;
-            flex: none !important;
-          }
-          .industry-card-wrapper > div:first-child {
-            height: 300px !important;
-          }
+        .marquee-wrapper {
+          display: flex;
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          background: var(--bg-secondary);
+          padding: 4rem 0;
+          border-top: 1px solid var(--border);
+          border-bottom: 1px solid var(--border);
+        }
+        
+        .marquee {
+          display: flex;
+          gap: 6rem;
+          align-items: center;
+          animation: scroll 45s linear infinite;
+          width: max-content;
+        }
+
+        .marquee:hover {
+          animation-play-state: paused;
+        }
+
+        .marquee-item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 180px;
+          height: 60px;
+        }
+
+        .tech-logo {
+          max-width: 100%;
+          max-height: 100%;
+          object-fit: contain;
+          filter: grayscale(100%) opacity(0.5);
+          transition: all 0.4s ease;
+          user-select: none;
+        }
+
+        .tech-logo:hover {
+          filter: grayscale(0%) opacity(1);
+          transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(-33.3333% - 2rem)); } 
         }
       `}</style>
-    </div>
+    </section>
   );
 }
 
 function IndustrySection() {
   const industries = [
     {
-      title: "Real Estate & Property Management",
-      image: "/img/real-estate.png",
-      desc: "Dubai real estate moves at WhatsApp speed. Agents drown in 50+ lead messages daily, many completely unqualified. We deploy AI agents that qualify in Arabic and English within 4 minutes, score by budget, timeline, nationality, and visa status, and sync qualified leads directly into Zoho CRM for automatic assignment. Response time improves from 6 hours (manual) to 12 minutes (agent assisted). Conversion rate improves 43% simply because responses are faster and better informed. We've implemented this across 12 real estate firms, managing 80,000+ inbound leads annually."
+      title: "Financial Services & Wealth Management",
+      image: "/finance-hero.png",
+      link: "/industries/financial-services-wealth",
+      bullets: [
+        "Fraud detection pipelines on Databricks",
+        "AI agents for KYC and AML compliance",
+        "Modernised adviser CRM systems",
+        "Regulatory reporting (APRA and ASIC)"
+      ]
     },
     {
-      title: "Retail & E-Commerce",
-      image: "/img/retail.png",
-      desc: "Retail WhatsApp inquiry volume is staggering—inventory questions, returns, order tracking, all hitting personal phones. We automate inventory lookups, order status, return processing, and product recommendations. A luxury retail group automated 90% of order related inquiries, reducing customer service cost by 35% while improving satisfaction (faster, 24/7). An e-commerce firm used AI agents for cross sell recommendations, increasing average order value by 12%. We handle Arabic language nuance (understanding casual inquiries, colloquial product references) and multi currency pricing."
+      title: "Healthcare and Aged Care",
+      image: "/compliance-hero.png",
+      link: "/industries/healthcare-aged-care",
+      bullets: [
+        "Patient data platforms & analytics",
+        "Mobile apps for care coordination",
+        "Automated rostering and compliance",
+        "Administrative operational dashboards"
+      ]
     },
     {
-      title: "Professional Services & Consulting",
-      image: "/img/professional-services.png",
-      desc: "Consulting firms live on proposal cycles and time tracking. We automate intake (capturing project requirements, scope, budget), proposal generation (templated but customized per client), and resource scheduling. A 40 person firm reduced proposal turnaround from 5 days to 2 days. An accounting practice automated 70% of initial client questionnaires, freeing senior staff for actual advisory work. These agents understand complex business logic not just form filling, but judgment calls about resource allocation and risk assessment."
-    },
-    {
-      title: "Finance & Accounting",
-      image: "/img/finance.png",
-      desc: "Month end close is universally painful. We automate reconciliation (bank rec, GL account reconciliation), accruals (revenue recognition, expense accrual), and reporting prep. A manufacturing firm reduced month end from 10 days to 3 days. A holding company automated multi entity consolidation. A fintech firm achieved zero revenue recognition errors across 200 clients. We handle UAE VAT specifics tracking, quarterly return preparation, audit trail maintenance. Multi currency operations (AED, USD, INR) are configured for automatic daily revaluation."
-    },
-    {
-      title: "Hospitality & Food & Beverage",
-      image: "/img/hospitality.png",
-      desc: "Hospitality operates in service moments a guest needs something now, or the moment is lost. We deploy agents handling check in escalations, dining reservations, maintenance requests, and local recommendations. A 5 star hotel automated 60% of guest service requests, improving guest satisfaction while reducing front desk overhead. A restaurant group automated reservation management and special request handling across 8 locations. These agents understand service context and can escalate appropriately when human judgment is needed."
-    },
-    {
-      title: "Logistics & Supply Chain",
-      image: "/img/logistics.png",
-      desc: "Supply chain is exception driven. Normal orders process fine; exceptions (wrong delivery address, customs hold, damaged shipment) require immediate attention. We build agents that detect exceptions (using real time tracking data), initiate communications with customers and vendors, and coordinate resolution. A logistics provider reduced exception resolution time from 90 minutes to 2 minutes per shipment, improving on time delivery from 87% to 94%. We handle multi leg shipments, customs documentation, and Arabic communication with suppliers."
+      title: "Resources, Mining & Logistics",
+      image: "/delivery-hero.png",
+      link: "/industries/resources-mining-logistics",
+      bullets: [
+        "Telemetry for predictive maintenance",
+        "AI for dispatch optimisation",
+        "Real-time supply-chain analytics",
+        "Offline remote field operations apps"
+      ]
     }
   ];
 
   return (
-    <section id="industries" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)' }}>
-      <div className="container" style={{ maxWidth: '1100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-          <div className="section-label">Industry Impact</div>
-          <h2 className="section-title">Which UAE Industries Does FI Digital Serve?</h2>
+    <section id="industries" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div className="section-label">Industries We Serve</div>
+          <h2 className="section-title">Where We Create Impact</h2>
+          <p style={{ maxWidth: '1000px', margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8 }}>
+            Our four service lines converge differently depending on your industry. These are not theoretical capabilities. They are production systems processing real transactions, managing real patient records, and optimising real supply chains across Australia today.
+          </p>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {industries.map((ind, idx) => (
-            <IndustryCard key={ind.title} ind={ind} index={idx} />
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
+          {industries.map((ind) => (
+            <div key={ind.title} className="industry-bg-card group" style={{ 
+              borderRadius: '24px', 
+              overflow: 'hidden', 
+              position: 'relative',
+              boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
+              height: '520px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              background: `url(${ind.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              padding: '2.5rem 2rem'
+            }}>
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.1) 100%)',
+                zIndex: 1,
+                transition: 'all 0.5s ease'
+              }} className="overlay" />
+
+              <div style={{ position: 'relative', zIndex: 2 }}>
+                <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', lineHeight: 1.25 }}>
+                  {ind.title}
+                </h3>
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  {ind.bullets.map(b => (
+                    <li key={b} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start', color: 'rgba(255,255,255,0.9)', fontSize: '1rem', lineHeight: 1.5, fontWeight: 500 }}>
+                      <CheckCircle2 size={18} className="text-primary" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+                <Link href={ind.link} style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  color: 'white',
+                  fontWeight: 800,
+                  fontSize: '0.95rem',
+                  padding: '0.75rem 1.5rem',
+                  background: 'rgba(255,255,255,0.15)',
+                  backdropFilter: 'blur(10px)',
+                  WebkitBackdropFilter: 'blur(10px)',
+                  border: '1px solid rgba(255,255,255,0.2)',
+                  borderRadius: '12px',
+                  transition: 'all 0.3s ease'
+                }} className="btn-glass">
+                  Learn More <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .industry-bg-card {
+          transform: translateY(0);
+          transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .industry-bg-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+        }
+        .industry-bg-card:hover .overlay {
+          background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.3) 100%);
+        }
+        .btn-glass:hover {
+          background: var(--primary) !important;
+          border-color: var(--primary) !important;
+          transform: translateX(5px);
+        }
+      `}</style>
     </section>
   );
 }
 
-function MethodologySection() {
-  const phases = [
+function MethodologyDeliverySection() {
+  const steps = [
     {
-      num: "01",
-      title: "Discover & Diagnose",
-      duration: "Weeks 1-3",
-      price: "AED 18,000",
-      desc: "We don't start with a blank whiteboard. We interview your team, observe actual processes, and identify pain points with impact. Discovery finds the real problems, not the symptoms. We deliver a diagnostic report with automation opportunities and Zoho readiness assessment."
+      id: "01",
+      title: "Discover",
+      duration: "Weeks 1–2",
+      icon: <Search size={28} />,
+      desc: "Audit current systems, interview stakeholders, and quantify the cost of manual processes. We produce a detailed Discovery Report with architecture recommendations, timeline, and investment estimate."
     },
     {
-      num: "02",
-      title: "Design & Architecture",
-      duration: "Weeks 3-8",
-      price: "AED 28,000 - 35,000",
-      desc: "Once we understand your reality, we design the solution: process redesign, Zoho data models, n8n workflows, and AI agent specifications. We present options and architecture diagrams, ensuring your team can maintain these systems long-term."
+      id: "02",
+      title: "Design",
+      duration: "Weeks 3–4",
+      icon: <PenTool size={28} />,
+      desc: "Architect the solution: data models, API contracts, agent decision logic, integration maps, and UX wireframes. You review and approve before a single line of production code is written."
     },
     {
-      num: "03",
-      title: "Deploy & Test",
-      duration: "Weeks 8-16",
-      price: "AED 80,000 - 150,000",
-      desc: "Implementation is orchestrated, not rushed. We set up n8n instances, Zoho environments, and manage the coding of automation. We run parallel periods where human and AI processes are validated side by side for 100% accuracy before the full switch."
+      id: "03",
+      title: "Build",
+      duration: "Weeks 5–12",
+      icon: <Hammer size={28} />,
+      desc: "Our engineering team (avg 8 years experience) constructs the solution. Fortnightly demos, code reviews, and stakeholder check-ins ensure alignment throughout."
     },
     {
-      num: "04",
-      title: "Optimize & Govern",
-      duration: "Weeks 16+, Ongoing",
-      price: "AED 15,000 - 25,000/mo",
-      desc: "Launch is the beginning. We monitor agent accuracy and user adoption, refining behavior based on real-world feedback. After 90 days, we establish clear governance, escalation paths, and provide dashboards for full visibility into agent performance and ROI."
+      id: "04",
+      title: "Operate",
+      duration: "Ongoing",
+      icon: <LayoutDashboard size={28} />,
+      desc: "Comprehensive hand-over, documentation, training, and support retainer. Your team controls the system; we stay on call for refinement and optimisation."
     }
   ];
 
-  const sectionRef = useRef(null);
-  const itemsRef = useRef([]);
-
-  useGSAP(() => {
-    gsap.from(itemsRef.current, {
-      x: -30,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top center+=100",
-      }
-    });
-
-    // Path animation
-    gsap.from(".timeline-path-active", {
-      height: 0,
-      scrollTrigger: {
-        trigger: ".timeline-container",
-        start: "top center",
-        end: "bottom center",
-        scrub: true
-      }
-    });
-  }, { scope: sectionRef });
-
   return (
-    <section id="methodology" ref={sectionRef} style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
-      <div className="container" style={{ maxWidth: '1000px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-          <div className="section-label">Execution Strategy</div>
-          <h2 className="section-title">How Does FI Digital Deploy AI Agents in Dubai?</h2>
+    <section id="methodology-delivery" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
+      <div className="container" style={{ maxWidth: '1300px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
+          <div className="section-label">How We Deliver</div>
+          <h2 className="section-title">Discover, Design, Build, Operate</h2>
+          <p style={{ maxWidth: '1000px', margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8 }}>
+            Every engagement follows our structured methodology. Most engagements run 10 to 16 weeks from Discovery to Operate. Some simpler projects ship in 6 weeks. Complex multi-pillar transformations may span 6 months. <strong style={{ color: 'var(--text)' }}>We give you a timeline during Discovery and we stick to it.</strong>
+          </p>
         </div>
 
-        <div className="timeline-container" style={{ position: 'relative', paddingLeft: '3rem' }}>
-          {/* Timeline Path */}
-          <div className="timeline-path-bg" style={{ 
-            position: 'absolute', 
-            left: 'calc(3rem / 2)', 
-            top: 0, 
-            bottom: 0, 
-            width: '2px', 
-            background: 'var(--border)',
-            opacity: 0.5
-          }} />
-          <div className="timeline-path-active" style={{ 
-            position: 'absolute', 
-            left: 'calc(3rem / 2)', 
-            top: 0, 
-            width: '2px', 
-            background: 'var(--primary)',
-            zIndex: 1
-          }} />
-
-          {phases.map((p, i) => (
-            <div 
-              key={p.num} 
-              ref={el => itemsRef.current[i] = el}
-              style={{ position: 'relative', marginBottom: '4rem' }}
-            >
-              {/* Timeline Dot */}
-              <div style={{
-                position: 'absolute',
-                left: 'calc(-3rem / 2 - 8px)',
-                top: '0',
-                width: '18px',
-                height: '18px',
-                borderRadius: '50%',
-                background: 'white',
-                border: '3px solid var(--primary)',
-                zIndex: 2,
-                boxShadow: '0 0 0 5px var(--bg)'
-              }} />
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                  <span style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.1em' }}>PHASE {p.num}</span>
-                  <div style={{ height: '1px', flex: 1, background: 'var(--border)', opacity: 0.5, minWidth: '20px' }} />
-                  <span style={{ fontSize: '0.9rem', fontWeight: 700, opacity: 0.6 }}>{p.duration}</span>
+        {/* Horizontal Timeline Graphic */}
+        <div className="timeline-horizontal">
+          {steps.map((step, idx) => (
+            <div key={step.id} className="timeline-item hover-lift">
+              <div className="timeline-header">
+                <div className="timeline-icon">
+                  {step.icon}
                 </div>
-
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
-                  <h3 style={{ fontSize: '1.8rem', fontWeight: 900, margin: 0 }}>{p.title}</h3>
-                  <span style={{
-                    background: 'rgba(29, 78, 216, 0.08)',
-                    color: 'var(--primary)',
-                    padding: '0.4rem 1.2rem',
-                    borderRadius: '100px',
-                    fontSize: '0.95rem',
-                    fontWeight: 800
-                  }}>
-                    {p.price}
-                  </span>
+                {idx !== steps.length - 1 && <div className="timeline-connector"></div>}
+              </div>
+              <div className="timeline-content">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '0.9rem', fontWeight: 800, color: 'var(--primary)', letterSpacing: '0.1em' }}>{step.id}</span>
+                  <div style={{ padding: '0.3rem 0.8rem', background: 'rgba(29, 78, 216, 0.08)', borderRadius: '100px', fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary)' }}>
+                    {step.duration}
+                  </div>
                 </div>
-
-                <p style={{ 
-                  fontSize: '1.1rem', 
-                  color: 'var(--text-muted)', 
-                  lineHeight: 1.7, 
-                  margin: 0,
-                  maxWidth: '850px'
-                }}>
-                  {p.desc}
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '1rem', color: 'var(--text)' }}>
+                  {step.title}
+                </h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.65, margin: 0 }}>
+                  {step.desc}
                 </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
-  );
-}
-
-function WhyDubaiCard({ reason, index }) {
-  const [expanded, setExpanded] = useState(false);
-  const contentRef = useRef(null);
-  const cardRef = useRef(null);
-  const isEven = index % 2 === 0;
-
-  useGSAP(() => {
-    // Reveal animation
-    gsap.from(cardRef.current, {
-      x: isEven ? -50 : 50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      scrollTrigger: {
-        trigger: cardRef.current,
-        start: "top bottom-=50",
-        toggleActions: "play none none none"
-      }
-    });
-
-    // Expansion animation
-    if (expanded) {
-      gsap.to(contentRef.current, {
-        height: "auto",
-        opacity: 1,
-        duration: 0.6,
-        ease: "power2.out"
-      });
-    } else {
-      gsap.to(contentRef.current, {
-        height: 100,
-        opacity: 0.8,
-        duration: 0.5,
-        ease: "power2.inOut"
-      });
-    }
-  }, { dependencies: [expanded], scope: cardRef });
-
-  return (
-    <div 
-      ref={cardRef}
-      className={`why-dubai-wrapper ${isEven ? 'row' : 'row-reverse'}`}
-      style={{ 
-        display: 'flex',
-        flexDirection: isEven ? 'row' : 'row-reverse',
-        gap: '4rem',
-        alignItems: 'flex-start',
-        marginBottom: '5rem',
-        width: '100%',
-        padding: '2.5rem',
-        borderRadius: '32px',
-        background: 'var(--card-bg)',
-        border: '1px solid var(--border)',
-        boxShadow: expanded ? '0 30px 60px rgba(0,0,0,0.1)' : 'var(--card-shadow)',
-        transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-        position: 'relative',
-        overflow: 'hidden'
-      }}
-    >
-      {/* Visual Numbering Backdrop */}
-      <span style={{
-        position: 'absolute',
-        top: '-10px',
-        right: isEven ? '20px' : 'auto',
-        left: isEven ? 'auto' : '20px',
-        fontSize: '10rem',
-        fontWeight: 950,
-        color: 'var(--primary)',
-        opacity: 0.04,
-        lineHeight: 1,
-        pointerEvents: 'none',
-        userSelect: 'none'
-      }}>
-        {index + 1}
-      </span>
-
-      {/* Title Column */}
-      <div style={{ flex: '1', position: 'relative', zIndex: 1 }}>
-        <div style={{
-          width: '60px',
-          height: '60px',
-          borderRadius: '16px',
-          background: 'rgba(29, 78, 216, 0.1)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'var(--primary)',
-          fontSize: '1.5rem',
-          fontWeight: 900,
-          marginBottom: '1.5rem'
-        }}>
-          0{index + 1}
-        </div>
-        <h3 style={{ 
-          fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', 
-          fontWeight: 900, 
-          color: 'var(--text)', 
-          lineHeight: 1.1,
-          margin: 0
-        }}>
-          {reason.title}
-        </h3>
-      </div>
-
-      {/* Description Column */}
-      <div style={{ flex: '1.5', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', position: 'relative', zIndex: 1 }}>
-        <div 
-          ref={contentRef}
-          style={{ 
-            height: 100, 
-            overflow: 'hidden', 
-            fontSize: '1.1rem', 
-            color: 'var(--text-muted)', 
-            lineHeight: 1.8, 
-            marginBottom: '1.5rem',
-            position: 'relative',
-            width: '100%'
-          }}
-        >
-          {reason.desc}
-          {!expanded && (
-            <div style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: '50px',
-              background: `linear-gradient(to bottom, transparent, var(--card-bg))`,
-              pointerEvents: 'none'
-            }} />
-          )}
-        </div>
-        
-        <button 
-          onClick={() => setExpanded(!expanded)}
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '0.5rem', 
-            fontWeight: 800,
-            padding: '0.5rem 0',
-            fontSize: '0.95rem',
-            color: 'var(--primary)',
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer'
-          }}
-        >
-          {expanded ? 'Read Less' : 'Learn Why This Matters'}
-          <ChevronDown size={18} style={{ 
-            transform: expanded ? 'rotate(180deg)' : 'none', 
-            transition: 'transform 0.4s ease' 
-          }} />
-        </button>
-      </div>
-
       <style jsx>{`
+        .timeline-horizontal {
+          display: flex;
+          justify-content: space-between;
+          position: relative;
+        }
+        .timeline-item {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          padding-right: 2rem;
+          position: relative;
+        }
+        .timeline-item:last-child {
+          padding-right: 0;
+        }
+        .timeline-header {
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-bottom: 2.5rem;
+        }
+        .timeline-icon {
+          width: 72px;
+          height: 72px;
+          background: var(--bg);
+          border: 2px solid var(--primary);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--primary);
+          z-index: 2;
+          box-shadow: 0 10px 30px rgba(29, 78, 216, 0.15);
+          flex-shrink: 0;
+          transition: transform 0.3s ease;
+        }
+        .timeline-connector {
+          flex: 1;
+          height: 2px;
+          background: linear-gradient(90deg, var(--primary) 0%, rgba(29, 78, 216, 0.1) 100%);
+          margin-left: -5px;
+          z-index: 1;
+        }
+        .timeline-content {
+          background: var(--card-bg);
+          padding: 2.5rem 2rem;
+          border-radius: 24px;
+          border: 1px solid var(--border);
+          box-shadow: var(--card-shadow);
+          height: 100%;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .hover-lift:hover .timeline-content {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+          border-color: rgba(29, 78, 216, 0.3);
+        }
+        .hover-lift:hover .timeline-icon {
+          transform: scale(1.1);
+        }
+
         @media (max-width: 900px) {
-          .why-dubai-wrapper {
-            flex-direction: column !important;
-            gap: 1.5rem !important;
-            padding: 2rem !important;
+          .timeline-horizontal {
+            flex-direction: column;
+            gap: 2.5rem;
           }
-          .why-dubai-wrapper > div {
-            flex: none !important;
-            width: 100% !important;
+          .timeline-item {
+            padding-right: 0;
+            flex-direction: row;
+            gap: 2rem;
+          }
+          .timeline-header {
+            flex-direction: column;
+            margin-bottom: 0;
+          }
+          .timeline-connector {
+            width: 2px;
+            height: 100%;
+            margin-left: 0;
+            margin-top: -5px;
+            background: linear-gradient(180deg, var(--primary) 0%, rgba(29, 78, 216, 0.1) 100%);
+          }
+        }
+        @media (max-width: 600px) {
+          .timeline-item {
+            flex-direction: column;
+            gap: 1.5rem;
+          }
+          .timeline-connector {
+            display: none;
           }
         }
       `}</style>
-    </div>
-  );
-}
-
-function WhyDubaiSection() {
-  const reasons = [
-    {
-      title: "The 3-Year Zoho License We Help Secure",
-      desc: "In the UAE, a 3-year business trade license is the local gold standard. We help you secure this in Dubai Business Bay. Why? Because it signals commitment. A fly by night consulting firm can't maintain 3-year licensing; we can and do. This matters for your enterprise relationships they want to work with partners who'll be around in 3 years. Most Zoho partners are UK-based or US-based; we're here. Your problems are our problems. We're invested in the UAE market, not treating it as an overseas project."
-    },
-    {
-      title: "Bilingual, Bicultural Expertise",
-      desc: "Your business operates in English and Arabic. Your CRM needs to work in both. Most Zoho implementations are English-only because the partner doesn't speak Arabic and doesn't understand Emirati or UAE Expat business culture. We do both. We've configured Zoho for Gulf Arabic speakers, Levantine expatriates, and Egyptian staff. We understand the regulatory context VAT compliance, labor law, and data sovereignty expectations. We build agents that understand casual Arabic service context, not just formal text."
-    },
-    {
-      title: "Three-Office Model: Responsiveness & Value",
-      desc: "We operate from Dubai (client facing, on ground presence), Sydney (engineering and architecture), and India (delivery and training). This means your call gets answered in Dubai time, your solution is architected by experienced engineers in Sydney, and your implementation is delivered by trained specialists in India at a sustainable cost. You get responsiveness and high-level architecture without paying Silicon Valley rates for 24/7 coverage. We're optimized for AU, APAC, and the UAE."
-    },
-    {
-      title: "Zoho + Modern AI, Not Replacing Zoho",
-      desc: "The market is full of 'AI disruption' stories claims that AI will replace Zoho or your entire CRM. We take the opposite view. Zoho is the operational spine that will outlast this AI cycle. What's changing is how we augment it. We're positioning AI as the multiplier. Your Zoho CRM gets better with AI agents; your Zoho Finance gets smarter with automation. We're not selling you a 'rip and replace'—we're selling you Zoho elevation. That's more conservative, more realistic, and more likely to create lasting value."
-    },
-    {
-      title: "Transparent, Incentive-Aligned Pricing",
-      desc: "We don't hide costs in 'implementation overruns.' You'll know what you're paying for upfront. A basic Zoho setup is AED 50-100K; advanced setups with multi company workflows are AED 150-300K. AI agents add 40-60K per agent depending on complexity. We also price ongoing support clearly: AED 15-25K/mo for SMB, AED 40-75K/mo for enterprise. Whether you're a startup starting with discovery (AED 18K) or an enterprise with board approved ROI metrics, your investment is clear and approved by your CFO."
-    }
-  ];
-
-  return (
-    <section id="why-us" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
-      <div className="container" style={{ maxWidth: '1100px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '6rem' }}>
-          <div className="section-label">Why FI Digital?</div>
-          <h2 className="section-title">Why Do UAE Enterprises Choose FI Digital?</h2>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          {reasons.map((r, idx) => (
-            <WhyDubaiCard key={r.title} reason={r} index={idx} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }
 
-function NextStepsSection() {
-  const steps = [
-    {
-      title: "Complimentary AI & Zoho Audit",
-      duration: "45 Minutes",
-      desc: "A 15-20 page readiness report with no sales pitch. Perfect if you are genuinely exploring what's possible.",
-      action: "Get Audit",
-      link: "/contact",
-      icon: <Search size={40} />,
-      badge: "Discovery"
-    },
-    {
-      title: "Strategy Session",
-      duration: "60 Minutes",
-      desc: "A deep dive where we map your full technical roadmap. Best if you are serious about moving forward.",
-      action: "Book Session",
-      link: "/contact",
-      icon: <Zap size={40} />,
-      badge: "Planning"
-    },
-    {
-      title: "WhatsApp Quick Connect",
-      duration: "< 2 Hours",
-      desc: "Quick assessment and initial answers. Ideal if you just want to kick the tires and ask a few questions.",
-      action: "Connect Now",
-      link: "/contact",
-      icon: <MessageCircleMore size={40} />,
-      badge: "Urgent"
-    }
-  ];
-
+// --- GLOBAL DELIVERY SECTION ---
+function GlobalDeliverySection() {
   return (
-    <section id="next-steps" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
-      <div className="container">
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <div className="section-label">Direct Access</div>
-          <h2 className="section-title">How Do I Get Started with FI Digital?</h2>
-          <p style={{ maxWidth: '700px', margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.6 }}>
-            Choose whichever feels right. We don&apos;t believe in high-pressure sales—we believe in architecting the right decision once.
-          </p>
-        </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginBottom: '4rem' }}>
-          {steps.map((step) => (
-            <div key={step.title} className="card next-step-card" style={{ 
-              padding: '3rem 2rem', 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'flex-start',
-              textAlign: 'left',
-              height: '100%',
-              background: 'var(--card-bg)',
-              border: '1px solid var(--border)',
-              borderRadius: '32px',
-              transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
-              position: 'relative',
-              overflow: 'hidden'
-            }}>
-              <div style={{ 
-                color: 'var(--primary)', 
-                fontWeight: 800, 
-                fontSize: '0.75rem', 
-                textTransform: 'uppercase', 
-                letterSpacing: '0.12em', 
-                marginBottom: '1rem',
-                padding: '0.4rem 0.8rem',
-                background: 'rgba(29, 78, 216, 0.08)',
-                borderRadius: '100px',
-                display: 'inline-block'
-              }}>
-                {step.badge}
-              </div>
-              
-              <h3 style={{ fontSize: '1.6rem', fontWeight: 900, marginBottom: '1rem', lineHeight: 1.1, color: 'var(--text)' }}>
-                {step.title}
-              </h3>
-              
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '2.5rem', flex: 1 }}>
-                {step.desc}
-              </p>
-
-              <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'auto' }}>
-                <span style={{ fontSize: '0.9rem', fontWeight: 700, opacity: 0.6 }}>{step.duration}</span>
-                <Link
-                  href={step.link}
-                  className="btn-primary"
-                  style={{ 
-                    borderRadius: '12px',
-                    fontWeight: 800,
-                    fontSize: '0.95rem',
-                    padding: '0.75rem 1.5rem',
-                    height: 'auto'
-                  }}
-                >
-                  {step.action}
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="card shadow-hover" style={{
-          padding: '80px 40px',
-          textAlign: 'center',
-          background: 'linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)',
-          borderRadius: '48px',
-          color: 'white',
-          boxShadow: '0 40px 100px rgba(0, 82, 212, 0.25)',
-          position: 'relative',
-          overflow: 'hidden',
-          border: 'none'
-        }}>
-          {/* Decorative elements */}
-          <div style={{
-            position: 'absolute',
-            top: '-20%',
-            right: '-10%',
-            width: '60%',
-            height: '60%',
-            background: 'radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%)',
-            pointerEvents: 'none'
-          }} />
-
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <div className="section-label" style={{ 
-              background: 'rgba(255,255,255,0.15)', 
-              color: 'white', 
-              border: '1px solid rgba(255,255,255,0.2)',
-              marginBottom: '2rem',
-              display: 'inline-block'
-            }}>CREDIT OFFER</div>
-
-            <h3 style={{ 
-              fontSize: 'clamp(2rem, 5vw, 3rem)', 
-              fontWeight: 900, 
-              marginBottom: '1.5rem', 
-              color: 'white',
-              lineHeight: 1.1,
-              letterSpacing: '-0.02em'
-            }}>
-              We also offer this
-            </h3>
-            <p style={{ maxWidth: '850px', margin: '0 auto', color: 'rgba(255,255,255,0.9)', fontSize: '1.25rem', lineHeight: 1.8 }}>
-              If you work with us for implementation, we will credit the full cost of discovery and strategy <strong style={{ color: 'white', textDecoration: 'underline' }}>(AED 45K+)</strong> against your implementation contract. You&apos;re not paying for these conversations twice you&apos;re investing in the right decision once.
+    <section id="global-delivery" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
+      <div className="container" style={{ maxWidth: '1200px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="gds-grid">
+          <div>
+            <div className="section-label">Our Presence</div>
+            <h2 className="section-title">Global Delivery,<br/>Australian Focus</h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+              FI Digital is part of Digital Synergy Ventures, an Australian-registered entity with 200 plus engineers across five locations. <strong style={{ color: 'var(--text)' }}>Melbourne is our headquarters</strong> and the centre of our enterprise relationships. Sydney supports our Financial Services and Healthcare clients. Our India engineering centre (150 plus engineers across four cities) provides deep technical capacity at scale. Our UAE hub serves regional clients. Our UK entity (Digital Synergy Ventures UK Limited) operates independently in the British market.
             </p>
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+              Your engagement is led by Australian-based senior consultants and architects. Our delivery team is experienced, certified, and operates under Australian employment standards and contractual terms. 
+            </p>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+              {[
+                "Data in Australian infrastructure",
+                "Your IP is fully yours",
+                "Source code ownership",
+                "Contractual SLAs & Insurance"
+              ].map((item, i) => (
+                <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '1rem', fontWeight: 700, color: 'var(--text)' }}>
+                  <ShieldCheck size={22} className="text-primary" style={{ flexShrink: 0 }} />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div style={{ position: 'relative' }}>
+             <img src="/delivery-hubs.png" alt="Global Delivery Hubs map" style={{ width: '100%', height: 'auto', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))', border: '1px solid var(--border)' }} 
+             onError={(e) => { e.target.src = '/global-scale.png'; }} />
           </div>
         </div>
       </div>
-      
       <style jsx>{`
-        .next-step-card {
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .next-step-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-        }
-        .shadow-hover {
-          transition: all 0.5s ease;
-        }
-        .shadow-hover:hover {
-          box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+        @media (max-width: 900px) {
+          .gds-grid {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
+    </section>
+  );
+}
+
+// --- SOCIAL PROOF SECTION ---
+function SocialProofSection() {
+  const clients = ["Silk Logistics", "BlueNRG", "Civil Survey Solutions", "Drova", "Visual Exposure", "Warequip"];
+  return (
+    <section id="social-proof" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
+      <div className="container" style={{ maxWidth: '1000px', textAlign: 'center' }}>
+        <div className="section-label">Proven Track Record</div>
+        <h2 className="section-title">Client Proof & Outcomes</h2>
+        <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8, margin: '1.5rem auto 3rem', maxWidth: '850px' }}>
+          <strong style={{ color: 'var(--text)' }}>200 plus projects delivered across 10 years.</strong> We do not publish vanity metrics. We publish outcomes. Ask us for references in your industry. We will connect you with clients who will tell you exactly what the experience was like.
+        </p>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginBottom: '4rem' }}>
+          {clients.map((c) => (
+            <div key={c} style={{ padding: '0.75rem 1.5rem', background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '100px', fontSize: '1.05rem', fontWeight: 700, color: 'var(--text)', boxShadow: 'var(--card-shadow)' }}>
+              {c}
+            </div>
+          ))}
+          <div style={{ padding: '0.75rem 1.5rem', background: 'transparent', border: '1px dashed var(--border)', borderRadius: '100px', fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-muted)' }}>
+            + dozens of mid-market Australian enterprises
+          </div>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+           {[
+             { title: "Zoho Innovator of the Year" },
+             { title: "Zoho Premium Partner" },
+             { title: "AWS Partner" },
+             { title: "Microsoft Partner" }
+           ].map((partner) => (
+             <div key={partner.title} className="hover-lift" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', padding: '2rem 1rem', background: 'var(--card-bg)', borderRadius: '20px', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)', transition: 'all 0.3s ease' }}>
+                <Award size={40} color="var(--primary)" />
+                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: 'var(--text)', textAlign: 'center' }}>{partner.title}</span>
+             </div>
+           ))}
+        </div>
+      </div>
+      <style jsx>{`
+        .hover-lift:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+          border-color: var(--primary) !important;
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// --- NEXT STEPS SECTION ---
+function NextStepsSection() {
+  return (
+    <section id="next-steps" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
+      <div className="container" style={{ maxWidth: '850px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
+        <h2 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
+          Take the Next Step
+        </h2>
+        <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.25rem', lineHeight: 1.7, marginBottom: '3rem', fontWeight: 400 }}>
+          Not sure where to start? Book a free 30-minute Discovery Session with one of our senior consultants. No sales pitch. No pressure. Just a structured conversation about your current technology landscape, your business objectives, and where engineering, data, AI, or systems modernisation could create the most impact. 
+          <br/><br/>
+          We will tell you honestly whether we are the right fit. If we are, we will propose a Discovery engagement. If we are not, we will tell you who is.
+        </p>
+
+        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link href="/book-discovery" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            background: 'white',
+            color: 'var(--primary)',
+            padding: '1.1rem 2.2rem',
+            borderRadius: '100px',
+            fontSize: '1.1rem',
+            fontWeight: 800,
+            textDecoration: 'none',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+            transition: 'all 0.3s ease'
+          }} className="btn-primary-hover">
+            Book a Free Discovery Session <ArrowRight size={20} />
+          </Link>
+          <Link href="/case-studies" style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            background: 'rgba(255,255,255,0.1)',
+            backdropFilter: 'blur(10px)',
+            border: '2px solid rgba(255,255,255,0.3)',
+            color: 'white',
+            padding: '1.1rem 2.2rem',
+            borderRadius: '100px',
+            fontSize: '1.1rem',
+            fontWeight: 800,
+            textDecoration: 'none',
+            transition: 'all 0.3s ease'
+          }} className="btn-secondary-hover">
+            View Our Case Studies <FileText size={20} />
+          </Link>
+        </div>
+      </div>
+      <style jsx>{`
+        .btn-primary-hover:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        .btn-secondary-hover:hover {
+          background: rgba(255,255,255,0.2) !important;
+          border-color: rgba(255,255,255,0.5) !important;
+          transform: translateY(-5px);
+        }
+        @media (max-width: 600px) {
+           h2 { fontSize: '2.5rem' !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+// --- FAQ SECTION ---
+function FAQSection() {
+  const faqs = [
+    {
+      q: "What does FI Digital do?",
+      a: "FI Digital is an engineering-led transformation partner for Australian enterprise. We operate across four service lines: Product Engineering (custom web and mobile applications), Data Platforms and Intelligence (Databricks, Snowflake, Microsoft Fabric), AI Agents and Automation (governed AI systems using Claude, GPT-4o, and LangChain), and Business Systems Modernisation (Zoho CRM, integrations, workflow automation). We help organisations build software, engineer data foundations, deploy AI into real workflows, and modernise their existing business systems."
+    },
+    {
+      q: "Where is FI Digital based?",
+      a: "Our headquarters are in Melbourne, Victoria. We have a presence in Sydney for Financial Services and Healthcare clients. Our engineering centre in India provides 150 plus engineers. We also operate in the UAE and UK. All Australian engagements are led by Melbourne-based senior consultants."
+    },
+    {
+      q: "Does FI Digital only do Zoho?",
+      a: "No. Zoho is one of four service pillars. We are an award-winning Zoho Premium Partner, but we also build custom software (Product Engineering), design and deploy data platforms on Databricks, Snowflake, and Microsoft Fabric (Data Platforms and Intelligence), and build governed AI agents (AI Agents and Automation). Many clients engage us across multiple pillars."
+    },
+    {
+      q: "What industries does FI Digital serve?",
+      a: "We serve three primary industries in Australia: Financial Services and Wealth Management, Healthcare and Aged Care, and Resources, Mining, and Logistics. Our four service lines adapt to each industry with specific use cases, compliance requirements, and integration patterns."
+    },
+    {
+      q: "How long does a typical project take?",
+      a: "Most engagements run 10 to 16 weeks from Discovery to Operate. Some simpler projects (CRM configuration, single-workflow automation) ship in 6 weeks. Complex multi-pillar transformations may span 6 months. We provide a detailed timeline during the Discovery phase."
+    },
+    {
+      q: "Is my data kept in Australia?",
+      a: "Yes. All four service lines can be delivered with Australian-hosted infrastructure. We deploy on AWS Sydney (ap-southeast-2), Azure Australia East, and Zoho Australian data centres. AI models run via AWS Bedrock and Azure OpenAI Service, both with Australian data residency options."
+    },
+    {
+      q: "How is FI Digital different from other consulting firms?",
+      a: "We are engineering-led, not advisory-led. We do not produce PowerPoint recommendations and leave. We build production systems, write code, deploy infrastructure, and stay accountable for outcomes. Our 200 plus engineers have an average of 8 years experience. We carry professional indemnity insurance and provide contractual SLAs."
+    },
+    {
+      q: "Can FI Digital integrate with our existing systems?",
+      a: "Yes. We have integrated with 40 plus platforms including Salesforce, SAP, Oracle, NetSuite, Xero, MYOB, Zoho, HubSpot, Shopify, custom REST APIs, SFTP, SQL databases, Databricks, Snowflake, and Microsoft Fabric. Our n8n orchestration layer and custom API development handle complex multi-system integration."
+    }
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleOpen = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <section id="faq" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
+      <div className="container" style={{ maxWidth: '850px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div className="section-label">FAQ</div>
+          <h2 className="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            return (
+              <div 
+                key={index} 
+                style={{ 
+                  background: 'var(--card-bg)', 
+                  border: '1px solid var(--border)', 
+                  borderRadius: '16px', 
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  boxShadow: isOpen ? '0 10px 20px rgba(0,0,0,0.05)' : 'none'
+                }}
+              >
+                <button 
+                  onClick={() => toggleOpen(index)}
+                  style={{ 
+                    width: '100%', 
+                    padding: '1.5rem', 
+                    display: 'flex', 
+                    justifyContent: 'space-between', 
+                    alignItems: 'center', 
+                    background: 'transparent', 
+                    border: 'none', 
+                    textAlign: 'left', 
+                    cursor: 'pointer',
+                    color: 'var(--text)',
+                    fontSize: '1.1rem',
+                    fontWeight: 700
+                  }}
+                >
+                  {faq.q}
+                  <ChevronDown 
+                    size={20} 
+                    style={{ 
+                      flexShrink: 0,
+                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
+                      transition: 'transform 0.3s ease',
+                      color: isOpen ? 'var(--primary)' : 'var(--text-muted)'
+                    }} 
+                  />
+                </button>
+                <div 
+                  style={{ 
+                    maxHeight: isOpen ? '800px' : '0px', 
+                    overflow: 'hidden', 
+                    transition: 'all 0.4s ease',
+                    opacity: isOpen ? 1 : 0
+                  }}
+                >
+                  <div style={{ padding: '0 1.5rem 1.5rem', color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.6 }}>
+                    {faq.a}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </section>
   );
 }
@@ -1170,47 +1035,63 @@ export default function HomeClient() {
         "name": "What does FI Digital do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FI Digital is a Dubai-based AI automation company. We build bilingual AI agents and enterprise Zoho implementations for UAE businesses. Our solutions run on WhatsApp, email, and chat, and integrate with Zoho CRM, Zoho Books, and the full Zoho suite. We are a Zoho Authorized Partner with 50+ UAE implementations."
+          "text": "FI Digital is an engineering-led transformation partner for Australian enterprise. We operate across four service lines: Product Engineering (custom web and mobile applications), Data Platforms and Intelligence (Databricks, Snowflake, Microsoft Fabric), AI Agents and Automation (governed AI systems using Claude, GPT-4o, and LangChain), and Business Systems Modernisation (Zoho CRM, integrations, workflow automation)."
         }
       },
       {
         "@type": "Question",
-        "name": "How much does AI automation cost in the UAE?",
+        "name": "Where is FI Digital based?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FI Digital's AI automation engagements start with a Discovery Sprint at AED 15,000–25,000, which is a 2-week diagnostic delivering a full implementation roadmap. Full project implementations typically range from AED 50,000 to AED 500,000+ depending on scope. Ongoing monthly optimization retainers start at AED 15,000/month. A complimentary AI & Zoho Readiness Audit (45-minute session + 15-20 page report) is available at no cost."
+          "text": "Our headquarters are in Melbourne, Victoria. We have a presence in Sydney for Financial Services and Healthcare clients. Our engineering centre in India provides 150 plus engineers. We also operate in the UAE and UK."
         }
       },
       {
         "@type": "Question",
-        "name": "Which industries does FI Digital serve in the UAE?",
+        "name": "Does FI Digital only do Zoho?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FI Digital serves Real Estate & PropTech, Retail & E-Commerce, Professional Services (consulting, legal, accounting), Healthcare & Wellness, F&B & Hospitality, and Logistics & Supply Chain across the UAE."
+          "text": "No. Zoho is one of four service pillars. We are an award-winning Zoho Premium Partner, but we also build custom software, design and deploy data platforms on Databricks, Snowflake, and Microsoft Fabric, and build governed AI agents."
         }
       },
       {
         "@type": "Question",
-        "name": "Where is FI Digital located?",
+        "name": "What industries does FI Digital serve?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "FI Digital's UAE office is in Business Bay, Dubai. The company was founded in Sydney, Australia and expanded to Dubai in 2023 with a 3-year UAE trade license. Additional delivery offices are in India. All client-facing operations and project management are handled from Dubai."
+          "text": "We serve three primary industries in Australia: Financial Services and Wealth Management, Healthcare and Aged Care, and Resources, Mining, and Logistics."
         }
       },
       {
         "@type": "Question",
-        "name": "What is the AI Agent Mesh that FI Digital uses?",
+        "name": "How long does a typical project take?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The AI Agent Mesh is FI Digital's proprietary architecture that connects Zoho (CRM, Books, Desk, People) as the enterprise data backbone with n8n as the workflow orchestration layer, Claude (Anthropic) for reasoning and natural language generation, Gemini (Google) for Arabic voice transcription and dialect-aware processing, and LangChain for RAG and multi-agent orchestration."
+          "text": "Most engagements run 10 to 16 weeks from Discovery to Operate. Some simpler projects ship in 6 weeks. Complex multi-pillar transformations may span 6 months."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I get started with FI Digital?",
+        "name": "Is my data kept in Australia?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The first step is a complimentary AI & Zoho Readiness Audit — a 45-minute diagnostic session followed by a 15-20 page report identifying automation opportunities in your business. Contact FI Digital at info@fidigital.ae or via WhatsApp to book. Following the audit, we typically recommend a 2-week Discovery Sprint (AED 15,000–25,000) before any full implementation begins."
+          "text": "Yes. All four service lines can be delivered with Australian-hosted infrastructure. We deploy on AWS Sydney, Azure Australia East, and Zoho Australian data centres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How is FI Digital different from other consulting firms?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We are engineering-led, not advisory-led. We build production systems, write code, deploy infrastructure, and stay accountable for outcomes. Our 200 plus engineers have an average of 8 years experience. We carry professional indemnity insurance and provide contractual SLAs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can FI Digital integrate with our existing systems?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We have integrated with 40 plus platforms including Salesforce, SAP, Oracle, NetSuite, Xero, MYOB, Zoho, HubSpot, Shopify, custom REST APIs, SQL databases, Databricks, Snowflake, and Microsoft Fabric."
         }
       }
     ]
@@ -1227,15 +1108,14 @@ export default function HomeClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <HomeHero />
-      <EcosystemSection />
-      <PillarsSection />
+      <FourPillarsSection />
+      <TechStackSection />
       <IndustrySection />
-      <MethodologySection />
-      <WhyDubaiSection />
+      <MethodologyDeliverySection />
+      <GlobalDeliverySection />
+      <SocialProofSection />
+      <FAQSection />
       <NextStepsSection />
-      <div style={{ textAlign: 'center', padding: '2rem', opacity: 0.5, fontSize: '0.8rem' }}>
-        Last Updated: March 2026
-      </div>
     </>
   );
 }
