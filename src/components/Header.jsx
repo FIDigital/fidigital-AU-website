@@ -38,17 +38,49 @@ const navLinks = [
             { href: "/ai-agents/workflow-automation", label: "Workflow Automation" },
         ]
     },
-    { 
-        href: "/business-systems", 
-        label: "Business Systems" 
+    {
+        href: "/zoho-consultants",
+        label: "Zoho",
+        subLinks: [
+            { href: "/zoho-consultants/", label: "Zoho Consultants" },
+            { href: "/zoho-partners-australia/", label: "Zoho Partners Australia" },
+            { href: "/zoho-implementation-specialist/", label: "Implementation Specialist" },
+            { href: "/crm-implementation/", label: "CRM Implementation" },
+            { href: "/desk-implementation/", label: "Desk Implementation" },
+            { href: "/custom-development/", label: "Custom Development" },
+            { href: "/3rd-party-zoho-integration/", label: "3rd Party Integration" },
+            { href: "/creator/", label: "Creator" },
+        ]
     },
     {
-        href: "/business-systems",
-        label: "Business Systems",
+        href: "javascript:void(0)",
+        label: "Zoho For",
         subLinks: [
-            { href: "/industries/financial-services-wealth", label: "Financial Services" },
-            { href: "/industries/healthcare-aged-care", label: "Healthcare & Aged Care" },
-            { href: "/industries/resources-mining-logistics", label: "Resources & Logistics" },
+            { href: "/energy-renewables/", label: "Energy & Renewables" },
+            { href: "/manufacturing/", label: "Manufacturing" },
+            { href: "/retail/", label: "Retail" },
+            { href: "/distribution/", label: "Distribution" },
+            { href: "/logistics/", label: "Logistics" },
+            { href: "/solar-energy/", label: "Solar Energy" },
+            { href: "/it-software/", label: "IT & Software" },
+            { href: "/financial-services/", label: "Financial Services" },
+            { href: "/mortgage-brokers/", label: "Mortgage Brokers" },
+        ]
+    },
+    {
+        href: "javascript:void(0)",
+        label: "Other Services",
+        subLinks: [
+            { href: "/search-engine-optimisation/", label: "Search Engine Optimisation" },
+            { href: "/digital-transformation-consultant-melbourne/", label: "Digital Transformation" },
+            { href: "/strategy/", label: "Strategy" },
+            { href: "/mobile-app-development/", label: "Mobile App Development" },
+            { href: "/web-app-development/", label: "Web App Development" },
+            { href: "/user-experience/", label: "User Experience" },
+            { href: "/design/", label: "Design" },
+            { href: "/content/", label: "Content" },
+            { href: "/support/", label: "Support" },
+            { href: "/build/", label: "Build" },
         ]
     },
     {
@@ -60,7 +92,17 @@ const navLinks = [
             { href: "/why-fi-digital/australian-compliance", label: "Australian Compliance" },
         ]
     },
-    { href: "/case-studies", label: "Case Studies" },
+    { 
+        href: "/case-study/", 
+        label: "Case Study" 
+    },
+    { 
+        href: "javascript:void(0)", 
+        label: "Blog",
+        subLinks: [
+            { href: "/exploring-promotions-in-casino-online-non-aams-sicuri-8/", label: "Online Casino Promotions" }
+        ]
+    },
     { href: "/contact", label: "Contact" },
     { href: "/book-discovery", label: "Book a Discovery" },
 ];
