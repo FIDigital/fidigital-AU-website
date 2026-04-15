@@ -1,12 +1,18 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Financial Services Wealth
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Financial Services Wealth page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+import FinanceClient from "./FinanceClient";
+
+export const metadata = {
+  title: "AI & Data Engineering for Financial Services Australia | FI Digital",
+  description: "Fraud detection, KYC/AML automation, data platforms, regulatory reporting, and CRM modernisation for Australian financial services. Databricks. Snowflake. Claude AI. Zoho. APRA and ASIC compliant.",
+  openGraph: {
+    title: "AI & Data Engineering for Financial Services | FI Digital",
+    description: "Fraud detection, KYC/AML automation, data platforms, regulatory reporting, and CRM modernisation for Australian financial services.",
+    url: "https://fidigital.com.au/industries/financial-services-wealth",
+    siteName: "FI Digital",
+    locale: "en_AU",
+    type: "website",
+  },
+};
+
+export default function FinancePage() {
+  return <FinanceClient />;
 }
