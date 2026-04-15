@@ -1,0 +1,29 @@
+# AI Crawlers — Allow all public content 
+User-agent: GPTBot 
+Allow: / 
+Disallow: /admin 
+Disallow: /internal 
+
+User-agent: ClaudeBot 
+Allow: / 
+Disallow: /admin 
+Disallow: /internal 
+
+User-agent: PerplexityBot 
+Allow: / 
+Disallow: /admin 
+Disallow: /internal 
+
+User-agent: Google-Extended 
+Allow: / 
+Disallow: /admin 
+Disallow: /internal  
+
+# Standard crawlers (keep existing) 
+User-agent: Googlebot 
+Allow: / 
+
+User-agent: Bingbot 
+Allow: / 
+
+Sitemap: https://fidigital.com.au/sitemap.xml

@@ -4,29 +4,33 @@ import { Instagram, Facebook, Twitter, Linkedin } from "lucide-react";
 import Logo from "./Logo";
 
 const footerLinks = {
-  "Product Engineering": [
-    { label: "Web Applications", href: "/product-engineering/web-applications" },
-    { label: "Mobile Applications", href: "/product-engineering/mobile-applications" },
-    { label: "SaaS & MVP Builds", href: "/product-engineering/saas-mvp" },
-    { label: "Product Modernisation", href: "/product-engineering/product-modernisation" },
+  "Digital Workers": [
+    { label: "WhatsApp Sales Agents", href: "/digital-workers/whatsapp-sales-agents" },
+    { label: "Real Estate Agents", href: "/digital-workers/real-estate-agents" },
+    { label: "Finance & Procurement", href: "/digital-workers/finance-procurement-agents" },
+    { label: "Customer Service", href: "/digital-workers/customer-service-agents" },
+    { label: "HR & Onboarding", href: "/digital-workers/hr-onboarding-agents" },
   ],
-  "Data & AI": [
-    { label: "Databricks Consulting", href: "/data-platforms/databricks" },
-    { label: "Microsoft Fabric", href: "/data-platforms/microsoft-fabric" },
-    { label: "RAG & Intelligence", href: "/ai-agents/rag-document-intelligence" },
-    { label: "Copilots & Digital Workers", href: "/ai-agents/copilots-digital-workers" },
-    { label: "Workflow Automation", href: "/ai-agents/workflow-automation" },
+  Platform: [
+    { label: "Zoho Agentic AI", href: "/platform/zoho-agentic-ai" },
+    { label: "n8n Orchestration", href: "/platform/n8n-orchestration" },
+    { label: "Multilingual LLM", href: "/platform/multilingual-llm" },
+    { label: "Custom AI Development", href: "/platform/custom-ai-development" },
+    { label: "Data & Analytics", href: "/platform/data-analytics" },
   ],
-  "Industries": [
-    { label: "Financial Services", href: "/industries/financial-services-wealth" },
-    { label: "Healthcare & Aged Care", href: "/industries/healthcare-aged-care" },
-    { label: "Resources & Logistics", href: "/industries/resources-mining-logistics" },
+  Industries: [
+    { label: "Real Estate", href: "/industries/real-estate" },
+    { label: "Retail & E-Commerce", href: "/industries/retail-ecommerce" },
+    { label: "Professional Services", href: "/industries/professional-services" },
+    { label: "Healthcare", href: "/industries/healthcare" },
+    { label: "F&B & Hospitality", href: "/industries/fnb-hospitality" },
+    { label: "Logistics", href: "/industries/logistics" },
   ],
-  "Company": [
-    { label: "Our Approach", href: "/why-fi-digital" },
-    { label: "Global Delivery", href: "/why-fi-digital/global-delivery" },
+  Company: [
+    { label: "About Us", href: "/about" },
     { label: "Case Studies", href: "/case-studies" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Resources", href: "/resources" },
+    { label: "Contact & Pricing", href: "/contact" },
   ],
 };
 
