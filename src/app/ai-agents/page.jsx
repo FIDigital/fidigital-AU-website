@@ -1,12 +1,10 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Ai Agents
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Ai Agents page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+import AIAgentsClient from "./AIAgentsClient";
+
+export const metadata = {
+  title: 'AI Agents & Automation Australia | RAG, Copilots, Digital Workers | FI Digital',
+  description: 'Governed AI agents that read, reason, decide, and act. RAG pipelines. Copilots. Digital workers. Claude, GPT-4o, LangChain, n8n. Australian data residency. Human-in-the-loop guardrails.',
+};
+
+export default function AIAgentsPage() {
+  return <AIAgentsClient />;
 }
