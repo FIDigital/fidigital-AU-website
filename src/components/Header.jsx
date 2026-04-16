@@ -177,6 +177,14 @@ export default function Header() {
         setActiveDropdown(null);
     }, [pathname]);
 
+    // Keep ref in sync so scroll handler always sees latest value
+    useEffect(() => {
+        mobileOpenRef.current = mobileOpen;
+        document.body.style.overflow = mobileOpen ? "hidden" : "";
+        return () => { document.body.style.overflow = ""; };
+    }, [mobileOpen]);
+
+
     const handleNavEnter = (label) => {
         if (closeTimer.current) { clearTimeout(closeTimer.current); closeTimer.current = null; }
         setActiveDropdown(label);
