@@ -40,61 +40,41 @@ export default function ProductEngineeringClient() {
           />
         </div>
         
-        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1250px', display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 0.8fr)', gap: '4rem', alignItems: 'center' }}>
-          <div>
-            <div className="badge hover-lift">
-              <Code2 size={16} /> <span>Product Engineering</span>
-            </div>
-            
-            <h1 className="hero-title">
-              Build Software That Creates <br />
-              <span className="text-gradient">Competitive Advantage</span>
-            </h1>
-            
-            <p className="hero-subtitle">
-              Custom web applications, native mobile apps, SaaS platforms, and internal workflow tools. Engineered for your specific business logic. Deployed on your infrastructure. Owned by you. <strong style={{ color: 'var(--text)' }}>FI Digital — 200+ engineers, 10 years in production.</strong>
-            </p>
-
-            <div className="hero-actions">
-              <Link href="/book-discovery" className="btn-primary hover-lift">
-                Start a Discovery Sprint <ArrowRight size={20} />
-              </Link>
-              <Link href="/case-studies" className="btn-secondary hover-lift">
-                Explore Case Studies
-              </Link>
-            </div>
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <div className="hero-badge section-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "rgba(29, 78, 216, 0.1)", color: "var(--primary)", padding: "0.5rem 1rem", borderRadius: "50px", fontWeight: 700, marginBottom: "1.5rem" }}>
+            <Code2 size={16} /> Product Engineering
           </div>
-          
-          <div className="hero-visual">
-             <div className="glass-panel" style={{ padding: '2.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-                  <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#EF4444' }}></div>
-                  <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#F59E0B' }}></div>
-                  <div style={{ width: 14, height: 14, borderRadius: '50%', background: '#10B981' }}></div>
-                </div>
-                {/* Visual placeholder for software stack */}
-                <div style={{ display: 'grid', gap: '1.5rem' }}>
-                   <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid var(--border)', transition: 'all 0.3s ease' }} className="hover-lift">
-                     <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '1rem' }}><Smartphone className="text-primary" size={28}/> <h4 style={{ color: 'var(--text)', fontWeight: 800, fontSize: '1.15rem', margin: 0 }}>Native Mobile Apps</h4></div>
-                     <div style={{ width: '80%', height: '8px', background: 'var(--primary)', opacity: 0.6, borderRadius: '100px' }}></div>
-                   </div>
-                   <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid var(--border)', transition: 'all 0.3s ease' }} className="hover-lift">
-                     <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '1rem' }}><Terminal className="text-primary" size={28}/> <h4 style={{ color: 'var(--text)', fontWeight: 800, fontSize: '1.15rem', margin: 0 }}>Cloud SaaS Platforms</h4></div>
-                     <div style={{ width: '60%', height: '8px', background: 'var(--primary)', opacity: 0.6, borderRadius: '100px' }}></div>
-                   </div>
-                   <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid var(--border)', transition: 'all 0.3s ease' }} className="hover-lift">
-                     <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', marginBottom: '1rem' }}><Database className="text-primary" size={28}/> <h4 style={{ color: 'var(--text)', fontWeight: 800, fontSize: '1.15rem', margin: 0 }}>Internal Workflow Tools</h4></div>
-                     <div style={{ width: '90%', height: '8px', background: 'var(--primary)', opacity: 0.6, borderRadius: '100px' }}></div>
-                   </div>
-                </div>
-             </div>
+
+          <h1 className="hero-h1 section-title" style={{ maxWidth: "1000px", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
+            Build Software That Creates<br />
+            <span style={{ color: "var(--primary)", fontWeight: 300 }}>Competitive Advantage</span>
+          </h1>
+
+          <p className="hero-p section-desc" style={{ maxWidth: "700px", fontSize: "1.2rem", color: "var(--text-muted)", marginBottom: "3rem" }}>
+            Custom web applications, native mobile apps, SaaS platforms, and internal workflow tools. Engineered for your specific business logic. Deployed on your infrastructure. Owned by you. <strong style={{ color: "var(--text)" }}>FI Digital — 200+ engineers, 10 years in production.</strong>
+          </p>
+
+          <div className="hero-btn flex flex-wrap gap-4" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/book-discovery" className="btn-primary" style={{
+              background: "var(--primary)", color: "#fff", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
+            }}>
+              Start a Discovery Sprint <ArrowRight size={18} />
+            </Link>
+            <Link href="/case-studies" className="btn-secondary" style={{
+              background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", color: "var(--text)", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
+            }}>
+              Explore Case Studies
+            </Link>
           </div>
         </div>
 
         <style jsx>{`
           .product-hero {
             position: relative;
-            padding: 200px 1.5rem 120px;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: clamp(80px, 10vh, 120px) 1.5rem 80px;
             background: var(--bg);
             overflow: hidden;
             border-bottom: 1px solid var(--border);
@@ -130,51 +110,6 @@ export default function ProductEngineeringClient() {
             bottom: -150px;
             right: -100px;
             animation-delay: -10s;
-          }
-
-          .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 1.25rem;
-            background: rgba(29, 78, 216, 0.1);
-            color: var(--primary);
-            border-radius: 100px;
-            font-size: 0.95rem;
-            font-weight: 800;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(29, 78, 216, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-          }
-
-          .hero-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-            color: var(--text);
-            margin-bottom: 2rem;
-          }
-
-          .text-gradient {
-            background: linear-gradient(135deg, var(--primary) 0%, rgba(13, 148, 136, 1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-          }
-
-          .hero-subtitle {
-            font-size: 1.35rem;
-            line-height: 1.7;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            max-width: 700px;
-          }
-
-          .hero-actions {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
           }
 
           .btn-primary {
