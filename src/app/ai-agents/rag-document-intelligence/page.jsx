@@ -1,12 +1,10 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Rag Document Intelligence
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Rag Document Intelligence page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+import RAGClient from "./RAGClient";
+
+export const metadata = {
+  title: 'RAG & Document Intelligence Australia | AI Knowledge Retrieval | FI Digital',
+  description: 'Retrieval-Augmented Generation (RAG) pipelines that connect AI to your institutional knowledge. Contract analysis, policy compliance, document classification, and knowledge retrieval. Claude, GPT-4o, LangChain. Australian data residency.',
+};
+
+export default function RAGPage() {
+  return <RAGClient />;
 }
