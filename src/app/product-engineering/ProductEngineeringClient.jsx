@@ -280,7 +280,7 @@ function WhatWeBuildSection() {
       num: "02", color: "#F97316",
       title: "Mobile Applications",
       icon: <Smartphone size={24} />,
-      image: "/images/mobile-app-hero.png",
+      image: "/images/mobile-app-card.png",
       link: "/product-engineering/mobile-applications",
       chips: ["React Native", "iOS & Android", "Offline-first"],
       content: "Native iOS and Android apps for field workers, customers, and enterprise teams. Offline-capable. Real-time sync. Biometric authentication. Camera and scanner integration."
@@ -289,7 +289,7 @@ function WhatWeBuildSection() {
       num: "03", color: "#8B5CF6",
       title: "SaaS & MVP Builds",
       icon: <Rocket size={24} />,
-      image: "/images/saas-mvp-hero.png",
+      image: "/images/saas-mvp-card.png",
       link: "/product-engineering/saas-mvp",
       chips: ["12–16 wks", "Stripe billing", "Multi-tenant", "IP yours"],
       content: "From concept to paying customers in 12–16 weeks. Market validation, UX design, engineering, launch, and iteration. 30+ SaaS products launched."
@@ -298,7 +298,7 @@ function WhatWeBuildSection() {
       num: "04", color: "#0EA5E9",
       title: "Product Modernisation",
       icon: <RefreshCw size={24} />,
-      image: "/images/product-modernisation-hero.png",
+      image: "/images/product-mod-card.png",
       link: "/product-engineering/product-modernisation",
       chips: ["No rip-and-replace", "Phased", "Zero data loss"],
       content: "Modernise legacy systems without losing business logic. Strangler fig migration, front-end refresh, API layer creation, database migration — all available."

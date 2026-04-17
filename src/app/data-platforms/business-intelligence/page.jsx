@@ -1,12 +1,18 @@
+import BIClient from "./BIClient";
+
+export const metadata = {
+  title: "Business Intelligence Consulting Australia | Power BI, Tableau | FI Digital",
+  description:
+    "BI dashboards and reporting that your board trusts. Power BI, Tableau, Looker. Connected to Databricks, Snowflake, and Microsoft Fabric. Decision-grade reporting for Australian enterprise. 200+ engineers.",
+  alternates: { canonical: "https://www.fidigital.com.au/data-platforms/business-intelligence" },
+  openGraph: {
+    title: "Business Intelligence Consulting Australia | FI Digital",
+    description:
+      "Power BI, Tableau, Looker on governed data platforms. Dashboards your board trusts. Single metric definition. Sub-3-second load times.",
+    url: "https://www.fidigital.com.au/data-platforms/business-intelligence",
+  },
+};
+
 export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Business Intelligence
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Business Intelligence page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+  return <BIClient />;
 }
