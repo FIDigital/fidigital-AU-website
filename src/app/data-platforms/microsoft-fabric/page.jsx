@@ -1,12 +1,18 @@
+import FabricClient from "./FabricClient";
+
+export const metadata = {
+  title: "Microsoft Fabric Consulting Australia | Unified Analytics | FI Digital",
+  description:
+    "Microsoft Fabric implementation for Australian enterprise. OneLake, data engineering, Power BI integration, real-time analytics. Azure Australia East. Microsoft-stack enterprises. APRA and ASIC compliant.",
+  alternates: { canonical: "https://www.fidigital.com.au/data-platforms/microsoft-fabric" },
+  openGraph: {
+    title: "Microsoft Fabric Consulting Australia | FI Digital",
+    description:
+      "Unified analytics platform for Microsoft-stack enterprises. OneLake, Power BI native integration, real-time analytics, Azure OpenAI. Azure Australia East.",
+    url: "https://www.fidigital.com.au/data-platforms/microsoft-fabric",
+  },
+};
+
 export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Microsoft Fabric
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Microsoft Fabric page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+  return <FabricClient />;
 }

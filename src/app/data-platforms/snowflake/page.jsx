@@ -1,12 +1,18 @@
+import SnowflakeClient from "./SnowflakeClient";
+
+export const metadata = {
+  title: "Snowflake Consulting Australia | Cloud Data Warehouse | FI Digital",
+  description:
+    "Snowflake implementation for Australian enterprise. Cloud-native data warehousing, data sharing, governance, and cross-cloud analytics. AWS Sydney. Financial services. Healthcare. Resources. APRA compliant.",
+  alternates: { canonical: "https://www.fidigital.com.au/data-platforms/snowflake" },
+  openGraph: {
+    title: "Snowflake Consulting Australia | FI Digital",
+    description:
+      "Cloud-native data warehousing on AWS Sydney. Data sharing, governed access, Snowpark analytics. APRA and ASIC compliant. 200+ engineers.",
+    url: "https://www.fidigital.com.au/data-platforms/snowflake",
+  },
+};
+
 export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Snowflake
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Snowflake page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+  return <SnowflakeClient />;
 }
