@@ -1,12 +1,10 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Product Modernisation
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Product Modernisation page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+import ProductModClient from "./ProductModClient";
+
+export const metadata = {
+  title: 'Legacy Application Modernisation Australia | FI Digital',
+  description: 'Modernise legacy applications without losing critical business logic. Monolith to microservices. Server-rendered to React. API layer creation. Database migration. 200+ engineers. No rip-and-replace.',
+};
+
+export default function ProductModPage() {
+  return <ProductModClient />;
 }

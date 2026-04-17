@@ -94,11 +94,11 @@ const STACK_ROWS = [
   {
     label:"Database / Analytics", color:"#0891B2",
     items:[
-      { name:"PostgreSQL",  logo:null },
-      { name:"MongoDB",     logo:null },
+      { name:"PostgreSQL",  logo:"/images/postgresql.png" },
+      { name:"MongoDB",     logo:"/images/mongodb.png" },
       { name:"Snowflake",   logo:"/images/snowflake-nobg.png" },
       { name:"Databricks",  logo:"/images/databricks-nobg.png" },
-      { name:"Redis",       logo:null },
+      { name:"Redis",       logo:"/images/redis.png" },
     ],
   },
   {
@@ -106,9 +106,9 @@ const STACK_ROWS = [
     items:[
       { name:"AWS Sydney",  logo:"/images/aws-nobg.png" },
       { name:"Azure AU",    logo:"/images/azure-nobg.png" },
-      { name:"Docker",      logo:null },
-      { name:"Kubernetes",  logo:null },
-      { name:"Terraform",   logo:null },
+      { name:"Docker",      logo:"/images/docker.png" },
+      { name:"Kubernetes",  logo:"/images/kubernetes.png" },
+      { name:"Terraform",   logo:"/images/terraform.png" },
     ],
   },
 ];
