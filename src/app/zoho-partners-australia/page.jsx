@@ -1,13 +1,6 @@
-export const metadata = {
-  title: "Zoho Partners Australia",
-  description: "Zoho Partners Australia - FI Digital"
-};
+import ZohoPartnersClient from './ZohoPartnersClient';
+export { metadata } from './meta';
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Zoho Partners Australia</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <ZohoPartnersClient />;
 }
