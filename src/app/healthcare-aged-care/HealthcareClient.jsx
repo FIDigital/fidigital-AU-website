@@ -57,7 +57,7 @@ export default function HealthcareClient() {
         {/* ══ HERO ══════════════════════════════════════════════════════════ */}
         <section style={{
           position: "relative", minHeight: "75vh", display: "flex", alignItems: "center",
-          padding: "clamp(80px,10vh,120px) 1.5rem 80px",
+          padding: "0 1.5rem 60px",
           background: "var(--bg)", overflow: "hidden"
         }}>
           <div style={{

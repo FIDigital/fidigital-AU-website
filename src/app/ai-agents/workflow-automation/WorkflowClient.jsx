@@ -125,7 +125,7 @@ export default function WorkflowClient() {
         {/* ══ HERO ══════════════════════════════════════════════════════════ */}
         <section style={{
           position: "relative", minHeight: "82vh", display: "flex", alignItems: "center",
-          padding: "clamp(80px,10vh,120px) 1.5rem 80px",
+          padding: "0 1.5rem 60px",
           background: "var(--bg)", overflow: "hidden",
         }}>
           <div style={{ position:"absolute", top:"15%", right:"3%", width:"600px", height:"600px",
