@@ -267,103 +267,122 @@ function CaseForCustomSoftwareSection() {
 function WhatWeBuildSection() {
   const services = [
     {
+      num: "01", color: "#1D4ED8",
       title: "Web Applications",
-      icon: <Layout size={36} />,
+      icon: <Layout size={24} />,
+      image: "/images/web-app-card.png",
       link: "/product-engineering/web-applications",
-      content: "Customer portals, internal workflow tools, dashboards, admin panels, and multi-tenant SaaS platforms. Built with React for fast, responsive front-ends and Python or FastAPI for robust backends. Deployed on AWS or Azure with Australian data residency. We handle authentication, role-based access, API design, database architecture, and production monitoring."
+      chips: ["React", "Python", "FastAPI", "AWS / Azure"],
+      content: "Customer portals, internal workflow tools, SaaS dashboards, and multi-tenant platforms. Built for your specific business logic. Deployed on Australian infrastructure. You own the code."
     },
     {
+      num: "02", color: "#F97316",
       title: "Mobile Applications",
-      icon: <Smartphone size={36} />,
+      icon: <Smartphone size={24} />,
+      image: "/images/mobile-app-hero.png",
       link: "/product-engineering/mobile-applications",
-      content: "Native iOS and Android apps using React Native for cross-platform efficiency without compromising on performance. Offline-capable for field workers in remote locations. Real-time sync, push notifications, biometric authentication, and camera or scanner integration for document capture. Our mobile apps serve logistics drivers, field service engineers, healthcare workers, and sales teams."
+      chips: ["React Native", "iOS & Android", "Offline-first"],
+      content: "Native iOS and Android apps for field workers, customers, and enterprise teams. Offline-capable. Real-time sync. Biometric authentication. Camera and scanner integration."
     },
     {
+      num: "03", color: "#8B5CF6",
       title: "SaaS & MVP Builds",
-      icon: <Rocket size={36} />,
+      icon: <Rocket size={24} />,
+      image: "/images/saas-mvp-hero.png",
       link: "/product-engineering/saas-mvp",
-      content: "Turn your business idea into a production-ready SaaS platform. We take you from concept to paying customers in 12 to 16 weeks. Market validation, user experience design, architecture planning, development, launch, and iteration. We have helped founders and internal innovation teams build products that generate revenue within their first quarter."
+      chips: ["12–16 wks", "Stripe billing", "Multi-tenant", "IP yours"],
+      content: "From concept to paying customers in 12–16 weeks. Market validation, UX design, engineering, launch, and iteration. 30+ SaaS products launched."
     },
     {
+      num: "04", color: "#0EA5E9",
       title: "Product Modernisation",
-      icon: <RefreshCw size={36} />,
+      icon: <RefreshCw size={24} />,
+      image: "/images/product-modernisation-hero.png",
       link: "/product-engineering/product-modernisation",
-      content: "Your legacy application still works but it is expensive to maintain, difficult to recruit for, and impossible to extend. We modernise legacy systems with modern architecture, without losing the business logic your team depends on. Migration from monolith to microservices. UI refresh from server-rendered pages to modern React. API layer creation for integration. Database migration to cloud-native options."
+      chips: ["No rip-and-replace", "Phased", "Zero data loss"],
+      content: "Modernise legacy systems without losing business logic. Strangler fig migration, front-end refresh, API layer creation, database migration — all available."
     }
   ];
 
   return (
     <section id="what-we-build" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
       <div className="container" style={{ maxWidth: '1250px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <div className="section-label">Capabilities</div>
           <h2 className="section-title">What We Build</h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '560px', margin: '1rem auto 0', lineHeight: 1.75 }}>
+            Four product engineering capabilities — each a standalone practice with dedicated engineering teams.
+          </p>
         </div>
-        
-        <div className="build-grid layout-2-col">
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.75rem' }} className="build-grid-2col">
           {services.map((svc) => (
-            <div key={svc.title} className="build-card hover-lift" style={{
-              background: 'var(--card-bg)',
+            <div key={svc.title} style={{
+              background: 'var(--card-bg)', borderRadius: '24px',
               border: '1px solid var(--border)',
-              borderRadius: '24px',
-              padding: '3rem',
-              display: 'flex',
-              flexDirection: 'column',
-              boxShadow: 'var(--card-shadow)',
-              minHeight: '100%'
-            }}>
-              <div style={{
-                width: '72px',
-                height: '72px',
-                background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%)',
-                color: 'var(--primary)',
-                borderRadius: '20px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '2rem',
-                flexShrink: 0
-              }}>
-                {svc.icon}
+              overflow: 'hidden', display: 'flex', flexDirection: 'column',
+              boxShadow: '0 4px 24px rgba(0,0,0,0.07)',
+              transition: 'transform 0.22s ease, box-shadow 0.22s ease'
+            }} className="build-card-new">
+
+              {/* Image zone */}
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <Image
+                  src={svc.image} alt={svc.title} fill
+                  style={{ objectFit: 'cover', objectPosition: 'center' }}
+                />
+                {/* Colour overlay */}
+                <div style={{
+                  position: 'absolute', inset: 0,
+                  background: `linear-gradient(135deg, ${svc.color}cc 0%, ${svc.color}55 60%, transparent 100%)`
+                }} />
+                {/* Number + icon badge */}
+                <div style={{
+                  position: 'absolute', top: '1.25rem', left: '1.5rem',
+                  display: 'flex', alignItems: 'center', gap: '0.65rem'
+                }}>
+                  <div style={{
+                    width: '42px', height: '42px', borderRadius: '11px',
+                    background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff'
+                  }}>{svc.icon}</div>
+                  <span style={{ fontSize: '2rem', fontWeight: 900, color: 'rgba(255,255,255,0.5)', lineHeight: 1 }}>{svc.num}</span>
+                </div>
               </div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--text)', marginBottom: '1rem', letterSpacing: '-0.01em' }}>
-                {svc.title}
-              </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.7, margin: 0, flex: 1, marginBottom: '2.5rem' }}>
-                {svc.content}
-              </p>
-              <Link href={svc.link} style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                color: 'var(--primary)',
-                background: 'rgba(29, 78, 216, 0.08)',
-                padding: '0.85rem 1.5rem',
-                borderRadius: '12px',
-                fontWeight: 800,
-                fontSize: '1rem',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease',
-                marginTop: 'auto',
-                alignSelf: 'flex-start'
-              }} className="build-link hover-link-shift">
-                Explore Capability <ArrowRight size={18} />
-              </Link>
+
+              {/* Content zone */}
+              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', flex: 1 }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: 'var(--text)', margin: 0 }}>{svc.title}</h3>
+                <p style={{ fontSize: '0.93rem', color: 'var(--text-muted)', lineHeight: 1.75, margin: 0, flex: 1 }}>{svc.content}</p>
+
+                {/* Chips */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  {svc.chips.map((chip, j) => (
+                    <span key={j} style={{
+                      padding: '0.25rem 0.75rem', borderRadius: '50px',
+                      background: `${svc.color}12`, color: svc.color,
+                      fontSize: '0.75rem', fontWeight: 700
+                    }}>{chip}</span>
+                  ))}
+                </div>
+
+                <Link href={svc.link} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                  color: svc.color, fontWeight: 700, fontSize: '0.9rem',
+                  textDecoration: 'none', marginTop: '0.25rem'
+                }}>
+                  Explore Capability <ArrowRight size={15} />
+                </Link>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <style jsx>{`
-        .layout-2-col {
-          display: grid;
-          gap: 2rem;
-          grid-template-columns: repeat(1, 1fr);
+        @media (max-width: 768px) {
+          .build-grid-2col { grid-template-columns: 1fr !important; }
         }
-        @media (min-width: 768px) {
-          .layout-2-col {
-            grid-template-columns: repeat(2, 1fr);
-          }
-        }
+        .build-card-new:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12) !important; }
       `}</style>
     </section>
   );
@@ -587,68 +606,107 @@ function ProductEngineeringFAQSection() {
 }
 
 function TechStackGridSection() {
-  const stack = [
+  const STACK = [
     {
-      domain: "Front-End",
-      icon: <Layout size={24} />,
-      items: ["React (web)", "React Native (mobile)", "Next.js (SSR)", "TypeScript"]
+      domain: "Front-End", color: "#1D4ED8",
+      items: [
+        { name: "React",        logo: "/images/react-nobg.png" },
+        { name: "React Native", logo: "/images/react-nobg.png" },
+        { name: "Next.js",      logo: "/images/nextjs-nobg.png" },
+        { name: "TypeScript",   logo: "/images/typescript-nobg.png" },
+      ]
     },
     {
-      domain: "Back-End",
-      icon: <Server size={24} />,
-      items: ["Python", "FastAPI", "Django", "Node.js"]
+      domain: "Back-End", color: "#059669",
+      items: [
+        { name: "Python",  logo: "/images/python-nobg.png" },
+        { name: "FastAPI", logo: "/images/fastapi-nobg.png" },
+        { name: "Node.js", logo: "/images/nodejs-nobg.png" },
+        { name: "Django",  logo: "/images/django-nobg.png" },
+      ]
     },
     {
-      domain: "Database",
-      icon: <Database size={24} />,
-      items: ["PostgreSQL", "MongoDB", "Redis", "Snowflake (analytics)"]
+      domain: "Database & Analytics", color: "#0891B2",
+      items: [
+        { name: "PostgreSQL",  logo: "/images/postgresql.png" },
+        { name: "MongoDB",     logo: "/images/mongodb.png" },
+        { name: "Redis",       logo: "/images/redis.png" },
+        { name: "Snowflake",   logo: "/images/snowflake-nobg.png" },
+        { name: "Databricks",  logo: "/images/databricks-nobg.png" },
+      ]
     },
     {
-      domain: "Infrastructure",
-      icon: <Cloud size={24} />,
-      items: ["AWS (EC2, Lambda, S3, RDS, ECS)", "Azure (App Service, Functions, Cosmos DB)", "Docker", "Kubernetes"]
+      domain: "Infrastructure", color: "#7C3AED",
+      items: [
+        { name: "AWS",        logo: "/images/aws-nobg.png" },
+        { name: "Azure AU",   logo: "/images/azure-nobg.png" },
+        { name: "Docker",     logo: "/images/docker.png" },
+        { name: "Kubernetes", logo: "/images/kubernetes.png" },
+      ]
     },
     {
-      domain: "DevOps",
-      icon: <Cog size={24} />,
-      items: ["GitHub Actions", "Terraform", "CloudFormation", "Datadog", "Sentry"]
+      domain: "DevOps", color: "#F59E0B",
+      items: [
+        { name: "Terraform",  logo: "/images/terraform.png" },
+        { name: "GitHub Actions", logo: "/images/github-nobg.png" },
+        { name: "Datadog",    logo: "/images/datadog-nobg.png" },
+        { name: "Sentry",     logo: "/images/sentry-nobg.png" },
+      ]
     }
   ];
 
   return (
-    <section id="tech-stack" style={{ padding: '100px 1.5rem', background: 'var(--bg)' }}>
+    <section id="tech-stack" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)', borderTop: '1px solid var(--border)' }}>
       <div className="container" style={{ maxWidth: '1250px' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
           <div className="section-label">Engineering Foundation</div>
           <h2 className="section-title">Technology Stack</h2>
-          <p style={{ maxWidth: '850px', margin: '1.5rem auto 0', color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.7 }}>
-            We choose the right tool for the job. <strong style={{ color: 'var(--text)' }}>No religious attachment to frameworks. No vendor lock-in.</strong> Every architecture decision is documented and explained before we write a single line of code.
+          <p style={{ maxWidth: '620px', margin: '1.25rem auto 0', color: 'var(--text-muted)', fontSize: '1.05rem', lineHeight: 1.75 }}>
+            No religious attachment to frameworks. Every architecture decision is documented and explained before a single line of code is written.
           </p>
         </div>
 
-        <div className="tech-stack-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem' }}>
-          {stack.map((category) => (
-            <div key={category.domain} style={{ 
-              background: 'var(--card-bg)', 
-              border: '1px solid var(--border)', 
-              borderRadius: '24px', 
-              padding: '2.5rem 2rem', 
-              transition: 'all 0.3s ease',
-              boxShadow: 'var(--card-shadow)'
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+          {STACK.map((category) => (
+            <div key={category.domain} style={{
+              background: 'var(--card-bg)', borderRadius: '22px',
+              border: '1px solid var(--border)',
+              padding: '2rem 1.75rem',
+              boxShadow: '0 2px 14px rgba(0,0,0,0.05)',
+              transition: 'transform 0.2s ease'
             }} className="hover-lift">
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                 <div style={{ color: 'var(--primary)', background: 'rgba(29, 78, 216, 0.1)', padding: '0.75rem', borderRadius: '12px' }}>
-                    {category.icon}
-                 </div>
-                 <h3 style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--text)', margin: 0 }}>{category.domain}</h3>
+
+              {/* Domain header */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem' }}>
+                <div style={{
+                  width: '10px', height: '10px', borderRadius: '50%',
+                  background: category.color, flexShrink: 0
+                }} />
+                <h3 style={{ fontSize: '0.82rem', fontWeight: 800, color: 'var(--text)',
+                  textTransform: 'uppercase', letterSpacing: '0.1em', margin: 0 }}>
+                  {category.domain}
+                </h3>
               </div>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                {category.items.map((item, idx) => (
-                  <li key={idx} style={{ color: 'var(--text-muted)', fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                     <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--border)' }}></div> {item}
-                  </li>
+
+              {/* Logo chips */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem' }}>
+                {category.items.map((tech, idx) => (
+                  <div key={idx} style={{
+                    display: 'flex', alignItems: 'center', gap: '0.45rem',
+                    padding: '0.4rem 0.8rem',
+                    background: `${category.color}0d`,
+                    border: `1px solid ${category.color}20`,
+                    borderRadius: '9px'
+                  }}>
+                    <div style={{ position: 'relative', width: '18px', height: '18px', flexShrink: 0 }}>
+                      <Image src={tech.logo} alt={tech.name} fill style={{ objectFit: 'contain' }} />
+                    </div>
+                    <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text)', whiteSpace: 'nowrap' }}>
+                      {tech.name}
+                    </span>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

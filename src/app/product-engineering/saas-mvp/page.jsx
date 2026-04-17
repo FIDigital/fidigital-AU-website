@@ -1,12 +1,10 @@
-export default function Page() {
-  return (
-    <div className="min-h-screen pt-32 pb-20 px-4 md:px-8 bg-neutral-900 text-white flex flex-col items-center justify-center">
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">
-        Saas Mvp
-      </h1>
-      <p className="text-lg text-neutral-400 max-w-2xl text-center">
-        This is a placeholder for the Saas Mvp page, part of the new digital transformation architecture.
-      </p>
-    </div>
-  );
+import SaaSMVPClient from "./SaaSMVPClient";
+
+export const metadata = {
+  title: 'SaaS Development & MVP Builds Australia | FI Digital',
+  description: 'Turn your software idea into a production-ready SaaS platform. From concept to paying customers in 12–16 weeks. Market validation, UX design, engineering, launch, and iteration. 200+ engineers. React, Python, FastAPI.',
+};
+
+export default function SaaSMVPPage() {
+  return <SaaSMVPClient />;
 }
