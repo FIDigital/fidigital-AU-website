@@ -206,25 +206,32 @@ export default function ProductEngineeringClient() {
 }
 
 function CaseForCustomSoftwareSection() {
+  const [expanded, setExpanded] = useState(false);
   return (
     <section id="case-for-custom" style={{ padding: '100px 1.5rem', background: 'var(--bg-secondary)', borderBottom: '1px solid var(--border)' }}>
       <div className="container" style={{ maxWidth: '1250px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.2fr)', gap: '6rem', alignItems: 'center' }} className="case-grid">
-          
           <div className="case-content">
             <div className="section-label">Why Custom?</div>
             <h2 className="section-title">The Case for Custom Software</h2>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Every business reaches a point where off-the-shelf software stops working. The CRM does not match your sales process. The reporting tool cannot combine data from five systems. The customer portal looks like every other customer portal. You stack subscriptions on top of subscriptions, pay for features you do not use, and build workarounds that break when the vendor updates.
+            <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+              Every business reaches a point where off-the-shelf software stops working. The CRM does not match your sales process. The reporting tool cannot combine data from five systems. You stack subscriptions on top of subscriptions and build workarounds that break when the vendor updates.
             </p>
-            <p style={{ color: 'var(--text)', fontSize: '1.15rem', lineHeight: 1.8, fontWeight: 700, marginBottom: '1.5rem' }}>
-              Custom software solves this permanently. It is built around your operational logic, your data structures, your compliance requirements, and your competitive differentiation.
-            </p>
-            <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', lineHeight: 1.8 }}>
-              FI Digital builds this software. Not templates configured to look custom. Not low-code platforms with limitations you discover too late. Real, production-grade applications built with React, React Native, Python, FastAPI, and modern cloud infrastructure. You own the source code. You own the IP. You run it on your infrastructure.
-            </p>
+            <div style={{ maxHeight: expanded ? '400px' : '0px', overflow: 'hidden', transition: 'max-height 0.4s ease, opacity 0.3s ease', opacity: expanded ? 1 : 0 }}>
+              <p style={{ color: 'var(--text)', fontSize: '1.1rem', lineHeight: 1.8, fontWeight: 700, marginBottom: '1.25rem' }}>
+                Custom software solves this permanently. Built around your operational logic, your data structures, your compliance requirements, and your competitive differentiation.
+              </p>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>
+                FI Digital builds this software. Not templates configured to look custom. Not low-code platforms with limitations you discover too late. Real, production-grade applications built with React, React Native, Python, FastAPI, and modern cloud infrastructure. You own the source code. You own the IP.
+              </p>
+            </div>
+            <button onClick={() => setExpanded(!expanded)} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--primary)', fontWeight: 700, fontSize: '0.95rem', padding: 0, marginTop: '0.5rem' }}>
+              {expanded ? 'Read less' : 'Read more'}
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ transform: expanded ? 'rotate(180deg)' : 'rotate(0)', transition: 'transform 0.3s ease' }}>
+                <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
-
           <div className="case-examples glass-panel" style={{ padding: '3.5rem', background: 'var(--card-bg)', borderRadius: '32px', border: '1px solid var(--border)', boxShadow: 'var(--card-shadow)' }}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: 'var(--text)', marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>Competitive Differentiation</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
@@ -243,26 +250,20 @@ function CaseForCustomSoftwareSection() {
             </div>
             <div style={{ marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid var(--border)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
               <div style={{ padding: '0.5rem 1rem', background: 'rgba(29, 78, 216, 0.1)', color: 'var(--primary)', fontWeight: 900, borderRadius: '100px', fontSize: '1rem' }}>200+</div>
-              <p style={{ color: 'var(--text-muted)', fontWeight: 800, fontSize: '1.05rem', margin: 0 }}>
-                Projects Delivered. <span style={{ color: 'var(--text)' }}>Built to last.</span>
-              </p>
+              <p style={{ color: 'var(--text-muted)', fontWeight: 800, fontSize: '1.05rem', margin: 0 }}>Projects Delivered. <span style={{ color: 'var(--text)' }}>Built to last.</span></p>
             </div>
           </div>
-
         </div>
       </div>
       <style jsx>{`
         @media (max-width: 1024px) {
-          .case-grid {
-             grid-template-columns: 1fr !important;
-             gap: 3rem !important;
-             align-items: stretch !important;
-          }
+          .case-grid { grid-template-columns: 1fr !important; gap: 3rem !important; align-items: stretch !important; }
         }
       `}</style>
     </section>
   );
 }
+
 
 function WhatWeBuildSection() {
   const services = [
