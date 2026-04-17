@@ -104,7 +104,7 @@ export default function AIAgentsClient() {
         {/* ══ HERO ══════════════════════════════════════════════════════════ */}
         <section style={{
           position: "relative", minHeight: "80vh", display: "flex", alignItems: "center",
-          padding: "clamp(80px,10vh,120px) 1.5rem 80px",
+          padding: "0 1.5rem 60px",
           background: "var(--bg)", overflow: "hidden"
         }}>
           <div style={{ position: "absolute", top: 0, right: 0, width: "58%", height: "100%", zIndex: 0, opacity: 0.4, pointerEvents: "none" }}>
