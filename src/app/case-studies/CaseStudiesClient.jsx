@@ -1,153 +1,497 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Building2, TrendingUp, Zap } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 }
 
-const wallanCase = {
-  company: "Wallan Trading Co",
-  image: "/images/case-studies/wallan.png",
-  slug: "wallan-trading-co-digital-transformation-zoho"
-};
+export const caseStudies = [
+  {
+    id: 1,
+    title: "Drova's Journey from Salesforce Complexity to Zoho CRMPlus Simplicity",
+    company: "Drova",
+    industry: "CRM & Business Systems",
+    tag: "Zoho CRM Plus",
+    image: "/images/Case-Study/Drova1.png",
+    slug: "drova-zoho-crm-plus-case-study",
+    highlight: "CRM Migration",
+    color: "#3B82F6",
+  },
+  {
+    id: 2,
+    title: "Digitizing Port Logistics & Manufacturing for Silk Logistics with Zoho One",
+    company: "Silk Logistics",
+    industry: "Logistics & Manufacturing",
+    tag: "Zoho One",
+    image: "/images/Case-Study/silk-logistic.png",
+    slug: "silk-logistics-zoho-one-case-study",
+    highlight: "Port & Manufacturing",
+    color: "#10B981",
+  },
+  {
+    id: 3,
+    title: "Transforming Visual Exposure's Operations with Zoho One",
+    company: "Visual Exposure",
+    industry: "Media & Marketing",
+    tag: "Zoho One",
+    image: "/images/Case-Study/Visual-expo1.png",
+    slug: "visual-exposure-zoho-one-case-study",
+    highlight: "Digital Operations",
+    color: "#F59E0B",
+  },
+  {
+    id: 4,
+    title: "Silk Contract Logistics Zoho Desk Case Study",
+    company: "Silk Contract Logistics",
+    industry: "Logistics",
+    tag: "Zoho Desk",
+    image: "/images/Case-Study/silk-logistic.png",
+    slug: "silk-contract-logistics-zoho-desk",
+    highlight: "Customer Support",
+    color: "#10B981",
+  },
+  {
+    id: 5,
+    title: "Silk Contract Logistics Zoho Expense Case Study",
+    company: "Silk Contract Logistics",
+    industry: "Logistics",
+    tag: "Zoho Expense",
+    image: "/images/Case-Study/silk-logistic.png",
+    slug: "silk-contract-logistics-zoho-expense",
+    highlight: "Expense Management",
+    color: "#10B981",
+  },
+  {
+    id: 6,
+    title: "Zoo Business Media Case Study",
+    company: "Zoo Business Media",
+    industry: "Media & Publishing",
+    tag: "Zoho Platform",
+    image: "/images/Case-Study/Zoo.png",
+    slug: "zoo-business-media-case-study",
+    highlight: "Media Digitisation",
+    color: "#8B5CF6",
+    logoScale: 1.5,
+  },
+  {
+    id: 7,
+    title: "BlueNRG Zoho One Case Study",
+    company: "BlueNRG",
+    industry: "Energy & Renewables",
+    tag: "Zoho One",
+    image: "/images/Case-Study/Blue.png",
+    slug: "bluenrg-zoho-one-case-study",
+    highlight: "Energy Operations",
+    color: "#F97316",
+    logoScale: 1.5,
+  },
+  {
+    id: 8,
+    title: "Civil Survey Solutions Case Study",
+    company: "Civil Survey Solutions",
+    industry: "Engineering & Construction",
+    tag: "Zoho Platform",
+    image: "/images/Case-Study/Civil.png",
+    slug: "civil-survey-solutions-case-study",
+    highlight: "Field Operations",
+    color: "#6B7280",
+    logoScale: 1.5,
+  },
+  {
+    id: 9,
+    title: "Enhancing Drova's Sales and Support Processes with Zoho Solutions",
+    company: "Drova",
+    industry: "CRM & Business Systems",
+    tag: "Zoho CRM",
+    image: "/images/Case-Study/Drova1.png",
+    slug: "enhancing-drovas-sales-and-support-processes-with-zoho-solutions",
+    highlight: "Sales & Support",
+    color: "#3B82F6",
+  },
+  {
+    id: 10,
+    title: "My Autonomy – Client Overview",
+    company: "My Autonomy",
+    industry: "Financial Services",
+    tag: "Business Systems",
+    image: "/images/Case-Study/Autonomy.png",
+    slug: "my-autonomy-client-overview",
+    highlight: "Autonomy Platform",
+    color: "#EF4444",
+    logoScale: 1.5,
+  },
+  {
+    id: 11,
+    title: "Responsive Lending",
+    company: "Responsive Lending",
+    industry: "Mortgage & Finance",
+    tag: "Digital Transformation",
+    image: "/images/Case-Study/Responsive.png",
+    slug: "responsive-lending",
+    highlight: "Lending Platform",
+    color: "#EC4899",
+    logoScale: 1.5,
+  },
+  {
+    id: 12,
+    title: "Safe Gauge Enhances Operations Using Zoho Creator",
+    company: "Safe Gauge",
+    industry: "Safety & Operations",
+    tag: "Zoho Creator",
+    image: "/images/Case-Study/Safe-gauge.png",
+    slug: "safe-gauge-enhances-operations-using-zoho-creator",
+    highlight: "Safety Systems",
+    color: "#14B8A6",
+    logoScale: 1.5,
+  },
+  {
+    id: 13,
+    title: "Visual Exposure's Digital Transformation with Zoho One",
+    company: "Visual Exposure",
+    industry: "Media & Marketing",
+    tag: "Zoho One",
+    image: "/images/Case-Study/Visual-expo1.png",
+    slug: "visual-exposures-digital-transformation-with-zoho-one",
+    highlight: "Full Transformation",
+    color: "#F59E0B",
+  },
+];
+
+
+const ALL_INDUSTRIES = ["All", ...Array.from(new Set(caseStudies.map((c) => c.industry)))];
 
 export default function CaseStudiesClient() {
-    const containerRef = useRef(null);
+  const containerRef = useRef(null);
+  const [activeFilter, setActiveFilter] = useState("All");
 
-    useGSAP(() => {
-        const tl = gsap.timeline();
-        tl.to(".hero-reveal", {
-            y: 0,
-            opacity: 1,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power3.out"
-        });
-    }, { scope: containerRef });
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.to(".hero-reveal", {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.12,
+      ease: "power3.out",
+    });
 
-    return (
-        <div ref={containerRef} style={{ background: "var(--bg)", color: "var(--text)" }}>
-            <main style={{ paddingTop: "var(--header-h)" }}>
-                
-                {/* HERO SECTION — Home-style */}
-                <section style={{
-                    position: "relative",
-                    minHeight: "70vh",
-                    display: "flex",
-                    alignItems: "center",
-                    overflow: "hidden",
-                    padding: "clamp(120px, 15vh, 160px) 1.5rem 100px",
-                    background: "var(--bg)",
+    gsap.utils.toArray(".cs-card").forEach((card) => {
+      gsap.fromTo(
+        card,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            once: true,
+          },
+        }
+      );
+    });
+  }, { scope: containerRef });
+
+  const filtered =
+    activeFilter === "All"
+      ? caseStudies
+      : caseStudies.filter((c) => c.industry === activeFilter);
+
+  const displayList = activeFilter === "All" ? caseStudies : filtered;
+
+  return (
+    <div ref={containerRef} style={{ background: "var(--bg)", color: "var(--text)" }}>
+      <main style={{ paddingTop: "var(--header-h)" }}>
+
+        {/* ══ HERO ══ */}
+        <section style={{
+          position: "relative",
+          minHeight: "80vh",
+          display: "flex",
+          alignItems: "center",
+          overflow: "hidden",
+          padding: "clamp(120px, 15vh, 180px) 1.5rem 100px",
+          background: "var(--bg)",
+        }}>
+          {/* Background Visual — right-side image with gradient mask */}
+          <div style={{
+            position: "absolute", top: 0, right: 0,
+            width: "60%", height: "100%", zIndex: 0,
+            opacity: 0.3, pointerEvents: "none",
+          }}>
+            <Image
+              src="/images/home_hero_professional.png"
+              alt=""
+              fill
+              style={{
+                objectFit: "cover",
+                maskImage: "radial-gradient(circle at right, black, transparent 80%)",
+                WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)",
+              }}
+            />
+          </div>
+
+          <div className="container" style={{ position: "relative", zIndex: 1 }}>
+            <div style={{ maxWidth: "1000px" }}>
+              <div
+                className="hero-reveal"
+                style={{
+                  opacity: 0, transform: "translateY(10px)",
+                  display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                  background: "rgba(29,78,216,0.08)", color: "var(--primary)",
+                  padding: "0.45rem 1rem", borderRadius: "50px",
+                  fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.5px",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                <TrendingUp size={14} /> Customer Success & Impact
+              </div>
+
+              <h1
+                className="hero-reveal"
+                style={{
+                  opacity: 0, transform: "translateY(10px)",
+                  fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                  fontWeight: 900, lineHeight: 1.1,
+                  marginBottom: "2rem", letterSpacing: "-0.03em",
+                }}
+              >
+                Real Results for <br />
+                <span style={{
+                  background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)",
+                  WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
                 }}>
+                  Australian Enterprise.
+                </span>
+              </h1>
+
+              <p
+                className="hero-reveal"
+                style={{
+                  opacity: 0, transform: "translateY(10px)",
+                  fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
+                  color: "var(--text-muted)", lineHeight: 1.7, maxWidth: "800px",
+                  marginBottom: "3rem"
+                }}
+              >
+                We publish outcomes, not promises. Each case study details the client challenge, our approach across service pillars, the technology deployed, and the measurable results achieved. These are production deployments, not proof-of-concept experiments.
+              </p>
+
+              <div className="hero-reveal" style={{ display: "flex", gap: "1rem", opacity: 0, transform: "translateY(10px)" }}>
+                <Link href="#filter" className="btn-primary" style={{ padding: "0.8rem 2rem", borderRadius: "12px", fontWeight: 800 }}>
+                  Browse Studies
+                </Link>
+                <Link href="/contact" className="btn-secondary" style={{ padding: "0.8rem 2rem", borderRadius: "12px", fontWeight: 800 }}>
+                  Start Your Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══ INDUSTRY FILTER ══ */}
+        <section style={{
+          padding: "40px 1.5rem",
+          borderBottom: "1px solid var(--border)",
+          background: "var(--bg-secondary)",
+          position: "sticky",
+          top: "var(--header-h)",
+          zIndex: 10
+        }}>
+          <div className="container" style={{ maxWidth: "1200px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", alignItems: "center", justifyContent: "center" }}>
+              <span style={{ fontWeight: 700, color: "var(--text-muted)", fontSize: "0.85rem", marginRight: "0.5rem" }}>Filter by industry:</span>
+              {ALL_INDUSTRIES.map((ind) => (
+                <button
+                  key={ind}
+                  onClick={() => setActiveFilter(ind)}
+                  style={{
+                    padding: "0.5rem 1.2rem",
+                    borderRadius: "50px",
+                    border: activeFilter === ind ? "2px solid var(--primary)" : "1px solid var(--border)",
+                    background: activeFilter === ind ? "var(--primary)" : "var(--bg)",
+                    color: activeFilter === ind ? "#fff" : "var(--text)",
+                    fontWeight: 600, fontSize: "0.85rem",
+                    cursor: "pointer", transition: "all 0.2s ease",
+                    boxShadow: activeFilter === ind ? "0 4px 12px rgba(29, 78, 216, 0.2)" : "none"
+                  }}
+                >
+                  {ind}
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ══ CASE STUDIES GRID ══ */}
+        <section style={{ padding: "80px 1.5rem 120px", background: "var(--bg-secondary)" }}>
+          <div className="container" style={{ maxWidth: "1280px" }}>
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))",
+              gap: "2rem",
+            }}>
+              {displayList.map((cs) => (
+                <Link
+                  key={cs.id}
+                  href={`/case-study/${cs.slug}`}
+                  style={{ textDecoration: "none", display: "flex" }}
+                >
+                  <article
+                    className="cs-card"
+                    style={{
+                      background: "linear-gradient(160deg, #0f172a 0%, #1e293b 100%)",
+                      border: "1px solid rgba(255,255,255,0.07)",
+                      borderRadius: "20px",
+                      overflow: "hidden",
+                      width: "100%",
+                      display: "flex", flexDirection: "column",
+                      transition: "transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease, border-color 0.35s ease",
+                      cursor: "pointer",
+                      boxShadow: "0 4px 24px rgba(0,0,0,0.18)"
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.transform = "translateY(-8px)";
+                      e.currentTarget.style.boxShadow = `0 20px 50px rgba(0,0,0,0.35)`;
+                      e.currentTarget.style.borderColor = `${cs.color}55`;
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.transform = "translateY(0)";
+                      e.currentTarget.style.boxShadow = "0 4px 24px rgba(0,0,0,0.18)";
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.07)";
+                    }}
+                  >
+                    {/* Top accent line */}
                     <div style={{
-                        position: "absolute",
-                        top: 0,
-                        right: 0,
-                        width: "60%",
-                        height: "100%",
-                        zIndex: 0,
-                        opacity: 0.15,
-                        pointerEvents: "none",
+                      height: "3px",
+                      background: `linear-gradient(90deg, ${cs.color} 0%, ${cs.color}44 100%)`
+                    }} />
+
+                    {/* Logo Area */}
+                    <div style={{
+                      padding: "2rem 2rem 1.5rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
                     }}>
-                        <Image
-                            src="/images/case-studies-hero.png"
-                            alt=""
-                            fill
-                            style={{
-                                objectFit: "cover",
-                                maskImage: "radial-gradient(circle at right, black, transparent 80%)",
-                                WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)",
-                            }}
+                      <div style={{
+                        background: "rgba(255,255,255,0.95)",
+                        borderRadius: "12px",
+                        padding: "12px 20px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        minWidth: "90px",
+                        maxWidth: "180px",
+                        height: "76px",
+                        flexShrink: 0,
+                        overflow: "hidden"
+                      }}>
+                        <img
+                          src={cs.image}
+                          alt={cs.company}
+                          style={{
+                            maxWidth: "100%",
+                            maxHeight: "52px",
+                            width: "auto",
+                            height: "auto",
+                            objectFit: "contain",
+                            display: "block",
+                            transform: `scale(${cs.logoScale || 1})`,
+                            transformOrigin: "center center",
+                            transition: "transform 0.2s ease"
+                          }}
                         />
+                      </div>
+
+                      <span style={{
+                        background: `${cs.color}22`,
+                        border: `1px solid ${cs.color}44`,
+                        color: cs.color,
+                        padding: "0.35rem 0.9rem",
+                        borderRadius: "50px",
+                        fontWeight: 700,
+                        fontSize: "0.65rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        whiteSpace: "nowrap",
+                      }}>
+                        {cs.tag}
+                      </span>
                     </div>
 
-                    <div className="container" style={{ position: "relative", zIndex: 1 }}>
-                        <div style={{ maxWidth: "900px" }}>
-                            <div className="section-label hero-reveal" style={{ opacity: 0, transform: "translateY(10px)" }}>Customer Success</div>
-                            <h1 className="hero-reveal" style={{
-                                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-                                fontWeight: 900,
-                                lineHeight: 1.1,
-                                marginBottom: "2rem",
-                                letterSpacing: "-0.03em",
-                                opacity: 0, transform: "translateY(10px)"
-                            }}>
-                                <span style={{ background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-                                    Case study
-                                </span>
-                            </h1>
-                            <p className="hero-reveal" style={{ 
-                                fontSize: "clamp(1.1rem, 2vw, 1.25rem)", 
-                                color: "var(--text-muted)",
-                                lineHeight: 1.6,
-                                maxWidth: "800px",
-                                opacity: 0, transform: "translateY(10px)"
-                            }}>
-                                Proving ROI through intelligent transformation. Explore how we architect solutions that scale with Middle Eastern ambition.
-                            </p>
-                        </div>
-                    </div>
-                </section>
+                    {/* Body */}
+                    <div style={{ padding: "0 2rem 2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                      {/* Divider */}
+                      <div style={{ height: "1px", background: "rgba(255,255,255,0.07)", marginBottom: "1.5rem" }} />
 
-                {/* 1ST SECTION — Split Layout */}
-                <section style={{ padding: "100px 1.5rem", borderTop: "1px solid var(--border)" }}>
-                    <div className="container">
-                        <div style={{ 
-                          display: "grid", 
-                          gridTemplateColumns: "1fr 1fr", 
-                          gap: "4rem", 
-                          alignItems: "center",
-                          maxWidth: "1100px",
-                          margin: "0 auto"
+                      <div style={{
+                        color: cs.color,
+                        fontSize: "0.7rem", fontWeight: 800,
+                        textTransform: "uppercase", letterSpacing: "2px",
+                        marginBottom: "0.75rem"
+                      }}>
+                        {cs.company}
+                      </div>
+
+                      <h3 style={{
+                        fontSize: "1.15rem", fontWeight: 700,
+                        color: "rgba(255,255,255,0.92)", lineHeight: 1.55,
+                        flex: 1, marginBottom: "2rem",
+                        letterSpacing: "-0.01em"
+                      }}>
+                        {cs.title}
+                      </h3>
+
+                      <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                      }}>
+                        <span style={{
+                          fontSize: "0.75rem",
+                          color: "rgba(255,255,255,0.4)",
+                          fontWeight: 600,
+                          background: "rgba(255,255,255,0.06)",
+                          padding: "0.3rem 0.75rem",
+                          borderRadius: "50px"
                         }}>
-                            
-                            {/* Left Side: Company Name */}
-                            <div>
-                                <div style={{ fontSize: "0.85rem", fontWeight: 800, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "1rem" }}>Featured Company</div>
-                                <h2 style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.5rem)", fontWeight: 900, marginBottom: "2rem", lineHeight: 1.2 }}>
-                                    {wallanCase.company}
-                                </h2>
-                                <p style={{ color: "var(--text-muted)", fontSize: "1.1rem", lineHeight: 1.7, marginBottom: "2.5rem" }}>
-                                    Leading the automotive sector in Riyadh through comprehensive digital innovation and unified Zoho systems.
-                                </p>
-                                <Link href={`/casestudy/${wallanCase.slug}`} className="btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
-                                    View Full Case Study <ArrowUpRight size={20} />
-                                </Link>
-                            </div>
-
-                            {/* Right Side: Company Photo */}
-                            <div style={{ textAlign: "right" }}>
-                                <div style={{ 
-                                    position: "relative", 
-                                    borderRadius: "32px", 
-                                    overflow: "hidden", 
-                                    boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-                                    border: "1px solid var(--border)",
-                                    width: "100%",
-                                    maxWidth: "540px",
-                                    marginLeft: "auto"
-                                }}>
-                                    <Image 
-                                        src={wallanCase.image} 
-                                        alt={wallanCase.company} 
-                                        width={540} 
-                                        height={360} 
-                                        style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
-                                    />
-                                </div>
-                            </div>
+                          {cs.industry}
+                        </span>
+                        <div style={{
+                          display: "flex", alignItems: "center", gap: "0.35rem",
+                          color: cs.color, fontWeight: 800, fontSize: "0.85rem",
+                        }}>
+                          View Story <ArrowUpRight size={16} />
                         </div>
+                      </div>
                     </div>
-                </section>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
-            </main>
-        </div>
-    );
+      </main>
+
+      <style jsx>{`
+        .cs-card:hover h3 {
+          color: #fff !important;
+        }
+        @media (max-width: 768px) {
+          .cs-card { border-radius: 16px !important; }
+        }
+      `}</style>
+    </div>
+  );
 }
