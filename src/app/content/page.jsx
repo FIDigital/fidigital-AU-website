@@ -1,13 +1,10 @@
+import ContentClient from './ContentClient';
+
 export const metadata = {
-  title: "Content",
-  description: "Content - FI Digital"
+  title: "Content Strategy & Copywriting | FI Digital",
+  description: "Content is the King. We help you find the right words to strike a chord with your users through strategic storytelling, SEO optimization, and curated copywriting."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Content</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <ContentClient />;
 }
