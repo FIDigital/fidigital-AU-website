@@ -1,13 +1,10 @@
+import WebAppClient from './WebAppClient';
+
 export const metadata = {
-  title: "Web App Development",
-  description: "Web App Development - FI Digital"
+  title: "Web App Development | FI Digital",
+  description: "Custom web application development services tailored to your business needs. Scalable, secure, and high-performance web solutions by FI Digital."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Web App Development</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <WebAppClient />;
 }

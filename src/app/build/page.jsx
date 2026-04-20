@@ -1,13 +1,10 @@
+import BuildClient from './BuildClient';
+
 export const metadata = {
-  title: "Build",
-  description: "Build - FI Digital"
+  title: "Engineering & Development Excellence | FI Digital",
+  description: "Build your brand's unique identity with FI Digital. We specialize in bespoke builds, seamless integrations, and rigorous quality standards like WCAG 2.0 and Section 508."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Build</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <BuildClient />;
 }

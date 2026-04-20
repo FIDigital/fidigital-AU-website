@@ -1,13 +1,10 @@
+import UserExperienceClient from './UserExperienceClient';
+
 export const metadata = {
-  title: "User Experience",
-  description: "User Experience - FI Digital"
+  title: "User Experience (UX) Services | FI Digital",
+  description: "Elevate your business with human-centric User Experience (UX) design and strategy. From audience research to interactive prototyping, we help you connect with users."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>User Experience</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <UserExperienceClient />;
 }

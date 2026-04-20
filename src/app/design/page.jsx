@@ -1,13 +1,10 @@
+import DesignClient from './DesignClient';
+
 export const metadata = {
-  title: "Design",
-  description: "Design - FI Digital"
+  title: "Creative Design & Innovation | FI Digital",
+  description: "Passion-driven design solutions for the digital age. From UI/UX and responsive design to high-fidelity prototyping and brand management."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Design</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <DesignClient />;
 }

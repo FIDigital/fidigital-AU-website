@@ -1,13 +1,10 @@
+import SupportClient from './SupportClient';
+
 export const metadata = {
-  title: "Support",
-  description: "Support - FI Digital"
+  title: "24/7 Global Support & Maintenance | FI Digital",
+  description: "Never let your website down with FI Digital's 24/7 global support. Expert system administrators, 99.9% uptime guarantee, and comprehensive maintenance agreements."
 };
 
 export default function Page() {
-  return (
-    <div style={{ paddingTop: "120px", display: "flex", flexDirection: "column", minHeight: "60vh", alignItems: "center", justifyContent: "center" }}>
-      <h1 style={{ fontSize: "3rem", fontWeight: "bold", textAlign: "center", marginBottom: "2rem" }}>Support</h1>
-      <p style={{ fontSize: "1.2rem", color: "var(--text-muted)" }}>This page is coming soon.</p>
-    </div>
-  );
+  return <SupportClient />;
 }
