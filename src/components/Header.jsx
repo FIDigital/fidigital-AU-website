@@ -116,7 +116,7 @@ const megaMenuColumns = [
         heading: "Resources",
         href: "javascript:void(0)",
         links: [
-            { href: "/case-study/",                                         label: "Case Studies" },
+            { href: "/case-studies/",                                         label: "Case Studies" },
             { href: "/exploring-promotions-in-casino-online-non-aams-sicuri-8/", label: "Online Casino Promotions" },
         ]
     },

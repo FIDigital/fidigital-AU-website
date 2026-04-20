@@ -1,9 +1,9 @@
 import CaseStudiesClient from "./CaseStudiesClient";
 
 export const metadata = {
-  title: "Case Studies | FI Digital UAE — Real Results From Real Businesses",
+  title: "Case Studies | Software, Data, AI & Business Systems | FI Digital Australia",
   description:
-    "Proven AI and Zoho automation results from UAE enterprises. Real case studies, ROI calculator, and before/after process comparisons.",
+    "Real results from Australian enterprises. Product engineering, data platforms, AI agents, and Zoho modernisation case studies with quantified outcomes.",
 };
 
 export default function Page() {
