@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Plus, Minus, Grid3X3 } from "lucide-react";
+import { ChevronDown, Plus, Minus, Grid3X3, ChevronRight } from "lucide-react";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
@@ -125,11 +125,15 @@ const megaMenuColumns = [
 /* All nav items flattened — used by the mobile menu */
 const allNavLinks = [
     ...primaryNav,
-    ...megaMenuColumns.map(col => ({
-        href: col.href,
-        label: col.heading,
-        subLinks: col.links,
-    })),
+    {
+        href: "javascript:void(0)",
+        label: "More",
+        isMegaMenu: true,
+        otherServices: megaMenuColumns.map(col => ({
+            label: col.heading,
+            subLinks: col.links,
+        }))
+    }
 ];
 
 export default function Header() {
@@ -315,91 +319,93 @@ export default function Header() {
                                 />
                             </button>
 
-                            {/* Level-1: compact dropdown with 3 category rows */}
+                            {/* Level-1/2: Mega Menu Container */}
                             <div
-                                className="dropdown-menu"
+                                className="mega-menu-container"
                                 style={{
+                                    position: "absolute",
+                                    right: "0",
+                                    top: "calc(100% + 4px)",
+                                    transform: isMegaOpen ? "translateY(0)" : "translateY(10px)",
+                                    width: "850px",
+                                    background: "var(--card-bg)",
+                                    border: "1px solid var(--border)",
+                                    borderRadius: "24px",
+                                    boxShadow: "0 30px 60px rgba(0,0,0,0.15)",
                                     opacity: isMegaOpen ? 1 : 0,
                                     visibility: isMegaOpen ? "visible" : "hidden",
-                                    transform: isMegaOpen ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(10px)",
                                     pointerEvents: isMegaOpen ? "auto" : "none",
-                                    minWidth: "200px",
-                                    padding: "0.5rem",
+                                    transition: "all 0.3s ease-out",
+                                    zIndex: 1000,
+                                    overflow: "hidden",
                                 }}
                                 onMouseEnter={() => handleNavEnter(MEGA_KEY)}
                                 onMouseLeave={() => handleNavLeave()}
                             >
-                                {megaMenuColumns.map((col) => {
-                                    const isSubOpen = activeMegaSub === col.heading;
-                                    return (
-                                        <div
-                                            key={col.heading}
-                                            style={{ position: "relative" }}
-                                            onMouseEnter={() => handleMegaSubEnter(col.heading)}
-                                            onMouseLeave={() => handleMegaSubLeave()}
-                                        >
-                                            {/* Category row */}
-                                            <div className={`dropdown-item more-category-row${isSubOpen ? " active" : ""}`}
-                                                style={{
-                                                    display: "flex", alignItems: "center",
-                                                    justifyContent: "space-between",
-                                                    padding: "0.7rem 1rem",
-                                                    borderRadius: "8px",
-                                                    cursor: "default",
-                                                    fontSize: "0.85rem", fontWeight: 700,
-                                                    color: isSubOpen ? "var(--primary)" : "var(--text)",
-                                                    background: isSubOpen ? "var(--hover-bg)" : "transparent",
-                                                    transition: "all 0.15s ease",
-                                                }}
-                                            >
-                                                {col.heading}
-                                                <ChevronDown size={13} opacity={0.6}
-                                                    style={{ transform: "rotate(-90deg)", flexShrink: 0, marginLeft: "0.5rem" }}
-                                                />
-                                            </div>
-
-                                            {/* Level-2: flyout to the right */}
-                                            <div
-                                                style={{
-                                                    position: "absolute",
-                                                    top: 0,
-                                                    left: "calc(100% + 6px)",
-                                                    background: "var(--card-bg)",
-                                                    border: "1px solid var(--border)",
-                                                    borderRadius: "14px",
-                                                    minWidth: "220px",
-                                                    padding: "0.5rem",
-                                                    boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
-                                                    opacity: isSubOpen ? 1 : 0,
-                                                    visibility: isSubOpen ? "visible" : "hidden",
-                                                    transform: isSubOpen ? "translateX(0)" : "translateX(-6px)",
-                                                    pointerEvents: isSubOpen ? "auto" : "none",
-                                                    transition: "opacity 0.2s ease, transform 0.2s ease, visibility 0.2s",
-                                                    zIndex: 1001,
-                                                }}
-                                                onMouseEnter={() => handleMegaSubEnter(col.heading)}
-                                                onMouseLeave={() => handleMegaSubLeave()}
-                                            >
-                                                {col.links.map((sub) => (
-                                                    <Link key={sub.href} href={sub.href}
-                                                        className={`dropdown-item${pathname === sub.href ? " active" : ""}`}
+                                <div style={{ display: "flex", minHeight: "350px", background: "var(--card-bg)" }}>
+                                    {/* Left Panel: Category List */}
+                                    <div style={{ width: "240px", borderRight: "1px solid var(--border)", padding: "1rem" }}>
+                                        {megaMenuColumns.map((col, idx) => {
+                                            const isSubOpen = activeMegaSub === col.heading;
+                                            return (
+                                                <div 
+                                                    key={col.heading}
+                                                    onMouseEnter={() => handleMegaSubEnter(col.heading)}
+                                                    className={`mega-cat-item ${isSubOpen ? "active" : ""}`}
+                                                    style={{
+                                                        padding: "0.8rem 1rem",
+                                                        borderRadius: "10px",
+                                                        cursor: "pointer",
+                                                        fontSize: "0.9rem",
+                                                        fontWeight: 750,
+                                                        display: "flex",
+                                                        alignItems: "center",
+                                                        justifyContent: "space-between",
+                                                        marginBottom: "0.25rem",
+                                                        color: isSubOpen ? "var(--primary)" : "var(--text)",
+                                                        background: isSubOpen ? "rgba(79, 70, 229, 0.05)" : "transparent"
+                                                    }}
+                                                >
+                                                    {col.heading}
+                                                    <ChevronRight size={14} opacity={isSubOpen ? 1 : 0.3} />
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                    {/* Right Panel: Sub-links Grid */}
+                                    <div style={{ flex: 1, padding: "1.5rem", overflowY: "auto" }}>
+                                        {activeMegaSub !== null ? (
+                                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                                                {megaMenuColumns.find(c => c.heading === activeMegaSub)?.links.map((sub) => (
+                                                    <Link
+                                                        key={sub.href}
+                                                        href={sub.href}
                                                         style={{
-                                                            display: "block",
-                                                            padding: "0.65rem 1rem",
-                                                            fontSize: "0.84rem", fontWeight: 600,
-                                                            color: pathname === sub.href ? "var(--primary)" : "var(--text)",
-                                                            textDecoration: "none",
+                                                            padding: "0.75rem 1rem",
                                                             borderRadius: "8px",
-                                                            transition: "all 0.15s ease",
+                                                            fontSize: "0.85rem",
+                                                            fontWeight: 600,
+                                                            color: pathname === sub.href ? "var(--primary)" : "var(--text-muted)",
+                                                            textDecoration: "none",
+                                                            transition: "all 0.2s ease",
+                                                            display: "flex",
+                                                            alignItems: "center",
+                                                            gap: "0.5rem"
                                                         }}
+                                                        className="dropdown-item"
                                                     >
+                                                        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--primary)", opacity: 0.4, flexShrink: 0 }} />
                                                         {sub.label}
                                                     </Link>
                                                 ))}
                                             </div>
-                                        </div>
-                                    );
-                                })}
+                                        ) : (
+                                            <div style={{ height: "100%", display: "flex", alignItems: "center", justifyContent: "center", color: "var(--text-muted)", fontSize: "0.9rem", opacity: 0.6 }}>
+                                                Hover over a category to see services
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -451,17 +457,29 @@ export default function Header() {
                     {allNavLinks.map((link) => (
                         <div key={link.label} style={{ display: "flex", flexDirection: "column" }}>
                             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                                <Link
-                                    href={link.href}
-                                    onClick={() => setMobileOpen(false)}
-                                    style={{
-                                        padding: "1rem 0.5rem", fontSize: "1.2rem", fontWeight: 800,
-                                        color: "var(--text)", textDecoration: "none", flex: 1
-                                    }}
-                                >
-                                    {link.label}
-                                </Link>
-                                {link.subLinks && (
+                                {link.href && link.href !== "javascript:void(0)" ? (
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setMobileOpen(false)}
+                                        style={{
+                                            padding: "1rem 0.5rem", fontSize: "1.2rem", fontWeight: 800,
+                                            color: "var(--text)", textDecoration: "none", flex: 1
+                                        }}
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ) : (
+                                    <span
+                                        style={{
+                                            padding: "1rem 0.5rem", fontSize: "1.2rem", fontWeight: 800,
+                                            color: "var(--text)", flex: 1, cursor: "pointer"
+                                        }}
+                                        onClick={() => toggleMobileSubmenu(link.label)}
+                                    >
+                                        {link.label}
+                                    </span>
+                                )}
+                                {(link.subLinks || link.isMegaMenu) && (
                                     <button
                                         onClick={(e) => { e.preventDefault(); toggleMobileSubmenu(link.label); }}
                                         style={{
@@ -475,7 +493,7 @@ export default function Header() {
                                 )}
                             </div>
 
-                            {link.subLinks && mobileSubmenu === link.label && (
+                            {link.subLinks && !link.isMegaMenu && mobileSubmenu === link.label && (
                                 <div style={{
                                     paddingLeft: "1rem", display: "flex", flexDirection: "column",
                                     borderLeft: "2px solid var(--primary)", margin: "0.5rem 0 0.5rem 0.5rem"
@@ -490,6 +508,34 @@ export default function Header() {
                                         >
                                             {sub.label}
                                         </Link>
+                                    ))}
+                                </div>
+                            )}
+
+                            {link.isMegaMenu && mobileSubmenu === link.label && (
+                                <div style={{
+                                    paddingLeft: "1rem", display: "flex", flexDirection: "column",
+                                    borderLeft: "2px solid var(--primary)", margin: "0.5rem 0 0.5rem 0.5rem"
+                                }}>
+                                    {link.otherServices.map((cat) => (
+                                        <div key={cat.label} style={{ marginBottom: "1rem" }}>
+                                            <div style={{ fontSize: "0.85rem", fontWeight: 800, color: "var(--primary)", textTransform: "uppercase", marginBottom: "0.5rem" }}>{cat.label}</div>
+                                            <div style={{ display: "grid", gap: "0.5rem" }}>
+                                                {cat.subLinks.map(sub => (
+                                                    <Link
+                                                        key={sub.href}
+                                                        href={sub.href}
+                                                        onClick={() => setMobileOpen(false)}
+                                                        style={{
+                                                            padding: "0.4rem 0", fontSize: "0.95rem", fontWeight: 600,
+                                                            color: "var(--text-muted)", textDecoration: "none"
+                                                        }}
+                                                    >
+                                                        {sub.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        </div>
                                     ))}
                                 </div>
                             )}
@@ -537,9 +583,12 @@ export default function Header() {
                 padding-left:1.5rem !important;
               }
 
-              /* ── More dropdown category row hover ── */
-              .more-category-row:hover {
-                background: var(--hover-bg) !important;
+              /* ── Mega Menu dropdown category row hover ── */
+              .mega-cat-item {
+                transition: all 0.2s ease;
+              }
+              .mega-cat-item:hover {
+                background: rgba(79, 70, 229, 0.05) !important;
                 color: var(--primary) !important;
               }
 
