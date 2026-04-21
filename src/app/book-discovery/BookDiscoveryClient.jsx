@@ -57,13 +57,13 @@ export default function BookDiscoveryClient() {
           position: absolute;
           top: 0;
           right: 0;
-          width: 60%;
+          width: 65%;
           height: 100%;
           z-index: 0;
-          mask-image: radial-gradient(circle at center, black, transparent 80%);
-          -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
-          opacity: 0.15;
-          filter: grayscale(1);
+          mask-image: radial-gradient(circle at center, black, transparent 85%);
+          -webkit-mask-image: radial-gradient(circle at center, black, transparent 85%);
+          opacity: 0.25;
+          filter: grayscale(1) brightness(0.8);
         }
 
         [data-theme='dark'] .hero-bg-container {

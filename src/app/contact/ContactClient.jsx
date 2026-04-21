@@ -143,11 +143,12 @@ export default function ContactClient() {
           position: absolute;
           top: 0;
           right: 0;
-          width: 55%;
+          width: 60%;
           height: 100%;
-          opacity: 0.35;
+          opacity: 0.25;
           pointer-events: none;
           z-index: 0;
+          filter: grayscale(1) brightness(0.8);
         }
 
         .hero-badge {
