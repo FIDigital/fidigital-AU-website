@@ -189,6 +189,31 @@ export default function Header() {
         setActiveDropdown(null);
     }, [pathname]);
 
+    // Active link helpers
+    const isLinkActive = (href) => {
+        if (!href || href === "javascript:void(0)") return false;
+        const normPath = pathname && pathname.endsWith("/") && pathname.length > 1 ? pathname.slice(0, -1) : pathname;
+        const normHref = href.endsWith("/") && href.length > 1 ? href.slice(0, -1) : href;
+        if (normHref === "/") return normPath === "/";
+        return normPath === normHref || normPath.startsWith(normHref + "/");
+    };
+
+    const isSectionActive = (link) => {
+        if (!link) return false;
+        if (isLinkActive(link.href)) return true;
+        if (link.subLinks && link.subLinks.some(sub => isLinkActive(sub.href))) return true;
+        return false;
+    };
+
+    const isMoreActive = megaMenuColumns.some(col => 
+        col.links.some(sub => isLinkActive(sub.href))
+    );
+
+    const checkMobileActive = (link) => {
+        if (link.isMegaMenu) return isMoreActive;
+        return isSectionActive(link);
+    };
+
     // Keep ref in sync so scroll handler always sees latest value
     useEffect(() => {
         mobileOpenRef.current = mobileOpen;
@@ -257,7 +282,7 @@ export default function Header() {
                                 >
                                     <Link
                                         href={link.href}
-                                        className={`nav-link ${pathname === link.href || (link.href !== "/" && link.href !== "javascript:void(0)" && pathname.startsWith(link.href)) ? "active" : ""}`}
+                                        className={`nav-link ${isSectionActive(link) ? "active" : ""}`}
                                         style={{
                                             color: "var(--text)", fontSize: "0.8rem", fontWeight: 700,
                                             letterSpacing: "0.01em", textDecoration: "none",
@@ -287,12 +312,13 @@ export default function Header() {
                                         >
                                             {link.subLinks.map((sub) => (
                                                 <Link key={sub.href} href={sub.href}
-                                                    className={`dropdown-item${pathname === sub.href ? " active" : ""}`}
+                                                    className={`dropdown-item${isLinkActive(sub.href) ? " active" : ""}`}
                                                     style={{
                                                         display: "block", padding: "0.7rem 1.25rem",
                                                         fontSize: "0.85rem", fontWeight: 600,
-                                                        color: pathname === sub.href ? "var(--primary)" : "var(--text)",
+                                                        color: isLinkActive(sub.href) ? "var(--primary)" : "var(--text)",
                                                         textDecoration: "none", transition: "all 0.2s ease",
+                                                        borderBottom: isLinkActive(sub.href) ? "2px solid var(--primary)" : "2px solid transparent",
                                                         borderRadius: "8px"
                                                     }}
                                                 >
@@ -314,7 +340,7 @@ export default function Header() {
                             onMouseLeave={() => handleNavLeave()}
                         >
                             <button
-                                className={`nav-link nav-more-btn${isMegaOpen ? " active" : ""}`}
+                                className={`nav-link nav-more-btn${isMegaOpen || isMoreActive ? " active" : ""}`}
                                 style={{
                                     background: "none", border: "none", color: "var(--text)",
                                     fontSize: "0.8rem", fontWeight: 700, letterSpacing: "0.01em",
@@ -394,16 +420,16 @@ export default function Header() {
                                                             borderRadius: "8px",
                                                             fontSize: "0.85rem",
                                                             fontWeight: 600,
-                                                            color: pathname === sub.href ? "var(--primary)" : "var(--text-muted)",
+                                                            color: isLinkActive(sub.href) ? "var(--primary)" : "var(--text-muted)",
                                                             textDecoration: "none",
                                                             transition: "all 0.2s ease",
                                                             display: "flex",
                                                             alignItems: "center",
                                                             gap: "0.5rem"
                                                         }}
-                                                        className="dropdown-item"
+                                                        className={`dropdown-item ${isLinkActive(sub.href) ? "active" : ""}`}
                                                     >
-                                                        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--primary)", opacity: 0.4, flexShrink: 0 }} />
+                                                        <div style={{ width: "4px", height: "4px", borderRadius: "50%", background: "var(--primary)", opacity: isLinkActive(sub.href) ? 1 : 0.4, flexShrink: 0 }} />
                                                         {sub.label}
                                                     </Link>
                                                 ))}
@@ -472,7 +498,7 @@ export default function Header() {
                                         onClick={() => setMobileOpen(false)}
                                         style={{
                                             padding: "1rem 0.5rem", fontSize: "1.2rem", fontWeight: 800,
-                                            color: "var(--text)", textDecoration: "none", flex: 1
+                                            color: checkMobileActive(link) ? "var(--primary)" : "var(--text)", textDecoration: "none", flex: 1
                                         }}
                                     >
                                         {link.label}
@@ -481,7 +507,7 @@ export default function Header() {
                                     <span
                                         style={{
                                             padding: "1rem 0.5rem", fontSize: "1.2rem", fontWeight: 800,
-                                            color: "var(--text)", flex: 1, cursor: "pointer"
+                                            color: checkMobileActive(link) ? "var(--primary)" : "var(--text)", flex: 1, cursor: "pointer"
                                         }}
                                         onClick={() => toggleMobileSubmenu(link.label)}
                                     >
@@ -512,7 +538,7 @@ export default function Header() {
                                             onClick={() => setMobileOpen(false)}
                                             style={{
                                                 padding: "0.75rem 0.5rem", fontSize: "1rem", fontWeight: 600,
-                                                color: "var(--text-muted)", textDecoration: "none"
+                                                color: isLinkActive(sub.href) ? "var(--primary)" : "var(--text-muted)", textDecoration: "none"
                                             }}
                                         >
                                             {sub.label}
@@ -537,7 +563,7 @@ export default function Header() {
                                                         onClick={() => setMobileOpen(false)}
                                                         style={{
                                                             padding: "0.4rem 0", fontSize: "0.95rem", fontWeight: 600,
-                                                            color: "var(--text-muted)", textDecoration: "none"
+                                                            color: isLinkActive(sub.href) ? "var(--primary)" : "var(--text-muted)", textDecoration: "none"
                                                         }}
                                                     >
                                                         {sub.label}

@@ -117,7 +117,7 @@ function HomeHero() {
         }}
       >
         We Build Software. We Engineer Data. We Deploy AI. <br />
-        <span style={{ background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+        <span style={{ fontWeight: 300, background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
           We Modernise Systems.
         </span>
       </h1>
@@ -173,6 +173,8 @@ function HomeHero() {
 }
 
 function FourPillarsSection() {
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
   const pillars = [
     {
       title: "Product Engineering",
@@ -212,57 +214,104 @@ function FourPillarsSection() {
         </div>
 
         <div className="pillars-grid layout-4-col">
-          {pillars.map((pillar) => (
-            <div key={pillar.title} className="pillar-modern-card hover-lift" style={{ 
-              padding: '2.5rem 2rem', 
-              background: 'var(--card-bg)', 
-              borderRadius: '24px', 
-              border: '1px solid var(--border)',
-              display: 'flex',
-              flexDirection: 'column',
-              boxShadow: 'var(--card-shadow)',
-              position: 'relative',
-              minHeight: '100%'
-            }}>
-              <div style={{ 
-                width: '64px', 
-                height: '64px', 
-                background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%)', 
-                color: 'var(--primary)', 
-                borderRadius: '16px', 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'center',
-                marginBottom: '1.5rem',
-                flexShrink: 0
+          {pillars.map((pillar, idx) => {
+            const isExpanded = expandedIndex === idx;
+            return (
+              <div key={pillar.title} className="pillar-modern-card hover-lift" style={{ 
+                padding: '2.5rem 2rem', 
+                background: 'var(--card-bg)', 
+                borderRadius: '24px', 
+                border: '1px solid var(--border)',
+                display: 'flex',
+                flexDirection: 'column',
+                boxShadow: 'var(--card-shadow)',
+                position: 'relative',
+                minHeight: '100%',
+                transition: 'all 0.4s ease'
               }}>
-                {pillar.icon}
+                <div style={{ 
+                  width: '64px', 
+                  height: '64px', 
+                  background: 'linear-gradient(135deg, rgba(29, 78, 216, 0.1) 0%, rgba(13, 148, 136, 0.1) 100%)', 
+                  color: 'var(--primary)', 
+                  borderRadius: '16px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  marginBottom: '1.5rem',
+                  flexShrink: 0
+                }}>
+                  {pillar.icon}
+                </div>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.3, color: 'var(--text)', marginBottom: '1rem' }}>
+                  {pillar.title}
+                </h3>
+                
+                <div style={{ flex: 1, marginBottom: '2rem' }}>
+                  <div style={{
+                    maxHeight: isExpanded ? '600px' : '82px',
+                    transition: 'max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                    overflow: 'hidden',
+                    position: 'relative'
+                  }}>
+                    <p style={{ 
+                      color: 'var(--text-muted)', 
+                      fontSize: '1rem', 
+                      lineHeight: 1.7, 
+                      margin: 0,
+                    }}>
+                      {pillar.content}
+                    </p>
+                    
+                    {/* Fade out gradient for collapsed state */}
+                    <div style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: '45px',
+                      background: 'linear-gradient(to top, var(--card-bg) 5%, transparent)',
+                      opacity: isExpanded ? 0 : 1,
+                      transition: 'opacity 0.4s ease',
+                      pointerEvents: 'none'
+                    }} />
+                  </div>
+                </div>
+                
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', flexWrap: 'wrap', gap: '1rem' }}>
+                  <button 
+                    onClick={() => setExpandedIndex(isExpanded ? null : idx)}
+                    onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
+                    onMouseLeave={(e) => e.currentTarget.style.opacity = '0.8'}
+                    style={{ 
+                      background: 'none', border: 'none', color: 'var(--text)', opacity: 0.8,
+                      fontWeight: 700, padding: 0, display: 'flex', alignItems: 'center', gap: '0.4rem', 
+                      fontSize: '0.9rem', cursor: 'pointer', outline: 'none', transition: 'opacity 0.2s ease'
+                    }}
+                  >
+                    {isExpanded ? "Read Less" : "Read More"}
+                    <ChevronDown size={14} style={{ transform: isExpanded ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease' }} />
+                  </button>
+                  
+                  <Link href={pillar.link} style={{ 
+                    display: 'inline-flex', 
+                    alignItems: 'center', 
+                    gap: '0.5rem', 
+                    color: 'var(--primary)', 
+                    background: 'rgba(29, 78, 216, 0.08)',
+                    padding: '0.6rem 1rem',
+                    borderRadius: '10px',
+                    fontWeight: 800, 
+                    fontSize: '0.9rem', 
+                    textDecoration: 'none', 
+                    transition: 'all 0.3s ease'
+                  }} className="pillar-link hover-link-shift">
+                    Explore <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
-              <h3 style={{ fontSize: '1.3rem', fontWeight: 900, lineHeight: 1.3, color: 'var(--text)', marginBottom: '1rem' }}>
-                {pillar.title}
-              </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: 1.7, margin: 0, flex: 1, marginBottom: '2rem' }}>
-                {pillar.content}
-              </p>
-              <Link href={pillar.link} style={{ 
-                display: 'inline-flex', 
-                alignItems: 'center', 
-                gap: '0.5rem', 
-                color: 'var(--primary)', 
-                background: 'rgba(29, 78, 216, 0.08)',
-                padding: '0.75rem 1.25rem',
-                borderRadius: '12px',
-                fontWeight: 800, 
-                fontSize: '0.95rem', 
-                textDecoration: 'none', 
-                transition: 'all 0.3s ease', 
-                marginTop: 'auto',
-                alignSelf: 'flex-start'
-              }} className="pillar-link hover-link-shift">
-                Learn More <ArrowRight size={16} />
-              </Link>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
       <style jsx>{`
@@ -302,7 +351,7 @@ function TechStackSection() {
     { name: "GPT-4o (OpenAI)", src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
     { name: "LangChain", src: "https://avatars.githubusercontent.com/u/126733545" },
     { name: "n8n", src: "/images/n8n.png" },
-    { name: "Zoho", src: "/images/new-zoho-logo.png" },
+    { name: "Zoho", src: "/images/zoho-logo-nobg.png" },
     { name: "AWS", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
     { name: "Microsoft Azure", src: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" }
   ];
@@ -348,15 +397,16 @@ function TechStackSection() {
           overflow: hidden;
           position: relative;
           width: 100%;
-          background: var(--bg-secondary);
-          padding: 4rem 0;
+          background: linear-gradient(to right, var(--bg-secondary) 0%, rgba(29, 78, 216, 0.03) 50%, var(--bg-secondary) 100%);
+          padding: 5rem 0;
           border-top: 1px solid var(--border);
           border-bottom: 1px solid var(--border);
+          box-shadow: inset 0 0 40px rgba(0,0,0,0.02);
         }
         
         .marquee {
           display: flex;
-          gap: 6rem;
+          gap: 2rem;
           align-items: center;
           animation: scroll 45s linear infinite;
           width: max-content;
@@ -370,27 +420,38 @@ function TechStackSection() {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 180px;
-          height: 60px;
+          width: 220px;
+          height: 110px;
+          background: var(--card-bg);
+          border: 1px solid var(--border);
+          border-radius: 20px;
+          padding: 1.5rem;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .marquee-item:hover {
+          border-color: rgba(29, 78, 216, 0.3);
+          box-shadow: 0 20px 40px rgba(29, 78, 216, 0.15);
+          transform: translateY(-5px);
         }
 
         .tech-logo {
           max-width: 100%;
           max-height: 100%;
           object-fit: contain;
-          filter: grayscale(100%) opacity(0.5);
-          transition: all 0.4s ease;
+          filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06));
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
           user-select: none;
         }
 
-        .tech-logo:hover {
-          filter: grayscale(0%) opacity(1);
+        .marquee-item:hover .tech-logo {
           transform: scale(1.1);
         }
 
         @keyframes scroll {
           0% { transform: translateX(0); }
-          100% { transform: translateX(calc(-33.3333% - 2rem)); } 
+          100% { transform: translateX(calc(-33.3333% - 0.667rem)); } 
         }
       `}</style>
     </section>
