@@ -3,7 +3,13 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, Clock, User, ArrowUpRight, Newspaper, Sparkles, Settings, Cloud, Search, Zap, Brain } from "lucide-react";
+import { 
+  ArrowRight, Calendar, Clock, User, ArrowUpRight, 
+  Newspaper, Sparkles, Settings, Cloud, Search, 
+  Zap, Brain, ChevronRight, Filter, Tag,
+  MessageSquare, Layout, Cpu, Database, 
+  PenTool, Smartphone, Globe
+} from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -21,7 +27,6 @@ const blogPosts = [
     readTime: "11 min read",
     author: "FI Strategy Team",
     category: "Tech Insights",
-    image: "/images/strategy.png",
     slug: "takings-cues-from-apples-wwdc-2016",
   },
   {
@@ -32,7 +37,6 @@ const blogPosts = [
     readTime: "7 min read",
     author: "FI Strategy Team",
     category: "SEO Strategy",
-    image: "/images/seo.png",
     slug: "common-seo-myths-busted-part-1",
   },
   {
@@ -43,7 +47,6 @@ const blogPosts = [
     readTime: "8 min read",
     author: "FI Strategy Team",
     category: "Domain Strategy",
-    image: "/images/seo.png",
     slug: "does-local-tld-extensions-work",
   },
   {
@@ -54,7 +57,6 @@ const blogPosts = [
     readTime: "9 min read",
     author: "FI Strategy Team",
     category: "SME Growth",
-    image: "/images/strategy.png",
     slug: "digital-agency-for-small-business",
   },
   {
@@ -65,7 +67,6 @@ const blogPosts = [
     readTime: "15 min read",
     author: "FI Strategy Team",
     category: "Future Trends",
-    image: "/images/strategy.png",
     slug: "glimpse-into-the-digital-marketing-scenario-a-year-from-now",
   },
   {
@@ -76,7 +77,6 @@ const blogPosts = [
     readTime: "12 min read",
     author: "FI Strategy Team",
     category: "Mobile Strategy",
-    image: "/images/seo.png",
     slug: "is-mobile-search-the-next-big-thing",
   },
   {
@@ -87,7 +87,6 @@ const blogPosts = [
     readTime: "10 min read",
     author: "Automation Strategy Team",
     category: "Marketing Automation",
-    image: "/images/strategy.png",
     slug: "digital-personalization-the-consciousness-of-marketing-automation",
   },
   {
@@ -98,7 +97,6 @@ const blogPosts = [
     readTime: "6 min read",
     author: "SEO Strategy Team",
     category: "SEO Evolution",
-    image: "/images/seo.png",
     slug: "what-changes-can-you-experience-in-seo-in-2018",
   },
   {
@@ -109,7 +107,6 @@ const blogPosts = [
     readTime: "15 min read",
     author: "Agency Selection Team",
     category: "Marketing & Strategy",
-    image: "/images/it-software.png",
     slug: "how-to-select-your-next-digital-marketing-agency",
   },
   {
@@ -120,7 +117,6 @@ const blogPosts = [
     readTime: "8 min read",
     author: "FI Strategy Team",
     category: "Marketing & Strategy",
-    image: "/images/strategy.png",
     slug: "why-digital-marketing-is-important-for-australian-smes",
   },
   {
@@ -131,7 +127,6 @@ const blogPosts = [
     readTime: "7 min read",
     author: "FI Strategy Team",
     category: "SEO & Strategy",
-    image: "/images/strategy.png",
     slug: "tips-for-choosing-a-company-for-your-seo-melbourne-business-owners-should-know",
   },
   {
@@ -142,7 +137,6 @@ const blogPosts = [
     readTime: "9 min read",
     author: "SEO Strategy Team",
     category: "Local SEO",
-    image: "/images/seo.png",
     slug: "how-can-seo-agency-help-in-optimizing-your-website-to-target-local-audience",
   },
   {
@@ -153,7 +147,6 @@ const blogPosts = [
     readTime: "10 min read",
     author: "SEO Strategy Team",
     category: "SEO & Strategy",
-    image: "/images/seo.png",
     slug: "top-12-reasons-why-australian-small-businesses-should-invest-in-seo",
   },
   {
@@ -164,7 +157,6 @@ const blogPosts = [
     readTime: "8 min read",
     author: "Marketing Ops Team",
     category: "Marketing Technology",
-    image: "/images/strategy.png",
     slug: "what-is-marketing-automation",
   },
   {
@@ -175,7 +167,6 @@ const blogPosts = [
     readTime: "12 min read",
     author: "Data Strategy Team",
     category: "Data & Analytics",
-    image: "/images/data-platforms.png",
     slug: "data-analytics-the-future-of-data-driven-decision-making",
   },
   {
@@ -186,7 +177,6 @@ const blogPosts = [
     readTime: "15 min read",
     author: "UX Research Team",
     category: "UX Design",
-    image: "/images/digital-transformation.png",
     slug: "understanding-the-psychology-of-human-mind-of-user-experience",
   },
   {
@@ -197,7 +187,6 @@ const blogPosts = [
     readTime: "6 min read",
     author: "FI Digital SEO Team",
     category: "SEO & Strategy",
-    image: "/images/it-software.png",
     slug: "questions-to-ask-your-potential-seo-agency",
   },
   {
@@ -208,7 +197,6 @@ const blogPosts = [
     readTime: "12 min read",
     author: "FI Digital Consulting Team",
     category: "Digital Strategy",
-    image: "/images/digital-transformation.png",
     slug: "developing-digital-transformation-strategy",
   },
   {
@@ -219,7 +207,6 @@ const blogPosts = [
     readTime: "7 min read",
     author: "FI Digital SEO Team",
     category: "SEO & Strategy",
-    image: "/images/strategy.png",
     slug: "how-can-seo-help-in-growing-your-business",
   },
   {
@@ -230,7 +217,6 @@ const blogPosts = [
     readTime: "6 min read",
     author: "FI Digital SEO Team",
     category: "SEO & Strategy",
-    image: "/images/seo.png",
     slug: "seo-melbourne-expert-advice-for-blog-post-writing-fundamentals-2",
   },
   {
@@ -241,7 +227,6 @@ const blogPosts = [
     readTime: "7 min read",
     author: "FI Digital Team",
     category: "Cloud Ecosystem",
-    image: "/images/it-infrastructure.png",
     slug: "tools-of-cloud-services",
   },
   {
@@ -252,7 +237,6 @@ const blogPosts = [
     readTime: "8 min read",
     author: "FI Digital Consulting",
     category: "Zoho Solutions",
-    image: "/images/it-software.png",
     slug: "unlocking-the-power-of-zoho-for-australian-businesses",
   },
   {
@@ -263,183 +247,237 @@ const blogPosts = [
     readTime: "12 min read",
     author: "Senior Engineering Team",
     category: "AI & Productivity",
-    image: "/images/home_hero_professional.png",
     slug: "scaling-trust-time-and-talent-responsible-ai-as-australias-productivity-game-changer",
   }
 ];
 
+const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
+
+const getCategoryIcon = (category) => {
+  switch(category) {
+    case "AI & Productivity": return <Sparkles size={20} />;
+    case "Zoho Solutions": return <Settings size={20} />;
+    case "Cloud Ecosystem": return <Cloud size={20} />;
+    case "SEO & Strategy": return <Search size={20} />;
+    case "Digital Strategy": return <Zap size={20} />;
+    case "UX Design": return <Brain size={20} />;
+    case "Tech Insights": return <Cpu size={20} />;
+    case "Local SEO": return <Globe size={20} />;
+    case "Marketing Automation": return <Layout size={20} />;
+    case "Data & Analytics": return <Database size={20} />;
+    case "Marketing & Strategy": return <PenTool size={20} />;
+    default: return <Newspaper size={20} />;
+  }
+};
 
 export default function BlogClient() {
   const containerRef = useRef(null);
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredPosts = activeCategory === "All" 
+    ? blogPosts 
+    : blogPosts.filter(post => post.category === activeCategory);
 
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.to(".hero-reveal", {
       y: 0,
       opacity: 1,
-      duration: 0.6,
-      stagger: 0.12,
-      ease: "power3.out",
+      duration: 0.8,
+      stagger: 0.1,
+      ease: "power4.out",
     });
 
-    gsap.utils.toArray(".blog-card").forEach((card) => {
-      gsap.fromTo(
-        card,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 88%",
-            once: true,
-          },
+    gsap.fromTo(".blog-card", 
+      { y: 30, opacity: 0 },
+      { 
+        y: 0, opacity: 1, 
+        duration: 0.6, 
+        stagger: 0.05, 
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ".blog-grid",
+          start: "top 85%",
+          once: true
         }
-      );
-    });
-  }, { scope: containerRef });
+      }
+    );
+  }, { scope: containerRef, dependencies: [activeCategory] });
 
   return (
     <div ref={containerRef} style={{ background: "var(--bg)", color: "var(--text)" }}>
-      <main style={{ paddingTop: "var(--header-h)" }}>
+      <main>
         
-        {/* ══ HERO ══ */}
-        <section style={{
+        {/* ══ HERO SECTION ══ */}
+        <section className="hero-section" style={{
           position: "relative",
-          minHeight: "85vh",
+          minHeight: "80vh",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          alignItems: "center",
           overflow: "hidden",
-          padding: "calc(var(--header-h) + 40px) 1.5rem 100px",
+          padding: "clamp(120px, 15vh, 160px) 1.5rem 100px",
           background: "var(--bg)",
-          borderBottom: "1px solid var(--border)"
         }}>
-          {/* Background Visual — high-fidelity image with premium mask */}
-          <div className="hero-img-blend" style={{
-            position: "absolute", top: 0, right: 0,
-            width: "65%", height: "100%", zIndex: 0,
-            opacity: 0.25, pointerEvents: "none",
+          {/* Background Visual — right-side image with gradient mask */}
+          <div style={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+            width: "60%",
+            height: "100%",
+            zIndex: 0,
+            opacity: 0.45,
+            pointerEvents: "none",
           }}>
             <Image
-              src="/images/home_hero_professional.png"
+              src="/images/Blog.png"
               alt=""
               fill
               style={{
                 objectFit: "cover",
-                maskImage: "radial-gradient(circle at right, black, transparent 85%)",
-                WebkitMaskImage: "radial-gradient(circle at right, black, transparent 85%)",
+                maskImage: "radial-gradient(circle at right, black, transparent 80%)",
+                WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)",
               }}
               priority
             />
           </div>
 
-          <div className="container" style={{ position: "relative", zIndex: 1 }}>
-            <div style={{ maxWidth: "900px" }}>
+          <div className="container" style={{ position: "relative", zIndex: 3, textAlign: "left" }}>
+            <div style={{ maxWidth: "1000px", textAlign: "left" }}>
               <div className="hero-reveal" style={{ 
                 opacity: 0, transform: "translateY(10px)",
                 display: "inline-flex", alignItems: "center", gap: "0.5rem",
                 background: "rgba(29,78,216,0.08)", color: "var(--primary)",
-                padding: "0.45rem 1rem", borderRadius: "50px",
-                fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.5px",
-                marginBottom: "1.5rem"
+                padding: "0.45rem 1.25rem", borderRadius: "50px",
+                fontWeight: 800, fontSize: "0.8rem", textTransform: "uppercase",
+                letterSpacing: "0.1em", marginBottom: "1.5rem",
+                border: "1px solid rgba(29, 78, 216, 0.2)"
               }}>
-                <Newspaper size={14} /> Insights & Thought Leadership
+                <Newspaper size={14} /> Intelligence Feed
               </div>
 
               <h1 className="hero-reveal" style={{
                 opacity: 0, transform: "translateY(10px)",
                 fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
                 fontWeight: 900, lineHeight: 1.1,
-                marginBottom: "2rem", letterSpacing: "-0.02em"
+                marginBottom: "2rem", letterSpacing: "-0.04em"
               }}>
-                Latest <span style={{ color: "var(--primary)" }}>News & Updates</span>
+                Expert <span style={{ 
+                  fontWeight: 300, 
+                  background: "linear-gradient(135deg, var(--primary) 0%, #6366F1 100%)", 
+                  WebkitBackgroundClip: "text", 
+                  WebkitTextFillColor: "transparent", 
+                  backgroundClip: "text" 
+                }}>Perspectives</span> <br />
+                on Digital Strategy.
               </h1>
 
               <p className="hero-reveal" style={{
                 opacity: 0, transform: "translateY(10px)",
                 fontSize: "clamp(1.1rem, 2vw, 1.3rem)",
                 color: "var(--text-muted)", lineHeight: 1.7, maxWidth: "750px",
-                fontWeight: 500
+                fontWeight: 500, margin: 0
               }}>
-                We help companies succeed in the digital world through impactful storytelling and digital experience. Explore our latest thinking on software, data, and AI.
+                Research-led analysis on software engineering, data platforms, and the emerging AI landscape in Australian enterprise.
               </p>
             </div>
           </div>
         </section>
 
-
-        {/* ══ BLOG LIST ══ */}
-        <section style={{ padding: "80px 1.5rem 120px", background: "var(--bg-secondary)" }}>
+        {/* ══ FEED SECTION ══ */}
+        <section style={{ padding: "80px 1.5rem 120px", background: "var(--bg)" }}>
           <div className="container">
-            <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "2.5rem", maxWidth: "1100px", margin: "0 auto" }}>
-              {blogPosts.map((post, index) => (
+            
+            {/* Category Filter Bar */}
+            <div className="reveal" style={{ marginBottom: '5rem', display: 'flex', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap', borderBottom: '1px solid var(--border)', paddingBottom: '1.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--text)', fontWeight: 800, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <Filter size={16} color="var(--primary)" /> Filter by
+              </div>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {categories.map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    style={{
+                      padding: '0.5rem 1.25rem',
+                      borderRadius: '12px',
+                      border: 'none',
+                      background: activeCategory === cat ? 'rgba(29, 78, 216, 0.1)' : 'transparent',
+                      color: activeCategory === cat ? 'var(--primary)' : 'var(--text-muted)',
+                      fontSize: '0.9rem',
+                      fontWeight: activeCategory === cat ? 800 : 600,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease'
+                    }}
+                    className="category-btn"
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Grid Layout (No Images) */}
+            <div className="blog-grid" style={{ 
+              display: "grid", 
+              gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))", 
+              gap: "2rem" 
+            }}>
+              {filteredPosts.map((post) => (
                 <div key={post.id} className="blog-card" style={{ opacity: 0 }}>
                   <Link href={`/${post.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
                     <article style={{
-                      padding: "3rem",
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      background: "var(--bg-secondary)",
                       borderRadius: "24px",
-                      background: "var(--bg)",
                       border: "1px solid var(--border)",
-                      transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
-                      position: "relative",
-                      overflow: "hidden"
+                      transition: "all 0.4s cubic-bezier(0.16,1,0.3,1)",
+                      padding: '3rem',
+                      position: 'relative'
                     }} className="article-inner">
                       
-                      {/* Category & Stats */}
-                      <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.5rem", marginBottom: "2rem" }}>
-                        <div style={{ 
-                          background: "rgba(29, 78, 216, 0.1)", 
-                          color: "var(--primary)", 
-                          padding: "0.5rem 1.25rem", 
-                          borderRadius: "100px", 
-                          fontSize: "0.75rem", 
-                          fontWeight: 800,
-                          textTransform: "uppercase",
-                          letterSpacing: "0.1em"
-                        }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                            {post.category === "AI & Productivity" && <Sparkles size={14} />}
-                            {post.category === "Zoho Solutions" && <Settings size={14} />}
-                            {post.category === "Cloud Ecosystem" && <Cloud size={14} />}
-                            {post.category === "SEO & Strategy" && <Search size={14} />}
-                            {post.category === "Digital Strategy" && <Zap size={14} />}
-                            {post.category === "UX Design" && <Brain size={14} />}
+                      {/* Icon & Category */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+                         <div style={{ 
+                           width: '48px', height: '48px', borderRadius: '14px', 
+                           background: 'var(--bg)', border: '1px solid var(--border)',
+                           display: 'flex', alignItems: 'center', justifyContent: 'center',
+                           color: 'var(--primary)'
+                         }}>
+                            {getCategoryIcon(post.category)}
+                         </div>
+                         <div style={{ color: 'var(--primary)', fontWeight: 800, fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                             {post.category}
-                          </div>
-                        </div>
-                        
-                        <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", color: "var(--text-muted)", fontSize: "0.85rem", fontWeight: 600 }}>
-                          <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}><Calendar size={15} opacity={0.6} /> {post.date}</span>
-                          <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}><Clock size={15} opacity={0.6} /> {post.readTime}</span>
-                        </div>
+                         </div>
                       </div>
 
-                      {/* Title & Excerpt */}
-                      <div style={{ maxWidth: "800px" }}>
-                        <h2 style={{ 
-                          fontSize: "clamp(1.5rem, 3vw, 2.25rem)", 
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{ 
+                          fontSize: "1.75rem", 
                           fontWeight: 900, 
                           marginBottom: "1.5rem", 
-                          lineHeight: 1.2, 
-                          transition: "color 0.2s ease" 
+                          lineHeight: 1.25, 
+                          color: 'var(--text)',
+                          transition: "color 0.2s ease",
+                          letterSpacing: '-0.02em'
                         }} className="post-title">
                           {post.title}
-                        </h2>
+                        </h3>
+                        
                         <p style={{ 
                           color: "var(--text-muted)", 
                           lineHeight: 1.7, 
-                          marginBottom: "2.5rem", 
-                          fontSize: "clamp(1rem, 1.2vw, 1.15rem)",
+                          marginBottom: "3rem", 
+                          fontSize: "1.05rem",
                           fontWeight: 400
                         }}>
                           {post.excerpt}
                         </p>
                       </div>
 
-                      {/* Footer: Author & CTA */}
+                      {/* Card Footer */}
                       <div style={{ 
                         display: "flex", 
                         alignItems: "center", 
@@ -447,32 +485,18 @@ export default function BlogClient() {
                         borderTop: "1px solid var(--border)",
                         paddingTop: "2rem"
                       }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                          <div style={{ 
-                            width: "40px", height: "40px", 
-                            borderRadius: "12px", 
-                            background: "rgba(29, 78, 216, 0.1)", 
-                            display: "flex", alignItems: "center", justifyContent: "center", 
-                            color: "var(--primary)" 
-                          }}>
-                            <User size={20} />
-                          </div>
-                          <div>
-                            <div style={{ fontWeight: 800, fontSize: "0.9rem" }}>{post.author}</div>
-                            <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>FI Digital Australia</div>
-                          </div>
+                        <div style={{ display: "flex", flexWrap: 'wrap', gap: "1.5rem", color: "var(--text-muted)", fontSize: "0.85rem", fontWeight: 600 }}>
+                          <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}><Calendar size={14} opacity={0.6} /> {post.date}</span>
+                          <span style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}><Clock size={14} opacity={0.6} /> {post.readTime}</span>
                         </div>
                         
-                        <div style={{ 
-                          display: "flex", 
-                          alignItems: "center", 
-                          gap: "0.6rem", 
-                          color: "var(--primary)", 
-                          fontWeight: 800, 
-                          fontSize: "1rem",
-                          transition: "gap 0.3s ease"
-                        }} className="read-more">
-                          Full Article <ArrowRight size={20} />
+                        <div className="arrow-box" style={{ 
+                          width: '40px', height: '40px', borderRadius: '10px',
+                          background: 'rgba(29, 78, 216, 0.05)', display: 'flex',
+                          alignItems: 'center', justifyContent: 'center',
+                          color: "var(--primary)", transition: "all 0.3s ease"
+                        }}>
+                          <ArrowRight size={20} />
                         </div>
                       </div>
                     </article>
@@ -481,43 +505,40 @@ export default function BlogClient() {
               ))}
             </div>
 
-
-            {/* Pagination or Load More (Placeholder) */}
-            <div style={{ textAlign: "center", marginTop: "5rem" }}>
-              <button className="btn-main" style={{ padding: "0.8rem 2.5rem", borderRadius: "100px", fontWeight: 800 }}>
-                View All Insights
-              </button>
-            </div>
           </div>
         </section>
       </main>
 
       <style jsx>{`
-        .blog-card:hover .article-inner {
+        .article-inner:hover {
           transform: translateY(-8px);
           border-color: var(--primary) !important;
-          box-shadow: 0 25px 60px -15px rgba(29, 78, 216, 0.15);
+          background: var(--bg);
+          box-shadow: 0 30px 60px -20px rgba(0,0,0,0.08);
         }
-        .hero-img-blend { filter: grayscale(1) brightness(0.8); }
-        [data-theme='dark'] .hero-img-blend { filter: grayscale(1) brightness(0.4) contrast(1.2); }
-        .blog-card:hover .post-title {
+        .article-inner:hover .post-title {
           color: var(--primary);
         }
-        .blog-card:hover .read-more {
-          gap: 1rem !important;
-        }
-        .btn-main {
+        .article-inner:hover .arrow-box {
           background: var(--primary);
           color: #fff;
-          border: none;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          box-shadow: 0 10px 20px rgba(29, 78, 216, 0.2);
+          transform: translateX(5px);
         }
-        .btn-main:hover {
-          background: var(--primary-dark);
+        .category-btn:hover {
+          color: var(--primary);
+        }
+        .load-more-btn:hover {
+          border-color: var(--primary) !important;
           transform: translateY(-2px);
-          box-shadow: 0 15px 30px rgba(29, 78, 216, 0.3);
+        }
+        
+        @media (max-width: 640px) {
+          .blog-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .article-inner {
+            padding: 2rem !important;
+          }
         }
       `}</style>
 
