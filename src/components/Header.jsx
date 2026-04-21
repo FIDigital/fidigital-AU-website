@@ -74,7 +74,15 @@ const primaryNav = [
             { href: "/why-fi-digital/australian-compliance",   label: "Australian Compliance" },
         ]
     },
-    { href: "/contact", label: "Contact" },
+    {
+        href: "/contact",
+        label: "Contact",
+        subLinks: [
+            { href: "/contact", label: "Contact Us" },
+            { href: "/book-discovery", label: "Book a Discovery Session" },
+        ]
+    },
+
 ];
 
 /* ─────────────────────────────────────────────
@@ -285,9 +293,10 @@ export default function Header() {
                                                         fontSize: "0.85rem", fontWeight: 600,
                                                         color: pathname === sub.href ? "var(--primary)" : "var(--text)",
                                                         textDecoration: "none", transition: "all 0.2s ease",
-                                                        borderBottom: pathname === sub.href ? "2px solid var(--primary)" : "2px solid transparent",
+                                                        borderRadius: "8px"
                                                     }}
                                                 >
+
                                                     {sub.label}
                                                 </Link>
                                             ))}
