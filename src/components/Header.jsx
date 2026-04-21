@@ -125,9 +125,11 @@ const megaMenuColumns = [
         href: "javascript:void(0)",
         links: [
             { href: "/case-studies/",                                         label: "Case Studies" },
+            { href: "/blog/",                                                 label: "Blog" },
             { href: "/exploring-promotions-in-casino-online-non-aams-sicuri-8/", label: "Online Casino Promotions" },
         ]
     },
+
 ];
 
 /* All nav items flattened — used by the mobile menu */
