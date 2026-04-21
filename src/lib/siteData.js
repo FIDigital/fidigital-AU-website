@@ -1,20 +1,20 @@
 export const siteConfig = {
-    name: "FI Digital UAE",
-    tagline: "AI Agent Architects for Enterprise Transformation",
-    url: "https://www.fidigital.ae",
-    email: "info@fidigital.ae",
-    phone: "+971 58 589 5292",
-    whatsapp: "+971 58 589 5292",
+    name: "FI Digital Australia",
+    tagline: "Product Engineering, Data Platforms & AI Agent Architects",
+    url: "https://www.fidigital.com.au",
+    email: "info@fidigital.com.au",
+    phone: "1300 921 280",
+    whatsapp: "1300 921 280",
     offices: {
-        dubai: {
-            city: "Dubai",
-            address: "DSV Information Technology LLC. 412-582, Arjumand Offices and Retail, Dubai Investment Park, Dubai",
-            phone: "+971 58 589 5292",
+        melbourne_hq: {
+            city: "Melbourne HQ",
+            address: "Level 9, 440 Collins Street, Melbourne VIC 3000",
+            phone: "1300 921 280",
         },
-        riyadh: {
-            city: "Riyadh",
-            address: "King Fahd Road, Olaya District, Riyadh, KSA",
-            phone: "+971 58 589 5292",
+        vermont_south: {
+            city: "Vermont South Office",
+            address: "3 Tanunda Street, Vermont South, Victoria 3133",
+            phone: "1300 921 280",
         },
     },
 };
@@ -22,66 +22,40 @@ export const siteConfig = {
 export const navigation = [
     {
         label: "Home",
-        href: "/home",
+        href: "/",
     },
     {
-        label: "Services",
-        href: "/digital-workers",
+        label: "Product Engineering",
+        href: "/product-engineering",
         children: [
-            {
-                label: "WhatsApp Sales Agents",
-                href: "/digital-workers/whatsapp-sales-agents",
-            },
-            {
-                label: "Real Estate Lead Qualification",
-                href: "/digital-workers/real-estate-agents",
-            },
-            {
-                label: "Finance & Procurement Agents",
-                href: "/digital-workers/finance-procurement-agents",
-            },
-            {
-                label: "Customer Service Agents",
-                href: "/digital-workers/customer-service-agents",
-            },
-            {
-                label: "HR & Onboarding Agents",
-                href: "/digital-workers/hr-onboarding-agents",
-            },
+            { label: "Web Applications", href: "/product-engineering/web-applications" },
+            { label: "Mobile Applications", href: "/product-engineering/mobile-applications" },
+            { label: "SaaS & MVP Builds", href: "/product-engineering/saas-mvp" },
+            { label: "Product Modernisation", href: "/product-engineering/product-modernisation" },
         ],
     },
     {
-        label: "Platform",
-        href: "/platform",
+        label: "Data Platforms",
+        href: "/data-platforms",
         children: [
-            { label: "Zoho Agentic AI", href: "/platform/zoho-agentic-ai" },
-            { label: "n8n Orchestration", href: "/platform/n8n-orchestration" },
-            { label: "Multilingual LLM", href: "/platform/multilingual-llm" },
-            {
-                label: "Custom AI Development",
-                href: "/platform/custom-ai-development",
-            },
-            { label: "Data & Analytics", href: "/platform/data-analytics" },
+            { label: "Databricks Consulting", href: "/data-platforms/databricks" },
+            { label: "Microsoft Fabric", href: "/data-platforms/microsoft-fabric" },
+            { label: "Snowflake Consulting", href: "/data-platforms/snowflake" },
+            { label: "Business Intelligence", href: "/data-platforms/business-intelligence" },
         ],
     },
     {
-        label: "Industries",
-        href: "/industries",
+        label: "AI Agents",
+        href: "/ai-agents",
         children: [
-            { label: "Real Estate & PropTech", href: "/industries/real-estate" },
-            { label: "Retail & E-Commerce", href: "/industries/retail-ecommerce" },
-            {
-                label: "Professional Services",
-                href: "/industries/professional-services",
-            },
-            { label: "Healthcare & Wellness", href: "/industries/healthcare" },
-            { label: "F&B & Hospitality", href: "/industries/fnb-hospitality" },
-            { label: "Logistics & Supply Chain", href: "/industries/logistics" },
+            { label: "RAG & Document Intelligence", href: "/ai-agents/rag-document-intelligence" },
+            { label: "Copilots & Digital Workers", href: "/ai-agents/copilots-digital-workers" },
+            { label: "Workflow Automation", href: "/ai-agents/workflow-automation" },
         ],
     },
     {
         label: "About",
-        href: "/about",
+        href: "/why-fi-digital",
     },
     {
         label: "Contact",
@@ -90,56 +64,39 @@ export const navigation = [
 ];
 
 export const stats = [
-    { value: "40+", label: "Deployed Agent Workflows" },
-    { value: "87%", label: "Avg Qualification Accuracy" },
-    { value: "94%", label: "Finance Automation Rate" },
-    { value: "80+", label: "Zoho Implementations" },
+    { value: "150+", label: "Enterprise Projects" },
+    { value: "100%", label: "Local AU Delivery" },
+    { value: "24/7", label: "Global Support" },
+    { value: "80+", label: "Certified Engineers" },
 ];
 
-// Industry icons are now SVG-based, rendered in the component
 export const industries = [
     {
-        name: "Real Estate & PropTech",
-        slug: "real-estate",
-        tagline: "Sell More Properties with Less Manual Work",
+        name: "Financial Services & Wealth",
+        slug: "financial-services-wealth",
+        tagline: "Digital Transformation for Modern Finance",
         iconId: "building",
-        description:
-            "AI-powered lead qualification and WhatsApp agents for Dubai real estate.",
+        description: "Enterprise-grade data platforms and AI agents for wealth management and banking.",
     },
     {
-        name: "Retail & E-Commerce",
-        slug: "retail-ecommerce",
-        tagline: "Turn Every Customer Interaction Into Revenue",
-        iconId: "shopping",
-        description:
-            "Boost sales with AI-powered commerce, inventory, and customer engagement.",
-    },
-    {
-        name: "Professional Services",
-        slug: "professional-services",
-        tagline: "Deliver More Billable Value with Less Admin",
-        iconId: "briefcase",
-        description: "Automate proposals, billing, and knowledge management.",
-    },
-    {
-        name: "Healthcare & Wellness",
-        slug: "healthcare",
-        tagline: "Better Patient Experience. Less Administrative Burden.",
+        name: "Healthcare & Aged Care",
+        slug: "healthcare-aged-care",
+        tagline: "Technology for Better Care Outcomes",
         iconId: "heart",
-        description: "Automate patient management for UAE clinics with AI agents.",
+        description: "Streamline patient management and reporting with custom healthcare software.",
     },
     {
-        name: "F&B & Hospitality",
-        slug: "fnb-hospitality",
-        tagline: "Elevate Every Guest Experience",
-        iconId: "utensils",
-        description: "Automate reservations, guest experience, and operations.",
-    },
-    {
-        name: "Logistics & Supply Chain",
-        slug: "logistics",
-        tagline: "Move Faster. Track Everything. Waste Nothing.",
+        name: "Resources & Logistics",
+        slug: "resources-mining-logistics",
+        tagline: "Efficiency at Scale",
         iconId: "truck",
-        description: "Optimize routes, automate tracking, streamline operations.",
+        description: "Optimise mining operations and supply chain logistics with real-time data.",
+    },
+    {
+        name: "Energy & Renewables",
+        slug: "energy-renewables",
+        tagline: "Sustainable Technology Systems",
+        iconId: "zap",
+        description: "Software solutions for solar, wind, and green energy distribution.",
     },
 ];
