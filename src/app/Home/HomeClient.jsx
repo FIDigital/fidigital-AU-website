@@ -76,7 +76,7 @@ function HomeHero() {
     }}
   >
     <Image
-      src="/images/home_hero_professional.png"
+      src="/images/ai-copilot-panel.png"
       alt=""
       aria-hidden="true"
       fill
@@ -1040,18 +1040,18 @@ export default function HomeClient() {
     "@type": "Service",
     "name": "Enterprise AI & Zoho Implementation",
     "provider": {
-      "@id": "https://fidigital.ae/#organization"
+      "@id": "https://fidigital.com.au/#organization"
     },
-    "description": "Enterprise-grade Agentic AI and Zoho CRM implementation services in Dubai and the UAE. Specializing in autonomous digital workers and bilingual AI orchestration.",
+    "description": "Enterprise-grade Agentic AI and Zoho CRM implementation services in Melbourne and Australia. Specializing in autonomous digital workers and AI orchestration.",
     "areaServed": {
       "@type": "Country",
-      "name": "United Arab Emirates"
+      "name": "Australia"
     },
     "offers": {
       "@type": "Offer",
       "description": "Complimentary AI & Zoho Readiness Audit",
       "price": "0",
-      "priceCurrency": "AED"
+      "priceCurrency": "AUD"
     }
   };
 

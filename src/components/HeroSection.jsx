@@ -12,7 +12,7 @@ export default function HeroSection() {
         <section
             id="home"
             className="hero-section"
-            aria-label="Hero – FI Digital Zoho Partner UAE"
+            aria-label="Hero – FI Digital Zoho Partner AU"
             style={{
                 background: "var(--hero-bg)",
                 paddingTop: "160px",
@@ -24,13 +24,13 @@ export default function HeroSection() {
                 <div style={{ textAlign: "center", marginBottom: "4rem" }}>
                     {/* Badge */}
                     <div className="hero-badge">
-                        Premium Zoho Partner Dubai
+                        Premium Zoho Partner Australia
                     </div>
 
                     {/* Heading */}
                     <h1 className="hero-title">
                         Digital <span>Synergy</span> <br />
-                        for Modern UAE Business
+                        for Modern Australian Business
                     </h1>
 
                     {/* Description */}

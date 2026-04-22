@@ -7,19 +7,19 @@ import Footer from "@/components/Footer";
 import FloatingContactButton from "@/components/FloatingContactButton";
 
 export const metadata = {
-  metadataBase: new URL("https://fidigital.ae"),
+  metadataBase: new URL("https://fidigital.com.au"),
   title: {
-    default: "FI Digital UAE | AI Agent Architects & Zoho Experts",
-    template: "%s | FI Digital UAE",
+    default: "FI Digital AU | AI Agent Architects & Zoho Experts",
+    template: "%s | FI Digital AU",
   },
   description:
-    "Leading Australian Zoho partner in Dubai. We architect intelligent AI agents and automated enterprise workflows for UAE businesses.",
+    "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows for Australian businesses.",
   keywords: [
-    "AI agents UAE",
+    "AI agents Australia",
     "WhatsApp business automation",
-    "Zoho Partner Dubai",
-    "Digital Transformation UAE",
-    "Enterprise AI Dubai",
+    "Zoho Partner Melbourne",
+    "Digital Transformation Australia",
+    "Enterprise AI Melbourne",
   ],
   authors: [{ name: "FI Digital" }],
   creator: "FI Digital",
@@ -31,24 +31,24 @@ export const metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_AE",
-    url: "https://fidigital.ae",
-    siteName: "FI Digital UAE",
-    title: "FI Digital UAE | AI Agent Architects & Zoho Experts",
-    description: "Leading Australian Zoho partner in Dubai. We architect intelligent AI agents and automated enterprise workflows.",
+    locale: "en_AU",
+    url: "https://fidigital.com.au",
+    siteName: "FI Digital AU",
+    title: "FI Digital AU | AI Agent Architects & Zoho Experts",
+    description: "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "FI Digital UAE – AI Agent Architects",
+        alt: "FI Digital AU – AI Agent Architects",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FI Digital UAE | AI Agent Architects",
-    description: "Leading Australian Zoho partner in Dubai. AI agent architects and Zoho experts.",
+    title: "FI Digital AU | AI Agent Architects",
+    description: "Leading Australian Zoho partner in Melbourne. AI agent architects and Zoho experts.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -68,7 +68,7 @@ export const metadata = {
     apple: "/favicon.png",
   },
   alternates: {
-    canonical: "https://fidigital.ae",
+    canonical: "https://fidigital.com.au",
     types: {
       "text/plain": [
         {
@@ -110,6 +110,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script src="https://cdn.pagesense.io/js/fristineinfotechpvtltd/f614a38d77ca403aba041c58108102e5.js" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

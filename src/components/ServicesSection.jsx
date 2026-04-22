@@ -24,7 +24,7 @@ const services = [
     {
         icon: "💰",
         title: "Zoho Books",
-        desc: "Cloud accounting software that simplifies bookkeeping, invoicing, and tax compliance for UAE businesses.",
+        desc: "Cloud accounting software that simplifies bookkeeping, invoicing, and tax compliance for Australian businesses.",
     },
     {
         icon: "🤖",
@@ -45,8 +45,8 @@ export default function ServicesSection() {
                             Everything You Need to Run Your Business on Zoho
                         </h2>
                         <p className="section-desc">
-                            As a certified Zoho Premium Partner in Dubai, we implement, customize, and support the full
-                            suite of Zoho applications tailored for the UAE market.
+                            As a certified Zoho Premium Partner in Melbourne, we implement, customize, and support the full
+                            suite of Zoho applications tailored for the Australian market.
                         </p>
                         <Link href="/solutions" className="btn-primary" style={{ marginTop: "2rem", display: "inline-flex" }}>
                             View All Solutions

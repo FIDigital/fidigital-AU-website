@@ -57,12 +57,12 @@ export default function IndustriesClient() {
         "@type": "Service",
         "serviceType": "Industry AI Consultatiion",
         "provider": {
-            "@id": "https://fidigital.ae/#organization"
+            "@id": "https://fidigital.com.au/#organization"
         },
-        "description": "Bespoke AI and Zoho solutions for Real Estate, Retail, Finance, Healthcare, and Logistics industries in the UAE.",
+        "description": "Bespoke AI and Zoho solutions for Real Estate, Retail, Finance, Healthcare, and Logistics industries in Australia.",
         "areaServed": {
             "@type": "Country",
-            "name": "United Arab Emirates"
+            "name": "Australia"
         }
     };
 
@@ -72,7 +72,7 @@ export default function IndustriesClient() {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Which UAE industries benefit most from AI agents?",
+                "name": "Which Australian industries benefit most from AI agents?",
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Real Estate, Retail, and Logistics see the highest impact through automated lead qualification, WhatsApp commerce, and custom clearance workflows."
@@ -83,7 +83,7 @@ export default function IndustriesClient() {
                 "name": "Does FI Digital handle industry-specific regulations?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, our AI and Zoho architectures are built with Day 1 compliance for UAE VAT, labor laws, and industry-specific data sovereignty requirements."
+                    "text": "Yes, our AI and Zoho architectures are built with Day 1 compliance for Australian GST, labor laws, and industry-specific data sovereignty requirements."
                 }
             }
         ]
@@ -140,7 +140,7 @@ export default function IndustriesClient() {
                 textAlign: "center"
             }}>
                 <div className="container" style={{ maxWidth: "1000px" }}>
-                    <div className="section-label reveal-industries">Which Industries Can Benefit from Agentic AI in the UAE?</div>
+                    <div className="section-label reveal-industries">Which Industries Can Benefit from Agentic AI in Australia?</div>
                     <h1 className="reveal-industries" style={{
                         fontSize: "clamp(2.5rem, 6vw, 4rem)",
                         fontWeight: 900,
@@ -158,7 +158,7 @@ export default function IndustriesClient() {
                         margin: "0 auto 1.5rem",
                         lineHeight: 1.6
                     }}>
-                        FI Digital builds industry-specific AI solutions for UAE enterprises, from Real Estate lead qualification to Logistics customs automation. By integrating Zoho with advanced reasoning models, we enable 94% workflow automation and Day 1 regulatory compliance for Dubai&apos;s high-growth sectors.
+                        FI Digital builds industry-specific AI solutions for Australian enterprises, from Real Estate lead qualification to Logistics customs automation. By integrating Zoho with advanced reasoning models, we enable 94% workflow automation and Day 1 regulatory compliance for Melbourne&apos;s high-growth sectors.
                     </p>
                     <p className="reveal-industries" style={{
                         fontSize: "clamp(1.1rem, 1.5vw, 1.25rem)",
@@ -168,7 +168,7 @@ export default function IndustriesClient() {
                         margin: "0 auto 3rem"
                     }}>
                         Every industry has unique workflows, regulations, and customer expectations. We build AI solutions that 
-                        understand how your specific industry works in the UAE.
+                        understand how your specific industry works in Australia.
                     </p>
                 </div>
             </section>
