@@ -1,16 +1,16 @@
 export const metadata = {
-    title: 'AI Solutions Built for Your Industry Dubai | FI Digital',
-    description: 'Every industry has unique workflows and regulations. We build AI solutions that understand how your specific industry works in the UAE.',
-    keywords: 'AI industry solutions Dubai, industry-specific AI UAE, custom AI for business, UAE AI integration',
+    title: 'AI Solutions Built for Your Industry Melbourne | FI Digital',
+    description: 'Every industry has unique workflows and regulations. We build AI solutions that understand how your specific industry works in Australia.',
+    keywords: 'AI industry solutions Melbourne, industry-specific AI Australia, custom AI for business, Australian AI integration',
     openGraph: {
-        title: 'AI Solutions Built for Your Industry Dubai | FI Digital',
-        description: 'Every industry has unique workflows and regulations. We build AI solutions that understand how your specific industry works in the UAE.',
-        url: 'https://fidigital.ae/industries',
-        siteName: 'FI Digital UAE',
-        locale: 'en_AE',
+        title: 'AI Solutions Built for Your Industry Melbourne | FI Digital',
+        description: 'Every industry has unique workflows and regulations. We build AI solutions that understand how your specific industry works in Australia.',
+        url: 'https://fidigital.com.au/industries',
+        siteName: 'FI Digital AU',
+        locale: 'en_AU',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://fidigital.ae/industries',
+        canonical: 'https://fidigital.com.au/industries',
     }
 };

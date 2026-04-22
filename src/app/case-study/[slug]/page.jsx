@@ -1,4 +1,4 @@
-import { caseStudies } from "../../case-studies/CaseStudiesClient";
+import { caseStudies } from "@/lib/caseStudiesData";
 import CaseStudyContent from "./CaseStudyContent";
 import { notFound } from "next/navigation";
 
