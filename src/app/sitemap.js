@@ -1,5 +1,5 @@
 export default async function sitemap() {
-    const baseUrl = "https://fidigital.ae"; // Standardized to primary domain
+    const baseUrl = "https://fidigital.com.au"; // Standardized to primary domain
     const lastModified = new Date();
 
     return [

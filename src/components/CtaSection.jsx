@@ -59,7 +59,7 @@ export default function CtaSection() {
                 </h2>
                 <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.75)", lineHeight: 1.7, marginBottom: "2.5rem" }}>
                     Talk to our Zoho experts and discover how FI Digital can streamline
-                    your business operations and accelerate your growth in the UAE market.
+                    your business operations and accelerate your growth in the Australian market.
                 </p>
                 <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
                     <Link
@@ -83,7 +83,7 @@ export default function CtaSection() {
                         Book a Free Consultation
                     </Link>
                     <a
-                        href="tel:+971-XX-XXXXXXX"
+                        href="tel:+61-XX-XXXXXXX"
                         style={{
                             display: "inline-flex",
                             alignItems: "center",
