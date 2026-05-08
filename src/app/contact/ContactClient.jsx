@@ -17,6 +17,60 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+const ZohoIframe = () => {
+  const [height, setHeight] = useState("850px");
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data && event.data.type === 'iframeHeight') {
+        setHeight(`${event.data.height}px`);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    
+    const syncTheme = () => {
+      if (iframeRef.current && iframeRef.current.contentWindow) {
+        try {
+          const isDark = document.documentElement.classList.contains('dark') || 
+                         document.documentElement.getAttribute('data-theme') === 'dark' ||
+                         window.matchMedia('(prefers-color-scheme: dark)').matches;
+          iframeRef.current.contentWindow.postMessage({ type: 'theme', isDark }, '*');
+        } catch(e) {}
+      }
+    };
+
+    const timer = setTimeout(syncTheme, 1500);
+    
+    return () => {
+      window.removeEventListener('message', handleMessage);
+      clearTimeout(timer);
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '100%', minHeight: height, transition: 'min-height 0.3s ease' }}>
+      <iframe
+        ref={iframeRef}
+        id="zoho-form-iframe"
+        src="/zoho-form"
+        title="Contact Us Form"
+        scrolling="no"
+        style={{ width: '100%', height: height, border: 'none', display: 'block' }}
+        onLoad={(e) => {
+          try {
+            const isDark = document.documentElement.classList.contains('dark') || 
+                           document.documentElement.getAttribute('data-theme') === 'dark' ||
+                           window.matchMedia('(prefers-color-scheme: dark)').matches;
+            e.target.contentWindow.postMessage({ type: 'theme', isDark }, '*');
+          } catch(err) {}
+        }}
+      />
+    </div>
+  );
+};
+
 /* ─── Data ──────────────────────────────────────────────────────────────────── */
 
 const offices = [
@@ -89,15 +143,7 @@ export default function ContactClient() {
       );
     });
 
-    // Staggered cards
-    gsap.from(".trust-card", {
-      scale: 0.9,
-      autoAlpha: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: "power2.out",
-      scrollTrigger: { trigger: ".trust-grid", start: "top 85%", once: true }
-    });
+    /* Trust cards are handled by the generic .reveal animation above */
 
     // Floating animation for decorative elements
     gsap.to(".float-slow", {
@@ -211,16 +257,32 @@ export default function ContactClient() {
         /* Trust Grid */
         .trust-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.5rem;
+          width: 100%;
+        }
+
+        @media (max-width: 1100px) {
+          .trust-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
+          .trust-grid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .trust-card {
           background: var(--card-bg);
-          padding: 2.5rem;
+          padding: 2rem;
           border-radius: 24px;
           border: 1px solid var(--border);
           transition: all 0.3s ease;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
 
         .trust-card:hover {
@@ -451,17 +513,7 @@ export default function ContactClient() {
             </div>
 
             <div className="reveal premium-card" style={{ maxWidth: '1100px', margin: '0 auto' }}>
-               <div className="zoho-iframe-container">
-                 <style dangerouslySetInnerHTML={{__html: `
-                   .zoho-iframe-container { width: 100%; min-height: 750px; overflow: hidden; }
-                   .zoho-iframe-container iframe { width: 100%; height: 750px; border: none; }
-                   @media (max-width: 650px) {
-                     .zoho-iframe-container { min-height: 1100px; }
-                     .zoho-iframe-container iframe { height: 1100px; }
-                   }
-                 `}} />
-                 <iframe src="/zoho-form.html" title="Contact Us Form" scrolling="no"></iframe>
-               </div>
+               <ZohoIframe />
             </div>
           </div>
         </section>
