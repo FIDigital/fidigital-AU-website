@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import { ArrowRight, Database, CloudSnow, Network, FileDown, AlertCircle, LineChart, ShieldCheck, ChevronDown } from 'lucide-react';
 
@@ -31,7 +32,7 @@ export default function DataPlatformsClient() {
           <Image 
             src="/finance-lakehouse.png" 
             alt="Data Platforms Background" 
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{ 
               objectFit: "cover", 
               maskImage: "radial-gradient(circle at right, black, transparent 80%)", 
@@ -43,7 +44,7 @@ export default function DataPlatformsClient() {
         <div className="container" style={{ position: "relative", zIndex: 1, maxWidth: "1200px" }}>
           <div className="hero-badge section-label" style={{ display: 'inline-block', marginBottom: '1.5rem' }}>Data Platforms & Intelligence</div>
           <h1 className="hero-h1 section-title" style={{ maxWidth: 900, marginBottom: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1 }}>
-            Build the Data Foundation <br /> Everything Else Depends On
+            Modern Data Platforms for Australian Enterprise — <br /> Databricks, Snowflake, Fabric
           </h1>
           
           <p className="hero-p section-desc" style={{ maxWidth: 700, color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '2.5rem' }}>
@@ -52,7 +53,7 @@ export default function DataPlatformsClient() {
 
           <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
             <Link href="/book-discovery" className="btn-primary hover-lift">
-              Start a Discovery Sprint <ArrowRight size={20} />
+              Book a Data Platform Architecture Review <ArrowRight size={20} />
             </Link>
             <Link href="/case-studies" className="btn-secondary hover-lift">
               Explore Case Studies
@@ -61,6 +62,7 @@ export default function DataPlatformsClient() {
         </div>
       </section>
       
+      <TrustedBy />
       <WhyDataPlatformsMatterSection />
       <DataWhatWeBuildSection />
       <DataPlatformExpertiseSection />
@@ -385,7 +387,7 @@ function DataPlatformExpertiseSection() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '1.5rem', background: 'var(--bg)', padding: '1.25rem', borderRadius: '16px', border: '1px solid var(--border)' }}>
                 <div style={{ position: 'relative', width: '48px', height: '48px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   <Image src={plat.logo} alt={`${plat.name} Logo`} fill style={{ objectFit: 'contain' }} />
+                   <Image src={plat.logo} alt={`${plat.name} Logo`} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: 'contain' }} />
                 </div>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 900, color: 'var(--text)', margin: 0, letterSpacing: '-0.5px' }}>{plat.name}</h3>
               </div>

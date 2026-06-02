@@ -1,5 +1,7 @@
 import SilkLogisticsCaseStudy from "./SilkLogisticsCaseStudy";
 
+import { JsonLd, buildBreadcrumb } from "@/lib/jsonLd";
+
 export const metadata = {
   title: "Silk Logistics Zoho One Digital Transformation | Case Study | FI Digital",
   description:
@@ -7,5 +9,10 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <SilkLogisticsCaseStudy />;
+  return (
+    <>
+      <JsonLd data={buildBreadcrumb([{ name: "Home", path: "/" }, { name: "Case Studies", path: "/case-studies" }, { name: "Silk Logistics Zoho One Case Study", path: "/case-study/silk-logistics-zoho-one-case-study" }])} />
+      <SilkLogisticsCaseStudy />
+    </>
+  );
 }

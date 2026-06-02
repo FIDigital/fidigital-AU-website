@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronRight, ChevronDown, Plus, Minus,
   Layers, Code2, Database, Globe, RefreshCw, Wrench,
@@ -178,7 +179,7 @@ export default function ProductModClient() {
             pointerEvents:"none", zIndex:0 }} />
 
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/product-modernisation-hero.png" alt="Legacy Application Modernisation" fill
+            <Image src="/images/product-modernisation-hero.png" alt="Legacy Application Modernisation" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -230,6 +231,8 @@ export default function ProductModClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.25rem 1.5rem" }}>
@@ -340,7 +343,7 @@ export default function ProductModClient() {
                         filter:"grayscale(30%)"
                       }}>
                         <div style={{ position:"relative", width:"22px", height:"22px", flexShrink:0, opacity:0.75 }}>
-                          <Image src={tech.logo} alt={tech.label} fill style={{ objectFit:"contain" }} />
+                          <Image src={tech.logo} alt={tech.label} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                         </div>
                         <span style={{ fontSize:"0.8rem", fontWeight:700, color:"#94A3B8", whiteSpace:"nowrap" }}>{tech.label}</span>
                       </div>
@@ -391,7 +394,7 @@ export default function ProductModClient() {
                         borderRadius:"10px", padding:"0.5rem 0.9rem"
                       }}>
                         <div style={{ position:"relative", width:"22px", height:"22px", flexShrink:0 }}>
-                          <Image src={tech.logo} alt={tech.label} fill style={{ objectFit:"contain" }} />
+                          <Image src={tech.logo} alt={tech.label} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                         </div>
                         <span style={{ fontSize:"0.8rem", fontWeight:700, color:PRIMARY, whiteSpace:"nowrap" }}>{tech.label}</span>
                       </div>

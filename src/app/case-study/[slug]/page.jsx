@@ -1,6 +1,7 @@
 import { caseStudies } from "@/lib/caseStudiesData";
 import CaseStudyContent from "./CaseStudyContent";
 import { notFound } from "next/navigation";
+import { JsonLd, buildBreadcrumb } from "@/lib/jsonLd";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -22,7 +23,18 @@ export default function Page({ params }) {
     notFound();
   }
 
-  return <CaseStudyContent study={study} />;
+  return (
+    <>
+      <JsonLd
+        data={buildBreadcrumb([
+          { name: "Home", path: "/" },
+          { name: "Case Studies", path: "/case-studies" },
+          { name: study.title, path: `/case-study/${slug}` },
+        ])}
+      />
+      <CaseStudyContent study={study} />
+    </>
+  );
 }
 
 export async function generateStaticParams() {

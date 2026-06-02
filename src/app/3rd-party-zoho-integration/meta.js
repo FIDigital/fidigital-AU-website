@@ -1,14 +1,6 @@
 export const metadata = {
   title: "3rd Party Zoho Integration Services | FI Digital Australia",
   description: "Seamlessly integrate Zoho with G-Suite, Xero, Shopify, and more. Our 3rd party Zoho integration specialists optimize data sync, analytics and custom workflows.",
-  keywords: [
-    "3rd Party Zoho Integration",
-    "Zoho Data Sync",
-    "Zoho Shopify Integration",
-    "Xero Zoho Integration",
-    "API integration Australia",
-    "Zoho Business Ecosystem"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/3rd-party-zoho-integration',
@@ -20,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-3rd-party-zoho-integration.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Zoho Ecosystem API Integration",
       },
     ],

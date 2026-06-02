@@ -9,6 +9,7 @@ import {
   MessageSquare, Sparkles, Zap, Users, Globe, Building
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -146,7 +147,7 @@ export default function BookDiscoveryClient() {
             <Image 
               src="/images/Contact-us.png" 
               alt="Discovery Background" 
-              fill 
+              fill sizes="(max-width: 768px) 100vw, 50vw" 
               className="object-cover"
               priority
             />
@@ -223,23 +224,25 @@ export default function BookDiscoveryClient() {
               </div>
               <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1.5rem' }}>Schedule Your Session</h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-                Select a time that works for you. Our team will prepare a brief industry overview prior to our call.
+                Reach out and we'll arrange a free 30-minute discovery call at a time that suits you.
               </p>
             </div>
 
-            <div className="reveal glass-card" style={{ maxWidth: '1000px', margin: '0 auto', minHeight: '800px' }}>
-              <style dangerouslySetInnerHTML={{__html: `
-                .zoho-iframe-container { width: 100%; min-height: 750px; overflow: hidden; }
-                .zoho-iframe-container iframe { width: 100%; height: 750px; border: none; }
-                @media (max-width: 650px) {
-                  .zoho-iframe-container { min-height: 1100px; }
-                  .zoho-iframe-container iframe { height: 1100px; }
-                }
-              `}} />
-              <div className="zoho-iframe-container">
-                {/* Using the standard lead form for now; in a real scenario this would be a booking widget */}
-                <iframe src="/zoho-form.html" title="Discovery Booking Form" scrolling="no"></iframe>
+            <div className="reveal glass-card" style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', padding: 'clamp(2rem, 5vw, 3rem)' }}>
+              <p style={{ fontSize: '1.1rem', color: 'var(--text)', lineHeight: 1.7, marginBottom: '2rem' }}>
+                To book your session, send us a message or give us a call — we'll confirm a time directly with you.
+              </p>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary)', color: '#fff', padding: '1rem 2rem', borderRadius: '10px', fontWeight: 800, textDecoration: 'none' }}>
+                  Contact Us <ArrowRight size={18} />
+                </Link>
+                <a href="tel:1300921280" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-secondary)', color: 'var(--text)', padding: '1rem 2rem', borderRadius: '10px', fontWeight: 800, textDecoration: 'none', border: '1px solid var(--border)' }}>
+                  Call 1300 921 280
+                </a>
               </div>
+              <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
+                Or email <a href="mailto:info@fidigital.com.au" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>info@fidigital.com.au</a>
+              </p>
             </div>
           </div>
         </section>

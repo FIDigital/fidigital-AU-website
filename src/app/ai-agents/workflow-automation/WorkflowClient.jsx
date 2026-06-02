@@ -11,6 +11,7 @@ import {
   Zap, GitBranch, Clock, CheckCircle2,
   Mail, FileText, Database, Bell, RefreshCw, Settings
 } from "lucide-react";
+import TrustedBy from "@/components/TrustedBy";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -78,7 +79,7 @@ const FLOW_STEPS = [
 export default function WorkflowClient() {
   const containerRef = useRef(null);
   const [openCase, setOpenCase] = useState(null);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState([0, 1, 2]);
 
   useGSAP(() => {
     gsap.from(".hero-badge", { y: -14, autoAlpha: 0, duration: 0.4, ease: "power2.out" });
@@ -137,7 +138,7 @@ export default function WorkflowClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.28, pointerEvents:"none" }}>
-            <Image src="/images/workflow-hero.png" alt="AI Workflow Automation" fill
+            <Image src="/images/workflow-hero.png" alt="AI Workflow Automation" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -150,7 +151,7 @@ export default function WorkflowClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"60px", height:"22px" }}>
-                <Image src="/images/n8n.png" alt="n8n" fill style={{ objectFit:"contain" }} />
+                <Image src="/images/n8n.png" alt="n8n" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:"#10B981", fontWeight:700, fontSize:"0.88rem" }}>
                 n8n · LangChain · Claude · GPT-4o · 400+ Integrations
@@ -178,7 +179,7 @@ export default function WorkflowClient() {
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
                 display:"inline-flex", alignItems:"center", gap:"0.5rem"
               }}>
-                Book a Workflow Discovery Session <ArrowRight size={18} />
+                Book a Workflow Automation Assessment <ArrowRight size={18} />
               </Link>
               <Link href="/ai-agents" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
@@ -191,6 +192,8 @@ export default function WorkflowClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.5rem 1.5rem" }}>
@@ -308,7 +311,7 @@ export default function WorkflowClient() {
                   { src:"/images/openai-nobg.png",      alt:"OpenAI",    w:64, h:24 },
                 ].map((l,j) => (
                   <div key={j} style={{ position:"relative", width:`${l.w}px`, height:`${l.h}px`, opacity:0.85 }}>
-                    <Image src={l.src} alt={l.alt} fill style={{ objectFit:"contain" }} />
+                    <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                 ))}
               </div>
@@ -427,7 +430,7 @@ export default function WorkflowClient() {
                   <div style={{ height:"32px", display:"flex", alignItems:"center" }}>
                     {tech.logoSrc ? (
                       <div style={{ position:"relative", width:`${tech.logoW}px`, height:`${tech.logoH}px` }}>
-                        <Image src={tech.logoSrc} alt={tech.name} fill style={{ objectFit:"contain" }} />
+                        <Image src={tech.logoSrc} alt={tech.name} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                       </div>
                     ) : (
                       <span style={{ fontSize:"1.1rem", fontWeight:900, color:tech.color }}>{tech.name}</span>
@@ -460,7 +463,7 @@ export default function WorkflowClient() {
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"0.4rem" }}>
                   <div style={{ position:"relative", width:"64px", height:"24px" }}>
-                    <Image src={l.src} alt={l.alt} fill style={{ objectFit:"contain" }} />
+                    <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                   <span style={{ fontSize:"0.65rem", color:"var(--text-muted)", fontWeight:600 }}>{l.label}</span>
                 </div>
@@ -489,14 +492,14 @@ export default function WorkflowClient() {
                   background:"var(--card-bg)", borderRadius:"16px",
                   boxShadow:"0 1px 8px rgba(0,0,0,0.05)", overflow:"hidden"
                 }}>
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  <button onClick={() => setOpenFaq(openFaq.includes(i) ? openFaq.filter((x) => x !== i) : [...openFaq, i])}
                     style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between",
                       padding:"1.4rem 2rem", background:"none", border:"none", cursor:"pointer", textAlign:"left", gap:"1rem" }}>
                     <span style={{ fontSize:"1rem", fontWeight:700, color:"var(--text)", flex:1 }}>{faq.q}</span>
                     <ChevronDown size={20} color="var(--text-muted)"
-                      style={{ minWidth:"20px", transform:openFaq===i?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
+                      style={{ minWidth:"20px", transform:openFaq.includes(i)?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
                   </button>
-                  {openFaq === i && (
+                  {openFaq.includes(i) && (
                     <div className="faq-body" style={{ padding:"0 2rem 1.75rem", borderTop:"1px solid var(--border)" }}>
                       <p style={{ fontSize:"0.96rem", color:"var(--text-muted)", lineHeight:1.8, paddingTop:"1.25rem", margin:0 }}>{faq.a}</p>
                     </div>
@@ -526,7 +529,7 @@ export default function WorkflowClient() {
                   borderRadius:"8px", fontWeight:600, textDecoration:"none",
                   display:"inline-flex", alignItems:"center", gap:"0.5rem"
                 }}>
-                  Book a Workflow Discovery Session <ArrowRight size={18} />
+                  Book a Workflow Automation Assessment <ArrowRight size={18} />
                 </Link>
                 <Link href="/ai-agents" style={{
                   background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",

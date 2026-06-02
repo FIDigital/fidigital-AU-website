@@ -1,7 +1,10 @@
 import ProductEngineeringClient from './ProductEngineeringClient';
+import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jsonLd";
 
 export const metadata = {
-  title: "Custom Software Development Australia | Product Engineering | FI Digital",
+  title: "Custom Software Development Australia | Product Engineering",
+  alternates: { canonical: "https://fidigital.com.au/product-engineering" },
+  openGraph: buildOpenGraph({ title: "Custom Software Development Australia | Product Engineering", description: "Build web apps, mobile apps, SaaS platforms, and internal tools. React, Python, FastAPI. 200+ engineers. Australian data residency. From MVP to enterprise scale.", path: "/product-engineering" }),
   description: "Build web apps, mobile apps, SaaS platforms, and internal tools. React, Python, FastAPI. 200+ engineers. Australian data residency. From MVP to enterprise scale.",
 };
 
@@ -66,6 +69,20 @@ export default function ProductEngineeringPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <JsonLd
+        data={[
+          buildBreadcrumb([
+            { name: "Home", path: "/" },
+            { name: "Product Engineering", path: "/product-engineering" },
+          ]),
+          buildService({
+            name: "Custom Software Development & Product Engineering",
+            serviceType: "Software Development",
+            path: "/product-engineering",
+            description: "Custom web apps, mobile apps, SaaS platforms, and internal tools for Australian enterprise.",
+          }),
+        ]}
       />
       <ProductEngineeringClient />
     </>

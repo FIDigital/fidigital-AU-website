@@ -12,6 +12,7 @@ import {
   CheckCircle2, FileText, Lock, BarChart2,
   GitBranch, Layers
 } from "lucide-react";
+import TrustedBy from "@/components/TrustedBy";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -87,7 +88,7 @@ const GOVERNANCE = [
 
 export default function RAGClient() {
   const containerRef = useRef(null);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState([0, 1, 2]);
 
   useGSAP(() => {
     gsap.from(".hero-badge", { y: -16, autoAlpha: 0, duration: 0.45, ease: "power2.out" });
@@ -155,7 +156,7 @@ export default function RAGClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/rag-hero.png" alt="RAG Document Intelligence" fill
+            <Image src="/images/rag-hero.png" alt="RAG Document Intelligence" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -194,7 +195,7 @@ export default function RAGClient() {
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
                 display:"inline-flex", alignItems:"center", gap:"0.5rem"
               }}>
-                Book a RAG Discovery Session <ArrowRight size={18} />
+                Start a 2-Week RAG Pilot <ArrowRight size={18} />
               </Link>
               <Link href="/ai-agents" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
@@ -207,6 +208,8 @@ export default function RAGClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════════ */}
         <section style={{ background:"var(--bg-secondary)", padding:"2.5rem 1.5rem", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)" }}>
@@ -384,7 +387,7 @@ export default function RAGClient() {
                         <div style={{ display: "flex", flexWrap: "wrap", gap: "1.25rem", alignItems: "center", justifyContent: "center" }}>
                           {s.logos.map((l,j) => (
                             <div key={j} style={{ position: "relative", width: "72px", height: "28px" }}>
-                              <Image src={l.src} alt={l.alt} fill style={{ objectFit: "contain" }} />
+                              <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                             </div>
                           ))}
                         </div>
@@ -519,7 +522,7 @@ export default function RAGClient() {
                   }}>
                     {card.logos.map((logo,j) => (
                       <div key={j} style={{ position:"relative", width:"72px", height:"26px", opacity:0.85 }}>
-                        <Image src={logo.src} alt={logo.alt} fill style={{ objectFit:"contain" }} />
+                        <Image src={logo.src} alt={logo.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                       </div>
                     ))}
                   </div>
@@ -603,7 +606,7 @@ export default function RAGClient() {
                   border:"1px solid var(--border)", overflow:"hidden"
                 }}>
                   <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    onClick={() => setOpenFaq(openFaq.includes(i) ? openFaq.filter((x) => x !== i) : [...openFaq, i])}
                     style={{
                       width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between",
                       padding:"1.4rem 2rem", background:"none", border:"none",
@@ -612,9 +615,9 @@ export default function RAGClient() {
                   >
                     <span style={{ fontSize:"1.02rem", fontWeight:700, color:"var(--text)", flex:1 }}>{faq.q}</span>
                     <ChevronDown size={20} color="var(--text-muted)"
-                      style={{ minWidth:"20px", transform:openFaq===i?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
+                      style={{ minWidth:"20px", transform:openFaq.includes(i)?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
                   </button>
-                  {openFaq === i && (
+                  {openFaq.includes(i) && (
                     <div className="faq-answer" style={{ padding:"0 2rem 1.75rem 2rem", borderTop:"1px solid var(--border)" }}>
                       <p style={{ fontSize:"0.97rem", color:"var(--text-muted)", lineHeight:1.8, paddingTop:"1.25rem" }}>{faq.a}</p>
                     </div>
@@ -644,7 +647,7 @@ export default function RAGClient() {
                   borderRadius:"8px", fontWeight:600, textDecoration:"none",
                   display:"inline-flex", alignItems:"center", gap:"0.5rem"
                 }}>
-                  Book a RAG Discovery Session <ArrowRight size={18} />
+                  Start a 2-Week RAG Pilot <ArrowRight size={18} />
                 </Link>
                 <Link href="/ai-agents" style={{
                   background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",

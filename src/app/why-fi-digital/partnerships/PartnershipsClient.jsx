@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Award, Zap, CheckCircle2, Star, ShieldCheck } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -75,7 +76,7 @@ export default function PartnershipsClient() {
             <Image 
               src="/images/partner-hero.png" 
               alt="Strategic Technology Partnerships Background" 
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
             />
           </div>
@@ -152,12 +153,12 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/zoho-logo-nobg.png" alt="Zoho Premium Partner" fill style={{ objectFit: "contain" }} />
+                    <Image src="/images/zoho-logo-nobg.png" alt="Zoho Premium Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/aws-nobg.png" alt="AWS Partner Network" fill style={{ objectFit: "contain" }} />
+                    <Image src="/images/aws-nobg.png" alt="AWS Partner Network" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>
@@ -166,12 +167,12 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/azure-nobg.png" alt="Microsoft Azure Partner" fill style={{ objectFit: "contain" }} />
+                    <Image src="/images/azure-nobg.png" alt="Microsoft Azure Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/databricks-nobg.png" alt="Databricks Partner" fill style={{ objectFit: "contain" }} />
+                    <Image src="/images/databricks-nobg.png" alt="Databricks Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>
@@ -180,7 +181,7 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card partner-full" style={{ maxWidth: "600px", margin: "0 auto", width: "100%" }}>
                   <div className="partner-img-wrapper">
-                    <Image src="/images/snowflake-nobg.png" alt="Snowflake Service Partner" fill style={{ objectFit: "contain" }} />
+                    <Image src="/images/snowflake-nobg.png" alt="Snowflake Service Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>
@@ -222,7 +223,7 @@ export default function PartnershipsClient() {
                   }}>
                     <div style={{ width: "64px", height: "64px", borderRadius: "12px", background: "var(--bg)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, position: "relative", padding: "0.5rem", border: "1px solid var(--border)" }}>
                       <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                        <Image src={cert.img} alt={cert.title} fill style={{ objectFit: "contain" }} />
+                        <Image src={cert.img} alt={cert.title} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                       </div>
                       <div style={{ position: "absolute", bottom: "-6px", right: "-6px", background: "var(--card-bg)", borderRadius: "50%", padding: "2px", display: "flex" }}>
                         <CheckCircle2 size={18} color="#10B981" />
@@ -237,6 +238,16 @@ export default function PartnershipsClient() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ══ CTA ══ */}
+        <section style={{ padding: "100px 1.5rem", textAlign: "center", background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, marginBottom: "1.5rem" }}>
+            Partner with a certified team.
+          </h2>
+          <Link href="/book-discovery" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "var(--primary)", color: "#fff", padding: "1.05rem 2.4rem", borderRadius: "100px", fontSize: "1.05rem", fontWeight: 800, textDecoration: "none" }}>
+            Book a Discovery Session →
+          </Link>
         </section>
 
       </main>

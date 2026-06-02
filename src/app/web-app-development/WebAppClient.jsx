@@ -67,7 +67,7 @@ export default function WebAppClient() {
             src="/images/web-hero.png"
             alt="Web Application Development Visualization"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -236,7 +236,7 @@ export default function WebAppClient() {
             <Image 
               src="/images/web-portal-visual.png"
               alt="Custom Web Application Dashboard"
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.8), transparent)", display: "flex", alignItems: "flex-end", padding: "4rem" }}>

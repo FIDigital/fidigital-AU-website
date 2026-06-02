@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronDown, Settings, Zap, Bot,
   Link2, BarChart3, Award, CheckCircle2, ChevronRight
@@ -17,7 +18,6 @@ if (typeof window !== "undefined") {
 
 const ZOHO_PAGES = [
   { label: "Zoho Consulting",            href: "/zoho-consultants" },
-  { label: "Zoho Implementation",        href: "/zoho-implementation-specialist" },
   { label: "CRM Implementation",         href: "/crm-implementation" },
   { label: "Desk Implementation",        href: "/desk-implementation" },
   { label: "Custom Development",         href: "/custom-development" },
@@ -104,7 +104,7 @@ export default function BusinessSystemsClient() {
             <Image
               src="/images/business-systems-hero.png"
               alt="Business Systems Modernisation"
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
                 objectFit: "cover",
                 maskImage: "radial-gradient(ellipse at right, black, transparent 75%)",
@@ -145,7 +145,7 @@ export default function BusinessSystemsClient() {
                 borderRadius: "8px", fontWeight: 600, textDecoration: "none",
                 display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
               }}>
-                Book a Systems Modernisation Assessment <ArrowRight size={18} />
+                Get a Free Zoho Health Check <ArrowRight size={18} />
               </Link>
               <Link href="/zoho-consultants" style={{
                 background: "transparent", color: "var(--text)", padding: "1rem 2rem",
@@ -158,6 +158,8 @@ export default function BusinessSystemsClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════════ */}
         <section style={{ background: "var(--bg-secondary)", padding: "3rem 1.5rem", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
@@ -321,7 +323,7 @@ export default function BusinessSystemsClient() {
                   </div>
                 </div>
                 <div style={{ flex: "1 1 260px", minHeight: "280px", borderRadius: "20px", position: "relative", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)" }}>
-                  <Image src="/images/ai-layering.png" alt="AI Layering on Business Systems" fill style={{ objectFit: "cover" }} />
+                  <Image src="/images/ai-layering.png" alt="AI Layering on Business Systems" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
 
@@ -346,7 +348,7 @@ export default function BusinessSystemsClient() {
               border: "1px solid var(--border)", marginBottom: "4rem"
             }}>
               <div style={{ flex: "0 0 80px", height: "80px", position: "relative" }}>
-                <Image src="/images/zoho-logo-nobg.png" alt="Zoho" fill style={{ objectFit: "contain", filter: "brightness(1.2)" }} />
+                <Image src="/images/zoho-logo-nobg.png" alt="Zoho" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", filter: "brightness(1.2)" }} />
               </div>
               <div style={{ flex: "1 1 400px" }}>
                 <p style={{ fontSize: "1.05rem", color: "var(--text)", lineHeight: 1.8 }}>
@@ -446,7 +448,7 @@ export default function BusinessSystemsClient() {
                   borderRadius: "8px", fontWeight: 600, textDecoration: "none",
                   display: "inline-flex", alignItems: "center", gap: "0.5rem"
                 }}>
-                  Book a Systems Modernisation Assessment <ArrowRight size={18} />
+                  Get a Free Zoho Health Check <ArrowRight size={18} />
                 </Link>
                 <Link href="/zoho-consultants" style={{
                   background: "transparent", color: "var(--text)", padding: "1rem 2.25rem",

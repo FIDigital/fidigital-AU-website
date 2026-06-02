@@ -127,7 +127,7 @@ export default function UserExperienceClient() {
             src="/images/digital-transformation.png"
             alt="User Experience Design Visualization"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -256,7 +256,7 @@ export default function UserExperienceClient() {
               <Image 
                 src="/images/strategy.png"
                 alt="UX Strategy and Management"
-                fill
+                fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             </div>

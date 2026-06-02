@@ -85,8 +85,8 @@ export default function BlogArticleClient() {
             opacity: 0.25, pointerEvents: "none"
           }}>
             <Image 
-              src="/images/home_hero_professional.png" 
-              alt="" fill className="object-cover"
+              src="/images/partner-hero.png" 
+              alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover"
               style={{
                 maskImage: "radial-gradient(circle at right, black, transparent 85%)",
                 WebkitMaskImage: "radial-gradient(circle at right, black, transparent 85%)"

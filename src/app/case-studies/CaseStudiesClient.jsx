@@ -78,9 +78,9 @@ export default function CaseStudiesClient() {
             opacity: 0.3, pointerEvents: "none",
           }}>
             <Image
-              src="/images/home_hero_professional.png"
+              src="/images/partner-hero.png"
               alt=""
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
                 objectFit: "cover",
                 maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -328,7 +328,50 @@ export default function CaseStudiesClient() {
                   </article>
                 </Link>
               ))}
+
+              {/* Coming-soon placeholder cards — back the four-pillar story until real case studies are published */}
+              {[
+                { pillar: "Data Platforms", color: "#3B82F6" },
+                { pillar: "AI Agents", color: "#8B5CF6" },
+                { pillar: "Product Engineering", color: "#10B981" },
+              ].map((c) => (
+                <article
+                  key={c.pillar}
+                  className="cs-card"
+                  aria-label={`${c.pillar} case study — coming soon`}
+                  style={{
+                    background: "linear-gradient(160deg, #0f172a 0%, #1e293b 100%)",
+                    border: "1px dashed rgba(255,255,255,0.14)",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    width: "100%",
+                    display: "flex", flexDirection: "column",
+                    opacity: 0.7,
+                  }}
+                >
+                  <div style={{ height: "3px", background: `linear-gradient(90deg, ${c.color} 0%, ${c.color}44 100%)` }} />
+                  <div style={{ padding: "2rem 2rem 1.5rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ color: "rgba(255,255,255,0.45)", fontWeight: 800, fontSize: "0.7rem", textTransform: "uppercase", letterSpacing: "2px" }}>
+                      {c.pillar}
+                    </span>
+                    <span style={{ background: `${c.color}22`, border: `1px solid ${c.color}44`, color: c.color, padding: "0.35rem 0.9rem", borderRadius: "50px", fontWeight: 700, fontSize: "0.65rem", textTransform: "uppercase", letterSpacing: "1px", whiteSpace: "nowrap" }}>
+                      Coming soon
+                    </span>
+                  </div>
+                  <div style={{ padding: "0 2rem 2rem", flex: 1, display: "flex", flexDirection: "column" }}>
+                    <div style={{ height: "1px", background: "rgba(255,255,255,0.07)", marginBottom: "1.5rem" }} />
+                    <h3 style={{ fontSize: "1.15rem", fontWeight: 700, color: "rgba(255,255,255,0.7)", lineHeight: 1.55, flex: 1, letterSpacing: "-0.01em" }}>
+                      {c.pillar} case study — coming soon
+                    </h3>
+                  </div>
+                </article>
+              ))}
             </div>
+
+            {/* [PLACEHOLDER: Replace with real case studies later.] */}
+            <p style={{ textAlign: "center", marginTop: "2.5rem", fontSize: "0.85rem", color: "var(--text-muted)", fontStyle: "italic" }}>
+              [PLACEHOLDER: Replace with real case studies later.]
+            </p>
           </div>
         </section>
 

@@ -67,7 +67,7 @@ export default function BuildClient() {
             src="/images/it-software.png"
             alt="Advanced Software Engineering Visualization"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -116,7 +116,7 @@ export default function BuildClient() {
               <Image 
                 src="/images/digital-transformation.png"
                 alt="Modern Coding Standards"
-                fill
+                fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             </div>

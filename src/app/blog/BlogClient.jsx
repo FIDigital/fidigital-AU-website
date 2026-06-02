@@ -332,7 +332,7 @@ export default function BlogClient() {
             <Image
               src="/images/Blog.png"
               alt=""
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
                 objectFit: "cover",
                 maskImage: "radial-gradient(circle at right, black, transparent 80%)",

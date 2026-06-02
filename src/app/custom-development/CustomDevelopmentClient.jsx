@@ -64,10 +64,10 @@ export default function CustomDevelopmentClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/home_hero_professional.png"
+            src="/images/partner-hero.png"
             alt="Zoho Custom Development Software Engineering"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
