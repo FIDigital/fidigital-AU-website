@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronRight, ChevronDown, CheckCircle2,
   BarChart2, PieChart, TableProperties, TrendingUp,
@@ -192,7 +193,7 @@ export default function BIClient() {
 
           {/* Hero image — same pattern as AI agents */}
           <div style={{ position:"absolute", top:0, right:0, width:"58%", height:"100%", zIndex:0, opacity:0.4, pointerEvents:"none" }}>
-            <Image src="/images/bi-hero.png" alt="Business Intelligence Dashboards" fill
+            <Image src="/images/bi-hero.png" alt="Business Intelligence Dashboards" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -244,6 +245,8 @@ export default function BIClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ══════════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.25rem 1.5rem" }}>
@@ -356,7 +359,7 @@ export default function BIClient() {
                       boxShadow: `0 20px 50px rgba(0,0,0,0.3), 0 0 0 1px var(--border)`,
                       border: `1px solid ${cap.color}20`
                     }}>
-                      <Image src={cap.image} alt={cap.title} fill style={{ objectFit: "cover" }} />
+                      <Image src={cap.image} alt={cap.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                     </div>
                   </div>
 
@@ -524,7 +527,7 @@ export default function BIClient() {
                     background:`${pl.color}08`, border:`1px solid ${pl.color}18`
                   }}>
                     <div style={{ position:"relative", width:"32px", height:"32px" }}>
-                      <Image src={pl.logo} alt={pl.name} fill style={{ objectFit:"contain" }} />
+                      <Image src={pl.logo} alt={pl.name} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                     </div>
                     <span style={{ fontSize:"0.65rem", fontWeight:700, color:"var(--text)", textAlign:"center", lineHeight:1.3 }}>{pl.name}</span>
                   </div>

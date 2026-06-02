@@ -67,7 +67,7 @@ export default function SolarEnergyClient() {
             src="/images/solar-energy.png"
             alt="Solar Energy Management Dashboards"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",

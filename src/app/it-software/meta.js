@@ -1,13 +1,6 @@
 export const metadata = {
   title: "Zoho IT & Software Management Solutions | FI Digital Australia",
   description: "Improve SLAs, customer support, and automate sales pipelines in your software company natively with expert Zoho CRM integration.",
-  keywords: [
-    "Zoho IT Solutions",
-    "Software Company CRM Australia",
-    "IT Support Ticket Automation",
-    "SLA Management software",
-    "Zoho Sales Forecasting"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/it-software',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-itsoftware.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - IT Software Ecosystem Tracking",
       },
     ],

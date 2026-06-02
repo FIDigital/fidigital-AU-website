@@ -1,13 +1,6 @@
 export const metadata = {
   title: "Zoho Manufacturing Solutions | FI Digital Australia",
   description: "Simplify your manufacturing and inventory management with FI Digital’s custom Zoho Solutions for manufacturing operations.",
-  keywords: [
-    "Zoho Manufacturing Australia",
-    "Zoho Inventory Management",
-    "Manufacturing CRM Software",
-    "Zoho Production Tracking",
-    "Manufacturing Software Integration"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/manufacturing',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-manufacturing.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Manufacturing Zoho Systems",
       },
     ],

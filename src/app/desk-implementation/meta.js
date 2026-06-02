@@ -1,14 +1,6 @@
 export const metadata = {
   title: "Zoho Desk Implementation Service | FI Digital Australia",
   description: "Offer 100% customer satisfaction and retention with expert Zoho Desk implementation. Empower support managers, agents, and customers effectively.",
-  keywords: [
-    "Zoho Desk Implementation",
-    "Customer Support Platforms",
-    "Zoho Consultants Australia",
-    "Zoho Service Desk Support",
-    "Business Helpdesk Setup",
-    "Zoho Integration Services"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/desk-implementation',
@@ -20,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-desk-implementation.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Customer Success with Zoho Desk",
       },
     ],

@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -173,6 +174,8 @@ export default function IndustriesClient() {
                 </div>
             </section>
 
+            <TrustedBy />
+
             {/* INDUSTRY GRID */}
             <section style={{ padding: "0 1.5rem 100px" }}>
                 <div className="container" style={{ maxWidth: "1250px" }}>
@@ -203,7 +206,7 @@ export default function IndustriesClient() {
                                     <Image 
                                         src={industry.image} 
                                         alt={industry.name}
-                                        fill
+                                        fill sizes="(max-width: 768px) 100vw, 50vw"
                                         style={{
                                             objectFit: "cover",
                                             transition: "transform 0.6s ease"

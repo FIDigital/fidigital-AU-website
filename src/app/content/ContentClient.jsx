@@ -67,7 +67,7 @@ export default function ContentClient() {
             src="/images/it-software.png"
             alt="Content Strategy and Writing"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -131,7 +131,7 @@ export default function ContentClient() {
               <Image 
                 src="/images/strategy.png"
                 alt="Digital Storytelling"
-                fill
+                fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             </div>
@@ -202,7 +202,7 @@ export default function ContentClient() {
                 <Image 
                   src="/images/digital-transformation.png"
                   alt="Copywriting and Training"
-                  fill
+                  fill sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
                 />
              </div>

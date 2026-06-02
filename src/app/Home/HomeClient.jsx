@@ -77,9 +77,10 @@ function HomeHero() {
   >
     <Image
       src="/images/ai-copilot-panel.png"
-      alt=""
-      aria-hidden="true"
+      alt="FI Digital AI copilot dashboard for Australian enterprise"
       fill
+      priority
+      sizes="(max-width: 768px) 100vw, 60vw"
       style={{
         objectFit: "cover",
         maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -342,18 +343,18 @@ function FourPillarsSection() {
 
 function TechStackSection() {
   const logos = [
-    { name: "React", src: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
-    { name: "Python", src: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" },
-    { name: "Databricks", src: "https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.png" },
-    { name: "Snowflake", src: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" },
-    { name: "Microsoft Fabric", src: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
+    { name: "React", src: "/images/react-nobg.png" },
+    { name: "Python", src: "/images/python-nobg.png" },
+    { name: "Databricks", src: "/images/databricks-nobg.png" },
+    { name: "Snowflake", src: "/images/snowflake-nobg.png" },
+    { name: "Microsoft Fabric", src: "/images/Microsoft-Fabric.png" },
     { name: "Claude (Anthropic)", src: "/images/claude.png" },
-    { name: "GPT-4o (OpenAI)", src: "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg" },
-    { name: "LangChain", src: "https://avatars.githubusercontent.com/u/126733545" },
+    { name: "GPT-4o (OpenAI)", src: "/images/openai-nobg.png" },
+    { name: "LangChain", src: "/images/langchain-nobg.png" },
     { name: "n8n", src: "/images/n8n.png" },
     { name: "Zoho", src: "/images/zoho-logo-nobg.png" },
-    { name: "AWS", src: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
-    { name: "Microsoft Azure", src: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" }
+    { name: "AWS", src: "/images/aws-nobg.png" },
+    { name: "Microsoft Azure", src: "/images/azure-nobg.png" }
   ];
 
   const marqueeItems = [...logos, ...logos, ...logos];
@@ -463,7 +464,7 @@ function IndustrySection() {
     {
       title: "Financial Services & Wealth Management",
       image: "/finance-hero.png",
-      link: "/industries/financial-services-wealth",
+      link: "/financial-services-wealth",
       bullets: [
         "Fraud detection pipelines on Databricks",
         "AI agents for KYC and AML compliance",
@@ -557,7 +558,9 @@ function IndustrySection() {
                   borderRadius: '12px',
                   transition: 'all 0.3s ease'
                 }} className="btn-glass">
-                  Learn More <ArrowRight size={18} />
+                  Learn More
+                  <span style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>about {ind.title}</span>
+                  <ArrowRight size={18} />
                 </Link>
               </div>
             </div>

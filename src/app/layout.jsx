@@ -5,6 +5,7 @@ import ZohoSalesIQ from "@/components/ZohoSalesIQ";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FloatingContactButton from "@/components/FloatingContactButton";
+import MobileCtaBar from "@/components/MobileCtaBar";
 
 export const metadata = {
   metadataBase: new URL("https://fidigital.com.au"),
@@ -14,13 +15,6 @@ export const metadata = {
   },
   description:
     "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows for Australian businesses.",
-  keywords: [
-    "AI agents Australia",
-    "WhatsApp business automation",
-    "Zoho Partner Melbourne",
-    "Digital Transformation Australia",
-    "Enterprise AI Melbourne",
-  ],
   authors: [{ name: "FI Digital" }],
   creator: "FI Digital",
   publisher: "FI Digital",
@@ -38,9 +32,9 @@ export const metadata = {
     description: "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows.",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital AU – AI Agent Architects",
       },
     ],
@@ -49,7 +43,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "FI Digital AU | AI Agent Architects",
     description: "Leading Australian Zoho partner in Melbourne. AI agent architects and Zoho experts.",
-    images: ["/og-image.jpg"],
+    images: ["/four-pillars.png"],
   },
   robots: {
     index: true,
@@ -68,7 +62,6 @@ export const metadata = {
     apple: "/favicon.png",
   },
   alternates: {
-    canonical: "https://fidigital.com.au",
     types: {
       "text/plain": [
         {
@@ -86,6 +79,7 @@ export default function RootLayout({
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://fidigital.com.au/#organization",
     "name": "FI Digital Australia",
     "legalName": "Digital Synergy Ventures Pty Ltd",
     "url": "https://fidigital.com.au",
@@ -93,14 +87,60 @@ export default function RootLayout({
     "description": "Software engineering, data platforms, AI automation, and business systems modernisation for Australian enterprises",
     "foundingDate": "2016",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 200 },
-    "address": { 
-      "@type": "PostalAddress", 
-      "addressLocality": "Melbourne", 
-      "addressRegion": "VIC", 
-      "addressCountry": "AU" 
-    },
+    "telephone": "+61 1300 921 280",
+    "email": "info@fidigital.com.au",
+    "sameAs": [
+      "https://www.linkedin.com/company/fi-digital-australia",
+      "https://www.facebook.com/FiDigitalSevices"
+    ],
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Level 9, 440 Collins Street",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "postalCode": "3000",
+        "addressCountry": "AU"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "3 Tanunda Street",
+        "addressLocality": "Vermont South",
+        "addressRegion": "VIC",
+        "postalCode": "3133",
+        "addressCountry": "AU"
+      }
+    ],
     "areaServed": ["AU", "NZ", "GB", "AE", "IN"],
     "knowsAbout": ["Product Engineering", "Data Engineering", "AI Agents", "Zoho", "Databricks", "Snowflake"]
+  };
+
+  const localBusinessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://fidigital.com.au/#localbusiness",
+    "name": "FI Digital Australia",
+    "image": "https://fidigital.com.au/images/logo.png",
+    "url": "https://fidigital.com.au",
+    "telephone": "+61 1300 921 280",
+    "email": "info@fidigital.com.au",
+    "priceRange": "$$$",
+    "parentOrganization": { "@id": "https://fidigital.com.au/#organization" },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Level 9, 440 Collins Street",
+      "addressLocality": "Melbourne",
+      "addressRegion": "VIC",
+      "postalCode": "3000",
+      "addressCountry": "AU"
+    },
+    "areaServed": { "@type": "Country", "name": "Australia" },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:30"
+    }
   };
 
   return (
@@ -109,6 +149,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <script src="https://cdn.pagesense.io/js/fristineinfotechpvtltd/f614a38d77ca403aba041c58108102e5.js" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -136,6 +180,7 @@ export default function RootLayout({
         </ThemeProvider>
         <ZohoSalesIQ />
         <FloatingContactButton />
+        <MobileCtaBar />
       </body>
     </html>
   );

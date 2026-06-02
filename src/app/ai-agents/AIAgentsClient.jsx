@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronDown, ChevronRight,
   Bot, ShieldCheck, FileSearch, Workflow,
@@ -59,7 +60,7 @@ const SUB_PAGES = [
 
 export default function AIAgentsClient() {
   const containerRef = useRef(null);
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState([0, 1, 2]);
 
   useGSAP(() => {
     gsap.from(".hero-badge", { y: -16, autoAlpha: 0, duration: 0.45, ease: "power2.out" });
@@ -111,7 +112,7 @@ export default function AIAgentsClient() {
             <Image
               src="/images/ai-agents-hero.png"
               alt="AI Agents and Automation"
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
                 objectFit: "cover",
                 maskImage: "radial-gradient(ellipse at right, black, transparent 72%)",
@@ -135,7 +136,7 @@ export default function AIAgentsClient() {
             }}>
               AI Agents & Automation<br />
               <span style={{ color: "var(--primary)", fontWeight: 300 }}>
-                Move Beyond Chatbots Into Workflow-Level AI
+                in Melbourne and Australia
               </span>
             </h1>
 
@@ -164,6 +165,8 @@ export default function AIAgentsClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ SECTION 1: THE AI THAT MATTERS ═══════════════════════════════ */}
         <section className="section" style={{ background: "var(--bg-secondary)" }}>
@@ -228,7 +231,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.03) 100%)" }}>
-                  <Image src="/images/ai-rag-panel.png" alt="RAG and Document Intelligence" fill style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src="/images/ai-rag-panel.png" alt="RAG and Document Intelligence" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(59,130,246,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <FileSearch size={24} color="#3B82F6" />
@@ -254,7 +257,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.03) 100%)" }}>
-                  <Image src="/images/ai-copilot-panel.png" alt="Copilots and Digital Workers" fill style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src="/images/ai-copilot-panel.png" alt="Copilots and Digital Workers" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(16,185,129,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Bot size={24} color="#10B981" />
@@ -280,7 +283,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0.03) 100%)" }}>
-                  <Image src="/images/ai-workflow-panel.png" alt="Workflow Automation" fill style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src="/images/ai-workflow-panel.png" alt="Workflow Automation" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(245,158,11,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Workflow size={24} color="#F59E0B" />
@@ -402,7 +405,7 @@ export default function AIAgentsClient() {
                   border: "1px solid var(--border)", overflow: "hidden"
                 }}>
                   <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                    onClick={() => setOpenFaq(openFaq.includes(i) ? openFaq.filter((x) => x !== i) : [...openFaq, i])}
                     style={{
                       width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between",
                       padding: "1.5rem 2rem", background: "none", border: "none",
@@ -413,10 +416,10 @@ export default function AIAgentsClient() {
                     <ChevronDown
                       size={20}
                       color="var(--text-muted)"
-                      style={{ minWidth: "20px", transform: openFaq === i ? "rotate(180deg)" : "rotate(0)", transition: "0.3s" }}
+                      style={{ minWidth: "20px", transform: openFaq.includes(i) ? "rotate(180deg)" : "rotate(0)", transition: "0.3s" }}
                     />
                   </button>
-                  {openFaq === i && (
+                  {openFaq.includes(i) && (
                     <div className="faq-answer" style={{ padding: "0 2rem 1.75rem 2rem", borderTop: "1px solid var(--border)" }}>
                       <p style={{ fontSize: "0.98rem", color: "var(--text-muted)", lineHeight: 1.8, paddingTop: "1.25rem" }}>{faq.a}</p>
                     </div>

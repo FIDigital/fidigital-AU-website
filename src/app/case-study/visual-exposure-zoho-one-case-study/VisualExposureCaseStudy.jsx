@@ -69,7 +69,7 @@ export default function VisualExposureCaseStudy() {
 
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", height: "100px", position: "relative", marginBottom: "1.5rem" }}>
-                <Image src="/images/Case-Study/Visual-expo1.png" alt="Visual Exposure" fill style={{ objectFit: "contain", padding: "12px 20px" }} />
+                <Image src="/images/Case-Study/Visual-expo1.png" alt="Visual Exposure" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "12px 20px" }} />
               </div>
               {[{ label: "Client", value: "Visual Exposure" }, { label: "Location", value: "Melbourne, Australia" }, { label: "Solution", value: "Zoho One" }, { label: "Partner", value: "FI Digital" }].map(r => (
                 <div key={r.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>

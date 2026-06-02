@@ -80,7 +80,7 @@ export default function SupportClient() {
             src="/images/it-software.png"
             alt="Support and Infrastructure Visualization"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -143,7 +143,7 @@ export default function SupportClient() {
               <Image 
                 src="/images/digital-transformation.png"
                 alt="Support Engineering Team"
-                fill
+                fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
               />
             </div>

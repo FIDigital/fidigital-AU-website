@@ -1,13 +1,6 @@
 export const metadata = {
-  title: "Zoho Implementation for Energy & Renewables | FI Digital",
+  title: "AI, Data & Software for Energy & Renewables Australia",
   description: "Simplify operations, manage massive projects, and automate your workflow with our customized Zoho consulting services exclusively for Australian Energy & Renewables.",
-  keywords: [
-    "Zoho Energy Sector Australia",
-    "Renewable Energy CRM Software",
-    "Energy Project Management Apps",
-    "Zoho Implementation Renewables",
-    "Zoho CRM Renewables Australia"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/energy-renewables',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-energy.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Energy Sector Zoho Integration",
       },
     ],

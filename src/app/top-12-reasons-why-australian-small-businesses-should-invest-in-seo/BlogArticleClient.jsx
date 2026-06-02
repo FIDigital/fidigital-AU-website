@@ -82,7 +82,7 @@ export default function BlogArticleClient() {
           }}>
             <Image 
               src="/images/seo.png" 
-              alt="" fill className="object-cover"
+              alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover"
               style={{
                 maskImage: "radial-gradient(circle at center right, black, transparent 90%)",
                 WebkitMaskImage: "radial-gradient(circle at center right, black, transparent 90%)"

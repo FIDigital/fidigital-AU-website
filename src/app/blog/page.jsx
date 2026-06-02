@@ -1,10 +1,17 @@
 import BlogClient from "./BlogClient";
 
+import { JsonLd, buildBreadcrumb } from "@/lib/jsonLd";
+
 export const metadata = {
   title: "Latest News & Updates | FI Digital Australia",
   description: "Stay updated with the latest in software engineering, data platforms, and AI innovation. We help companies succeed in the digital world through impactful storytelling and digital experience.",
 };
 
 export default function Page() {
-  return <BlogClient />;
+  return (
+    <>
+      <JsonLd data={buildBreadcrumb([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }])} />
+      <BlogClient />
+    </>
+  );
 }

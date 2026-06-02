@@ -1,13 +1,6 @@
 export const metadata = {
   title: "Zoho CRM for Mortgage Brokers | FI Digital Australia",
   description: "Centralize data, automate loan application forms, and streamline complex business processes for your Mortgage Broker firm with Zoho.",
-  keywords: [
-    "Zoho Mortgage Brokers",
-    "Mortgage CRM Australia",
-    "Loan Application Automation",
-    "Zoho CRM Integration Brokers",
-    "Financial Data Centralization"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/mortgage-brokers',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-mortgage.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Mortgage CRM Architecture",
       },
     ],

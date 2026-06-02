@@ -72,7 +72,7 @@ export default function ResponsiveLendingCaseStudy() {
 
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", height: "100px", position: "relative", marginBottom: "1.5rem", overflow: "hidden" }}>
-                <Image src="/images/Case-Study/Responsive.png" alt="Responsive Lending" fill style={{ objectFit: "contain", padding: "8px 10px", transform: "scale(1.4)", transformOrigin: "center center" }} />
+                <Image src="/images/Case-Study/Responsive.png" alt="Responsive Lending" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "8px 10px", transform: "scale(1.4)", transformOrigin: "center center" }} />
               </div>
               {[{ label: "Client", value: "Responsive Lending" }, { label: "Sector", value: "Financial Lending" }, { label: "Solution", value: "Zoho One" }, { label: "Partner", value: "FI Digital" }].map(r => (
                 <div key={r.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>

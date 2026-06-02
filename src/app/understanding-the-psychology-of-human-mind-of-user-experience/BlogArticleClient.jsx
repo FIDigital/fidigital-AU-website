@@ -97,7 +97,7 @@ export default function BlogArticleClient() {
           <Image
             src="/images/digital-transformation.png"
             alt="Psychology of UX"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at center right, black, transparent 90%)",
@@ -245,7 +245,7 @@ export default function BlogArticleClient() {
                     </div>
                   </div>
                   <div style={{ position: 'relative', height: '350px', borderRadius: '32px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-                    <Image src="/images/strategy.png" alt="UX Strategy" fill style={{ objectFit: 'cover' }} />
+                    <Image src="/images/strategy.png" alt="UX Strategy" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
               </div>
@@ -357,7 +357,7 @@ export default function BlogArticleClient() {
             <Link href="/user-experience" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--bg)', borderRadius: '24px', border: '1px solid var(--border)', overflow: 'hidden' }} className="hover-lift">
                 <div style={{ position: 'relative', height: '220px' }}>
-                  <Image src="/images/mobile-app-card.png" alt="UX Design" fill style={{ objectFit: 'cover' }} />
+                  <Image src="/images/mobile-app-card.png" alt="UX Design" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Services</div>
@@ -373,7 +373,7 @@ export default function BlogArticleClient() {
             <Link href="/seo-melbourne-expert-advice-for-blog-post-writing-fundamentals-2" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--bg)', borderRadius: '24px', border: '1px solid var(--border)', overflow: 'hidden' }} className="hover-lift">
                 <div style={{ position: 'relative', height: '220px' }}>
-                  <Image src="/images/seo.png" alt="SEO Advice" fill style={{ objectFit: 'cover' }} />
+                  <Image src="/images/seo.png" alt="SEO Advice" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>SEO Strategy</div>

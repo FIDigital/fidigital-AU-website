@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import Link from "next/link";
 import { Server, ShieldCheck, Scale, FileCode, CheckCircle2, Cloud, Database, Lock, Briefcase } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -72,7 +73,7 @@ export default function ComplianceClient() {
             <Image 
               src="/compliance-hero.png" 
               alt="Data Security Background" 
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
             />
           </div>
@@ -80,11 +81,11 @@ export default function ComplianceClient() {
           <div className="container" style={{ position: "relative", zIndex: 1 }}>
             <div className="hero-badge section-label">Australian Compliance & Data Residency</div>
             <h1 className="hero-h1 section-title" style={{ maxWidth: 900 }}>
-              Your Data Stays strictly <br />
+              Your Data Stays <br />
               <span style={{ color: "var(--primary)" }}>Inside Australia.</span>
             </h1>
             <p className="hero-p section-desc" style={{ maxWidth: 700 }}>
-              Australian enterprise requires Australian data residency. Every FI Digital service line operates on Australian-hosted infrastructure to ensure bulletproof compliance.
+              Australian enterprise requires Australian data residency. Every FI Digital service line operates on Australian-hosted infrastructure to ensure audit-ready compliance.
             </p>
           </div>
         </section>
@@ -150,7 +151,7 @@ export default function ComplianceClient() {
               </div>
             </div>
             <div className="reveal" style={{ position: "relative", height: "600px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/compliance-framework.png" alt="Regulatory Compliance Visualization" fill style={{ objectFit: "cover" }} />
+              <Image src="/compliance-framework.png" alt="Regulatory Compliance Visualization" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>
@@ -159,7 +160,7 @@ export default function ComplianceClient() {
         <section className="section" style={{ background: "var(--bg-secondary)" }}>
           <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
             <div className="reveal" style={{ position: "relative", height: "400px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)", order: 2 }}>
-              <Image src="/enterprise-trust.png" alt="Enterprise Security Contracts" fill style={{ objectFit: "cover" }} />
+              <Image src="/enterprise-trust.png" alt="Enterprise Security Contracts" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
             <div className="reveal" style={{ order: 1 }}>
               <div className="section-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
@@ -185,6 +186,16 @@ export default function ComplianceClient() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ══ CTA ══ */}
+        <section style={{ padding: "100px 1.5rem", textAlign: "center", background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, marginBottom: "1.5rem" }}>
+            Keep your data inside Australia.
+          </h2>
+          <Link href="/book-discovery" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "var(--primary)", color: "#fff", padding: "1.05rem 2.4rem", borderRadius: "100px", fontSize: "1.05rem", fontWeight: 800, textDecoration: "none" }}>
+            Book a Discovery Session →
+          </Link>
         </section>
 
       </main>
