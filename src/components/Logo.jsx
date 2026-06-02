@@ -12,7 +12,7 @@ export default function Logo({ variant = "theme", width = "160px", height = "48p
           <Image
             src="/img/logo-on-light1.png"
             alt="FI Digital Logo"
-            fill
+            fill sizes="(max-width: 768px) 40vw, 200px"
             style={{ objectFit: "contain" }}
             priority
           />
@@ -23,7 +23,7 @@ export default function Logo({ variant = "theme", width = "160px", height = "48p
           <Image
             src="/img/logo-on-dark1.png"
             alt="FI Digital Logo"
-            fill
+            fill sizes="(max-width: 768px) 40vw, 200px"
             style={{ objectFit: "contain" }}
             priority
           />

@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronRight, ChevronDown,
   Bot, Users, Shield, Clock, CheckCircle2,
@@ -120,7 +121,7 @@ const FAQS = [
 export default function CopilotClient() {
   const containerRef = useRef(null);
   const [activeTab, setActiveTab] = useState("finance");
-  const [openFaq, setOpenFaq] = useState(null);
+  const [openFaq, setOpenFaq] = useState([0, 1, 2]);
 
   const activeFunc = COPILOT_FUNCTIONS.find(f => f.id === activeTab);
 
@@ -190,7 +191,7 @@ export default function CopilotClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.3, pointerEvents:"none" }}>
-            <Image src="/images/ai-copilot-panel2.png" alt="AI Copilot Panel" fill
+            <Image src="/images/ai-copilot-panel2.png" alt="AI Copilot Panel" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -242,6 +243,8 @@ export default function CopilotClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.5rem 1.5rem" }}>
@@ -392,7 +395,7 @@ export default function CopilotClient() {
                         { src:"/images/openai-nobg.png", alt:"OpenAI" },
                       ].map((l,j) => (
                         <div key={j} style={{ position:"relative", width:"52px", height:"20px" }}>
-                          <Image src={l.src} alt={l.alt} fill style={{ objectFit:"contain" }} />
+                          <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                         </div>
                       ))}
                     </div>
@@ -504,7 +507,7 @@ export default function CopilotClient() {
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"0.4rem" }}>
                   <div style={{ position:"relative", width:"68px", height:"26px" }}>
-                    <Image src={l.src} alt={l.alt} fill style={{ objectFit:"contain" }} />
+                    <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                   <span style={{ fontSize:"0.65rem", color:"var(--text-muted)", fontWeight:600, textAlign:"center" }}>{l.label}</span>
                 </div>
@@ -528,14 +531,14 @@ export default function CopilotClient() {
                   background:"var(--card-bg)", borderRadius:"16px",
                   boxShadow:"0 1px 8px rgba(0,0,0,0.05)", overflow:"hidden"
                 }}>
-                  <button onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  <button onClick={() => setOpenFaq(openFaq.includes(i) ? openFaq.filter((x) => x !== i) : [...openFaq, i])}
                     style={{ width:"100%", display:"flex", alignItems:"center", justifyContent:"space-between",
                       padding:"1.4rem 2rem", background:"none", border:"none", cursor:"pointer", textAlign:"left", gap:"1rem" }}>
                     <span style={{ fontSize:"1rem", fontWeight:700, color:"var(--text)", flex:1 }}>{faq.q}</span>
                     <ChevronDown size={20} color="var(--text-muted)"
-                      style={{ minWidth:"20px", transform:openFaq===i?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
+                      style={{ minWidth:"20px", transform:openFaq.includes(i)?"rotate(180deg)":"rotate(0)", transition:"0.3s" }} />
                   </button>
-                  {openFaq === i && (
+                  {openFaq.includes(i) && (
                     <div className="faq-anim" style={{ padding:"0 2rem 1.75rem", borderTop:"1px solid var(--border)" }}>
                       <p style={{ fontSize:"0.96rem", color:"var(--text-muted)", lineHeight:1.8, paddingTop:"1.25rem", margin:0 }}>{faq.a}</p>
                     </div>

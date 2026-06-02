@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Users, Target, Activity, Shield, CheckCircle2 } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -65,7 +66,7 @@ export default function DeliveryClient() {
             <Image 
               src="/delivery-hero.png" 
               alt="Global Engineering Model background" 
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
             />
           </div>
@@ -103,7 +104,7 @@ export default function DeliveryClient() {
               </div>
             </div>
             <div className="reveal" style={{ order: 2, position: "relative", height: "550px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/delivery-hubs.png" alt="Global Delivery Network map" fill style={{ objectFit: "cover" }} />
+              <Image src="/delivery-hubs.png" alt="Global Delivery Network map" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>
@@ -112,7 +113,7 @@ export default function DeliveryClient() {
         <section className="section" style={{ background: "var(--bg)" }}>
           <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
             <div className="reveal" style={{ position: "relative", height: "450px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/delivery-process.png" alt="Process and Engineering Tooling" fill style={{ objectFit: "cover" }} />
+              <Image src="/delivery-process.png" alt="Process and Engineering Tooling" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
             <div className="reveal">
               <div className="section-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>
@@ -142,6 +143,16 @@ export default function DeliveryClient() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* ══ CTA ══ */}
+        <section style={{ padding: "100px 1.5rem", textAlign: "center", background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}>
+          <h2 className="section-title" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 900, marginBottom: "1.5rem" }}>
+            Enterprise-grade delivery, Australian accountability.
+          </h2>
+          <Link href="/book-discovery" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem", background: "var(--primary)", color: "#fff", padding: "1.05rem 2.4rem", borderRadius: "100px", fontSize: "1.05rem", fontWeight: 800, textDecoration: "none" }}>
+            Book a Discovery Session →
+          </Link>
         </section>
 
       </main>

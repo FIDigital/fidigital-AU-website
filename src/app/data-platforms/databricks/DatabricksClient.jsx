@@ -12,6 +12,7 @@ import {
   Layers, FlaskConical, Search, CheckCircle2,
   Clock, TrendingUp, Server, Globe
 } from "lucide-react";
+import TrustedBy from "@/components/TrustedBy";
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -117,7 +118,6 @@ export default function DatabricksClient() {
   const containerRef = useRef(null);
   const [openCap, setOpenCap]   = useState(null);
   const [openFaq, setOpenFaq]   = useState(null);
-  const [activePhase, setActivePhase] = useState(0);
 
   useGSAP(() => {
     gsap.from(".hero-badge", { y: -14, autoAlpha: 0, duration: 0.4, ease: "power2.out" });
@@ -176,7 +176,7 @@ export default function DatabricksClient() {
 
           {/* BG image — Databricks logo, same pattern as Fabric hero */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.32, pointerEvents:"none" }}>
-            <Image src="/images/databricks-nobg.png" alt="Databricks Lakehouse Platform" fill
+            <Image src="/images/databricks-nobg.png" alt="Databricks Lakehouse Platform" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"contain", objectPosition:"center right",
                 maskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)" }} />
@@ -189,7 +189,7 @@ export default function DatabricksClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"20px", height:"20px" }}>
-                <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain" }} />
+                <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:PRIMARY, fontWeight:700, fontSize:"0.88rem" }}>
                 Databricks · Azure Australia East · Medallion Architecture
@@ -217,7 +217,7 @@ export default function DatabricksClient() {
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
                 display:"inline-flex", alignItems:"center", gap:"0.5rem"
               }}>
-                Book a Databricks Assessment <ArrowRight size={18} />
+                Book a Lakehouse Architecture Review <ArrowRight size={18} />
               </Link>
               <Link href="/data-platforms" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
@@ -230,6 +230,8 @@ export default function DatabricksClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ══════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.25rem 1.5rem" }}>
@@ -309,7 +311,7 @@ export default function DatabricksClient() {
                 gap:"1rem", marginBottom:"2.5rem", flexWrap:"wrap" }}>
                 <div style={{ width:"2px", height:"24px", background:"var(--border)" }} />
                 <div style={{ position:"relative", width:"28px", height:"28px" }}>
-                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain" }} />
+                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <span style={{ fontSize:"1rem", fontWeight:800, color:"var(--text)" }}>
                   Medallion Architecture — How Your Data Flows
@@ -351,7 +353,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#B45309", textTransform:"uppercase", letterSpacing:"0.12em" }}>Bronze</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -386,7 +388,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#64748B", textTransform:"uppercase", letterSpacing:"0.12em" }}>Silver</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -421,7 +423,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#CA8A04", textTransform:"uppercase", letterSpacing:"0.12em" }}>Gold</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -477,7 +479,7 @@ export default function DatabricksClient() {
                 </span>
                 <div style={{ marginLeft:"auto", display:"flex", alignItems:"center", gap:"0.5rem" }}>
                   <div style={{ position:"relative", width:"18px", height:"18px" }}>
-                    <Image src="/images/azure-nobg.png" alt="Azure" fill style={{ objectFit:"contain" }} />
+                    <Image src="/images/azure-nobg.png" alt="Azure" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                   <span style={{ fontSize:"0.75rem", fontWeight:700, color:SECONDARY }}>Azure Australia East</span>
                 </div>
@@ -499,7 +501,7 @@ export default function DatabricksClient() {
               <div className="section-label">Capabilities</div>
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"0.75rem", marginBottom:"0.75rem" }}>
                 <div style={{ position:"relative", width:"32px", height:"32px" }}>
-                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit:"contain" }} />
+                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 className="section-title" style={{ maxWidth:"760px", margin:0 }}>
                   What We Build on Databricks
@@ -583,48 +585,34 @@ export default function DatabricksClient() {
               </p>
             </div>
 
-            {/* Phase tab selectors */}
-            <div className="phase-row reveal" style={{ display:"flex", gap:"1rem", marginBottom:"2rem", flexWrap:"wrap" }}>
+            {/* All four phases — full content always visible (no hidden tabs) */}
+            <div className="phase-row" style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(280px, 1fr))", gap:"1.5rem" }}>
               {PHASES.map((ph, i) => (
-                <button key={i} className="phase-tab"
-                  onClick={() => setActivePhase(i)}
-                  style={{
-                    flex:"1 1 160px", padding:"1rem 1.25rem", borderRadius:"14px", border:"none",
-                    textAlign:"left", background: activePhase===i ? `${ph.color}12` : "var(--card-bg)",
-                    outline: activePhase===i ? `2px solid ${ph.color}40` : "1px solid var(--border)",
-                    boxShadow: activePhase===i ? `0 4px 20px ${ph.color}20` : "none"
-                  }}>
-                  <div style={{ fontSize:"0.65rem", fontWeight:800, color:ph.color,
-                    textTransform:"uppercase", letterSpacing:"0.1em", marginBottom:"0.25rem" }}>{ph.weeks}</div>
-                  <div style={{ fontSize:"0.9rem", fontWeight:800, color:"var(--text)" }}>{ph.title}</div>
-                </button>
-              ))}
-            </div>
-
-            {/* Active phase detail */}
-            <div className="reveal" style={{
-              background:"var(--card-bg)", borderRadius:"22px",
-              padding:"2.25rem 2rem", border:`1px solid ${PHASES[activePhase].color}20`,
-              boxShadow:`0 4px 28px ${PHASES[activePhase].color}12`
-            }}>
-              <div style={{ display:"flex", alignItems:"center", gap:"1rem", marginBottom:"1.5rem" }}>
-                <span style={{ fontSize:"2.5rem", fontWeight:900, color:PHASES[activePhase].color, opacity:0.25, lineHeight:1 }}>
-                  {PHASES[activePhase].num}
-                </span>
-                <div>
-                  <div style={{ fontSize:"0.68rem", fontWeight:800, color:PHASES[activePhase].color,
-                    textTransform:"uppercase", letterSpacing:"0.1em" }}>{PHASES[activePhase].weeks}</div>
-                  <div style={{ fontSize:"1.2rem", fontWeight:800, color:"var(--text)" }}>{PHASES[activePhase].title}</div>
-                </div>
-              </div>
-              <div style={{ display:"flex", flexDirection:"column", gap:"0.75rem" }}>
-                {PHASES[activePhase].items.map((item, j) => (
-                  <div key={j} style={{ display:"flex", alignItems:"flex-start", gap:"0.65rem" }}>
-                    <CheckCircle2 size={16} color={PHASES[activePhase].color} style={{ marginTop:"2px", flexShrink:0 }} />
-                    <span style={{ fontSize:"0.95rem", color:"var(--text)", lineHeight:1.7 }}>{item}</span>
+                <div key={i} className="reveal" style={{
+                  background:"var(--card-bg)", borderRadius:"22px",
+                  padding:"2rem 1.75rem", border:`1px solid ${ph.color}20`,
+                  boxShadow:`0 4px 28px ${ph.color}12`
+                }}>
+                  <div style={{ display:"flex", alignItems:"center", gap:"1rem", marginBottom:"1.5rem" }}>
+                    <span style={{ fontSize:"2.5rem", fontWeight:900, color:ph.color, opacity:0.25, lineHeight:1 }}>
+                      {ph.num}
+                    </span>
+                    <div>
+                      <div style={{ fontSize:"0.68rem", fontWeight:800, color:ph.color,
+                        textTransform:"uppercase", letterSpacing:"0.1em" }}>{ph.weeks}</div>
+                      <div style={{ fontSize:"1.2rem", fontWeight:800, color:"var(--text)" }}>{ph.title}</div>
+                    </div>
                   </div>
-                ))}
-              </div>
+                  <div style={{ display:"flex", flexDirection:"column", gap:"0.75rem" }}>
+                    {ph.items.map((item, j) => (
+                      <div key={j} style={{ display:"flex", alignItems:"flex-start", gap:"0.65rem" }}>
+                        <CheckCircle2 size={16} color={ph.color} style={{ marginTop:"2px", flexShrink:0 }} />
+                        <span style={{ fontSize:"0.95rem", color:"var(--text)", lineHeight:1.7 }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -683,7 +671,7 @@ export default function DatabricksClient() {
                   borderRadius:"8px", fontWeight:600, textDecoration:"none",
                   display:"inline-flex", alignItems:"center", gap:"0.5rem"
                 }}>
-                  Book a Databricks Platform Assessment <ArrowRight size={18} />
+                  Book a Lakehouse Architecture Review <ArrowRight size={18} />
                 </Link>
                 <Link href="/data-platforms" style={{
                   background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",

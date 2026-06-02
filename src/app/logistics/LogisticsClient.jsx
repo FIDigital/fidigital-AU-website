@@ -67,7 +67,7 @@ export default function LogisticsClient() {
             src="/images/logistics.png"
             alt="Agile Logistics Networks"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",

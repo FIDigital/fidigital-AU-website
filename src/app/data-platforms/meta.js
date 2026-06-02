@@ -1,16 +1,6 @@
 export const metadata = {
-  title: "Data Engineering & Analytics Australia | Databricks, Snowflake, Fabric | FI Digital",
+  title: "Data Platforms Australia | Databricks, Snowflake & Microsoft Fabric",
   description: "Build governed data platforms on Databricks, Snowflake, and Microsoft Fabric. Lakehouse architecture. BI dashboards. ESG reporting. Australian data residency. 200+ engineers.",
-  keywords: [
-    "Data Platforms Australia",
-    "Databricks Implementation Partner",
-    "Snowflake Australia",
-    "Microsoft Fabric Setup",
-    "Lakehouse Architecture",
-    "Data Engineering Sydney",
-    "Data Engineering Melbourne",
-    "Enterprise AI Foundations"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/data-platforms',
@@ -22,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-data-platforms.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Modern Data Platforms & Lakehouse Architecture",
       },
     ],

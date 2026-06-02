@@ -4,8 +4,9 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import { ArrowRight, CheckCircle, Wallet, Users, Target, MessageSquare, LayoutDashboard, Settings, Clock, Activity, Briefcase, Search, Share2 } from 'lucide-react';
+import { ArrowRight, CheckCircle, Wallet, Users, Target, LayoutDashboard, Settings, Clock, Activity, Briefcase } from 'lucide-react';
 import Image from 'next/image';
+import TrustedBy from "@/components/TrustedBy";
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -66,10 +67,11 @@ export default function CrmImplementationClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/home_hero_professional.png"
+            src="/images/partner-hero.png"
             alt="CRM Implementation Dashboard"
             aria-hidden="true"
             fill
+            sizes="(max-width: 768px) 100vw, 60vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -86,22 +88,24 @@ export default function CrmImplementationClient() {
             </div>
 
             <h1 className="hero-title" style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", lineHeight: 1.1, fontWeight: 900, color: "var(--text)", letterSpacing: "-0.02em", marginBottom: "2rem", textWrap: "balance" }}>
-              Need a Robust, Powerful And <br/>
-              <span style={{ color: "var(--primary)", fontWeight: 300 }}>Affordable CRM Platform?</span>
+              Zoho CRM Implementation Services <br/>
+              <span style={{ color: "var(--primary)", fontWeight: 300 }}>in Australia</span>
             </h1>
 
             <p className="hero-subtitle" style={{ fontSize: "clamp(1.1rem, 2vw, 1.3rem)", color: "var(--text-muted)", lineHeight: 1.7, margin: "0 0 3rem 0", maxWidth: "800px", textWrap: "balance" }}>
-              FI Digital is the premier provider of Zoho CRM implementation services in Australia. We completely customize, integrate and implement your CRM <strong style={{color: "var(--text)"}}>to match your specific business requirements.</strong>
+              From kickoff to go-live in 6-8 weeks. Migration from Salesforce, HubSpot, Pipedrive, or legacy CRM systems. Australian data residency. <strong style={{color: "var(--text)"}}>Fixed-price options available.</strong>
             </p>
 
             <div className="hero-btn" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
-                Get Your CRM Audit <ArrowRight size={18} />
+              <Link href="/book-discovery" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
+                Get Your Free Zoho CRM Audit <ArrowRight size={18} />
               </Link>
             </div>
           </div>
         </div>
       </section>
+
+      <TrustedBy />
 
       {/* ══ SECTION 1: CONSULTING EXCELLENCE ══════════════ */}
       <section className="section" style={{ background: "var(--bg-secondary)", padding: "100px 1.5rem" }}>
@@ -179,31 +183,55 @@ export default function CrmImplementationClient() {
         </div>
       </section>
 
-      {/* ══ SECTION 3: CONSULTATION PROCESS ══════════════ */}
+      {/* ══ SECTION 3: IMPLEMENTATION TIMELINE ══════════════ */}
       <section className="section" style={{ background: "var(--bg-secondary)", padding: "100px 1.5rem", borderTop: "1px solid var(--border)" }}>
         <div className="container" style={{ maxWidth: "1000px" }}>
-          
+
           <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
             <div className="section-label" style={{ marginBottom: "1rem" }}>Execution</div>
-            <h2 className="section-title" style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: "1.5rem" }}>Our Consultation Process</h2>
+            <h2 className="section-title" style={{ fontSize: "2.5rem", fontWeight: 900, marginBottom: "1.5rem" }}>Implementation timeline</h2>
           </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
             {[
-              { title: "Research & Assessment", desc: "Our Zoho CRM consultants conduct extensive research and work with your team to suggest appropriate integration. We help you to map through understanding of your key requirements. After careful assessment and research, we suggest you to fix all your applications, update the existing ones and implement new applications and features for effective functioning.", icon: Search },
-              { title: "Execution & Training", desc: "Once the mapping session is through, our developers and consultants help you to execute the integration of Zoho CRM. We also offer assistance post implementation through training sessions and help you to resolve your issues pertaining to CRM.", icon: Settings },
-              { title: "Engagement & Analytics", desc: "Through our Zoho CRM implementation, businesses can engage with their customers and reach out to people through phone, email, chat and social media. Organizations can also track visitors and carry out email analytics to find out what your end-customers are looking for and identify opportunities for client engagement.", icon: Share2 }
+              { phase: "Week 1-2", title: "Process mapping & data audit" },
+              { phase: "Week 3-6", title: "Build, integration, and data migration" },
+              { phase: "Week 7", title: "User training and admin handover" },
+              { phase: "Week 8+", title: "Optimisation and support" },
             ].map((step, idx) => (
-              <div key={idx} className="reveal hover-lift" style={{ background: "var(--bg)", display: "flex", alignItems: "flex-start", padding: "2rem", borderRadius: "16px", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.02)", gap: "2rem" }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "50%", background: "var(--primary)", color: "white", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "1.2rem", fontWeight: 800, flexShrink: 0, marginTop: "0.25rem" }}>
-                  {idx + 1}
+              <div key={idx} className="reveal hover-lift" style={{ background: "var(--bg)", display: "flex", alignItems: "center", padding: "2rem", borderRadius: "16px", border: "1px solid var(--border)", boxShadow: "0 10px 30px rgba(0,0,0,0.02)", gap: "2rem" }}>
+                <div style={{ minWidth: "110px", fontWeight: 900, color: "var(--primary)", fontSize: "1.15rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                  <Clock size={20} /> {step.phase}
                 </div>
-                <div>
-                  <h3 style={{ fontSize: "1.3rem", fontWeight: 800, color: "var(--text)", marginBottom: "0.75rem", display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                     <step.icon size={20} color="var(--primary)" /> {step.title}
-                  </h3>
-                  <p style={{ color: "var(--text-muted)", fontSize: "1.05rem", lineHeight: 1.7, margin: 0 }}>{step.desc}</p>
-                </div>
+                <div style={{ width: "1px", alignSelf: "stretch", background: "var(--border)" }} />
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text)", margin: 0 }}>{step.title}</h3>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ══ SECTION 4: FAQ ══════════════ */}
+      <section className="section" style={{ background: "var(--bg)", padding: "100px 1.5rem", borderTop: "1px solid var(--border)" }}>
+        <div className="container" style={{ maxWidth: "900px" }}>
+
+          <div className="reveal" style={{ textAlign: "center", marginBottom: "4rem" }}>
+            <div className="section-label" style={{ marginBottom: "1rem" }}>FAQ</div>
+            <h2 className="section-title" style={{ fontSize: "2.5rem", fontWeight: 900 }}>Zoho CRM implementation — your questions answered</h2>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
+            {[
+              { q: "How much does Zoho CRM implementation cost?", a: "Most Australian SME implementations run between $15,000 and $60,000 depending on integrations, custom fields, automation depth, and user count. Enterprise implementations with multi-module integration (Books, Inventory, Creator) typically run $60,000-$180,000. We provide fixed-price quotes after a free 30-minute scoping call." },
+              { q: "How long does Zoho CRM implementation take?", a: "A standard SME implementation runs 6-8 weeks. Enterprise multi-module rollouts run 10-16 weeks. We provide a written timeline before any work starts." },
+              { q: "Can you migrate us from Salesforce or HubSpot to Zoho CRM?", a: "Yes. We have completed migrations from Salesforce, HubSpot, Pipedrive, Microsoft Dynamics, and legacy on-premise CRMs. We map data fields, preserve history, and run parallel testing before cutover." },
+              { q: "Will my data be in Australia?", a: "Yes. Zoho operates Australian data centres and your data can be hosted entirely within Australia. We confirm data residency at the start of every engagement." },
+              { q: "Do you provide training and support after go-live?", a: "Yes. Every implementation includes user training and admin documentation. Ongoing support retainers are available from $1,500 per month." },
+            ].map((item, i) => (
+              <div key={i} className="reveal" style={{ background: "var(--card-bg)", padding: "2rem", borderRadius: "16px", border: "1px solid var(--border)" }}>
+                <h3 style={{ fontSize: "1.2rem", fontWeight: 800, color: "var(--text)", marginBottom: "0.75rem" }}>{item.q}</h3>
+                <p style={{ color: "var(--text-muted)", fontSize: "1.05rem", lineHeight: 1.7, margin: 0 }}>{item.a}</p>
               </div>
             ))}
           </div>
@@ -216,10 +244,10 @@ export default function CrmImplementationClient() {
         <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
         <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
           <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: "900px", margin: "0 auto 3rem auto" }}>
-            Connect With Us To Take Advantage Of Our Zoho CRM Implementation Services Here!
+            Ready to implement Zoho CRM the right way?
           </h2>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
+            <Link href="/book-discovery" style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.75rem',
@@ -233,7 +261,7 @@ export default function CrmImplementationClient() {
               boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
               transition: 'all 0.3s ease'
             }} className="btn-primary-hover">
-              Contact Us <ArrowRight size={20} />
+              Get Your Free Zoho CRM Audit <ArrowRight size={20} />
             </Link>
           </div>
         </div>

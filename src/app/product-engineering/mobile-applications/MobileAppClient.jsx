@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronRight, ChevronDown, Plus, Minus,
   Smartphone, Truck, Heart, Briefcase, Users,
@@ -199,7 +200,7 @@ export default function MobileAppClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/mobile-app-hero.png" alt="Mobile Application Development" fill
+            <Image src="/images/mobile-app-hero.png" alt="Mobile Application Development" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -251,6 +252,8 @@ export default function MobileAppClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ════════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.25rem 1.5rem" }}>
@@ -452,7 +455,7 @@ export default function MobileAppClient() {
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", alignItems:"center", gap:"0.55rem" }}>
                   <div style={{ position:"relative", width:`${l.w}px`, height:"22px" }}>
-                    <Image src={l.src} alt={l.alt} fill style={{ objectFit:"contain" }} />
+                    <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                   <span style={{ fontSize:"0.88rem", fontWeight:700, color:"var(--text)" }}>{l.label}</span>
                 </div>

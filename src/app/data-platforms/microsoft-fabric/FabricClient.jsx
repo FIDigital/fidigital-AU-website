@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import {
   ArrowRight, ChevronRight, ChevronDown, CheckCircle2,
   Database, BarChart2, Zap, FlaskConical, GitMerge,
@@ -143,7 +144,7 @@ export default function FabricClient() {
 
           {/* Hero right image */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.28, pointerEvents:"none" }}>
-            <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric Platform" fill
+            <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric Platform" fill sizes="(max-width: 768px) 40vw, 200px"
               style={{ objectFit:"contain", objectPosition:"center right",
                 maskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)" }} />
@@ -157,7 +158,7 @@ export default function FabricClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"20px", height:"20px" }}>
-                <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill style={{ objectFit:"contain" }} />
+                <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:PRIMARY, fontWeight:700, fontSize:"0.88rem" }}>
                 Microsoft Fabric · Azure Australia East · OneLake
@@ -198,6 +199,8 @@ export default function FabricClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ STAT STRIP ══════════════════════════════════════════════ */}
         <div style={{ background:"var(--bg-secondary)", borderTop:"1px solid var(--border)", borderBottom:"1px solid var(--border)", padding:"2.25rem 1.5rem" }}>
@@ -258,7 +261,7 @@ export default function FabricClient() {
                       background:`${PRIMARY}0d`, border:`1px solid ${PRIMARY}20`,
                       padding:"0.35rem 1rem", borderRadius:"50px" }}>
                       <div style={{ position:"relative", width:"16px", height:"16px" }}>
-                        <Image src="/images/Microsoft-Fabric.png" alt="Fabric" fill style={{ objectFit:"contain" }} />
+                        <Image src="/images/Microsoft-Fabric.png" alt="Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                       </div>
                       <span style={{ fontSize:"0.72rem", fontWeight:800, color:PRIMARY, textTransform:"uppercase", letterSpacing:"0.1em" }}>
                         Microsoft Fabric — OneLake at Centre
@@ -329,7 +332,7 @@ export default function FabricClient() {
                       padding:"0.35rem 0.85rem", background:`${TEAL}10`,
                       borderRadius:"8px", border:`1px solid ${TEAL}20` }}>
                       <div style={{ position:"relative", width:"14px", height:"14px", flexShrink:0 }}>
-                        <Image src="/images/azure-nobg.png" alt="Azure" fill style={{ objectFit:"contain" }} />
+                        <Image src="/images/azure-nobg.png" alt="Azure" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                       </div>
                       <span style={{ fontSize:"0.72rem", fontWeight:700, color:TEAL }}>
                         Hosted on Azure Australia East · All data stays in Australia
@@ -349,7 +352,7 @@ export default function FabricClient() {
               <div className="section-label">Capabilities</div>
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"0.75rem", marginBottom:"0.75rem" }}>
                 <div style={{ position:"relative", width:"30px", height:"30px" }}>
-                  <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill style={{ objectFit:"contain" }} />
+                  <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 className="section-title" style={{ margin:0 }}>
                   What We Build on Microsoft Fabric
@@ -462,7 +465,7 @@ export default function FabricClient() {
               border:`1px solid ${PRIMARY}18`, borderRadius:"18px",
               display:"flex", alignItems:"center", gap:"1.5rem", flexWrap:"wrap" }}>
               <div style={{ position:"relative", width:"40px", height:"40px", flexShrink:0 }}>
-                <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill style={{ objectFit:"contain" }} />
+                <Image src="/images/Microsoft-Fabric.png" alt="Microsoft Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <div style={{ flex:1 }}>
                 <div style={{ fontSize:"0.95rem", fontWeight:800, color:"var(--text)", marginBottom:"0.25rem" }}>
@@ -526,7 +529,7 @@ export default function FabricClient() {
             <div className="reveal">
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem", marginBottom:"1.5rem" }}>
                 <div style={{ position:"relative", width:"44px", height:"44px" }}>
-                  <Image src="/images/Microsoft-Fabric.png" alt="Fabric" fill style={{ objectFit:"contain" }} />
+                  <Image src="/images/Microsoft-Fabric.png" alt="Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, margin:0 }}>
                   Ready to unify your Microsoft data platform?

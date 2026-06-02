@@ -9,10 +9,6 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'avatars.githubusercontent.com',
-            },
-            {
-                protocol: 'https',
                 hostname: 'uxwing.com',
             },
             {
@@ -21,13 +17,23 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'upload.wikimedia.org',
-            },
-            {
-                protocol: 'https',
                 hostname: 'n8n.io',
             },
         ],
+    },
+    async redirects() {
+        return [
+            {
+                source: '/industries/financial-services-wealth',
+                destination: '/financial-services-wealth',
+                statusCode: 301,
+            },
+            {
+                source: '/zoho-implementation-specialist',
+                destination: '/crm-implementation',
+                statusCode: 301,
+            },
+        ];
     },
 };
 

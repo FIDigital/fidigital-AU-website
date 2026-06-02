@@ -68,7 +68,7 @@ export default function MobileAppClient() {
             src="/images/mobile-app-dev.png"
             alt="Mobile Application Engineering Dashboard"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",

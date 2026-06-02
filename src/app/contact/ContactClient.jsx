@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -12,64 +12,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import ZohoFormEmbed from "@/components/ZohoFormEmbed";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const ZohoIframe = () => {
-  const [height, setHeight] = useState("850px");
-  const iframeRef = useRef(null);
-
-  useEffect(() => {
-    const handleMessage = (event) => {
-      if (event.data && event.data.type === 'iframeHeight') {
-        setHeight(`${event.data.height}px`);
-      }
-    };
-
-    window.addEventListener('message', handleMessage);
-    
-    const syncTheme = () => {
-      if (iframeRef.current && iframeRef.current.contentWindow) {
-        try {
-          const isDark = document.documentElement.classList.contains('dark') || 
-                         document.documentElement.getAttribute('data-theme') === 'dark' ||
-                         window.matchMedia('(prefers-color-scheme: dark)').matches;
-          iframeRef.current.contentWindow.postMessage({ type: 'theme', isDark }, '*');
-        } catch(e) {}
-      }
-    };
-
-    const timer = setTimeout(syncTheme, 1500);
-    
-    return () => {
-      window.removeEventListener('message', handleMessage);
-      clearTimeout(timer);
-    };
-  }, []);
-
-  return (
-    <div style={{ width: '100%', minHeight: height, transition: 'min-height 0.3s ease' }}>
-      <iframe
-        ref={iframeRef}
-        id="zoho-form-iframe"
-        src="/zoho-form"
-        title="Contact Us Form"
-        scrolling="no"
-        style={{ width: '100%', height: height, border: 'none', display: 'block' }}
-        onLoad={(e) => {
-          try {
-            const isDark = document.documentElement.classList.contains('dark') || 
-                           document.documentElement.getAttribute('data-theme') === 'dark' ||
-                           window.matchMedia('(prefers-color-scheme: dark)').matches;
-            e.target.contentWindow.postMessage({ type: 'theme', isDark }, '*');
-          } catch(err) {}
-        }}
-      />
-    </div>
-  );
-};
+// Zoho Web-to-Lead form is embedded via the shared <ZohoFormEmbed /> component.
 
 /* ─── Data ──────────────────────────────────────────────────────────────────── */
 
@@ -352,7 +301,7 @@ export default function ContactClient() {
             <Image 
               src="/images/Contact-us.png" 
               alt="" 
-              fill 
+              fill sizes="(max-width: 768px) 100vw, 50vw" 
               style={{ 
                 objectFit: "cover",
                 maskImage: "radial-gradient(ellipse at right, black, transparent 75%)",
@@ -417,7 +366,7 @@ export default function ContactClient() {
                      info@fidigital.com.au
                    </a>
                    <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                     General inquiries and project proposals. Reponse within 4 business hours.
+                     General inquiries and project proposals. Response within 4 business hours.
                    </p>
                 </div>
 
@@ -470,7 +419,7 @@ export default function ContactClient() {
                   {offices.map((o, i) => (
                     <div key={i} className="office-card">
                       <div style={{ position: 'relative', height: '240px' }}>
-                        <Image src={o.img} alt={o.city} fill style={{ objectFit: 'cover' }} />
+                        <Image src={o.img} alt={o.city} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.8), transparent)' }} />
                         <div style={{ position: 'absolute', bottom: '2rem', left: '2rem' }}>
                           <span style={{ 
@@ -513,7 +462,7 @@ export default function ContactClient() {
             </div>
 
             <div className="reveal premium-card" style={{ maxWidth: '1100px', margin: '0 auto' }}>
-               <ZohoIframe />
+               <ZohoFormEmbed />
             </div>
           </div>
         </section>

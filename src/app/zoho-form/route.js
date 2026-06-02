@@ -202,11 +202,11 @@ export async function GET() {
       accept-charset="UTF-8">
 
       <!-- Do not remove this code. -->
-      <input type="text" style="display:none;" name="xnQsjsdp" value="36759fdb49005e835b1ab8dfaa6b5260efd73870a91b3d99aeed88084a1c04f0">
+      <input type="text" style="display:none;" name="xnQsjsdp" value="5bd2f85854b525dd8b808b863fbe6a80b579f84ea6452abb5f0ee0357855a15a">
       <input type="hidden" name="zc_gad" id="zc_gad" value="">
-      <input type="text" style="display:none;" name="xmIwtLD" value="d8b9b02660a4ccee0351e1bc1676bacbee23887ad6c02045294fe3f99f72f596ba2978d78ef41049f0d0e0b22b3f276b">
+      <input type="text" style="display:none;" name="xmIwtLD" value="ac388f9e1e5c20ebb1f3c5b543d13c173243863a7d13f69554145988806b2aaa1d81db73441d5458524c1322d74b4801">
       <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
-      <input type="text" style="display:none;" name="returnURL" value="https://www.fidigital.com.au/contact">
+      <input type="text" style="display:none;" name="returnURL" value="https://fidigital.com.au/zoho-form/thank-you">
       <!-- Do not remove this code. -->
       <input type="text" style="display:none;" id="ldeskuid" name="ldeskuid">
       <input type="text" style="display:none;" id="LDTuvid" name="LDTuvid">
@@ -279,6 +279,78 @@ export async function GET() {
           </div>
         </div>
 
+        <!-- Industry of Interest (mandatory) -->
+        <div class="zcwf_row">
+          <div class="zcwf_col_lab">
+            <label for="LEADCF151">Industry of Interest <span class="required">*</span></label>
+          </div>
+          <div class="zcwf_col_fld">
+            <select id="LEADCF151" name="LEADCF151" aria-required="true"
+              style="-webkit-appearance:menulist; appearance:menulist;"
+              onchange="addAriaSelected3209734000015098004()">
+              <option value="-None-">Select…</option>
+              <option value="Financial Services">Financial Services</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Resources &amp; Logistics">Resources &amp; Logistics</option>
+              <option value="Energy">Energy</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Budget -->
+        <div class="zcwf_row">
+          <div class="zcwf_col_lab">
+            <label for="LEADCF12">Budget</label>
+          </div>
+          <div class="zcwf_col_fld">
+            <select id="LEADCF12" name="LEADCF12"
+              style="-webkit-appearance:menulist; appearance:menulist;"
+              onchange="addAriaSelected3209734000015098004()">
+              <option value="-None-">Select…</option>
+              <option value="$15–50K">$15–50K</option>
+              <option value="$50–150K">$50–150K</option>
+              <option value="$150K+">$150K+</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="zcwf_row">
+          <div class="zcwf_col_lab">
+            <label for="LEADCF35">Timeline</label>
+          </div>
+          <div class="zcwf_col_fld">
+            <select id="LEADCF35" name="LEADCF35"
+              style="-webkit-appearance:menulist; appearance:menulist;"
+              onchange="addAriaSelected3209734000015098004()">
+              <option value="-None-">Select…</option>
+              <option value="This Quarter">This Quarter</option>
+              <option value="3–6 Months">3–6 Months</option>
+              <option value="Exploring">Exploring</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Service Line -->
+        <div class="zcwf_row">
+          <div class="zcwf_col_lab">
+            <label for="LEADCF3">Service Line</label>
+          </div>
+          <div class="zcwf_col_fld">
+            <select id="LEADCF3" name="LEADCF3"
+              style="-webkit-appearance:menulist; appearance:menulist;"
+              onchange="addAriaSelected3209734000015098004()">
+              <option value="-None-">Select…</option>
+              <option value="Zoho">Zoho</option>
+              <option value="AI">AI</option>
+              <option value="Data">Data</option>
+              <option value="Product Engineering">Product Engineering</option>
+              <option value="Multiple">Multiple</option>
+            </select>
+          </div>
+        </div>
+
         <!-- Pain Points -->
         <div class="zcwf_row full-width">
           <div class="zcwf_col_lab">
@@ -309,7 +381,7 @@ export async function GET() {
             <div class="captcha-wrapper">
               <div class="captcha-img-row">
                 <img id="imgid3209734000015098004"
-                  src="https://crm.zoho.com/crm/CaptchaServlet?formId=d8b9b02660a4ccee0351e1bc1676bacbee23887ad6c02045294fe3f99f72f596ba2978d78ef41049f0d0e0b22b3f276b&grpid=36759fdb49005e835b1ab8dfaa6b5260efd73870a91b3d99aeed88084a1c04f0"
+                  src="https://crm.zoho.com/crm/CaptchaServlet?formId=ac388f9e1e5c20ebb1f3c5b543d13c173243863a7d13f69554145988806b2aaa1d81db73441d5458524c1322d74b4801&grpid=5bd2f85854b525dd8b808b863fbe6a80b579f84ea6452abb5f0ee0357855a15a"
                   alt="Captcha image">
                 <a class="reload-link" onclick="reloadImg3209734000015098004();">&#8635; Reload Captcha</a>
               </div>
@@ -414,8 +486,8 @@ export async function GET() {
         }
 
         function checkMandatory3209734000015098004() {
-          var mndFileds = ['Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'Description'];
-          var fldLangVal = ['Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'Description'];
+          var mndFileds = ['Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'Description', 'LEADCF151'];
+          var fldLangVal = ['Company', 'First Name', 'Last Name', 'Email', 'Mobile', 'Description', 'Industry of Interest'];
           var form = document.forms['WebToLeads3209734000015098004'];
           for (var i = 0; i < mndFileds.length; i++) {
             var fieldObj = form[mndFileds[i]];
@@ -486,7 +558,7 @@ export async function GET() {
       <script src="https://crm.zohopublic.com/crm/WebFormServlet?rid=b3458fba8d6e2e3f7521cf39297fcd479349cf2623ac0e2534848ba831a5d7b5"></script>
 
       <!-- Do not remove this --- Analytics Tracking code starts -->
-      <script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a000a405f83325ece81646bbab0b5daef2d44503568edf1176dd8487c47297b824dfa4d4d29d04d5d66db27e8a33ceccgid19df8bf99fe4c3c36f218c4f15bab0a4f88cb55fbb546436947ec0f76690a418gid11cd10dacdd70a9c2408b583af8f99257bdc955dc109e1ae79d6ff7ba2f87838gid7c8d27518192a0894dbedbfbc55cdceaba012138e755d0dfa57947344c7a6e98&tw=f8cf81ed22754ea98d6e3adae8921084ee3c3fd42380cd315d99e778bb3c3efc"></script>
+      <script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=81ec9fbffd5c33ea49fdacf4433121e6336a4f065bf53a4e9e151902add8b3b34b83f147eadf84eacf174613b062f7e3gidb26d78a3e80dcaaf9aed6bfaa3477f38b0ea4254fd70d7e3721b8547a1118bb3gid6acf0b82663b1879e7db6e3a8395a887a8f29a42b26031285e1178f4ac3fec0egidba3087ba43361a48c31ef8a74d425752af15e5500f70104a77216c4b692e0f84&tw=715b4b3dcf145efe6dd501fed7b2fe0aaaacd1f470285bfb4b17163939d0b75d"></script>
       <!-- Do not remove this --- Analytics Tracking code ends. -->
 
     </form>

@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
+import TrustedBy from "@/components/TrustedBy";
 import { ShieldAlert, Activity, Users, Settings, Database, Bot, Layout, ArrowRight, ChevronDown } from "lucide-react";
 
 if (typeof window !== "undefined") {
@@ -77,7 +78,7 @@ export default function FinancialServicesClient() {
             <Image 
               src="/finance-hero2.png" 
               alt="Financial Services Infrastructure" 
-              fill
+              fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(ellipse at right, black, transparent 75%)", WebkitMaskImage: "radial-gradient(ellipse at right, black, transparent 75%)" }}
             />
           </div>
@@ -102,6 +103,8 @@ export default function FinancialServicesClient() {
             </div>
           </div>
         </section>
+
+        <TrustedBy />
 
         {/* ══ SECTION 1: THE CHALLENGE ══════════════ */}
         <section className="section" style={{ background: "var(--bg-secondary)" }}>
@@ -160,7 +163,7 @@ export default function FinancialServicesClient() {
               
               {/* Left Split */}
               <div className="reveal" style={{ flex: "1 1 calc(50% - 1rem)", minHeight: "450px", position: "relative", minWidth: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
-                <Image src="/finance-split-left2.png" alt="Data & Compliance Visual" fill style={{ objectFit: "cover" }} />
+                <Image src="/finance-split-left2.png" alt="Data & Compliance Visual" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 {/* Premium Frosted Glass Text Overlay instead of dark gradient */}
                 <div style={{ position: "absolute", bottom: "2rem", left: "2rem", right: "2rem", padding: "1.5rem 2rem", background: "rgba(15, 15, 20, 0.4)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.1)" }}>
                   <h3 style={{ color: "#fff", fontSize: "1.4rem", fontWeight: 700, marginBottom: "0.25rem" }}>APRA / ASIC Prepared</h3>
@@ -170,7 +173,7 @@ export default function FinancialServicesClient() {
               
               {/* Right Split */}
               <div className="reveal" style={{ flex: "1 1 calc(50% - 1rem)", minHeight: "450px", position: "relative", minWidth: "300px", borderRadius: "24px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
-                <Image src="/finance-split-right2.png" alt="Human Adviser Portal" fill style={{ objectFit: "cover" }} />
+                <Image src="/finance-split-right2.png" alt="Human Adviser Portal" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 {/* Premium Frosted Glass Text Overlay instead of dark gradient */}
                 <div style={{ position: "absolute", bottom: "2rem", left: "2rem", right: "2rem", padding: "1.5rem 2rem", background: "rgba(15, 15, 20, 0.4)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.1)" }}>
                   <h3 style={{ color: "#fff", fontSize: "1.4rem", fontWeight: 700, marginBottom: "0.25rem" }}>Modern Adviser Workspaces</h3>
@@ -227,13 +230,13 @@ export default function FinancialServicesClient() {
                   {/* Glass card 1 - Databricks */}
                   <div style={{ width: "220px", height: "140px", background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", transform: "translateY(-20px)" }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill style={{ objectFit: "contain" }} />
+                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                   {/* Glass card 2 - Snowflake */}
                   <div style={{ width: "220px", height: "140px", background: "rgba(255, 255, 255, 0.03)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", transform: "translateY(20px)" }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                      <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill style={{ objectFit: "contain" }} />
+                      <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                   {/* Soft Background Glow */}
@@ -271,7 +274,7 @@ export default function FinancialServicesClient() {
                 
                 {/* Refined Image container with NO strong black gradient overlay */}
                 <div style={{ flex: "1 1 300px", minHeight: "350px", borderRadius: "20px", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
-                   <Image src="/images/ai-agents-finance.png" alt="AI Agent Workflows for KYC" fill style={{ objectFit: "cover" }} />
+                   <Image src="/images/ai-agents-finance.png" alt="AI Agent Workflows for KYC" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
 
@@ -304,7 +307,7 @@ export default function FinancialServicesClient() {
                 
                 {/* Refined Image container with NO strong black gradient overlay */}
                 <div style={{ flex: "1 1 300px", minHeight: "350px", borderRadius: "20px", display: "flex", alignItems: "center", justifyContent: "center", position: "relative", overflow: "hidden", border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
-                  <Image src="/images/product-finance.png" alt="Adviser Portal Engineering" fill style={{ objectFit: "cover" }} />
+                  <Image src="/images/product-finance.png" alt="Adviser Portal Engineering" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
 
@@ -340,7 +343,7 @@ export default function FinancialServicesClient() {
                 <div style={{ flex: "1 1 300px", minHeight: "350px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1 }}>
                    <div style={{ width: "220px", height: "220px", background: "rgba(255, 255, 255, 0.02)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "3rem", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
                      <div style={{ position: "relative", width: "100%", height: "100%", filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.4)) brightness(1.2)" }}>
-                       <Image src="/images/zoho-logo-nobg.png" alt="Zoho" fill style={{ objectFit: "contain" }} />
+                       <Image src="/images/zoho-logo-nobg.png" alt="Zoho" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                      </div>
                    </div>
                    {/* Soft Background Glow */}

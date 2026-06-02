@@ -83,7 +83,7 @@ export default function CivilSurveyCaseStudy() {
 
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", height: "100px", position: "relative", marginBottom: "1.5rem", overflow: "hidden" }}>
-                <Image src="/images/Case-Study/Civil.png" alt="Civil Survey Solutions" fill style={{ objectFit: "contain", padding: "8px 14px", transform: "scale(1.3)", transformOrigin: "center center" }} />
+                <Image src="/images/Case-Study/Civil.png" alt="Civil Survey Solutions" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "8px 14px", transform: "scale(1.3)", transformOrigin: "center center" }} />
               </div>
               {[{ label: "Client", value: "Civil Survey Solutions" }, { label: "Founded", value: "1998, Australia" }, { label: "Solution", value: "Zoho CRM" }, { label: "Partner", value: "FI Digital" }].map(r => (
                 <div key={r.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>

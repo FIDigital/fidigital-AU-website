@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import { useState } from 'react';
 import { ArrowRight, Code2, Terminal, Smartphone, Database, Layout, Rocket, RefreshCw, Search, Code, CheckCircle, Flag, Headphones, Server, Cloud, Cog, FileText, ChevronDown } from 'lucide-react';
@@ -31,7 +32,7 @@ export default function ProductEngineeringClient() {
             src="/we-build.png"
             alt="Product Engineering Software Build"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",
@@ -46,8 +47,8 @@ export default function ProductEngineeringClient() {
           </div>
 
           <h1 className="hero-h1 section-title" style={{ maxWidth: "1000px", fontSize: "clamp(2.5rem, 6vw, 4.5rem)", lineHeight: 1.1, marginBottom: "1.5rem" }}>
-            Build Software That Creates<br />
-            <span style={{ color: "var(--primary)", fontWeight: 300 }}>Competitive Advantage</span>
+            Custom Software Development & Product Engineering<br />
+            <span style={{ color: "var(--primary)", fontWeight: 300 }}>in Australia</span>
           </h1>
 
           <p className="hero-p section-desc" style={{ maxWidth: "700px", fontSize: "1.2rem", color: "var(--text-muted)", marginBottom: "3rem" }}>
@@ -58,7 +59,7 @@ export default function ProductEngineeringClient() {
             <Link href="/book-discovery" className="btn-primary" style={{
               background: "var(--primary)", color: "#fff", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
             }}>
-              Start a Discovery Sprint <ArrowRight size={18} />
+              Get a Fixed-Price Estimate in 5 Days <ArrowRight size={18} />
             </Link>
             <Link href="/case-studies" className="btn-secondary" style={{
               background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", color: "var(--text)", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
@@ -195,6 +196,8 @@ export default function ProductEngineeringClient() {
         `}</style>
       </section>
 
+      <TrustedBy />
+
       <CaseForCustomSoftwareSection />
       <WhatWeBuildSection />
       <EngineeringApproachSection />
@@ -329,7 +332,7 @@ function WhatWeBuildSection() {
               {/* Image zone */}
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <Image
-                  src={svc.image} alt={svc.title} fill
+                  src={svc.image} alt={svc.title} fill sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
                 />
                 {/* Colour overlay */}
@@ -700,7 +703,7 @@ function TechStackGridSection() {
                     borderRadius: '9px'
                   }}>
                     <div style={{ position: 'relative', width: '18px', height: '18px', flexShrink: 0 }}>
-                      <Image src={tech.logo} alt={tech.name} fill style={{ objectFit: 'contain' }} />
+                      <Image src={tech.logo} alt={tech.name} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: 'contain' }} />
                     </div>
                     <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text)', whiteSpace: 'nowrap' }}>
                       {tech.name}

@@ -48,7 +48,6 @@ const primaryNav = [
             { href: "/business-systems",                    label: "Modernisation Hub" },
             { href: "/zoho-consultants/",                   label: "Zoho Consultants" },
             { href: "/zoho-partners-australia/",            label: "Zoho Partners Australia" },
-            { href: "/zoho-implementation-specialist/",     label: "Implementation Specialist" },
             { href: "/crm-implementation/",                 label: "CRM Implementation" },
             { href: "/desk-implementation/",                label: "Desk Implementation" },
             { href: "/custom-development/",                 label: "Custom Development" },
@@ -126,7 +125,8 @@ const megaMenuColumns = [
         links: [
             { href: "/case-studies/",                                         label: "Case Studies" },
             { href: "/blog/",                                                 label: "Blog" },
-          
+            { href: "/resources/zoho-modernisation-checklist",                label: "Zoho Modernisation Checklist" },
+
         ]
     },
 
@@ -282,23 +282,48 @@ export default function Header() {
                                     onMouseEnter={() => link.subLinks ? handleNavEnter(link.label) : undefined}
                                     onMouseLeave={() => link.subLinks ? handleNavLeave() : undefined}
                                 >
-                                    <Link
-                                        href={link.href}
-                                        className={`nav-link ${isSectionActive(link) ? "active" : ""}`}
-                                        style={{
-                                            color: "var(--text)", fontSize: "0.8rem", fontWeight: 700,
-                                            letterSpacing: "0.01em", textDecoration: "none",
-                                            display: "flex", alignItems: "center", gap: "0.3rem",
-                                            padding: "0.25rem 0.6rem", whiteSpace: "nowrap"
-                                        }}
-                                    >
-                                        {link.label}
-                                        {link.subLinks && (
-                                            <ChevronDown size={13} opacity={0.5}
-                                                style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s ease" }}
-                                            />
-                                        )}
-                                    </Link>
+                                    {link.href === "javascript:void(0)" ? (
+                                        <button
+                                            type="button"
+                                            className={`nav-link ${isSectionActive(link) ? "active" : ""}`}
+                                            aria-haspopup="true"
+                                            aria-expanded={isOpen}
+                                            onClick={() => setActiveDropdown(isOpen ? null : link.label)}
+                                            style={{
+                                                color: "var(--text)", fontSize: "0.8rem", fontWeight: 700,
+                                                letterSpacing: "0.01em", textDecoration: "none",
+                                                display: "flex", alignItems: "center", gap: "0.3rem",
+                                                padding: "0.25rem 0.6rem", whiteSpace: "nowrap",
+                                                background: "none", border: "none", cursor: "pointer",
+                                                fontFamily: "inherit", lineHeight: "inherit"
+                                            }}
+                                        >
+                                            {link.label}
+                                            {link.subLinks && (
+                                                <ChevronDown size={13} opacity={0.5}
+                                                    style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s ease" }}
+                                                />
+                                            )}
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            className={`nav-link ${isSectionActive(link) ? "active" : ""}`}
+                                            style={{
+                                                color: "var(--text)", fontSize: "0.8rem", fontWeight: 700,
+                                                letterSpacing: "0.01em", textDecoration: "none",
+                                                display: "flex", alignItems: "center", gap: "0.3rem",
+                                                padding: "0.25rem 0.6rem", whiteSpace: "nowrap"
+                                            }}
+                                        >
+                                            {link.label}
+                                            {link.subLinks && (
+                                                <ChevronDown size={13} opacity={0.5}
+                                                    style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.25s ease" }}
+                                                />
+                                            )}
+                                        </Link>
+                                    )}
 
                                     {link.subLinks && (
                                         <div
@@ -518,6 +543,7 @@ export default function Header() {
                                 )}
                                 {(link.subLinks || link.isMegaMenu) && (
                                     <button
+                                        aria-label={`Toggle ${link.label} menu`}
                                         onClick={(e) => { e.preventDefault(); toggleMobileSubmenu(link.label); }}
                                         style={{
                                             background: "rgba(0,0,0,0.05)", border: "none", borderRadius: "8px",

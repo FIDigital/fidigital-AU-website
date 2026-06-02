@@ -1,13 +1,6 @@
 export const metadata = {
   title: "Zoho Retail Management Solutions | FI Digital Australia",
   description: "Streamline multi-channel retail operations, track warehousing and inventory, and boost sales with FI Digital's expert Zoho CRM implementation.",
-  keywords: [
-    "Zoho Retail Solutions",
-    "Omnichannel CRM Australia",
-    "Retail Operations CRM",
-    "Zoho Inventory Retail",
-    "Retail Management Software"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/retail',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-retail.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Retail Zoho Systems",
       },
     ],

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteData";
-import { Instagram, Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "./Logo";
 
 const footerLinks = {
@@ -27,6 +27,10 @@ const footerLinks = {
     { label: "Australian Compliance", href: "/why-fi-digital/australian-compliance" },
     { label: "Global Delivery", href: "/why-fi-digital/global-delivery" },
     { label: "Contact Us", href: "/contact" },
+  ],
+  Locations: [
+    { label: "Melbourne", href: "/locations/melbourne" },
+    { label: "Sydney", href: "/locations/sydney" },
   ],
 };
 
@@ -64,12 +68,6 @@ export default function Footer() {
               </a>
               <a href="https://www.facebook.com/FiDigitalSevices" target="_blank" rel="noopener noreferrer" className="fi-footer-social-link" aria-label="Facebook">
                 <Facebook size={18} />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="fi-footer-social-link" aria-label="Twitter">
-                <Twitter size={18} />
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="fi-footer-social-link" aria-label="Instagram">
-                <Instagram size={18} />
               </a>
             </div>
           </div>
@@ -145,7 +143,7 @@ export default function Footer() {
 
         .fi-footer-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+          grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
           gap: 3rem;
           padding-bottom: 4rem;
           border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -324,7 +322,7 @@ export default function Footer() {
 
         .fi-footer-copy {
           font-size: 0.85rem;
-          color: #64748b;
+          color: #94a3b8;
         }
 
         .fi-footer-legal {
@@ -335,7 +333,7 @@ export default function Footer() {
 
         .fi-footer-legal-link {
           font-size: 0.85rem;
-          color: #64748b;
+          color: #94a3b8;
           text-decoration: none;
         }
 

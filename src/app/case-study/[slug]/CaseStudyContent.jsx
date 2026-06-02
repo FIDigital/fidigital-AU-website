@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, ArrowUpRight, CheckCircle, Clock, Globe, Shield } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle, Clock, Globe, Shield, Zap } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -71,7 +71,7 @@ export default function CaseStudyContent({ study }) {
               </div>
             </div>
             <div className="hero-image" style={{ position: "relative", height: "450px", borderRadius: "32px", overflow: "hidden", boxShadow: "0 30px 60px rgba(0,0,0,0.12)" }}>
-              <Image src={study.image} alt={study.title} fill style={{ objectFit: "cover" }} />
+              <Image src={study.image} alt={study.title} fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </div>

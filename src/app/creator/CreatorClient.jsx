@@ -64,10 +64,10 @@ export default function CreatorClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/home_hero_professional.png"
+            src="/images/partner-hero.png"
             alt="Zoho Creator Low Code App Development"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",

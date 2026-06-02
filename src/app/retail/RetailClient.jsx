@@ -67,7 +67,7 @@ export default function RetailClient() {
             src="/images/Retail.png"
             alt="Retail Omnichannel Solutions"
             aria-hidden="true"
-            fill
+            fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
               objectFit: "cover",
               maskImage: "radial-gradient(circle at right, black, transparent 80%)",

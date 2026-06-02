@@ -1,16 +1,7 @@
 export const metadata = {
-  title: "FI Digital AU | AI Agent Architects & Zoho Experts in Melbourne",
+  title: "Software, Data & AI for Australian Enterprise | FI Digital AU",
   description:
     "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows for Australian businesses. Specialist in CRM, Finance, and WhatsApp automation.",
-  keywords: [
-    "AI agents Melbourne",
-    "Zoho Partner Australia",
-    "Enterprise Automation Melbourne",
-    "WhatsApp Business API Australia",
-    "Zoho CRM Implementation Melbourne",
-    "Digital Transformation Australia",
-    "AI Business Solutions Melbourne"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au',
@@ -22,9 +13,9 @@ export const metadata = {
     siteName: "FI Digital AU",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital AU - AI Agent Architects",
       },
     ],

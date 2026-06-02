@@ -1,13 +1,6 @@
 export const metadata = {
   title: "SEO Melbourne | Custom Search Engine Optimisation Strategies | FI Digital",
   description: "Boost your online visibility, improve organic search rankings, and attract targeted web traffic with FI Digital's expert SEO campaigns in Melbourne.",
-  keywords: [
-    "SEO Melbourne",
-    "Search Engine Optimisation Australia",
-    "Organic Search Rankings",
-    "Custom SEO Strategy",
-    "Local SEO Marketing"
-  ],
   metadataBase: new URL('https://fidigital.com.au'),
   alternates: {
       canonical: 'https://fidigital.com.au/search-engine-optimisation',
@@ -19,9 +12,9 @@ export const metadata = {
     siteName: "FI Digital",
     images: [
       {
-        url: "/og-seo.jpg",
-        width: 1200,
-        height: 630,
+        url: "/four-pillars.png",
+        width: 1024,
+        height: 559,
         alt: "FI Digital - Melbourne SEO Services",
       },
     ],
