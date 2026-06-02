@@ -90,8 +90,8 @@ export default function RootLayout({
     "telephone": "+61 1300 921 280",
     "email": "info@fidigital.com.au",
     "sameAs": [
-      "https://www.linkedin.com/company/fi-digital-australia",
-      "https://www.facebook.com/FiDigitalSevices"
+      "https://www.linkedin.com/company/fi-digital-services/",
+      "https://x.com/FidigitalAus"
     ],
     "address": [
       {
