@@ -241,7 +241,7 @@ export default function BookDiscoveryClient() {
                 </a>
               </div>
               <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                Or email <a href="mailto:info@fidigital.com.au" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>info@fidigital.com.au</a>
+                Or email <a href="mailto:support@fidigital.com.au" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>support@fidigital.com.au</a>
               </p>
             </div>
           </div>

@@ -88,7 +88,7 @@ export default function RootLayout({
     "foundingDate": "2016",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 200 },
     "telephone": "+61 1300 921 280",
-    "email": "info@fidigital.com.au",
+    "email": "support@fidigital.com.au",
     "sameAs": [
       "https://www.linkedin.com/company/fi-digital-services/",
       "https://x.com/FidigitalAus"
@@ -123,7 +123,7 @@ export default function RootLayout({
     "image": "https://fidigital.com.au/images/logo.png",
     "url": "https://fidigital.com.au",
     "telephone": "+61 1300 921 280",
-    "email": "info@fidigital.com.au",
+    "email": "support@fidigital.com.au",
     "priceRange": "$$$",
     "parentOrganization": { "@id": "https://fidigital.com.au/#organization" },
     "address": {

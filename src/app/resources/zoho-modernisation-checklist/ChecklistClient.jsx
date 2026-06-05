@@ -132,7 +132,7 @@ export default function ChecklistClient() {
                 </div>
                 <h2 style={{ fontSize: "1.5rem", fontWeight: 900, marginBottom: "0.75rem" }}>Thanks — your checklist is on its way.</h2>
                 <p style={{ fontSize: "1rem", color: "var(--text-muted)", lineHeight: 1.7, marginBottom: "2rem" }}>
-                  Check your inbox in the next few minutes. If it doesn't arrive, check your spam folder or email us at info@fidigital.com.au.
+                  Check your inbox in the next few minutes. If it doesn't arrive, check your spam folder or email us at support@fidigital.com.au.
                 </p>
                 <a href="/book-discovery" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--primary)", fontWeight: 800, textDecoration: "none" }}>
                   Book a free Zoho audit <ArrowRight size={18} />

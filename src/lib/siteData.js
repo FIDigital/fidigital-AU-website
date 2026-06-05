@@ -2,7 +2,7 @@ export const siteConfig = {
     name: "FI Digital Australia",
     tagline: "Product Engineering, Data Platforms & AI Agent Architects",
     url: "https://www.fidigital.com.au",
-    email: "info@fidigital.com.au",
+    email: "support@fidigital.com.au",
     phone: "1300 921 280",
     whatsapp: "1300 921 280",
     offices: {

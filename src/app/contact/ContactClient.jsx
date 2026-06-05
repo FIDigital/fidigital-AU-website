@@ -359,11 +359,11 @@ export default function ContactClient() {
                       </div>
                       <h2 style={{ fontSize: '1.75rem', fontWeight: 900 }}>Email Our Team</h2>
                    </div>
-                   <a href="mailto:info@fidigital.com.au" style={{ 
+                   <a href="mailto:support@fidigital.com.au" style={{ 
                      fontSize: 'clamp(1.5rem, 5vw, 3rem)', fontWeight: 950, color: 'var(--primary)', 
                      textDecoration: 'none', display: 'block', marginBottom: '1rem', wordBreak: 'break-all' 
                    }}>
-                     info@fidigital.com.au
+                     support@fidigital.com.au
                    </a>
                    <p style={{ fontSize: '1.15rem', color: 'var(--text-muted)', fontWeight: 500 }}>
                      General inquiries and project proposals. Response within 4 business hours.

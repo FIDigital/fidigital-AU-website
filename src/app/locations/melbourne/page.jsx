@@ -23,7 +23,7 @@ const localBusinessJsonLd = {
   name: "FI Digital Australia — Melbourne",
   url: `${SITE_URL}/locations/melbourne`,
   telephone: "+61 1300 921 280",
-  email: "info@fidigital.com.au",
+  email: "support@fidigital.com.au",
   parentOrganization: { "@id": ORG_ID },
   address: [
     { "@type": "PostalAddress", streetAddress: "Level 9, 440 Collins Street", addressLocality: "Melbourne", addressRegion: "VIC", postalCode: "3000", addressCountry: "AU" },
