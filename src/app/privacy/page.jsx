@@ -34,7 +34,7 @@ const SECTIONS = [
   },
   {
     heading: "Contact",
-    body: "For privacy questions or requests, contact us at info@fidigital.com.au.",
+    body: "For privacy questions or requests, contact us at support@fidigital.com.au.",
   },
 ];
 

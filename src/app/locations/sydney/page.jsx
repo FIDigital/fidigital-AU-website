@@ -29,7 +29,7 @@ const sydneyJsonLd = {
   name: "FI Digital Australia — Sydney",
   url: `${SITE_URL}/locations/sydney`,
   telephone: "+61 1300 921 280",
-  email: "info@fidigital.com.au",
+  email: "support@fidigital.com.au",
   parentOrganization: { "@id": ORG_ID },
   areaServed: [
     { "@type": "City", name: "Sydney" },
@@ -99,7 +99,7 @@ export default function SydneyLocationPage() {
               Engagements are led by Melbourne-based senior consultants with on-site presence in Sydney as needed. Remote-first delivery with monthly on-site workshops is the standard model.
             </p>
             <p style={{ fontSize: "1.05rem", color: "var(--text)", fontWeight: 600, margin: 0 }}>
-              1300 921 280  ·  info@fidigital.com.au
+              1300 921 280  ·  support@fidigital.com.au
             </p>
           </div>
         </section>
