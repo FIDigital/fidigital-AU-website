@@ -54,7 +54,7 @@ export async function GET() {
       </svg>
     </div>
     <h1 class="ty-title">Thank you — your inquiry has been received.</h1>
-    <p class="ty-text">A member of our team will respond within 4 business hours. If it's urgent, email us at <a href="mailto:info@fidigital.com.au">info@fidigital.com.au</a>.</p>
+    <p class="ty-text">A member of our team will respond within 4 business hours. If it's urgent, email us at <a href="mailto:support@fidigital.com.au">support@fidigital.com.au</a>.</p>
   </div>
 
   <!-- Theme detection + auto-height reporting (matches the form iframe) -->
