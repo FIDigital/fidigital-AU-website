@@ -1,6 +1,12 @@
-export async function GET() {
+export async function GET(request) {
+  // The parent (<ZohoFormEmbed />) passes the *site* theme as ?theme=dark|light
+  // so the form renders in the correct theme on the very first paint — no flash,
+  // and correct even if the postMessage theme sync is delayed.
+  const initialTheme =
+    new URL(request.url).searchParams.get("theme") === "dark" ? "dark" : "light";
+
   const html = `<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="${initialTheme}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,19 +32,25 @@ export async function GET() {
     }
 
     [data-theme="dark"] {
-      --bg: transparent;
+      /* Solid dark surface matching the site card (--card-bg: #0f172a).
+         Must NOT be 'transparent': an iframe with a transparent body falls
+         back to the browser's default WHITE canvas, which rendered the dark
+         theme's light text/borders onto white => unreadable in dark mode. */
+      --bg: #0f172a;
       --text: #f3f4f6;
       --text-muted: #9ca3af;
       --label: #d1d5db;
       --input-bg: rgba(255,255,255,0.06);
-      --input-border: rgba(255,255,255,0.14);
+      --input-border: rgba(255,255,255,0.28);
       --input-focus: #3b82f6;
       --shadow-focus: 0 0 0 4px rgba(59,130,246,0.18);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { overflow-x: hidden; }
+    /* Paint the surface on html too so there is never a white iframe canvas
+       behind the (padded) body, regardless of theme. */
+    html { overflow-x: hidden; background: var(--bg); }
 
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -572,12 +584,10 @@ export async function GET() {
       function applyTheme(isDark) {
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
       }
-      // Default to LIGHT. The parent page is the single source of truth for the
-      // theme and pushes the real site theme via postMessage. We must NOT follow
-      // the OS 'prefers-color-scheme' here — doing so rendered a dark form on the
-      // light site whenever the visitor's OS was in dark mode (invisible borders,
-      // washed-out labels).
-      applyTheme(false);
+      // Initial theme is set server-side from the ?theme= query param (see the
+      // route handler). The parent page remains the single source of truth and
+      // pushes the live site theme via postMessage so toggling dark/light updates
+      // the form instantly. We must NOT follow the OS 'prefers-color-scheme' here.
       window.addEventListener('message', function(e) {
         if (e.data && e.data.type === 'theme') { applyTheme(e.data.isDark); }
       });

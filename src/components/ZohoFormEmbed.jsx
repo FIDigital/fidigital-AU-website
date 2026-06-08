@@ -13,9 +13,27 @@ import { useState, useRef, useEffect } from "react";
  *
  * Shared by /contact and /book-discovery.
  */
+// Read the *site* theme. next-themes resolves the active theme onto a
+// `data-theme` attribute on <html> (defaultTheme="light"). We must NOT fall back
+// to the OS `prefers-color-scheme` — that pushed a dark theme onto the light form
+// whenever the visitor's OS was dark, making inputs borderless.
+const isSiteDark = () =>
+  typeof document !== "undefined" &&
+  (document.documentElement.getAttribute("data-theme") === "dark" ||
+    document.documentElement.classList.contains("dark"));
+
 export default function ZohoFormEmbed({ title = "Contact Us Form", fallbackHeight = "850px" }) {
   const [height, setHeight] = useState(fallbackHeight);
+  // Defer the src until mount so we can stamp the real site theme into the URL
+  // (?theme=dark|light). The form then renders correct on first paint — no white
+  // flash in dark mode — and loads exactly once (null src = no request server-side
+  // or on first client render, so no hydration mismatch and no double-load).
+  const [src, setSrc] = useState(null);
   const iframeRef = useRef(null);
+
+  useEffect(() => {
+    setSrc(`/zoho-form?theme=${isSiteDark() ? "dark" : "light"}`);
+  }, []);
 
   useEffect(() => {
     const handleMessage = (event) => {
@@ -24,14 +42,6 @@ export default function ZohoFormEmbed({ title = "Contact Us Form", fallbackHeigh
       }
     };
     window.addEventListener("message", handleMessage);
-
-    // Read the *site* theme only. next-themes resolves the active theme onto a
-    // `data-theme` attribute on <html> (defaultTheme="light"). We must NOT fall
-    // back to the OS `prefers-color-scheme` — that pushed a dark theme onto the
-    // light form whenever the visitor's OS was dark, making inputs borderless.
-    const isSiteDark = () =>
-      document.documentElement.getAttribute("data-theme") === "dark" ||
-      document.documentElement.classList.contains("dark");
 
     const pushTheme = () => {
       const win = iframeRef.current && iframeRef.current.contentWindow;
@@ -61,21 +71,23 @@ export default function ZohoFormEmbed({ title = "Contact Us Form", fallbackHeigh
 
   return (
     <div style={{ width: "100%", minHeight: height, transition: "min-height 0.3s ease" }}>
-      <iframe
-        ref={iframeRef}
-        src="/zoho-form"
-        title={title}
-        scrolling="no"
-        style={{ width: "100%", height: height, border: "none", display: "block" }}
-        onLoad={(e) => {
-          try {
-            const isDark =
-              document.documentElement.getAttribute("data-theme") === "dark" ||
-              document.documentElement.classList.contains("dark");
-            e.target.contentWindow.postMessage({ type: "theme", isDark }, "*");
-          } catch (err) {}
-        }}
-      />
+      {src && (
+        <iframe
+          ref={iframeRef}
+          src={src}
+          title={title}
+          scrolling="no"
+          style={{ width: "100%", height: height, border: "none", display: "block" }}
+          onLoad={(e) => {
+            try {
+              e.target.contentWindow.postMessage(
+                { type: "theme", isDark: isSiteDark() },
+                "*"
+              );
+            } catch (err) {}
+          }}
+        />
+      )}
     </div>
   );
 }
