@@ -572,12 +572,15 @@ export async function GET() {
       function applyTheme(isDark) {
         document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
       }
+      // Default to LIGHT. The parent page is the single source of truth for the
+      // theme and pushes the real site theme via postMessage. We must NOT follow
+      // the OS 'prefers-color-scheme' here — doing so rendered a dark form on the
+      // light site whenever the visitor's OS was in dark mode (invisible borders,
+      // washed-out labels).
+      applyTheme(false);
       window.addEventListener('message', function(e) {
         if (e.data && e.data.type === 'theme') { applyTheme(e.data.isDark); }
       });
-      var mq = window.matchMedia('(prefers-color-scheme: dark)');
-      applyTheme(mq.matches);
-      mq.addEventListener('change', function(e) { applyTheme(e.matches); });
 
       // Report body height to parent so iframe resizes automatically
       function reportHeight() {

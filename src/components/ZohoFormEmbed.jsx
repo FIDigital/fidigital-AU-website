@@ -25,23 +25,37 @@ export default function ZohoFormEmbed({ title = "Contact Us Form", fallbackHeigh
     };
     window.addEventListener("message", handleMessage);
 
-    const pushTheme = (win) => {
+    // Read the *site* theme only. next-themes resolves the active theme onto a
+    // `data-theme` attribute on <html> (defaultTheme="light"). We must NOT fall
+    // back to the OS `prefers-color-scheme` — that pushed a dark theme onto the
+    // light form whenever the visitor's OS was dark, making inputs borderless.
+    const isSiteDark = () =>
+      document.documentElement.getAttribute("data-theme") === "dark" ||
+      document.documentElement.classList.contains("dark");
+
+    const pushTheme = () => {
+      const win = iframeRef.current && iframeRef.current.contentWindow;
+      if (!win) return;
       try {
-        const isDark =
-          document.documentElement.classList.contains("dark") ||
-          document.documentElement.getAttribute("data-theme") === "dark" ||
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
-        win.postMessage({ type: "theme", isDark }, "*");
+        win.postMessage({ type: "theme", isDark: isSiteDark() }, "*");
       } catch (e) {}
     };
 
-    const timer = setTimeout(() => {
-      if (iframeRef.current && iframeRef.current.contentWindow) pushTheme(iframeRef.current.contentWindow);
-    }, 1500);
+    // Push shortly after mount (covers the iframe having already loaded before
+    // the onLoad handler attached).
+    const timer = setTimeout(pushTheme, 300);
+
+    // Keep the form in sync if the user flips the site theme toggle.
+    const observer = new MutationObserver(pushTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme", "class"],
+    });
 
     return () => {
       window.removeEventListener("message", handleMessage);
       clearTimeout(timer);
+      observer.disconnect();
     };
   }, []);
 
@@ -56,9 +70,8 @@ export default function ZohoFormEmbed({ title = "Contact Us Form", fallbackHeigh
         onLoad={(e) => {
           try {
             const isDark =
-              document.documentElement.classList.contains("dark") ||
               document.documentElement.getAttribute("data-theme") === "dark" ||
-              window.matchMedia("(prefers-color-scheme: dark)").matches;
+              document.documentElement.classList.contains("dark");
             e.target.contentWindow.postMessage({ type: "theme", isDark }, "*");
           } catch (err) {}
         }}
