@@ -5,11 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
-  Calendar, Clock, CheckCircle2, ArrowRight, ShieldCheck, 
+  Calendar, Clock, ShieldCheck,
   MessageSquare, Sparkles, Zap, Users, Globe, Building
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -133,10 +132,39 @@ export default function BookDiscoveryClient() {
           color: var(--text-muted); line-height: 1.6;
         }
 
+        /* ── Zoho Bookings embed ─────────────────────────────── */
+        .booking-embed-wrap {
+          max-width: 1000px;
+          margin: 0 auto;
+          border-radius: 24px;
+          overflow: hidden;
+          border: 1px solid var(--border);
+          box-shadow: var(--card-shadow);
+          background: var(--card-bg);
+          -webkit-overflow-scrolling: touch;
+        }
+        .booking-embed-wrap iframe {
+          display: block;
+          width: 100%;
+          height: 750px;
+          border: 0;
+        }
+        /* Taller viewports get a little more room; the Zoho flow
+           stacks vertically as the width shrinks, so height grows. */
+        @media (max-width: 1024px) {
+          .booking-embed-wrap iframe { height: 820px; }
+        }
+
         @media (max-width: 768px) {
           .section-padding { padding: 80px 0; }
           .hero-section { min-height: auto; padding-top: 140px; padding-bottom: 80px; }
           .glass-card { padding: 2rem; }
+          .booking-embed-wrap { border-radius: 16px; }
+          .booking-embed-wrap iframe { height: 1000px; }
+        }
+
+        @media (max-width: 480px) {
+          .booking-embed-wrap iframe { height: 1120px; }
         }
       `}</style>
 
@@ -224,26 +252,23 @@ export default function BookDiscoveryClient() {
               </div>
               <h2 style={{ fontSize: '3rem', fontWeight: 900, marginBottom: '1.5rem' }}>Schedule Your Session</h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto' }}>
-                Reach out and we'll arrange a free 30-minute discovery call at a time that suits you.
+                Reach out and we&apos;ll arrange a free 30-minute discovery call at a time that suits you.
               </p>
             </div>
 
-            <div className="reveal glass-card" style={{ maxWidth: '680px', margin: '0 auto', textAlign: 'center', padding: 'clamp(2rem, 5vw, 3rem)' }}>
-              <p style={{ fontSize: '1.1rem', color: 'var(--text)', lineHeight: 1.7, marginBottom: '2rem' }}>
-                To book your session, send us a message or give us a call — we'll confirm a time directly with you.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--primary)', color: '#fff', padding: '1rem 2rem', borderRadius: '10px', fontWeight: 800, textDecoration: 'none' }}>
-                  Contact Us <ArrowRight size={18} />
-                </Link>
-                <a href="tel:1300921280" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-secondary)', color: 'var(--text)', padding: '1rem 2rem', borderRadius: '10px', fontWeight: 800, textDecoration: 'none', border: '1px solid var(--border)' }}>
-                  Call 1300 921 280
-                </a>
-              </div>
-              <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-                Or email <a href="mailto:support@fidigital.com.au" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>support@fidigital.com.au</a>
-              </p>
+            <div className="reveal booking-embed-wrap">
+              <iframe
+                src="https://fidigital.zohobookings.com/portal-embed#/3881442000002731050"
+                title="Book your AI Strategy Call with FI Digital"
+                width="100%"
+                height="750"
+                allowFullScreen
+                loading="lazy"
+              />
             </div>
+            <p style={{ marginTop: '1.5rem', fontSize: '0.9rem', color: 'var(--text-muted)', textAlign: 'center' }}>
+              Trouble loading the scheduler? Call <a href="tel:1300921280" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>1300 921 280</a> or email <a href="mailto:support@fidigital.com.au" style={{ color: 'var(--primary)', fontWeight: 600, textDecoration: 'none' }}>support@fidigital.com.au</a>
+            </p>
           </div>
         </section>
 
