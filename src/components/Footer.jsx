@@ -1,7 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/lib/siteData";
 import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "./Logo";
+import zohoPartnerLogo from "../../public/Zoho-partner.png";
 
 const footerLinks = {
   Services: [
@@ -47,11 +49,11 @@ export default function Footer() {
                 <Logo variant="white" width="190px" height="58px" />
             </Link>
 
-            <img
-              src="/Zoho-partner.png"
+            <Image
+              src={zohoPartnerLogo}
               alt="Zoho Premium Partner"
-              width="190"
-              height="58"
+              width={190}
+              height={58}
               className="fi-footer-partner-logo"
             />
 
