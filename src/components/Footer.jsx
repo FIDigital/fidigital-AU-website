@@ -47,6 +47,14 @@ export default function Footer() {
                 <Logo variant="white" width="190px" height="58px" />
             </Link>
 
+            <img
+              src="/Zoho-partner.png"
+              alt="Zoho Premium Partner"
+              width="190"
+              height="58"
+              className="fi-footer-partner-logo"
+            />
+
             <p className="fi-footer-tagline">
               Premium Product Engineering, Data Platforms, and AI Agent Architects. Melbourne-based senior team serving the APAC region.
             </p>
@@ -153,6 +161,15 @@ export default function Footer() {
 
         .fi-footer-brand {
           max-width: 320px;
+        }
+
+        .fi-footer-partner-logo {
+          width: 190px;
+          height: 58px;
+          object-fit: contain;
+          object-position: left center;
+          display: block;
+          margin-bottom: 1.5rem;
         }
 
         .fi-footer-tagline {
