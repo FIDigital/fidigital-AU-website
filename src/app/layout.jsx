@@ -30,20 +30,11 @@ export const metadata = {
     siteName: "FI Digital AU",
     title: "FI Digital AU | AI Agent Architects & Zoho Experts",
     description: "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows.",
-    images: [
-      {
-        url: "/four-pillars.png",
-        width: 1024,
-        height: 559,
-        alt: "FI Digital AU – AI Agent Architects",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "FI Digital AU | AI Agent Architects",
     description: "Leading Australian Zoho partner in Melbourne. AI agent architects and Zoho experts.",
-    images: ["/four-pillars.png"],
   },
   robots: {
     index: true,
@@ -55,11 +46,6 @@ export const metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
   },
   alternates: {
     types: {
