@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Users, Search, PenTool, BarChart4, CheckCircle, Heart, Globe, Sparkles, MessageSquare } from 'lucide-react';
 import Image from 'next/image';
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
+import strategyImg from '@/assets/images/strategy.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -124,7 +126,7 @@ export default function UserExperienceClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/digital-transformation.png"
+            src={digitalTransformationImg}
             alt="User Experience Design Visualization"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -254,7 +256,7 @@ export default function UserExperienceClient() {
             </div>
             <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "550px", boxShadow: "0 30px 60px rgba(0,0,0,0.05)" }}>
               <Image 
-                src="/images/strategy.png"
+                src={strategyImg}
                 alt="UX Strategy and Management"
                 fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}

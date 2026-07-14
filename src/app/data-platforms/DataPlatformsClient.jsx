@@ -5,6 +5,11 @@ import Link from 'next/link';
 import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import { ArrowRight, Database, CloudSnow, Network, FileDown, AlertCircle, LineChart, ShieldCheck, ChevronDown } from 'lucide-react';
+import financeLakehouseImg from '@/assets/images/finance-lakehouse.png';
+import lakehouseDiagramImg from '@/assets/images/lakehouse-diagram.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import microsoftFabricImg from '@/assets/images/Microsoft-Fabric.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
 
 export default function DataPlatformsClient() {
   return (
@@ -30,7 +35,7 @@ export default function DataPlatformsClient() {
           pointerEvents: "none"
         }}>
           <Image 
-            src="/finance-lakehouse.png" 
+            src={financeLakehouseImg} 
             alt="Data Platforms Background" 
             fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{ 
@@ -250,7 +255,7 @@ function DataWhatWeBuildSection() {
            </div>
            
            <div style={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border)', boxShadow: '0 20px 40px rgba(0,0,0,0.15)' }} className="hover-lift">
-             <img src="/lakehouse-diagram.png" alt="Enterprise Lakehouse Architecture Medallion Topology" style={{ width: '100%', height: 'auto', display: 'block' }} onError={(e) => { e.target.style.display = 'none'; }} />
+             <img src={lakehouseDiagramImg.src} alt="Enterprise Lakehouse Architecture Medallion Topology" style={{ width: '100%', height: 'auto', display: 'block' }} />
            </div>
         </div>
         
@@ -343,21 +348,21 @@ function DataPlatformExpertiseSection() {
       name: "Databricks",
       color: "#f59e0b",
       route: "/data-platforms/databricks",
-      logo: "/images/databricks-nobg.png",
+      logo: databricksNobgImg,
       desc: "We design and deploy Databricks lakehouse platforms on Azure. Medallion architecture, Delta Lake, Unity Catalog for governance, MLflow for experiment tracking, and Databricks SQL for analyst-friendly querying. Our Databricks practice serves financial services, healthcare, and resources clients who need advanced analytics and ML capabilities alongside governed data management."
     },
     {
       name: "Microsoft Fabric",
       color: "#0ea5e9",
       route: "/data-platforms/microsoft-fabric",
-      logo: "/images/Microsoft-Fabric.png",
+      logo: microsoftFabricImg,
       desc: "The newest and most tightly integrated platform for Microsoft-stack enterprises. We deploy Fabric workspaces that unify data engineering, data science, real-time analytics, and Power BI reporting in a single governed environment. OneLake provides a single data lake across the entire organisation. If your enterprise runs on Azure AD, Power BI, and Dynamics 365, Fabric is the most natural path to a modern data platform."
     },
     {
       name: "Snowflake",
       color: "#3b82f6",
       route: "/data-platforms/snowflake",
-      logo: "/images/snowflake-nobg.png",
+      logo: snowflakeNobgImg,
       desc: "Cloud-native data warehousing with industry-leading data sharing and governance capabilities. We deploy Snowflake for organisations that need cross-organisational data sharing, multi-cloud flexibility, and consumption-based pricing. Snowflake excels in financial services scenarios where data needs to be shared between advisers, compliance teams, and external auditors with granular access controls."
     }
   ];

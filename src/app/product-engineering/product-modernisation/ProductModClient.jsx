@@ -13,6 +13,21 @@ import {
   FileSearch, GitBranch, HardDrive, Puzzle, Shield, Zap,
   CheckCircle2, AlertTriangle, Clock, TrendingUp
 } from "lucide-react";
+import productModernisationHeroImg from '@/assets/images/product-modernisation-hero.png';
+import phpNobg from '@/assets/images/php-nobg.png';
+import classicAsp from '@/assets/images/classicAsp.png';
+import dotnetNobg from '@/assets/images/dotnet-nobg.png';
+import javaLogo from '@/assets/images/java.png';
+import oracleNobg from '@/assets/images/oracle-nobg.png';
+import coldFusion from '@/assets/images/coldFusion.png';
+import reactNobg from '@/assets/images/react-nobg.png';
+import nextjsNobg from '@/assets/images/nextjs-nobg.png';
+import pythonNobg from '@/assets/images/python-nobg.png';
+import fastapiNobg from '@/assets/images/fastapi-nobg.png';
+import postgresql from '@/assets/images/postgresql.png';
+import awsNobg from '@/assets/images/aws-nobg.png';
+import azureNobg from '@/assets/images/azure-nobg.png';
+import nodejsNobg from '@/assets/images/nodejs-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -179,7 +194,7 @@ export default function ProductModClient() {
             pointerEvents:"none", zIndex:0 }} />
 
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/product-modernisation-hero.png" alt="Legacy Application Modernisation" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={productModernisationHeroImg} alt="Legacy Application Modernisation" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -328,12 +343,12 @@ export default function ProductModClient() {
                   </div>
                   <div style={{ display:"flex", flexWrap:"wrap", gap:"0.75rem" }}>
                     {[
-                      { label:"PHP 4/5",       logo:"/images/php-nobg.png" },
-                      { label:"Classic ASP",   logo:"/images/classicAsp.png" },
-                      { label:"VB.NET",        logo:"/images/dotnet-nobg.png" },
-                      { label:"Legacy Java",   logo:"/images/java.png" },
-                      { label:"Oracle Forms",  logo:"/images/oracle-nobg.png" },
-                      { label:"ColdFusion",    logo:"/images/coldFusion.png" },
+                      { label:"PHP 4/5",       logo: phpNobg },
+                      { label:"Classic ASP",   logo: classicAsp },
+                      { label:"VB.NET",        logo: dotnetNobg },
+                      { label:"Legacy Java",   logo: javaLogo },
+                      { label:"Oracle Forms",  logo: oracleNobg },
+                      { label:"ColdFusion",    logo: coldFusion },
                     ].map((tech, i) => (
                       <div key={i} style={{
                         display:"flex", alignItems:"center", gap:"0.55rem",
@@ -378,14 +393,14 @@ export default function ProductModClient() {
                   </div>
                   <div style={{ display:"flex", flexWrap:"wrap", gap:"0.75rem" }}>
                     {[
-                      { label:"React",      logo:"/images/react-nobg.png" },
-                      { label:"Next.js",    logo:"/images/nextjs-nobg.png" },
-                      { label:"Python",     logo:"/images/python-nobg.png" },
-                      { label:"FastAPI",    logo:"/images/fastapi-nobg.png" },
-                      { label:"PostgreSQL", logo:"/images/postgresql.png" },
-                      { label:"AWS Sydney", logo:"/images/aws-nobg.png" },
-                      { label:"Azure AU",   logo:"/images/azure-nobg.png" },
-                      { label:"Node.js",    logo:"/images/nodejs-nobg.png" },
+                      { label:"React",      logo: reactNobg },
+                      { label:"Next.js",    logo: nextjsNobg },
+                      { label:"Python",     logo: pythonNobg },
+                      { label:"FastAPI",    logo: fastapiNobg },
+                      { label:"PostgreSQL", logo: postgresql },
+                      { label:"AWS Sydney", logo: awsNobg },
+                      { label:"Azure AU",   logo: azureNobg },
+                      { label:"Node.js",    logo: nodejsNobg },
                     ].map((tech, i) => (
                       <div key={i} style={{
                         display:"flex", alignItems:"center", gap:"0.55rem",

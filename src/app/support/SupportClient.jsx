@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Clock, ShieldCheck, Zap, Users, Headphones, CheckCircle, BarChart, Settings, Lock } from 'lucide-react';
 import Image from 'next/image';
+import itSoftwareImg from '@/assets/images/it-software.png';
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -77,7 +79,7 @@ export default function SupportClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/it-software.png"
+            src={itSoftwareImg}
             alt="Support and Infrastructure Visualization"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -141,7 +143,7 @@ export default function SupportClient() {
             </div>
             <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "500px", boxShadow: "0 30px 60px rgba(0,0,0,0.05)" }}>
               <Image 
-                src="/images/digital-transformation.png"
+                src={digitalTransformationImg}
                 alt="Support Engineering Team"
                 fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}

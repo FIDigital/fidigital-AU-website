@@ -16,6 +16,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import itSoftwareImg from '@/assets/images/it-software.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -93,7 +94,7 @@ export default function BlogArticleClient() {
             opacity: 0.7, pointerEvents: "none",
           }}>
             <Image 
-              src="/images/it-software.png" 
+              src={itSoftwareImg} 
               alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover"
               style={{
                 maskImage: "radial-gradient(circle at center right, black, transparent 90%)",

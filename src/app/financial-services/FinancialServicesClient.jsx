@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Landmark, Bot, ShieldCheck, HeartHandshake, FileText, BarChart, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import financialServicesImg from '@/assets/images/financial-services.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function FinancialServicesClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/financial-services.png"
+            src={financialServicesImg}
             alt="Financial Services CRM Ecosystems"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

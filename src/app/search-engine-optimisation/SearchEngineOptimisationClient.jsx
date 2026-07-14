@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Search, BarChart3, LineChart, Target, Compass, Globe } from 'lucide-react';
 import Image from 'next/image';
+import seoImg from '@/assets/images/seo.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function SearchEngineOptimisationClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/seo.png"
+            src={seoImg}
             alt="Search Engine Optimisation Architecture"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

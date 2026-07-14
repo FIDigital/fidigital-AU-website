@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, Zap, Users, BarChart3, Globe, Layers, GitMerge, CheckCircle, Database } from "lucide-react";
+import drova1Img from '@/assets/images/Case-Study/Drova1.png';
 
 const C = "#3B82F6";
 
@@ -78,7 +79,7 @@ export default function DrovaSalesSupportCaseStudy() {
 
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", height: "100px", position: "relative", marginBottom: "1.5rem", overflow: "hidden" }}>
-                <Image src="/images/Case-Study/Drova1.png" alt="Drova" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "10px 16px" }} />
+                <Image src={drova1Img} alt="Drova" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "10px 16px" }} />
               </div>
               {[{ label: "Client", value: "Drova" }, { label: "Industry", value: "Cloud Data Protection" }, { label: "Solution", value: "Zoho CRM Plus" }, { label: "Regions", value: "Australia & UK" }].map(r => (
                 <div key={r.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>

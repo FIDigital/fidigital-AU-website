@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Code2, LayoutTemplate, Database, Settings, GitBranch, FileText, Lightbulb, Puzzle, Award, Briefcase } from 'lucide-react';
 import Image from 'next/image';
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function CreatorClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/partner-hero.png"
+            src={partnerHeroImg}
             alt="Zoho Creator Low Code App Development"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

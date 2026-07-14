@@ -13,6 +13,7 @@ if (typeof window !== "undefined") {
 }
 
 import { caseStudies } from "@/lib/caseStudiesData";
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 
 const ALL_INDUSTRIES = ["All", ...Array.from(new Set(caseStudies.map((c) => c.industry)))];
@@ -78,7 +79,7 @@ export default function CaseStudiesClient() {
             opacity: 0.3, pointerEvents: "none",
           }}>
             <Image
-              src="/images/partner-hero.png"
+              src={partnerHeroImg}
               alt=""
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
@@ -247,7 +248,7 @@ export default function CaseStudiesClient() {
                         overflow: "hidden"
                       }}>
                         <img
-                          src={cs.image}
+                          src={cs.image.src}
                           alt={cs.company}
                           style={{
                             maxWidth: "100%",

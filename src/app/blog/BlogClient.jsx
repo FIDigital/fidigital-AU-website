@@ -13,6 +13,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import blogImg from '@/assets/images/Blog.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -330,7 +331,7 @@ export default function BlogClient() {
             pointerEvents: "none",
           }}>
             <Image
-              src="/images/Blog.png"
+              src={blogImg}
               alt=""
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{

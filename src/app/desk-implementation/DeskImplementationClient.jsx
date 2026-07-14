@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, CheckCircle, HeartHandshake, Zap, Target, Smile, PenTool, Search, Puzzle, Shield, Settings } from 'lucide-react';
 import Image from 'next/image';
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -66,7 +67,7 @@ export default function DeskImplementationClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/partner-hero.png"
+            src={partnerHeroImg}
             alt="Zoho Desk Customer Success Matrix"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

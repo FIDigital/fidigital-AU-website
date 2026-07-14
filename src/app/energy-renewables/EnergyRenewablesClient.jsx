@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ArrowRight, Zap, Activity, Settings, Puzzle, Database, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import TrustedBy from "@/components/TrustedBy";
+import energyRenuableImg from '@/assets/images/energy-renuable.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -65,7 +66,7 @@ export default function EnergyRenewablesClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/energy-renuable.png"
+            src={energyRenuableImg}
             alt="Energy and renewables technology for Australian operators"
             aria-hidden="true"
             fill

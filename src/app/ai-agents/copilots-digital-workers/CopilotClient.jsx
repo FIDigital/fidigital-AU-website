@@ -13,6 +13,12 @@ import {
   Zap, FileText, BarChart2, Lock, Settings,
   MessageSquare, TrendingUp
 } from "lucide-react";
+import aiCopilotPanel2Img from '@/assets/images/ai-copilot-panel2.png';
+import claudeImg from '@/assets/images/claude.png';
+import openaiNobgImg from '@/assets/images/openai-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
+import langchainNobgImg from '@/assets/images/langchain-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +197,7 @@ export default function CopilotClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.3, pointerEvents:"none" }}>
-            <Image src="/images/ai-copilot-panel2.png" alt="AI Copilot Panel" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={aiCopilotPanel2Img} alt="AI Copilot Panel" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -391,8 +397,8 @@ export default function CopilotClient() {
                     <div style={{ fontSize:"0.6rem", fontWeight:800, color:"var(--text-muted)", textTransform:"uppercase", letterSpacing:"0.1em" }}>Powered by</div>
                     <div style={{ display:"flex", gap:"0.75rem", alignItems:"center", justifyContent:"center", flexWrap:"wrap" }}>
                       {[
-                        { src:"/images/claude.png",     alt:"Claude" },
-                        { src:"/images/openai-nobg.png", alt:"OpenAI" },
+                        { src:claudeImg,     alt:"Claude" },
+                        { src:openaiNobgImg, alt:"OpenAI" },
                       ].map((l,j) => (
                         <div key={j} style={{ position:"relative", width:"52px", height:"20px" }}>
                           <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
@@ -499,11 +505,11 @@ export default function CopilotClient() {
             }}>
               <span style={{ fontSize:"0.8rem", fontWeight:700, color:"var(--text-muted)", textTransform:"uppercase", letterSpacing:"0.08em" }}>Deployed via</span>
               {[
-                { src:"/images/claude.png",       alt:"Claude",   label:"Anthropic Claude" },
-                { src:"/images/openai-nobg.png",  alt:"OpenAI",   label:"GPT-4o / Azure OpenAI" },
-                { src:"/images/aws-nobg.png",     alt:"AWS",      label:"AWS Bedrock" },
-                { src:"/images/azure-nobg.png",   alt:"Azure",    label:"Azure OpenAI Service" },
-                { src:"/images/langchain-nobg.png",alt:"LangChain",label:"LangChain" },
+                { src:claudeImg,       alt:"Claude",   label:"Anthropic Claude" },
+                { src:openaiNobgImg,  alt:"OpenAI",   label:"GPT-4o / Azure OpenAI" },
+                { src:awsNobgImg,     alt:"AWS",      label:"AWS Bedrock" },
+                { src:azureNobgImg,   alt:"Azure",    label:"Azure OpenAI Service" },
+                { src:langchainNobgImg,alt:"LangChain",label:"LangChain" },
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"0.4rem" }}>
                   <div style={{ position:"relative", width:"68px", height:"26px" }}>

@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Factory, Database, GitBranch, Monitor, FileSpreadsheet, ShieldCheck, LayoutDashboard, Target, Truck, Boxes } from 'lucide-react';
 import Image from 'next/image';
+import manufacturingImg from '@/assets/images/manufacturing.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function ManufacturingClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/manufacturing.png"
+            src={manufacturingImg}
             alt="Manufacturing Logistics Dashboard"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

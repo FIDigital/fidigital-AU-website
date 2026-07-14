@@ -12,6 +12,13 @@ import {
   Mail, FileText, Database, Bell, RefreshCw, Settings
 } from "lucide-react";
 import TrustedBy from "@/components/TrustedBy";
+import workflowHeroImg from '@/assets/images/workflow-hero.png';
+import n8nImg from '@/assets/images/n8n.png';
+import langchainImg from '@/assets/images/langchain-nobg.png';
+import claudeImg from '@/assets/images/claude.png';
+import openaiImg from '@/assets/images/openai-nobg.png';
+import awsImg from '@/assets/images/aws-nobg.png';
+import azureImg from '@/assets/images/azure-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -138,7 +145,7 @@ export default function WorkflowClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.28, pointerEvents:"none" }}>
-            <Image src="/images/workflow-hero.png" alt="AI Workflow Automation" fill sizes="(max-width: 768px) 100vw, 60vw"
+            <Image src={workflowHeroImg} alt="AI Workflow Automation" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -151,7 +158,7 @@ export default function WorkflowClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"60px", height:"22px" }}>
-                <Image src="/images/n8n.png" alt="n8n" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                <Image src={n8nImg} alt="n8n" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:"#10B981", fontWeight:700, fontSize:"0.88rem" }}>
                 n8n · LangChain · Claude · GPT-4o · 400+ Integrations
@@ -305,10 +312,10 @@ export default function WorkflowClient() {
                 boxShadow:"0 2px 12px rgba(0,0,0,0.06)" }}>
                 <span style={{ fontSize:"0.7rem", fontWeight:800, color:"var(--text-muted)", textTransform:"uppercase", letterSpacing:"0.08em" }}>Orchestrated by</span>
                 {[
-                  { src:"/images/n8n.png",              alt:"n8n",       w:52, h:20 },
-                  { src:"/images/langchain-nobg.png",   alt:"LangChain", w:80, h:24 },
-                  { src:"/images/claude.png",           alt:"Claude",    w:64, h:24 },
-                  { src:"/images/openai-nobg.png",      alt:"OpenAI",    w:64, h:24 },
+                  { src: n8nImg,              alt:"n8n",       w:52, h:20 },
+                  { src: langchainImg,   alt:"LangChain", w:80, h:24 },
+                  { src: claudeImg,           alt:"Claude",    w:64, h:24 },
+                  { src: openaiImg,      alt:"OpenAI",    w:64, h:24 },
                 ].map((l,j) => (
                   <div key={j} style={{ position:"relative", width:`${l.w}px`, height:`${l.h}px`, opacity:0.85 }}>
                     <Image src={l.src} alt={l.alt} fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
@@ -396,7 +403,7 @@ export default function WorkflowClient() {
               {[
                 {
                   color:"#10B981",
-                  logoSrc:"/images/n8n.png",
+                  logoSrc: n8nImg,
                   logoW:72, logoH:28,
                   name:"n8n",
                   tagline:"Primary workflow orchestration",
@@ -405,7 +412,7 @@ export default function WorkflowClient() {
                 },
                 {
                   color:"#6366F1",
-                  logoSrc:"/images/langchain-nobg.png",
+                  logoSrc: langchainImg,
                   logoW:100, logoH:28,
                   name:"LangChain",
                   tagline:"AI orchestration framework",
@@ -458,8 +465,8 @@ export default function WorkflowClient() {
             }}>
               <span style={{ fontSize:"0.72rem", fontWeight:800, color:"var(--text-muted)", textTransform:"uppercase", letterSpacing:"0.08em" }}>Hosted on</span>
               {[
-                { src:"/images/aws-nobg.png",   alt:"AWS",   label:"AWS Sydney" },
-                { src:"/images/azure-nobg.png", alt:"Azure", label:"Azure Australia East" },
+                { src: awsImg,   alt:"AWS",   label:"AWS Sydney" },
+                { src: azureImg, alt:"Azure", label:"Azure Australia East" },
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"0.4rem" }}>
                   <div style={{ position:"relative", width:"64px", height:"24px" }}>

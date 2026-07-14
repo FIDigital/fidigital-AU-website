@@ -12,6 +12,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import itSoftwareImg from '@/assets/images/it-software.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -91,7 +92,7 @@ export default function BlogArticleClient() {
             opacity: 0.7, pointerEvents: "none",
           }}>
             <Image
-              src="/images/it-software.png"
+              src={itSoftwareImg}
               alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover"
               style={{
                 maskImage: "radial-gradient(circle at center right, black, transparent 90%)",
@@ -189,7 +190,7 @@ export default function BlogArticleClient() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'center' }} className="responsive-grid">
                   <div>
-                    <Image src="/images/it-software.png" width={400} height={300} alt="QuickBooks Integration" style={{ borderRadius: '20px', boxShadow: 'var(--card-shadow)' }} />
+                    <Image src={itSoftwareImg} width={400} height={300} alt="QuickBooks Integration" style={{ borderRadius: '20px', boxShadow: 'var(--card-shadow)' }} />
                   </div>
                   <div>
                     <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--primary)' }}>QuickBooks Online</h3>

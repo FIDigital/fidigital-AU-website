@@ -3,7 +3,7 @@ import Image from "next/image";
 import { siteConfig } from "@/lib/siteData";
 import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
 import Logo from "./Logo";
-import zohoPartnerLogo from "../../public/Zoho-partner.png";
+import zohoPartnerLogo from '@/assets/images/Zoho-partner.png';
 
 const footerLinks = {
   Services: [

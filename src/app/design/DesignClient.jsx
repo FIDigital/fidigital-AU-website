@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Monitor, Smartphone, Zap, Eye, Globe, Award, Palette, Layers, MousePointer2 } from 'lucide-react';
 import Image from 'next/image';
+import webHeroImg from '@/assets/images/web-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -103,7 +104,7 @@ export default function DesignClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/web-hero.png"
+            src={webHeroImg}
             alt="Design and Innovation Visualization"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

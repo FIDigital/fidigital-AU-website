@@ -27,6 +27,20 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import aiCopilotPanelImg from '@/assets/images/ai-copilot-panel.png';
+import deliveryHubsImg from '@/assets/images/delivery-hubs.png';
+import reactNobgImg from '@/assets/images/react-nobg.png';
+import pythonNobgImg from '@/assets/images/python-nobg.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
+import microsoftFabricImg from '@/assets/images/Microsoft-Fabric.png';
+import claudeImg from '@/assets/images/claude.png';
+import openaiNobgImg from '@/assets/images/openai-nobg.png';
+import langchainNobgImg from '@/assets/images/langchain-nobg.png';
+import n8nImg from '@/assets/images/n8n.png';
+import zohoLogoNobgImg from '@/assets/images/zoho-logo-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -76,7 +90,7 @@ function HomeHero() {
     }}
   >
     <Image
-      src="/images/ai-copilot-panel.png"
+      src={aiCopilotPanelImg}
       alt="FI Digital AI copilot dashboard for Australian enterprise"
       fill
       priority
@@ -343,18 +357,18 @@ function FourPillarsSection() {
 
 function TechStackSection() {
   const logos = [
-    { name: "React", src: "/images/react-nobg.png" },
-    { name: "Python", src: "/images/python-nobg.png" },
-    { name: "Databricks", src: "/images/databricks-nobg.png" },
-    { name: "Snowflake", src: "/images/snowflake-nobg.png" },
-    { name: "Microsoft Fabric", src: "/images/Microsoft-Fabric.png" },
-    { name: "Claude (Anthropic)", src: "/images/claude.png" },
-    { name: "GPT-4o (OpenAI)", src: "/images/openai-nobg.png" },
-    { name: "LangChain", src: "/images/langchain-nobg.png" },
-    { name: "n8n", src: "/images/n8n.png" },
-    { name: "Zoho", src: "/images/zoho-logo-nobg.png" },
-    { name: "AWS", src: "/images/aws-nobg.png" },
-    { name: "Microsoft Azure", src: "/images/azure-nobg.png" }
+    { name: "React", src: reactNobgImg.src },
+    { name: "Python", src: pythonNobgImg.src },
+    { name: "Databricks", src: databricksNobgImg.src },
+    { name: "Snowflake", src: snowflakeNobgImg.src },
+    { name: "Microsoft Fabric", src: microsoftFabricImg.src },
+    { name: "Claude (Anthropic)", src: claudeImg.src },
+    { name: "GPT-4o (OpenAI)", src: openaiNobgImg.src },
+    { name: "LangChain", src: langchainNobgImg.src },
+    { name: "n8n", src: n8nImg.src },
+    { name: "Zoho", src: zohoLogoNobgImg.src },
+    { name: "AWS", src: awsNobgImg.src },
+    { name: "Microsoft Azure", src: azureNobgImg.src }
   ];
 
   const marqueeItems = [...logos, ...logos, ...logos];
@@ -788,8 +802,7 @@ function GlobalDeliverySection() {
             </ul>
           </div>
           <div style={{ position: 'relative' }}>
-             <img src="/delivery-hubs.png" alt="Global Delivery Hubs map" style={{ width: '100%', height: 'auto', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))', border: '1px solid var(--border)' }} 
-             onError={(e) => { e.target.src = '/global-scale.png'; }} />
+             <img src={deliveryHubsImg.src} alt="Global Delivery Hubs map" style={{ width: '100%', height: 'auto', borderRadius: '16px', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.1))', border: '1px solid var(--border)' }} />
           </div>
         </div>
       </div>

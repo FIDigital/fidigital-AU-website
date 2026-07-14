@@ -7,6 +7,12 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Award, Zap, CheckCircle2, Star, ShieldCheck } from "lucide-react";
+import partnerHeroImg from '@/assets/images/partner-hero.png';
+import zohoLogoNobgImg from '@/assets/images/zoho-logo-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -42,11 +48,11 @@ export default function PartnershipsClient() {
   }, { scope: containerRef });
 
   const techCertifications = [
-    { title: "Zoho Certified", domains: "CRM, Books, Creator, Desk", img: "/images/zoho-logo-nobg.png" },
-    { title: "AWS Validated", domains: "Solutions Architect, Developer", img: "/images/aws-nobg.png" },
-    { title: "Azure Certified", domains: "Data Engineer, AI Engineer", img: "/images/azure-nobg.png" },
-    { title: "Databricks", domains: "Data Engineer Associate", img: "/images/databricks-nobg.png" },
-    { title: "Snowflake", domains: "SnowPro Core", img: "/images/snowflake-nobg.png" },
+    { title: "Zoho Certified", domains: "CRM, Books, Creator, Desk", img: zohoLogoNobgImg },
+    { title: "AWS Validated", domains: "Solutions Architect, Developer", img: awsNobgImg },
+    { title: "Azure Certified", domains: "Data Engineer, AI Engineer", img: azureNobgImg },
+    { title: "Databricks", domains: "Data Engineer Associate", img: databricksNobgImg },
+    { title: "Snowflake", domains: "SnowPro Core", img: snowflakeNobgImg },
   ];
 
   return (
@@ -74,7 +80,7 @@ export default function PartnershipsClient() {
             pointerEvents: "none"
           }}>
             <Image 
-              src="/images/partner-hero.png" 
+              src={partnerHeroImg} 
               alt="Strategic Technology Partnerships Background" 
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
@@ -153,12 +159,12 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/zoho-logo-nobg.png" alt="Zoho Premium Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                    <Image src={zohoLogoNobgImg} alt="Zoho Premium Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/aws-nobg.png" alt="AWS Partner Network" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                    <Image src={awsNobgImg} alt="AWS Partner Network" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>
@@ -167,12 +173,12 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/azure-nobg.png" alt="Microsoft Azure Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                    <Image src={azureNobgImg} alt="Microsoft Azure Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
                 <div className="cert-card partner-logo-card">
                   <div className="partner-img-wrapper">
-                    <Image src="/images/databricks-nobg.png" alt="Databricks Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                    <Image src={databricksNobgImg} alt="Databricks Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>
@@ -181,7 +187,7 @@ export default function PartnershipsClient() {
               <div className="partner-grid">
                 <div className="cert-card partner-logo-card partner-full" style={{ maxWidth: "600px", margin: "0 auto", width: "100%" }}>
                   <div className="partner-img-wrapper">
-                    <Image src="/images/snowflake-nobg.png" alt="Snowflake Service Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                    <Image src={snowflakeNobgImg} alt="Snowflake Service Partner" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                   </div>
                 </div>
               </div>

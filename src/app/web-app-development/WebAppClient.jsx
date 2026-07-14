@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Monitor, Cloud, Settings, Users, BarChart, Zap, CheckCircle, Globe, Layout, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import webHeroImg from '@/assets/images/web-hero.png';
+import webPortalVisualImg from '@/assets/images/web-portal-visual.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +66,7 @@ export default function WebAppClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/web-hero.png"
+            src={webHeroImg}
             alt="Web Application Development Visualization"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -234,7 +236,7 @@ export default function WebAppClient() {
         <div className="container" style={{ maxWidth: "1100px" }}>
           <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "500px", boxShadow: "0 40px 80px rgba(0,0,0,0.1)" }}>
             <Image 
-              src="/images/web-portal-visual.png"
+              src={webPortalVisualImg}
               alt="Custom Web Application Dashboard"
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover" }}

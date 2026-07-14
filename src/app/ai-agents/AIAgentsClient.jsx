@@ -12,6 +12,10 @@ import {
   Bot, ShieldCheck, FileSearch, Workflow,
   Eye, Lock, BarChart3, Cpu, CheckCircle2
 } from "lucide-react";
+import aiAgentsHeroImg from '@/assets/images/ai-agents-hero.png';
+import aiRagPanelImg from '@/assets/images/ai-rag-panel.png';
+import aiCopilotPanelImg from '@/assets/images/ai-copilot-panel.png';
+import aiWorkflowPanelImg from '@/assets/images/ai-workflow-panel.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -110,7 +114,7 @@ export default function AIAgentsClient() {
         }}>
           <div style={{ position: "absolute", top: 0, right: 0, width: "58%", height: "100%", zIndex: 0, opacity: 0.4, pointerEvents: "none" }}>
             <Image
-              src="/images/ai-agents-hero.png"
+              src={aiAgentsHeroImg}
               alt="AI Agents and Automation"
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
@@ -231,7 +235,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(59,130,246,0.15) 0%, rgba(59,130,246,0.03) 100%)" }}>
-                  <Image src="/images/ai-rag-panel.png" alt="RAG and Document Intelligence" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src={aiRagPanelImg} alt="RAG and Document Intelligence" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(59,130,246,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <FileSearch size={24} color="#3B82F6" />
@@ -257,7 +261,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(16,185,129,0.03) 100%)" }}>
-                  <Image src="/images/ai-copilot-panel.png" alt="Copilots and Digital Workers" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src={aiCopilotPanelImg} alt="Copilots and Digital Workers" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(16,185,129,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Bot size={24} color="#10B981" />
@@ -283,7 +287,7 @@ export default function AIAgentsClient() {
                 overflow: "hidden", display: "flex", flexDirection: "column"
               }}>
                 <div style={{ height: "220px", position: "relative", background: "linear-gradient(135deg, rgba(245,158,11,0.15) 0%, rgba(245,158,11,0.03) 100%)" }}>
-                  <Image src="/images/ai-workflow-panel.png" alt="Workflow Automation" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
+                  <Image src={aiWorkflowPanelImg} alt="Workflow Automation" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover", opacity: 0.8 }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, transparent 40%, var(--card-bg))" }}></div>
                   <div style={{ position: "absolute", top: "1.5rem", left: "1.5rem", width: "48px", height: "48px", background: "rgba(245,158,11,0.2)", backdropFilter: "blur(8px)", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center" }}>
                     <Workflow size={24} color="#F59E0B" />

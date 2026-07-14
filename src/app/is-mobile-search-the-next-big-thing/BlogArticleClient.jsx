@@ -15,6 +15,7 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import seoImg from '@/assets/images/seo.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -96,7 +97,7 @@ export default function BlogArticleClient() {
             opacity: 0.7, pointerEvents: "none",
           }}>
             <Image 
-              src="/images/seo.png" 
+              src={seoImg} 
               alt="" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover"
               style={{
                 maskImage: "radial-gradient(circle at center right, black, transparent 90%)",

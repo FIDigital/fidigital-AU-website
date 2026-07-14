@@ -7,6 +7,9 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Code2, Network, Globe, ShieldCheck } from "lucide-react";
+import whyHeroImg from '@/assets/images/why-hero.png';
+import weBuildImg from '@/assets/images/we-build.png';
+import globalScaleImg from '@/assets/images/global-scale.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -58,7 +61,7 @@ export default function WhyClient() {
             pointerEvents: "none"
           }}>
             <Image 
-              src="/why-hero.png" 
+              src={whyHeroImg} 
               alt="Engineering Background" 
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
@@ -96,7 +99,7 @@ export default function WhyClient() {
               </div>
             </div>
             <div className="reveal" style={{ order: 2, position: "relative", height: "450px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/we-build.png" alt="Engineering Team Building Systems" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={weBuildImg} alt="Engineering Team Building Systems" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>
@@ -152,7 +155,7 @@ export default function WhyClient() {
               </div>
             </div>
             <div className="reveal" style={{ position: "relative", height: "450px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/global-scale.png" alt="Global Engineering Capacity" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={globalScaleImg} alt="Global Engineering Capacity" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>

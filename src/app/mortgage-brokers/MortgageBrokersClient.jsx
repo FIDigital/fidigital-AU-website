@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Home, LayoutDashboard, Target, Database, Workflow, Bell, FileText } from 'lucide-react';
 import Image from 'next/image';
+import mortgageBrokersImg from '@/assets/images/mortgage-brokers.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function MortgageBrokersClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/mortgage-brokers.png"
+            src={mortgageBrokersImg}
             alt="Centralized Mortgage Brokering CRM"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

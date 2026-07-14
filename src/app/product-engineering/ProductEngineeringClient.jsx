@@ -5,6 +5,35 @@ import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import { useState } from 'react';
 import { ArrowRight, Code2, Terminal, Smartphone, Database, Layout, Rocket, RefreshCw, Search, Code, CheckCircle, Flag, Headphones, Server, Cloud, Cog, FileText, ChevronDown } from 'lucide-react';
+import weBuildImg from '@/assets/images/we-build.png';
+
+// Service card images
+import webAppCardImg from '@/assets/images/web-app-card.png';
+import mobileAppCardImg from '@/assets/images/mobile-app-card.png';
+import saasMvpCardImg from '@/assets/images/saas-mvp-card.png';
+import productModCardImg from '@/assets/images/product-mod-card.png';
+
+// Tech stack logos
+import reactNobgImg from '@/assets/images/react-nobg.png';
+import nextjsNobgImg from '@/assets/images/nextjs-nobg.png';
+import typescriptNobgImg from '@/assets/images/typescript-nobg.png';
+import pythonNobgImg from '@/assets/images/python-nobg.png';
+import fastapiNobgImg from '@/assets/images/fastapi-nobg.png';
+import nodejsNobgImg from '@/assets/images/nodejs-nobg.png';
+import djangoNobgImg from '@/assets/images/django-nobg.png';
+import postgresqlImg from '@/assets/images/postgresql.png';
+import mongodbImg from '@/assets/images/mongodb.png';
+import redisImg from '@/assets/images/redis.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
+import dockerImg from '@/assets/images/docker.png';
+import kubernetesImg from '@/assets/images/kubernetes.png';
+import terraformImg from '@/assets/images/terraform.png';
+import githubNobgImg from '@/assets/images/github-nobg.png';
+import datadogNobgImg from '@/assets/images/datadog-nobg.png';
+import sentryNobgImg from '@/assets/images/sentry-nobg.png';
 
 export default function ProductEngineeringClient() {
   return (
@@ -29,7 +58,7 @@ export default function ProductEngineeringClient() {
           }}
         >
           <Image
-            src="/we-build.png"
+            src={weBuildImg}
             alt="Product Engineering Software Build"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -274,7 +303,7 @@ function WhatWeBuildSection() {
       num: "01", color: "#1D4ED8",
       title: "Web Applications",
       icon: <Layout size={24} />,
-      image: "/images/web-app-card.png",
+      image: webAppCardImg,
       link: "/product-engineering/web-applications",
       chips: ["React", "Python", "FastAPI", "AWS / Azure"],
       content: "Customer portals, internal workflow tools, SaaS dashboards, and multi-tenant platforms. Built for your specific business logic. Deployed on Australian infrastructure. You own the code."
@@ -283,7 +312,7 @@ function WhatWeBuildSection() {
       num: "02", color: "#F97316",
       title: "Mobile Applications",
       icon: <Smartphone size={24} />,
-      image: "/images/mobile-app-card.png",
+      image: mobileAppCardImg,
       link: "/product-engineering/mobile-applications",
       chips: ["React Native", "iOS & Android", "Offline-first"],
       content: "Native iOS and Android apps for field workers, customers, and enterprise teams. Offline-capable. Real-time sync. Biometric authentication. Camera and scanner integration."
@@ -292,7 +321,7 @@ function WhatWeBuildSection() {
       num: "03", color: "#8B5CF6",
       title: "SaaS & MVP Builds",
       icon: <Rocket size={24} />,
-      image: "/images/saas-mvp-card.png",
+      image: saasMvpCardImg,
       link: "/product-engineering/saas-mvp",
       chips: ["12–16 wks", "Stripe billing", "Multi-tenant", "IP yours"],
       content: "From concept to paying customers in 12–16 weeks. Market validation, UX design, engineering, launch, and iteration. 30+ SaaS products launched."
@@ -301,7 +330,7 @@ function WhatWeBuildSection() {
       num: "04", color: "#0EA5E9",
       title: "Product Modernisation",
       icon: <RefreshCw size={24} />,
-      image: "/images/product-mod-card.png",
+      image: productModCardImg,
       link: "/product-engineering/product-modernisation",
       chips: ["No rip-and-replace", "Phased", "Zero data loss"],
       content: "Modernise legacy systems without losing business logic. Strangler fig migration, front-end refresh, API layer creation, database migration — all available."
@@ -614,47 +643,47 @@ function TechStackGridSection() {
     {
       domain: "Front-End", color: "#1D4ED8",
       items: [
-        { name: "React",        logo: "/images/react-nobg.png" },
-        { name: "React Native", logo: "/images/react-nobg.png" },
-        { name: "Next.js",      logo: "/images/nextjs-nobg.png" },
-        { name: "TypeScript",   logo: "/images/typescript-nobg.png" },
+        { name: "React",        logo: reactNobgImg },
+        { name: "React Native", logo: reactNobgImg },
+        { name: "Next.js",      logo: nextjsNobgImg },
+        { name: "TypeScript",   logo: typescriptNobgImg },
       ]
     },
     {
       domain: "Back-End", color: "#059669",
       items: [
-        { name: "Python",  logo: "/images/python-nobg.png" },
-        { name: "FastAPI", logo: "/images/fastapi-nobg.png" },
-        { name: "Node.js", logo: "/images/nodejs-nobg.png" },
-        { name: "Django",  logo: "/images/django-nobg.png" },
+        { name: "Python",  logo: pythonNobgImg },
+        { name: "FastAPI", logo: fastapiNobgImg },
+        { name: "Node.js", logo: nodejsNobgImg },
+        { name: "Django",  logo: djangoNobgImg },
       ]
     },
     {
       domain: "Database & Analytics", color: "#0891B2",
       items: [
-        { name: "PostgreSQL",  logo: "/images/postgresql.png" },
-        { name: "MongoDB",     logo: "/images/mongodb.png" },
-        { name: "Redis",       logo: "/images/redis.png" },
-        { name: "Snowflake",   logo: "/images/snowflake-nobg.png" },
-        { name: "Databricks",  logo: "/images/databricks-nobg.png" },
+        { name: "PostgreSQL",  logo: postgresqlImg },
+        { name: "MongoDB",     logo: mongodbImg },
+        { name: "Redis",       logo: redisImg },
+        { name: "Snowflake",   logo: snowflakeNobgImg },
+        { name: "Databricks",  logo: databricksNobgImg },
       ]
     },
     {
       domain: "Infrastructure", color: "#7C3AED",
       items: [
-        { name: "AWS",        logo: "/images/aws-nobg.png" },
-        { name: "Azure AU",   logo: "/images/azure-nobg.png" },
-        { name: "Docker",     logo: "/images/docker.png" },
-        { name: "Kubernetes", logo: "/images/kubernetes.png" },
+        { name: "AWS",        logo: awsNobgImg },
+        { name: "Azure AU",   logo: azureNobgImg },
+        { name: "Docker",     logo: dockerImg },
+        { name: "Kubernetes", logo: kubernetesImg },
       ]
     },
     {
       domain: "DevOps", color: "#F59E0B",
       items: [
-        { name: "Terraform",  logo: "/images/terraform.png" },
-        { name: "GitHub Actions", logo: "/images/github-nobg.png" },
-        { name: "Datadog",    logo: "/images/datadog-nobg.png" },
-        { name: "Sentry",     logo: "/images/sentry-nobg.png" },
+        { name: "Terraform",  logo: terraformImg },
+        { name: "GitHub Actions", logo: githubNobgImg },
+        { name: "Datadog",    logo: datadogNobgImg },
+        { name: "Sentry",     logo: sentryNobgImg },
       ]
     }
   ];

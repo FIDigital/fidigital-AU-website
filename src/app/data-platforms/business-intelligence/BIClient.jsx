@@ -12,6 +12,17 @@ import {
   BarChart2, PieChart, TableProperties, TrendingUp,
   Shield, Zap, Users, Clock, AlertTriangle, Database
 } from "lucide-react";
+import biHeroImg from '@/assets/images/bi-hero.png';
+import productModCardImg from '@/assets/images/product-mod-card.png';
+import mobileAppCardImg from '@/assets/images/mobile-app-card.png';
+import saasMvpCardImg from '@/assets/images/saas-mvp-card.png';
+import webReportingVisualImg from '@/assets/images/web-reporting-visual.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
+import microsoftFabricImg from '@/assets/images/Microsoft-Fabric.png';
+import postgresqlImg from '@/assets/images/postgresql.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +43,7 @@ const CAPABILITIES = [
   {
     num: "01", color: PRIMARY, icon: TrendingUp,
     title: "Executive and Board Dashboards",
-    image: "/images/product-mod-card.png",
+    image: productModCardImg,
     chips: ["CFO Scorecards", "Board Reporting", "DAX", "LookML"],
     intro: "High-level KPI views for leadership and board. Revenue, margin, performance, and risk. One-click drill-down. Built for non-technical audiences.",
     detail: "High-level KPI views for your leadership team and board. Revenue, margin, operational performance, and risk metrics designed for non-technical audiences with one-click drill-down. Built on a semantic layer that enforces consistent metric definitions across the business — so the CFO and the board chair see the same number from the same source. We have built board dashboards that replaced 40-slide PowerPoint decks with live, interactive reports updated automatically.",
@@ -41,7 +52,7 @@ const CAPABILITIES = [
   {
     num: "02", color: ACCENT, icon: Zap,
     title: "Operational & Mobile Reporting",
-    image: "/images/mobile-app-card.png",
+    image: mobileAppCardImg,
     chips: ["Real-time", "Push Alerts", "Field Visibility", "React Native"],
     intro: "The dashboards your operations team lives in. Job management, SLA performance, exception flagging. Under 3 seconds on large datasets.",
     detail: "The dashboards your operations team relies on daily. Job management, capacity utilisation, fulfilment rates, SLA performance, and exception flagging. Designed to load in under three seconds even on large datasets — because a slow dashboard is an unused dashboard. Refreshed near real-time for critical operational metrics using streaming ingestion or micro-batch pipelines. Role-based views ensure field supervisors, regional managers, and national operations heads each see the aggregation level appropriate to their role.",
@@ -50,7 +61,7 @@ const CAPABILITIES = [
   {
     num: "03", color: EMERALD, icon: Users,
     title: "Self-Service & MVP Analytics",
-    image: "/images/saas-mvp-card.png",
+    image: saasMvpCardImg,
     chips: ["12-wk Launch", "Governance", "Natural Language", "NLP"],
     intro: "A governed semantic layer your analysts query with natural language or drag-and-drop. Guardrails that prevent access to ungoverned or sensitive data.",
     detail: "A governed semantic layer published via Power BI, Tableau, or Looker that your analysts can query using natural language or drag-and-drop report building — without needing SQL or engineering support. Guardrails that prevent access to ungoverned or sensitive data without appropriate authorisation. All self-service queries are logged for governance and performance monitoring.",
@@ -59,7 +70,7 @@ const CAPABILITIES = [
   {
     num: "04", color: "#8B5CF6", icon: Shield,
     title: "Compliance and Regulatory Reporting",
-    image: "/images/web-reporting-visual.png",
+    image: webReportingVisualImg,
     chips: ["APRA CPS 234", "ASIC", "Lineage", "Audit Trails"],
     intro: "Automated compliance reports for APRA, ASIC, ACSC. Full data lineage from every figure in every regulatory submission back to its source.",
     detail: "Automated production of compliance reports satisfying APRA, ASIC, ACSC, and industry-specific regulators. Data lineage from every figure in every regulatory submission back to its source record — critical for APRA CPS 234 audits and ASIC breach reporting. Audit trails recording every access, query, and data export. Scheduled report generation and automated distribution to regulatory portals.",
@@ -68,7 +79,7 @@ const CAPABILITIES = [
   {
     num: "05", color: "#F59E0B", icon: PieChart,
     title: "Financial Planning and Analysis (FP&A)",
-    image: "/images/bi-hero.png",
+    image: biHeroImg,
     chips: ["Budget vs Actuals", "Cash Flow", "Scenario Modeling", "FP&A"],
     intro: "Integrated P&L, balance sheet, and cash flow reporting. Budget vs actuals with driver analysis. Monthly close cycle from 10 days to 2 days.",
     detail: "Integrated P&L, balance sheet, and cash flow reporting connected to your general ledger and operational systems. Budget versus actuals with driver analysis showing exactly which cost centres and revenue streams are driving variance. Scenario modelling for planning cycles. Variance reporting with automated commentary generation. We have built FP&A platforms that reduce the monthly close reporting cycle from 10 days to 2 days — freeing your finance team from spreadsheet wrangling.",
@@ -114,12 +125,12 @@ const TOOLS = [
 
 /* ── DATA PLATFORM CONNECTORS ───────────────────────────────────────────── */
 const PLATFORMS = [
-  { name:"Databricks",        logo:"/images/databricks-nobg.png",   color:"#EC4A1E" },
-  { name:"Snowflake",         logo:"/images/snowflake-nobg.png",    color:"#29B5E8" },
-  { name:"Microsoft Fabric",  logo:"/images/Microsoft-Fabric.png",  color:"#0078D4" },
-  { name:"PostgreSQL",        logo:"/images/postgresql.png",        color:"#336791" },
-  { name:"Azure",             logo:"/images/azure-nobg.png",        color:"#0078D4" },
-  { name:"AWS",               logo:"/images/aws-nobg.png",          color:"#FF9900" },
+  { name:"Databricks",        logo: databricksNobgImg,   color:"#EC4A1E" },
+  { name:"Snowflake",         logo: snowflakeNobgImg,    color:"#29B5E8" },
+  { name:"Microsoft Fabric",  logo: microsoftFabricImg,  color:"#0078D4" },
+  { name:"PostgreSQL",        logo: postgresqlImg,        color:"#336791" },
+  { name:"Azure",             logo: azureNobgImg,        color:"#0078D4" },
+  { name:"AWS",               logo: awsNobgImg,          color:"#FF9900" },
 ];
 
 /* ── FAQ ─────────────────────────────────────────────────────────────────── */
@@ -193,7 +204,7 @@ export default function BIClient() {
 
           {/* Hero image — same pattern as AI agents */}
           <div style={{ position:"absolute", top:0, right:0, width:"58%", height:"100%", zIndex:0, opacity:0.4, pointerEvents:"none" }}>
-            <Image src="/images/bi-hero.png" alt="Business Intelligence Dashboards" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={biHeroImg} alt="Business Intelligence Dashboards" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />

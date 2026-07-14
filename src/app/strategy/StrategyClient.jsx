@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Compass, Target, PieChart, Users, CheckSquare, Microscope, BarChart, Map, Heart, Smile, Layers, Globe, Lightbulb } from 'lucide-react';
 import Image from 'next/image';
+import strategyImg from '@/assets/images/strategy.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function StrategyClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/strategy.png"
+            src={strategyImg}
             alt="Business Digital Strategy Framework"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

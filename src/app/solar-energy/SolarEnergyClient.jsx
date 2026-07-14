@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Sun, MessageSquare, Ticket, Workflow, BarChart, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
+import solarEnergyImg from '@/assets/images/solar-energy.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function SolarEnergyClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/solar-energy.png"
+            src={solarEnergyImg}
             alt="Solar Energy Management Dashboards"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Truck, LayoutDashboard, Clock, MapPin, Activity, FileText, Zap, Smartphone } from 'lucide-react';
 import Image from 'next/image';
+import logisticsImg from '@/assets/images/logistics.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function LogisticsClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/logistics.png"
+            src={logisticsImg}
             alt="Agile Logistics Networks"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

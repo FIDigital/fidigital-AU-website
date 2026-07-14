@@ -12,6 +12,8 @@ import {
   Database, Share2, BarChart2, Shield, Layers,
   Code2, TrendingUp, Server, Globe, Zap, Lock
 } from "lucide-react";
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -168,7 +170,7 @@ export default function SnowflakeClient() {
 
           {/* Snowflake logo — right panel, same pattern as Databricks / Fabric */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.28, pointerEvents:"none" }}>
-            <Image src="/images/snowflake-nobg.png" alt="Snowflake Cloud Data Platform" fill sizes="(max-width: 768px) 40vw, 200px"
+            <Image src={snowflakeNobgImg} alt="Snowflake Cloud Data Platform" fill sizes="(max-width: 768px) 40vw, 200px"
               style={{ objectFit:"contain", objectPosition:"center right",
                 maskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)" }} />
@@ -182,10 +184,10 @@ export default function SnowflakeClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"20px", height:"20px" }}>
-                <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <div style={{ position:"relative", width:"18px", height:"18px" }}>
-                <Image src="/images/aws-nobg.png" alt="AWS" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                <Image src={awsNobgImg} alt="AWS" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:PRIMARY, fontWeight:700, fontSize:"0.88rem" }}>
                 Snowflake · AWS Sydney ap-southeast-2 · Australian Data Residency
@@ -285,7 +287,7 @@ export default function SnowflakeClient() {
                   {/* Header */}
                   <div style={{ display:"flex", alignItems:"center", gap:"0.6rem", marginBottom:"1.75rem" }}>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                      <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                     </div>
                     <span style={{ fontSize:"0.72rem", fontWeight:800, color:PRIMARY, textTransform:"uppercase", letterSpacing:"0.1em" }}>
                       Snowflake Architecture
@@ -329,7 +331,7 @@ export default function SnowflakeClient() {
                       {/* AWS badge */}
                       <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"0.4rem", marginTop:"0.1rem" }}>
                         <div style={{ position:"relative", width:"14px", height:"14px" }}>
-                          <Image src="/images/aws-nobg.png" alt="AWS" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                          <Image src={awsNobgImg} alt="AWS" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                         </div>
                         <span style={{ fontSize:"0.65rem", fontWeight:700, color:"var(--text-muted)" }}>AWS Sydney ap-southeast-2</span>
                       </div>
@@ -366,7 +368,7 @@ export default function SnowflakeClient() {
               <div className="section-label">Capabilities</div>
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"0.75rem", marginBottom:"0.75rem" }}>
                 <div style={{ position:"relative", width:"30px", height:"30px" }}>
-                  <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                  <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 className="section-title" style={{ margin:0 }}>
                   What We Build on Snowflake
@@ -483,7 +485,7 @@ export default function SnowflakeClient() {
                   <div style={{ display:"flex", alignItems:"center", gap:"0.4rem", marginTop:"1.25rem",
                     paddingTop:"1rem", borderTop:"1px solid var(--border)" }}>
                     <div style={{ position:"relative", width:"14px", height:"14px" }}>
-                      <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                      <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                     </div>
                     <span style={{ fontSize:"0.68rem", fontWeight:700, color:PRIMARY }}>Snowflake · AWS Sydney</span>
                   </div>
@@ -536,7 +538,7 @@ export default function SnowflakeClient() {
             <div className="reveal">
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem", marginBottom:"1.5rem", flexWrap:"wrap" }}>
                 <div style={{ position:"relative", width:"44px", height:"44px" }}>
-                  <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                  <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, margin:0 }}>
                   Ready to build your Snowflake data platform?

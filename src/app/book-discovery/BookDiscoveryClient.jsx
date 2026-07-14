@@ -9,6 +9,7 @@ import {
   MessageSquare, Sparkles, Zap, Users, Globe, Building
 } from "lucide-react";
 import Image from "next/image";
+import contactUsImg from '@/assets/images/Contact-us.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -173,7 +174,7 @@ export default function BookDiscoveryClient() {
         <section className="hero-section">
           <div className="hero-bg-container">
             <Image 
-              src="/images/Contact-us.png" 
+              src={contactUsImg} 
               alt="Discovery Background" 
               fill sizes="(max-width: 768px) 100vw, 50vw" 
               className="object-cover"

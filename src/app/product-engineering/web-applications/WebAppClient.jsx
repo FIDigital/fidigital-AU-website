@@ -12,6 +12,23 @@ import {
   Users, Settings, Cloud, BarChart2, CheckCircle2,
   Code2, Shield, Lock, Layers, Monitor, Zap
 } from "lucide-react";
+import webHeroImg from '@/assets/images/web-hero.png';
+import reactNobg from '@/assets/images/react-nobg.png';
+import nextjsNobg from '@/assets/images/nextjs-nobg.png';
+import typescriptNobg from '@/assets/images/typescript-nobg.png';
+import pythonNobg from '@/assets/images/python-nobg.png';
+import fastapiNobg from '@/assets/images/fastapi-nobg.png';
+import nodejsNobg from '@/assets/images/nodejs-nobg.png';
+import postgresql from '@/assets/images/postgresql.png';
+import mongodb from '@/assets/images/mongodb.png';
+import snowflakeNobg from '@/assets/images/snowflake-nobg.png';
+import databricksNobg from '@/assets/images/databricks-nobg.png';
+import redis from '@/assets/images/redis.png';
+import awsNobg from '@/assets/images/aws-nobg.png';
+import azureNobg from '@/assets/images/azure-nobg.png';
+import docker from '@/assets/images/docker.png';
+import kubernetes from '@/assets/images/kubernetes.png';
+import terraform from '@/assets/images/terraform.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -79,37 +96,37 @@ const STACK_ROWS = [
   {
     label:"Front-End", color:"#2563EB",
     items:[
-      { name:"React",     logo:"/images/react-nobg.png" },
-      { name:"Next.js",   logo:"/images/nextjs-nobg.png" },
-      { name:"TypeScript",logo:"/images/typescript-nobg.png" },
+      { name:"React",     logo:reactNobg },
+      { name:"Next.js",   logo:nextjsNobg },
+      { name:"TypeScript",logo:typescriptNobg },
     ],
   },
   {
     label:"Back-End", color:"#7C3AED",
     items:[
-      { name:"Python",   logo:"/images/python-nobg.png" },
-      { name:"FastAPI",  logo:"/images/fastapi-nobg.png" },
-      { name:"Node.js",  logo:"/images/nodejs-nobg.png" },
+      { name:"Python",   logo:pythonNobg },
+      { name:"FastAPI",  logo:fastapiNobg },
+      { name:"Node.js",  logo:nodejsNobg },
     ],
   },
   {
     label:"Database / Analytics", color:"#0891B2",
     items:[
-      { name:"PostgreSQL",  logo:"/images/postgresql.png" },
-      { name:"MongoDB",     logo:"/images/mongodb.png" },
-      { name:"Snowflake",   logo:"/images/snowflake-nobg.png" },
-      { name:"Databricks",  logo:"/images/databricks-nobg.png" },
-      { name:"Redis",       logo:"/images/redis.png" },
+      { name:"PostgreSQL",  logo:postgresql },
+      { name:"MongoDB",     logo:mongodb },
+      { name:"Snowflake",   logo:snowflakeNobg },
+      { name:"Databricks",  logo:databricksNobg },
+      { name:"Redis",       logo:redis },
     ],
   },
   {
     label:"Infrastructure", color:"#059669",
     items:[
-      { name:"AWS Sydney",  logo:"/images/aws-nobg.png" },
-      { name:"Azure AU",    logo:"/images/azure-nobg.png" },
-      { name:"Docker",      logo:"/images/docker.png" },
-      { name:"Kubernetes",  logo:"/images/kubernetes.png" },
-      { name:"Terraform",   logo:"/images/terraform.png" },
+      { name:"AWS Sydney",  logo:awsNobg },
+      { name:"Azure AU",    logo:azureNobg },
+      { name:"Docker",      logo:docker },
+      { name:"Kubernetes",  logo:kubernetes },
+      { name:"Terraform",   logo:terraform },
     ],
   },
 ];
@@ -202,7 +219,7 @@ export default function WebAppClient() {
 
           {/* Hero image — right side, background */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/web-hero.png" alt="Web Application Development" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={webHeroImg} alt="Web Application Development" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />

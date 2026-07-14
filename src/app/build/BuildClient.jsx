@@ -6,6 +6,8 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Code2, Cpu, Globe, Layers, ShieldCheck, Zap, Database, Smartphone, Layout } from 'lucide-react';
 import Image from 'next/image';
+import itSoftwareImg from '@/assets/images/it-software.png';
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +66,7 @@ export default function BuildClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/it-software.png"
+            src={itSoftwareImg}
             alt="Advanced Software Engineering Visualization"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -114,7 +116,7 @@ export default function BuildClient() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
             <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "500px", boxShadow: "0 30px 60px rgba(0,0,0,0.05)" }}>
               <Image 
-                src="/images/digital-transformation.png"
+                src={digitalTransformationImg}
                 alt="Modern Coding Standards"
                 fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}

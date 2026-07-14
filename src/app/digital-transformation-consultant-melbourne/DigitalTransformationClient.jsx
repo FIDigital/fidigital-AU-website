@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Lightbulb, Map, Microscope, Settings, Rocket, History, Award, Zap, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function DigitalTransformationClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/digital-transformation.png"
+            src={digitalTransformationImg}
             alt="Digital Transformation Mapping"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Monitor, Briefcase, TrendingUp, HeartHandshake, BadgeDollarSign, Clock } from 'lucide-react';
 import Image from 'next/image';
+import itSoftwareImg from '@/assets/images/it-software.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function ITSoftwareClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/it-software.png"
+            src={itSoftwareImg}
             alt="IT & Software Solutions Architecture"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

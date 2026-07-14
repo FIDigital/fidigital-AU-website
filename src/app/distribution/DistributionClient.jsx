@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Package, Boxes, Bell, Database, Receipt, ArrowRightCircle, TrendingUp, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
+import distributionImg from '@/assets/images/Distribution.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function DistributionClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/Distribution.png"
+            src={distributionImg}
             alt="Distribution Logistics Systems"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

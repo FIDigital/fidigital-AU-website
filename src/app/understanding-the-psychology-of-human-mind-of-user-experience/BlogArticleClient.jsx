@@ -14,6 +14,10 @@ import {
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
+import strategyImg from '@/assets/images/strategy.png';
+import mobileAppCardImg from '@/assets/images/mobile-app-card.png';
+import seoImg from '@/assets/images/seo.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -95,7 +99,7 @@ export default function BlogArticleClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/digital-transformation.png"
+            src={digitalTransformationImg}
             alt="Psychology of UX"
             fill sizes="(max-width: 768px) 100vw, 50vw"
             style={{
@@ -245,7 +249,7 @@ export default function BlogArticleClient() {
                     </div>
                   </div>
                   <div style={{ position: 'relative', height: '350px', borderRadius: '32px', overflow: 'hidden', border: '1px solid var(--border)' }}>
-                    <Image src="/images/strategy.png" alt="UX Strategy" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+                    <Image src={strategyImg} alt="UX Strategy" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                   </div>
                 </div>
               </div>
@@ -357,7 +361,7 @@ export default function BlogArticleClient() {
             <Link href="/user-experience" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--bg)', borderRadius: '24px', border: '1px solid var(--border)', overflow: 'hidden' }} className="hover-lift">
                 <div style={{ position: 'relative', height: '220px' }}>
-                  <Image src="/images/mobile-app-card.png" alt="UX Design" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+                  <Image src={mobileAppCardImg} alt="UX Design" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Services</div>
@@ -373,7 +377,7 @@ export default function BlogArticleClient() {
             <Link href="/seo-melbourne-expert-advice-for-blog-post-writing-fundamentals-2" style={{ textDecoration: 'none' }}>
               <div style={{ background: 'var(--bg)', borderRadius: '24px', border: '1px solid var(--border)', overflow: 'hidden' }} className="hover-lift">
                 <div style={{ position: 'relative', height: '220px' }}>
-                  <Image src="/images/seo.png" alt="SEO Advice" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
+                  <Image src={seoImg} alt="SEO Advice" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <div style={{ fontSize: '0.75rem', fontWeight: 800, color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '0.75rem' }}>SEO Strategy</div>

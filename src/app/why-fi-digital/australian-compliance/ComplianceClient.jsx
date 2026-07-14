@@ -7,6 +7,9 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Server, ShieldCheck, Scale, FileCode, CheckCircle2, Cloud, Database, Lock, Briefcase } from "lucide-react";
+import complianceHeroImg from '@/assets/images/compliance-hero.png';
+import complianceFrameworkImg from '@/assets/images/compliance-framework.png';
+import enterpriseTrustImg from '@/assets/images/enterprise-trust.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -71,7 +74,7 @@ export default function ComplianceClient() {
             pointerEvents: "none"
           }}>
             <Image 
-              src="/compliance-hero.png" 
+              src={complianceHeroImg} 
               alt="Data Security Background" 
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
@@ -151,7 +154,7 @@ export default function ComplianceClient() {
               </div>
             </div>
             <div className="reveal" style={{ position: "relative", height: "600px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/compliance-framework.png" alt="Regulatory Compliance Visualization" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={complianceFrameworkImg} alt="Regulatory Compliance Visualization" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>
@@ -160,7 +163,7 @@ export default function ComplianceClient() {
         <section className="section" style={{ background: "var(--bg-secondary)" }}>
           <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
             <div className="reveal" style={{ position: "relative", height: "400px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)", order: 2 }}>
-              <Image src="/enterprise-trust.png" alt="Enterprise Security Contracts" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={enterpriseTrustImg} alt="Enterprise Security Contracts" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
             <div className="reveal" style={{ order: 1 }}>
               <div className="section-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>

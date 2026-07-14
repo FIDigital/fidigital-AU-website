@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, Music, Tv, Phone, Mic, Layers, Zap, BarChart3, Globe, Users, Settings } from "lucide-react";
+import zooImg from '@/assets/images/Case-Study/Zoo.png';
 
 const C = "#8B5CF6";
 
@@ -75,7 +76,7 @@ export default function ZooCaseStudy() {
 
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", height: "100px", position: "relative", marginBottom: "1.5rem" }}>
-                <Image src="/images/Case-Study/Zoo.png" alt="Zoo Business Media" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "12px 20px" }} />
+                <Image src={zooImg} alt="Zoo Business Media" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "12px 20px" }} />
               </div>
               {[{ label: "Client", value: "Zoo Business Media" }, { label: "Founded", value: "1999, Helensvale QLD" }, { label: "Solution", value: "Zoho CRM Suite" }, { label: "Partner", value: "FI Digital" }].map(r => (
                 <div key={r.label} style={{ display: "flex", justifyContent: "space-between", padding: "0.6rem 0", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>

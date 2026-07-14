@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ArrowRight, CheckCircle, CheckCircle2, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import TrustedBy from "@/components/TrustedBy";
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -76,7 +77,7 @@ export default function ZohoPartnersClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/partner-hero.png"
+            src={partnerHeroImg}
             alt="Zoho Premium Partner Australia"
             aria-hidden="true"
             fill

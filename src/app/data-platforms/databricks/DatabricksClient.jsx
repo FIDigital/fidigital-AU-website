@@ -13,6 +13,8 @@ import {
   Clock, TrendingUp, Server, Globe
 } from "lucide-react";
 import TrustedBy from "@/components/TrustedBy";
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -176,7 +178,7 @@ export default function DatabricksClient() {
 
           {/* BG image — Databricks logo, same pattern as Fabric hero */}
           <div style={{ position:"absolute", top:0, right:0, width:"50%", height:"100%", zIndex:0, opacity:0.32, pointerEvents:"none" }}>
-            <Image src="/images/databricks-nobg.png" alt="Databricks Lakehouse Platform" fill sizes="(max-width: 768px) 100vw, 60vw"
+            <Image src={databricksNobgImg} alt="Databricks Lakehouse Platform" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"contain", objectPosition:"center right",
                 maskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black 30%, transparent 80%)" }} />
@@ -189,7 +191,7 @@ export default function DatabricksClient() {
               padding:"0.6rem 1.25rem", borderRadius:"50px", marginBottom:"2rem"
             }}>
               <div style={{ position:"relative", width:"20px", height:"20px" }}>
-                <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
               </div>
               <span style={{ color:PRIMARY, fontWeight:700, fontSize:"0.88rem" }}>
                 Databricks · Azure Australia East · Medallion Architecture
@@ -311,7 +313,7 @@ export default function DatabricksClient() {
                 gap:"1rem", marginBottom:"2.5rem", flexWrap:"wrap" }}>
                 <div style={{ width:"2px", height:"24px", background:"var(--border)" }} />
                 <div style={{ position:"relative", width:"28px", height:"28px" }}>
-                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                  <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <span style={{ fontSize:"1rem", fontWeight:800, color:"var(--text)" }}>
                   Medallion Architecture — How Your Data Flows
@@ -353,7 +355,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#B45309", textTransform:"uppercase", letterSpacing:"0.12em" }}>Bronze</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -388,7 +390,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#64748B", textTransform:"uppercase", letterSpacing:"0.12em" }}>Silver</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -423,7 +425,7 @@ export default function DatabricksClient() {
                       borderRadius:"50px", fontSize:"0.65rem", fontWeight:900,
                       color:"#CA8A04", textTransform:"uppercase", letterSpacing:"0.12em" }}>Gold</div>
                     <div style={{ position:"relative", width:"22px", height:"22px" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
+                      <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain", opacity:0.4 }} />
                     </div>
                   </div>
                   <div>
@@ -479,7 +481,7 @@ export default function DatabricksClient() {
                 </span>
                 <div style={{ marginLeft:"auto", display:"flex", alignItems:"center", gap:"0.5rem" }}>
                   <div style={{ position:"relative", width:"18px", height:"18px" }}>
-                    <Image src="/images/azure-nobg.png" alt="Azure" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                    <Image src={azureNobgImg} alt="Azure" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                   </div>
                   <span style={{ fontSize:"0.75rem", fontWeight:700, color:SECONDARY }}>Azure Australia East</span>
                 </div>
@@ -501,7 +503,7 @@ export default function DatabricksClient() {
               <div className="section-label">Capabilities</div>
               <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"0.75rem", marginBottom:"0.75rem" }}>
                 <div style={{ position:"relative", width:"32px", height:"32px" }}>
-                  <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
+                  <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
                 </div>
                 <h2 className="section-title" style={{ maxWidth:"760px", margin:0 }}>
                   What We Build on Databricks

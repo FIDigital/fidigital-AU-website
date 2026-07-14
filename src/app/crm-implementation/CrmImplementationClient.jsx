@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { ArrowRight, CheckCircle, Wallet, Users, Target, LayoutDashboard, Settings, Clock, Activity, Briefcase } from 'lucide-react';
 import Image from 'next/image';
 import TrustedBy from "@/components/TrustedBy";
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -67,7 +68,7 @@ export default function CrmImplementationClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/partner-hero.png"
+            src={partnerHeroImg}
             alt="CRM Implementation Dashboard"
             aria-hidden="true"
             fill

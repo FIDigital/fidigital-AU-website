@@ -13,6 +13,7 @@ import {
   Users, CreditCard, LayoutDashboard, BarChart2,
   Shield, Layers, CheckCircle2, Zap, Star, AlertCircle
 } from "lucide-react";
+import saasMvpHeroImg from '@/assets/images/saas-mvp-hero.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -165,7 +166,7 @@ export default function SaaSMVPClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/saas-mvp-hero.png" alt="SaaS and MVP Development" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={saasMvpHeroImg} alt="SaaS and MVP Development" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />

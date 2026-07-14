@@ -13,6 +13,11 @@ import {
   Wifi, WifiOff, Fingerprint, Upload, Shield, CheckCircle2,
   MapPin, Camera, ClipboardList, Bell
 } from "lucide-react";
+import mobileAppHeroImg from '@/assets/images/mobile-app-hero.png';
+import reactNobg from '@/assets/images/react-nobg.png';
+import typescriptNobg from '@/assets/images/typescript-nobg.png';
+import awsNobg from '@/assets/images/aws-nobg.png';
+import azureNobg from '@/assets/images/azure-nobg.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -200,7 +205,7 @@ export default function MobileAppClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/mobile-app-hero.png" alt="Mobile Application Development" fill sizes="(max-width: 768px) 100vw, 50vw"
+            <Image src={mobileAppHeroImg} alt="Mobile Application Development" fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -448,10 +453,10 @@ export default function MobileAppClient() {
             }}>
               <span style={{ fontSize:"0.72rem", fontWeight:800, color:"var(--text-muted)", textTransform:"uppercase", letterSpacing:"0.08em" }}>Built with</span>
               {[
-                { src:"/images/react-nobg.png",    alt:"React Native",  label:"React Native",  w:22 },
-                { src:"/images/typescript-nobg.png",alt:"TypeScript",   label:"TypeScript",    w:22 },
-                { src:"/images/aws-nobg.png",       alt:"AWS",          label:"AWS Sydney",    w:22 },
-                { src:"/images/azure-nobg.png",     alt:"Azure",        label:"Azure AU East", w:22 },
+                { src:reactNobg,    alt:"React Native",  label:"React Native",  w:22 },
+                { src:typescriptNobg,alt:"TypeScript",   label:"TypeScript",    w:22 },
+                { src:awsNobg,       alt:"AWS",          label:"AWS Sydney",    w:22 },
+                { src:azureNobg,     alt:"Azure",        label:"Azure AU East", w:22 },
               ].map((l,i) => (
                 <div key={i} style={{ display:"flex", alignItems:"center", gap:"0.55rem" }}>
                   <div style={{ position:"relative", width:`${l.w}px`, height:"22px" }}>

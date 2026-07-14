@@ -6,6 +6,9 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Type, BookOpen, Search, Share2, PenTool, MessageSquare, TrendingUp, Mic, UserCheck } from 'lucide-react';
 import Image from 'next/image';
+import itSoftwareImg from '@/assets/images/it-software.png';
+import strategyImg from '@/assets/images/strategy.png';
+import digitalTransformationImg from '@/assets/images/digital-transformation.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +67,7 @@ export default function ContentClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/it-software.png"
+            src={itSoftwareImg}
             alt="Content Strategy and Writing"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"
@@ -129,7 +132,7 @@ export default function ContentClient() {
             </div>
             <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "500px", boxShadow: "0 30px 60px rgba(0,0,0,0.05)" }}>
               <Image 
-                src="/images/strategy.png"
+                src={strategyImg}
                 alt="Digital Storytelling"
                 fill sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}
@@ -200,7 +203,7 @@ export default function ContentClient() {
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "4rem", alignItems: "center" }}>
              <div className="reveal" style={{ position: "relative", borderRadius: "32px", overflow: "hidden", height: "450px", boxShadow: "0 40px 80px rgba(0,0,0,0.08)" }}>
                 <Image 
-                  src="/images/digital-transformation.png"
+                  src={digitalTransformationImg}
                   alt="Copywriting and Training"
                   fill sizes="(max-width: 768px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}

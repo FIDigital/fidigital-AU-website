@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, ArrowUpRight, CheckCircle, Play, Zap, Users, Globe, Layers, TrendingUp, AlertCircle } from "lucide-react";
+import drova1Img from '@/assets/images/Case-Study/Drova1.png';
 
 const challenges = [
   { icon: <Layers size={22} />, title: "Complex, Expensive CRM", desc: "Drova's Salesforce setup evolved into an overly complicated, resource-intensive system — difficult to maintain and expensive to scale.", color: "#EF4444" },
@@ -93,7 +94,7 @@ export default function DrovaCaseStudy() {
             {/* Client card */}
             <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", padding: "2.5rem", backdropFilter: "blur(12px)", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
               <div style={{ background: "rgba(255,255,255,0.96)", borderRadius: "16px", padding: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center", height: "100px", position: "relative" }}>
-                <Image src="/images/Case-Study/Drova1.png" alt="Drova" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "12px 20px" }} />
+                <Image src={drova1Img} alt="Drova" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain", padding: "12px 20px" }} />
               </div>
               <div>
                 {[

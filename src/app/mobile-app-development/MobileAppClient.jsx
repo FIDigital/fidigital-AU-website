@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, Smartphone, Compass, Lightbulb, Android, Apple, CheckCircle, SmartphoneNfc } from 'lucide-react';
 import Image from 'next/image';
+import mobileAppDevImg from '@/assets/images/mobile-app-dev.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -65,7 +66,7 @@ export default function MobileAppClient() {
         }}>
           {/* Note: Reusing the product-modernisation asset as a high-fidelity alternative if custom mobile illustration is missing */}
           <Image
-            src="/images/mobile-app-dev.png"
+            src={mobileAppDevImg}
             alt="Mobile Application Engineering Dashboard"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

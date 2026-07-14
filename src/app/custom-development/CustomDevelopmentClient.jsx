@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ArrowRight, CheckCircle, Code2, Award, Lightbulb, Puzzle, Database, Monitor, Settings, Zap, Shield, FileBarChart, PenTool } from 'lucide-react';
 import Image from 'next/image';
+import partnerHeroImg from '@/assets/images/partner-hero.png';
 
 if (typeof window !== 'undefined') {
   const { ScrollTrigger } = require('gsap/ScrollTrigger');
@@ -64,7 +65,7 @@ export default function CustomDevelopmentClient() {
           pointerEvents: "none",
         }}>
           <Image
-            src="/images/partner-hero.png"
+            src={partnerHeroImg}
             alt="Zoho Custom Development Software Engineering"
             aria-hidden="true"
             fill sizes="(max-width: 768px) 100vw, 50vw"

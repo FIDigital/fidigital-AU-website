@@ -7,6 +7,9 @@ import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Users, Target, Activity, Shield, CheckCircle2 } from "lucide-react";
+import deliveryHeroImg from '@/assets/images/delivery-hero.png';
+import deliveryHubsImg from '@/assets/images/delivery-hubs.png';
+import deliveryProcessImg from '@/assets/images/delivery-process.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -64,7 +67,7 @@ export default function DeliveryClient() {
             pointerEvents: "none"
           }}>
             <Image 
-              src="/delivery-hero.png" 
+              src={deliveryHeroImg} 
               alt="Global Engineering Model background" 
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{ objectFit: "cover", maskImage: "radial-gradient(circle at right, black, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at right, black, transparent 80%)" }}
@@ -104,7 +107,7 @@ export default function DeliveryClient() {
               </div>
             </div>
             <div className="reveal" style={{ order: 2, position: "relative", height: "550px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/delivery-hubs.png" alt="Global Delivery Network map" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={deliveryHubsImg} alt="Global Delivery Network map" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </div>
         </section>
@@ -113,7 +116,7 @@ export default function DeliveryClient() {
         <section className="section" style={{ background: "var(--bg)" }}>
           <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "4rem", alignItems: "center" }}>
             <div className="reveal" style={{ position: "relative", height: "450px", borderRadius: "24px", overflow: "hidden", boxShadow: "var(--card-shadow)", border: "1px solid var(--border)" }}>
-              <Image src="/delivery-process.png" alt="Process and Engineering Tooling" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <Image src={deliveryProcessImg} alt="Process and Engineering Tooling" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
             <div className="reveal">
               <div className="section-label" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}>

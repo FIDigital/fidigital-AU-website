@@ -13,6 +13,14 @@ import {
   GitBranch, Layers
 } from "lucide-react";
 import TrustedBy from "@/components/TrustedBy";
+import ragHeroImg from '@/assets/images/rag-hero.png';
+import azureNobgImg from '@/assets/images/azure-nobg.png';
+import awsNobgImg from '@/assets/images/aws-nobg.png';
+import pineconeNobgImg from '@/assets/images/pinecone-nobg.png';
+import claudeImg from '@/assets/images/claude.png';
+import openaiNobgImg from '@/assets/images/openai-nobg.png';
+import langchainNobgImg from '@/assets/images/langchain-nobg.png';
+import n8nImg from '@/assets/images/n8n.png';
 
 if (typeof window !== "undefined") gsap.registerPlugin(ScrollTrigger);
 
@@ -156,7 +164,7 @@ export default function RAGClient() {
 
           {/* Hero image */}
           <div style={{ position:"absolute", top:0, right:0, width:"52%", height:"100%", zIndex:0, opacity:0.35, pointerEvents:"none" }}>
-            <Image src="/images/rag-hero.png" alt="RAG Document Intelligence" fill sizes="(max-width: 768px) 100vw, 60vw"
+            <Image src={ragHeroImg} alt="RAG Document Intelligence" fill sizes="(max-width: 768px) 100vw, 60vw"
               style={{ objectFit:"cover",
                 maskImage:"radial-gradient(ellipse at right, black, transparent 72%)",
                 WebkitMaskImage:"radial-gradient(ellipse at right, black, transparent 72%)" }} />
@@ -315,7 +323,7 @@ export default function RAGClient() {
                   title:"Document Sources",
                   desc:"Your institutional knowledge — contracts, policies, regulatory filings, SharePoint libraries, email archives, technical manuals — is wired in as the authoritative source of truth. The AI never guesses; it reads your documents.",
                   tags:["Policy PDFs","Contracts","SharePoint / OneDrive","Email","Regulatory Filings"],
-                  logos:[{src:"/images/azure-nobg.png",alt:"Azure"},{src:"/images/aws-nobg.png",alt:"AWS"}],
+                  logos:[{src:azureNobgImg,alt:"Azure"},{src:awsNobgImg,alt:"AWS"}],
                   flip:false
                 },
                 {
@@ -323,7 +331,7 @@ export default function RAGClient() {
                   title:"Ingestion & Vector Indexing",
                   desc:"Documents are parsed, split into semantically coherent chunks, converted to vector embeddings, and stored in a vector database with rich metadata — enabling retrieval filtered by type, date, category, or business unit.",
                   tags:["Semantic Chunking","Embedding Model","Pinecone","pgvector","Metadata Filtering"],
-                  logos:[{src:"/images/pinecone-nobg.png",alt:"Pinecone"},{src:"/images/azure-nobg.png",alt:"Azure"}],
+                  logos:[{src:pineconeNobgImg,alt:"Pinecone"},{src:azureNobgImg,alt:"Azure"}],
                   flip:true
                 },
                 {
@@ -339,7 +347,7 @@ export default function RAGClient() {
                   title:"LLM Reasoning",
                   desc:"Retrieved chunks are passed as context to the reasoning model alongside the question. The model generates a grounded answer constrained to retrieved content — structurally eliminating hallucination. GPT-4o for multimodal tasks; Claude for long-context documents.",
                   tags:["Claude","GPT-4o","LangChain","Context Window Mgmt","Prompt Engineering"],
-                  logos:[{src:"/images/claude.png",alt:"Claude"},{src:"/images/openai-nobg.png",alt:"OpenAI"},{src:"/images/langchain-nobg.png",alt:"LangChain"}],
+                  logos:[{src:claudeImg,alt:"Claude"},{src:openaiNobgImg,alt:"OpenAI"},{src:langchainNobgImg,alt:"LangChain"}],
                   flip:true
                 },
                 {
@@ -453,28 +461,28 @@ export default function RAGClient() {
                   title:"Document Ingestion & Vector Indexing",
                   body:"We build ingestion pipelines handling PDF, Word, Excel, SharePoint, and email sources. Documents are chunked using semantic strategies that preserve context. Each chunk is embedded and stored in a vector database — Pinecone, Weaviate, Azure AI Search, or pgvector. Metadata filtering enables retrieval scoped by document type, date, category, or business unit.",
                   chips:["Pinecone","Weaviate","pgvector","Semantic Chunking","Metadata Filtering"],
-                  logos:[{src:"/images/pinecone-nobg.png",alt:"Pinecone"},{src:"/images/azure-nobg.png",alt:"Azure"},{src:"/images/aws-nobg.png",alt:"AWS"}],
+                  logos:[{src:pineconeNobgImg,alt:"Pinecone"},{src:azureNobgImg,alt:"Azure"},{src:awsNobgImg,alt:"AWS"}],
                 },
                 {
                   num:"02", color:"#10B981",
                   title:"Knowledge Retrieval & Question Answering",
                   body:"Users ask questions in natural language. The pipeline retrieves the most relevant document chunks, passes them as context to Claude or GPT-4o, and returns an answer with citations to source documents. Hallucination is structurally minimised — the model is constrained to reason over retrieved content, not training data.",
                   chips:["Source Citations","Hallucination Control","Natural Language Q&A","Long-Context"],
-                  logos:[{src:"/images/claude.png",alt:"Claude"},{src:"/images/openai-nobg.png",alt:"OpenAI"},{src:"/images/langchain-nobg.png",alt:"LangChain"}],
+                  logos:[{src:claudeImg,alt:"Claude"},{src:openaiNobgImg,alt:"OpenAI"},{src:langchainNobgImg,alt:"LangChain"}],
                 },
                 {
                   num:"03", color:"#F59E0B",
                   title:"Document Classification & Extraction",
                   body:"Our document intelligence systems classify incoming documents and extract structured data from unstructured text. An AI agent that receives an email attachment identifies whether it is a contract, invoice, regulatory notice, or customer complaint — routes it, and extracts key fields into structured records. 95%+ extraction accuracy on standard document types.",
                   chips:["95%+ Accuracy","Auto-Classification","Field Extraction","Smart Routing","OCR"],
-                  logos:[{src:"/images/azure-nobg.png",alt:"Azure"},{src:"/images/aws-nobg.png",alt:"AWS"}],
+                  logos:[{src:azureNobgImg,alt:"Azure"},{src:awsNobgImg,alt:"AWS"}],
                 },
                 {
                   num:"04", color:"#8B5CF6",
                   title:"Multi-Document Reasoning",
                   body:"Some use cases demand reasoning across multiple documents simultaneously. A compliance officer needs to know whether a proposed agreement is consistent with current policy and regulatory requirements — three different documents. Our multi-document RAG systems retrieve in parallel, synthesise results, and attribute sources across all input documents.",
                   chips:["Cross-Document","Parallel Retrieval","Policy vs Contract","Source Attribution"],
-                  logos:[{src:"/images/claude.png",alt:"Claude"},{src:"/images/langchain-nobg.png",alt:"LangChain"},{src:"/images/n8n.png",alt:"n8n"}],
+                  logos:[{src:claudeImg,alt:"Claude"},{src:langchainNobgImg,alt:"LangChain"},{src:n8nImg,alt:"n8n"}],
                 },
               ].map((card,i) => (
                 <div key={i} className="build-card reveal" style={{

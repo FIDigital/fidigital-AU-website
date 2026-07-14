@@ -1,3 +1,13 @@
+import drova1Img from '@/assets/images/Case-Study/Drova1.png';
+import silkLogisticImg from '@/assets/images/Case-Study/silk-logistic.png';
+import visualExpo1Img from '@/assets/images/Case-Study/Visual-expo1.png';
+import zooImg from '@/assets/images/Case-Study/Zoo.png';
+import blueImg from '@/assets/images/Case-Study/Blue.png';
+import civilImg from '@/assets/images/Case-Study/Civil.png';
+import autonomyImg from '@/assets/images/Case-Study/Autonomy.png';
+import responsiveImg from '@/assets/images/Case-Study/Responsive.png';
+import safeGaugeImg from '@/assets/images/Case-Study/Safe-gauge.png';
+
 export const caseStudies = [
   {
     id: 1,
@@ -5,7 +15,7 @@ export const caseStudies = [
     company: "Drova",
     industry: "CRM & Business Systems",
     tag: "Zoho CRM Plus",
-    image: "/images/Case-Study/Drova1.png",
+    image: drova1Img,
     slug: "drova-zoho-crm-plus-case-study",
     highlight: "CRM Migration",
     color: "#3B82F6",
@@ -16,7 +26,7 @@ export const caseStudies = [
     company: "Silk Logistics",
     industry: "Logistics & Manufacturing",
     tag: "Zoho One",
-    image: "/images/Case-Study/silk-logistic.png",
+    image: silkLogisticImg,
     slug: "silk-logistics-zoho-one-case-study",
     highlight: "Port & Manufacturing",
     color: "#10B981",
@@ -27,7 +37,7 @@ export const caseStudies = [
     company: "Visual Exposure",
     industry: "Media & Marketing",
     tag: "Zoho One",
-    image: "/images/Case-Study/Visual-expo1.png",
+    image: visualExpo1Img,
     slug: "visual-exposure-zoho-one-case-study",
     highlight: "Digital Operations",
     color: "#F59E0B",
@@ -38,7 +48,7 @@ export const caseStudies = [
     company: "Silk Contract Logistics",
     industry: "Logistics",
     tag: "Zoho Desk",
-    image: "/images/Case-Study/silk-logistic.png",
+    image: silkLogisticImg,
     slug: "silk-contract-logistics-zoho-desk",
     highlight: "Customer Support",
     color: "#10B981",
@@ -49,7 +59,7 @@ export const caseStudies = [
     company: "Silk Contract Logistics",
     industry: "Logistics",
     tag: "Zoho Expense",
-    image: "/images/Case-Study/silk-logistic.png",
+    image: silkLogisticImg,
     slug: "silk-contract-logistics-zoho-expense",
     highlight: "Expense Management",
     color: "#10B981",
@@ -60,7 +70,7 @@ export const caseStudies = [
     company: "Zoo Business Media",
     industry: "Media & Publishing",
     tag: "Zoho Platform",
-    image: "/images/Case-Study/Zoo.png",
+    image: zooImg,
     slug: "zoo-business-media-case-study",
     highlight: "Media Digitisation",
     color: "#8B5CF6",
@@ -72,7 +82,7 @@ export const caseStudies = [
     company: "BlueNRG",
     industry: "Energy & Renewables",
     tag: "Zoho One",
-    image: "/images/Case-Study/Blue.png",
+    image: blueImg,
     slug: "bluenrg-zoho-one-case-study",
     highlight: "Energy Operations",
     color: "#F97316",
@@ -84,7 +94,7 @@ export const caseStudies = [
     company: "Civil Survey Solutions",
     industry: "Engineering & Construction",
     tag: "Zoho Platform",
-    image: "/images/Case-Study/Civil.png",
+    image: civilImg,
     slug: "civil-survey-solutions-case-study",
     highlight: "Field Operations",
     color: "#6B7280",
@@ -96,7 +106,7 @@ export const caseStudies = [
     company: "Drova",
     industry: "CRM & Business Systems",
     tag: "Zoho CRM",
-    image: "/images/Case-Study/Drova1.png",
+    image: drova1Img,
     slug: "enhancing-drovas-sales-and-support-processes-with-zoho-solutions",
     highlight: "Sales & Support",
     color: "#3B82F6",
@@ -107,7 +117,7 @@ export const caseStudies = [
     company: "My Autonomy",
     industry: "Financial Services",
     tag: "Business Systems",
-    image: "/images/Case-Study/Autonomy.png",
+    image: autonomyImg,
     slug: "my-autonomy-client-overview",
     highlight: "Autonomy Platform",
     color: "#EF4444",
@@ -119,7 +129,7 @@ export const caseStudies = [
     company: "Responsive Lending",
     industry: "Mortgage & Finance",
     tag: "Digital Transformation",
-    image: "/images/Case-Study/Responsive.png",
+    image: responsiveImg,
     slug: "responsive-lending",
     highlight: "Lending Platform",
     color: "#EC4899",
@@ -131,7 +141,7 @@ export const caseStudies = [
     company: "Safe Gauge",
     industry: "Safety & Operations",
     tag: "Zoho Creator",
-    image: "/images/Case-Study/Safe-gauge.png",
+    image: safeGaugeImg,
     slug: "safe-gauge-enhances-operations-using-zoho-creator",
     highlight: "Safety Systems",
     color: "#14B8A6",
@@ -143,7 +153,7 @@ export const caseStudies = [
     company: "Visual Exposure",
     industry: "Media & Marketing",
     tag: "Zoho One",
-    image: "/images/Case-Study/Visual-expo1.png",
+    image: visualExpo1Img,
     slug: "visual-exposures-digital-transformation-with-zoho-one",
     highlight: "Full Transformation",
     color: "#F59E0B",

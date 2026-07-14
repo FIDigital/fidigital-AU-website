@@ -8,6 +8,14 @@ import Image from "next/image";
 import Link from "next/link";
 import TrustedBy from "@/components/TrustedBy";
 import { ShieldAlert, Database, Bot, Layout, Settings, ArrowRight, ChevronDown, HeartPulse, FileText, Users, Clock } from "lucide-react";
+import healthHeroImg from '@/assets/images/health-hero.png';
+import healthSplitLeftImg from '@/assets/images/health-split-left.png';
+import healthSplitRightImg from '@/assets/images/health-split-right.png';
+import healthProductImg from '@/assets/images/health-product.png';
+import databricksNobgImg from '@/assets/images/databricks-nobg.png';
+import snowflakeNobgImg from '@/assets/images/snowflake-nobg.png';
+import healthAiAgentsImg from '@/assets/images/health-ai-agents.png';
+import zohoLogoNobgImg from '@/assets/images/zoho-logo-nobg.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -67,7 +75,7 @@ export default function HealthcareClient() {
             zIndex: 0, opacity: 0.45, pointerEvents: "none"
           }}>
             <Image
-              src="/images/health-hero.png"
+              src={healthHeroImg}
               alt="Healthcare Technology"
               fill sizes="(max-width: 768px) 100vw, 50vw"
               style={{
@@ -187,7 +195,7 @@ export default function HealthcareClient() {
                 position: "relative", borderRadius: "24px", overflow: "hidden",
                 border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
               }}>
-                <Image src="/images/health-split-left.png" alt="Care worker using a tablet in the field" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <Image src={healthSplitLeftImg} alt="Care worker using a tablet in the field" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div style={{
                   position: "absolute", bottom: "2rem", left: "2rem", right: "2rem",
                   padding: "1.5rem 2rem",
@@ -204,7 +212,7 @@ export default function HealthcareClient() {
                 position: "relative", borderRadius: "24px", overflow: "hidden",
                 border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.2)"
               }}>
-                <Image src="/images/health-split-right.png" alt="Healthcare operational dashboard" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                <Image src={healthSplitRightImg} alt="Healthcare operational dashboard" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 <div style={{
                   position: "absolute", bottom: "2rem", left: "2rem", right: "2rem",
                   padding: "1.5rem 2rem",
@@ -268,7 +276,7 @@ export default function HealthcareClient() {
                   position: "relative", overflow: "hidden",
                   border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
                 }}>
-                  <Image src="/images/health-product.png" alt="Care coordination app on mobile" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                  <Image src={healthProductImg} alt="Care coordination app on mobile" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
 
@@ -309,12 +317,12 @@ export default function HealthcareClient() {
                 <div style={{ flex: "1 1 300px", minHeight: "350px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", gap: "1.5rem", flexWrap: "wrap", zIndex: 1 }}>
                   <div style={{ width: "210px", height: "130px", background: "rgba(255,255,255,0.03)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", transform: "translateY(-18px)" }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                      <Image src="/images/databricks-nobg.png" alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                      <Image src={databricksNobgImg} alt="Databricks" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                   <div style={{ width: "210px", height: "130px", background: "rgba(255,255,255,0.03)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "20px", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "1.5rem", boxShadow: "0 20px 40px rgba(0,0,0,0.3)", transform: "translateY(18px)" }}>
                     <div style={{ position: "relative", width: "100%", height: "100%" }}>
-                      <Image src="/images/snowflake-nobg.png" alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                      <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                   <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: "100%", height: "100%", background: "radial-gradient(circle, rgba(13,148,136,0.08) 0%, transparent 60%)", zIndex: -1 }}></div>
@@ -357,7 +365,7 @@ export default function HealthcareClient() {
                   position: "relative", overflow: "hidden",
                   border: "1px solid rgba(255,255,255,0.05)", boxShadow: "0 20px 40px rgba(0,0,0,0.15)"
                 }}>
-                  <Image src="/images/health-ai-agents.png" alt="AI document automation for healthcare" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+                  <Image src={healthAiAgentsImg} alt="AI document automation for healthcare" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
                 </div>
               </div>
 
@@ -398,7 +406,7 @@ export default function HealthcareClient() {
                 <div style={{ flex: "1 1 300px", minHeight: "350px", position: "relative", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 1 }}>
                   <div style={{ width: "220px", height: "220px", background: "rgba(255,255,255,0.02)", backdropFilter: "blur(20px)", WebkitBackdropFilter: "blur(20px)", borderRadius: "50%", border: "1px solid rgba(255,255,255,0.08)", display: "flex", alignItems: "center", justifyContent: "center", padding: "3rem", boxShadow: "0 20px 40px rgba(0,0,0,0.2)" }}>
                     <div style={{ position: "relative", width: "100%", height: "100%", filter: "brightness(1.2) drop-shadow(0 10px 15px rgba(0,0,0,0.4))" }}>
-                      <Image src="/images/zoho-logo-nobg.png" alt="Zoho CRM" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
+                      <Image src={zohoLogoNobgImg} alt="Zoho CRM" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit: "contain" }} />
                     </div>
                   </div>
                   <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%,-50%)", width: "100%", height: "100%", background: "radial-gradient(circle, rgba(239,68,68,0.08) 0%, transparent 60%)", zIndex: -1 }}></div>

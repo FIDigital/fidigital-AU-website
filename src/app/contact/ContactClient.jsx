@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import ZohoFormEmbed from "@/components/ZohoFormEmbed";
+import contactUsImg from '@/assets/images/Contact-us.png';
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -299,7 +300,7 @@ export default function ContactClient() {
           
           <div className="hero-mask-image">
             <Image 
-              src="/images/Contact-us.png" 
+              src={contactUsImg} 
               alt="" 
               fill sizes="(max-width: 768px) 100vw, 50vw" 
               style={{ 
