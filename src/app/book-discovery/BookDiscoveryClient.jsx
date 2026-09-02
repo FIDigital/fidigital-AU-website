@@ -120,13 +120,13 @@ export default function BookDiscoveryClient() {
           width: 48px; height: 48px;
           background: rgba(29, 78, 216, 0.06);
           border-radius: 12px;
-          display: flex; alignItems: center; justifyContent: center;
+          display: flex; align-items: center; justify-content: center;
           color: var(--primary);
           flex-shrink: 0;
         }
 
         .expectation-content h3 {
-          font-size: 1.15rem; fontWeight: 800; margin-bottom: 0.5rem;
+          font-size: 1.15rem; font-weight: 800; margin-bottom: 0.5rem;
         }
 
         .expectation-content p {
