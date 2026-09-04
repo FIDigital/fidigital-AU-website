@@ -9,8 +9,8 @@
 - [Business Systems Modernisation](/business-systems): Zoho CRM, Books, Inventory, workflow automation, API integration
 
 ## Industries
-- [Financial Services & Wealth](/industries/financial-services)
-- [Healthcare & Aged Care](/industries/healthcare)
+- [Financial Services & Wealth](/financial-services-wealth)
+- [Healthcare & Aged Care](/industries/healthcare-aged-care)
 - [Resources, Mining & Logistics](/industries/resources-mining-logistics)
 
 ## Technology Stack

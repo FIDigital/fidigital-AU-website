@@ -99,7 +99,7 @@ const megaMenuColumns = [
             { href: "/logistics/",           label: "Logistics" },
             { href: "/solar-energy/",        label: "Solar Energy" },
             { href: "/it-software/",         label: "IT & Software" },
-            { href: "/financial-services/",  label: "Financial Services" },
+            { href: "/financial-services-wealth/",  label: "Financial Services" },
             { href: "/mortgage-brokers/",    label: "Mortgage Brokers" },
         ]
     },

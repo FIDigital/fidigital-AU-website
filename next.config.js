@@ -34,6 +34,21 @@ const nextConfig = {
                 destination: '/crm-implementation',
                 statusCode: 301,
             },
+            {
+                source: '/contact-us',
+                destination: '/contact',
+                statusCode: 301,
+            },
+            {
+                source: '/crm/zoho',
+                destination: '/zoho-consultants',
+                statusCode: 301,
+            },
+            {
+                source: '/financial-services',
+                destination: '/financial-services-wealth',
+                statusCode: 301,
+            },
         ];
     },
 };
