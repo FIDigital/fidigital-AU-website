@@ -1,4 +1,5 @@
 import ProductModClient from "./ProductModClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 
 import { JsonLd, buildBreadcrumb, buildService } from "@/lib/jsonLd";
 
@@ -17,6 +18,7 @@ export default function ProductModPage() {
         ]}
       />
       <ProductModClient />
+      <ZohoFormShort />
     </>
   );
 }

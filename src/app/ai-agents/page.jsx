@@ -1,4 +1,5 @@
 import AIAgentsClient from "./AIAgentsClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService, buildFaqPage, buildOpenGraph } from "@/lib/jsonLd";
 
 export const metadata = {
@@ -38,6 +39,7 @@ export default function AIAgentsPage() {
         ]}
       />
       <AIAgentsClient />
+      <ZohoFormShort />
     </>
   );
 }

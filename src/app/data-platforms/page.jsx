@@ -1,4 +1,5 @@
 import DataPlatformsClient from './DataPlatformsClient';
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService, buildFaqPage } from "@/lib/jsonLd";
 export { metadata } from './meta';
 
@@ -30,6 +31,7 @@ export default function DataPlatformsPage() {
         ]}
       />
       <DataPlatformsClient />
+      <ZohoFormShort />
     </>
   );
 }

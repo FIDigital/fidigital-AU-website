@@ -1,4 +1,5 @@
 import BusinessSystemsClient from "./BusinessSystemsClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService, buildFaqPage, buildOpenGraph } from "@/lib/jsonLd";
 
 export const metadata = {
@@ -35,6 +36,7 @@ export default function BusinessSystemsPage() {
         ]}
       />
       <BusinessSystemsClient />
+      <ZohoFormShort />
     </>
   );
 }

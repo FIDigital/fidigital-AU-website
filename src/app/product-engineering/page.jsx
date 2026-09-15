@@ -1,4 +1,5 @@
 import ProductEngineeringClient from './ProductEngineeringClient';
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jsonLd";
 
 export const metadata = {
@@ -85,6 +86,7 @@ export default function ProductEngineeringPage() {
         ]}
       />
       <ProductEngineeringClient />
+      <ZohoFormShort />
     </>
   );
 }

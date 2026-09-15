@@ -1,4 +1,5 @@
 import BlogArticleClient from "./BlogArticleClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 
 import { JsonLd, buildBreadcrumb } from "@/lib/jsonLd";
 
@@ -12,6 +13,7 @@ export default function BlogArticlePage() {
     <>
       <JsonLd data={buildBreadcrumb([{ name: "Home", path: "/" }, { name: "Blog", path: "/blog" }, { name: "Digital Agency For Small Business", path: "/digital-agency-for-small-business" }])} />
       <BlogArticleClient />
+      <ZohoFormShort />
     </>
   );
 }

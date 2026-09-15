@@ -1,4 +1,5 @@
 import WorkflowClient from "./WorkflowClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jsonLd";
 
 export const metadata = {
@@ -27,6 +28,7 @@ export default function WorkflowPage() {
         ]}
       />
       <WorkflowClient />
+      <ZohoFormShort />
     </>
   );
 }

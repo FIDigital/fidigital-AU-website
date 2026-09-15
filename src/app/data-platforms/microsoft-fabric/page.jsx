@@ -1,4 +1,5 @@
 import FabricClient from "./FabricClient";
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService } from "@/lib/jsonLd";
 
 export const metadata = {
@@ -33,6 +34,7 @@ export default function Page() {
         ]}
       />
       <FabricClient />
+      <ZohoFormShort />
     </>
   );
 }

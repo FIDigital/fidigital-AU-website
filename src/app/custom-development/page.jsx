@@ -1,4 +1,5 @@
 import CustomDevelopmentClient from './CustomDevelopmentClient';
+import ZohoFormShort from "@/components/ZohoFormShort";
 import { JsonLd, buildBreadcrumb, buildService } from "@/lib/jsonLd";
 
 export { metadata } from './meta';
@@ -13,6 +14,7 @@ export default function Page() {
         ]}
       />
       <CustomDevelopmentClient />
+      <ZohoFormShort />
     </>
   );
 }
