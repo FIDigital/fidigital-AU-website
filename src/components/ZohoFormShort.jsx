@@ -1,14 +1,22 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function ZohoFormShort() {
+  const [submitted, setSubmitted] = useState(false);
+
   function handleSubmit(e) {
+    e.preventDefault();
     const form = e.target;
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      form.reportValidity();
-    }
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    const data = new FormData(form);
+    fetch("https://crm.zoho.com/crm/WebToLeadForm", {
+      method: "POST",
+      body: new URLSearchParams(data),
+      mode: "no-cors",
+    }).finally(() => setSubmitted(true));
   }
 
   return (
@@ -47,64 +55,87 @@ export default function ZohoFormShort() {
           </p>
         </div>
 
-        {/* Right — form card */}
+        {/* Right — form card / thank-you */}
         <div style={{
           background: "var(--card-bg)",
           border: "1px solid var(--border)",
           borderRadius: 24,
           padding: "clamp(1.75rem, 3vw, 2.25rem)",
           boxShadow: "0 12px 40px rgba(0,0,0,0.06)",
+          minHeight: 380,
+          display: "flex",
+          alignItems: submitted ? "center" : "stretch",
+          justifyContent: submitted ? "center" : "stretch",
         }}>
-          <form
-            action="https://crm.zoho.com/crm/WebToLeadForm"
-            method="POST"
-            acceptCharset="UTF-8"
-            onSubmit={handleSubmit}
-            style={{ display: "grid", gap: "1rem" }}
-          >
-            {/* Hidden fields */}
-            <input type="hidden" name="xnQsjsdp" value="c4ebc2295599e6f55807fb0c7fee5e54c307e58b68c3dbaab25ae6171f1b36dd" />
-            <input type="hidden" name="zc_gad" value="" />
-            <input type="hidden" name="xmIwtLD" value="6d650e49c8bf22da2119e8bf5cb34675211ca0d40f9018d449a33cd25419cb3a0f82068935026d39630e6ebdc363da87" />
-            <input type="hidden" name="actionType" value="TGVhZHM=" />
-            <input type="hidden" name="returnURL" value="https://fidigital.com.au/thank-you" />
-            <input type="hidden" name="ldeskuid" value="" />
-            <input type="hidden" name="LDTuvid" value="" />
-            <input type="hidden" name="aG9uZXlwb3Q" value="" />
-            <select name="LEADCF48" defaultValue="FI Digital" hidden><option value="FI Digital">FI Digital</option></select>
-            <select name="Lead Status" defaultValue="New Lead" hidden><option value="New Lead">New Lead</option></select>
-
-            {/* Name row */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
-              <div className="zfs-field">
-                <label className="zfs-label">First Name</label>
-                <input name="First Name" type="text" required maxLength={40} placeholder="John" className="zfs-input" />
+          {submitted ? (
+            <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
+              <div style={{
+                width: 64, height: 64, borderRadius: "50%",
+                background: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(29,78,216,0.12) 100%)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                margin: "0 auto 1.25rem",
+              }}>
+                <CheckCircle size={28} color="var(--primary)" />
               </div>
-              <div className="zfs-field">
-                <label className="zfs-label">Last Name</label>
-                <input name="Last Name" type="text" required maxLength={80} placeholder="Smith" className="zfs-input" />
+              <h3 style={{ fontSize: "1.5rem", fontWeight: 800, marginBottom: "0.5rem" }}>
+                Thank You!
+              </h3>
+              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6 }}>
+                We&apos;ve received your details and will be in touch within one business day.
+              </p>
+            </div>
+          ) : (
+            <form
+              action="https://crm.zoho.com/crm/WebToLeadForm"
+              method="POST"
+              acceptCharset="UTF-8"
+              onSubmit={handleSubmit}
+              style={{ display: "grid", gap: "1rem", width: "100%" }}
+            >
+              {/* Hidden fields */}
+              <input type="hidden" name="xnQsjsdp" value="c4ebc2295599e6f55807fb0c7fee5e54c307e58b68c3dbaab25ae6171f1b36dd" />
+              <input type="hidden" name="zc_gad" value="" />
+              <input type="hidden" name="xmIwtLD" value="6d650e49c8bf22da2119e8bf5cb34675211ca0d40f9018d449a33cd25419cb3a0f82068935026d39630e6ebdc363da87" />
+              <input type="hidden" name="actionType" value="TGVhZHM=" />
+              <input type="hidden" name="returnURL" value="https://fidigital.com.au/thank-you" />
+              <input type="hidden" name="ldeskuid" value="" />
+              <input type="hidden" name="LDTuvid" value="" />
+              <input type="hidden" name="aG9uZXlwb3Q" value="" />
+              <select name="LEADCF48" defaultValue="FI Digital" hidden><option value="FI Digital">FI Digital</option></select>
+              <select name="Lead Status" defaultValue="New Lead" hidden><option value="New Lead">New Lead</option></select>
+
+              {/* Name row */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+                <div className="zfs-field">
+                  <label className="zfs-label">First Name</label>
+                  <input name="First Name" type="text" required maxLength={40} placeholder="John" className="zfs-input" />
+                </div>
+                <div className="zfs-field">
+                  <label className="zfs-label">Last Name</label>
+                  <input name="Last Name" type="text" required maxLength={80} placeholder="Smith" className="zfs-input" />
+                </div>
               </div>
-            </div>
 
-            <div className="zfs-field">
-              <label className="zfs-label">Work Email</label>
-              <input name="Email" type="email" required maxLength={100} placeholder="john@company.com" className="zfs-input" />
-            </div>
+              <div className="zfs-field">
+                <label className="zfs-label">Work Email</label>
+                <input name="Email" type="email" required maxLength={100} placeholder="john@company.com" className="zfs-input" />
+              </div>
 
-            <div className="zfs-field">
-              <label className="zfs-label">Company</label>
-              <input name="Company" type="text" required maxLength={200} placeholder="Your company name" className="zfs-input" />
-            </div>
+              <div className="zfs-field">
+                <label className="zfs-label">Company</label>
+                <input name="Company" type="text" required maxLength={200} placeholder="Your company name" className="zfs-input" />
+              </div>
 
-            <div className="zfs-field">
-              <label className="zfs-label">What do you want to automate?</label>
-              <textarea name="LEADCF130" required rows={3} placeholder="Tell us about your project or challenge…" className="zfs-input" style={{ resize: "vertical" }} />
-            </div>
+              <div className="zfs-field">
+                <label className="zfs-label">What do you want to automate?</label>
+                <textarea name="LEADCF130" required rows={3} placeholder="Tell us about your project or challenge…" className="zfs-input" style={{ resize: "vertical" }} />
+              </div>
 
-            <button type="submit" className="zfs-btn">
-              Get in Touch <ArrowRight size={18} />
-            </button>
-          </form>
+              <button type="submit" className="zfs-btn">
+                Get in Touch <ArrowRight size={18} />
+              </button>
+            </form>
+          )}
         </div>
       </div>
 
