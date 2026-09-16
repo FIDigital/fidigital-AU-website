@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
+
 export default function ZohoFormShort() {
   function handleSubmit(e) {
     const form = e.target;
@@ -19,38 +21,48 @@ export default function ZohoFormShort() {
         maxWidth: 1100,
         margin: "0 auto",
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: "clamp(2rem, 5vw, 4rem)",
+        gridTemplateColumns: "1fr 420px",
+        gap: "clamp(2.5rem, 5vw, 5rem)",
         alignItems: "center",
       }}>
         {/* Left — headline */}
         <div>
-          <p style={{ fontSize: "0.85rem", fontWeight: 700, color: "var(--primary)", textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: "0.75rem" }}>
+          <p style={{
+            fontSize: "0.8rem", fontWeight: 700, color: "var(--primary)",
+            textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "1rem",
+          }}>
             Start a conversation
           </p>
-          <h2 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1rem", letterSpacing: "-0.02em" }}>
-            Tell us what you want to automate
+          <h2 style={{
+            fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 800,
+            lineHeight: 1.15, marginBottom: "1.25rem", letterSpacing: "-0.02em",
+          }}>
+            Tell us what you{"\u2019"}d like to automate
           </h2>
-          <p style={{ fontSize: "1.05rem", color: "var(--text-muted)", lineHeight: 1.7, maxWidth: 440 }}>
-            Fill in a few details and we&apos;ll get back to you within one business day with a tailored response.
+          <p style={{
+            fontSize: "1.05rem", color: "var(--text-muted)",
+            lineHeight: 1.75, maxWidth: 440,
+          }}>
+            Share a few details about your project. Our engineering team will review your inquiry and respond within one business day.
           </p>
         </div>
 
-        {/* Right — compact form card */}
+        {/* Right — form card */}
         <div style={{
           background: "var(--card-bg)",
           border: "1px solid var(--border)",
-          borderRadius: 20,
-          padding: "clamp(1.5rem, 3vw, 2rem)",
+          borderRadius: 24,
+          padding: "clamp(1.75rem, 3vw, 2.25rem)",
+          boxShadow: "0 12px 40px rgba(0,0,0,0.06)",
         }}>
           <form
             action="https://crm.zoho.com/crm/WebToLeadForm"
             method="POST"
             acceptCharset="UTF-8"
             onSubmit={handleSubmit}
-            style={{ display: "grid", gap: "0.85rem" }}
+            style={{ display: "grid", gap: "1rem" }}
           >
-            {/* Hidden fields — from src/app/zoho-form/route.js */}
+            {/* Hidden fields */}
             <input type="hidden" name="xnQsjsdp" value="c4ebc2295599e6f55807fb0c7fee5e54c307e58b68c3dbaab25ae6171f1b36dd" />
             <input type="hidden" name="zc_gad" value="" />
             <input type="hidden" name="xmIwtLD" value="6d650e49c8bf22da2119e8bf5cb34675211ca0d40f9018d449a33cd25419cb3a0f82068935026d39630e6ebdc363da87" />
@@ -62,24 +74,98 @@ export default function ZohoFormShort() {
             <select name="LEADCF48" defaultValue="FI Digital" hidden><option value="FI Digital">FI Digital</option></select>
             <select name="Lead Status" defaultValue="New Lead" hidden><option value="New Lead">New Lead</option></select>
 
-            {/* Name row — side by side */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.85rem" }}>
-              <input name="First Name" type="text" required maxLength={40} placeholder="First Name" className="form-input" style={{ padding: "0.75rem 0.9rem", fontSize: "0.9rem" }} />
-              <input name="Last Name" type="text" required maxLength={80} placeholder="Last Name" className="form-input" style={{ padding: "0.75rem 0.9rem", fontSize: "0.9rem" }} />
+            {/* Name row */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
+              <div className="zfs-field">
+                <label className="zfs-label">First Name</label>
+                <input name="First Name" type="text" required maxLength={40} placeholder="John" className="zfs-input" />
+              </div>
+              <div className="zfs-field">
+                <label className="zfs-label">Last Name</label>
+                <input name="Last Name" type="text" required maxLength={80} placeholder="Smith" className="zfs-input" />
+              </div>
             </div>
 
-            <input name="Email" type="email" required maxLength={100} placeholder="Work Email" className="form-input" style={{ padding: "0.75rem 0.9rem", fontSize: "0.9rem" }} />
-            <input name="Company" type="text" required maxLength={200} placeholder="Company" className="form-input" style={{ padding: "0.75rem 0.9rem", fontSize: "0.9rem" }} />
-            <textarea name="LEADCF130" required rows={2} placeholder="What do you want to automate?" className="form-input" style={{ padding: "0.75rem 0.9rem", fontSize: "0.9rem", resize: "vertical" }} />
+            <div className="zfs-field">
+              <label className="zfs-label">Work Email</label>
+              <input name="Email" type="email" required maxLength={100} placeholder="john@company.com" className="zfs-input" />
+            </div>
 
-            <button type="submit" className="btn-primary" style={{ width: "100%", padding: "0.85rem", fontSize: "0.95rem", borderRadius: 8, fontWeight: 700, cursor: "pointer", marginTop: "0.25rem" }}>
-              Get in Touch
+            <div className="zfs-field">
+              <label className="zfs-label">Company</label>
+              <input name="Company" type="text" required maxLength={200} placeholder="Your company name" className="zfs-input" />
+            </div>
+
+            <div className="zfs-field">
+              <label className="zfs-label">What do you want to automate?</label>
+              <textarea name="LEADCF130" required rows={3} placeholder="Tell us about your project or challenge…" className="zfs-input" style={{ resize: "vertical" }} />
+            </div>
+
+            <button type="submit" className="zfs-btn">
+              Get in Touch <ArrowRight size={18} />
             </button>
           </form>
         </div>
       </div>
 
       <style>{`
+        .zfs-field {
+          display: flex;
+          flex-direction: column;
+          gap: 0.35rem;
+        }
+        .zfs-label {
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--text);
+          letter-spacing: 0.02em;
+        }
+        .zfs-input {
+          width: 100%;
+          padding: 0.7rem 0.85rem;
+          border-radius: 10px;
+          border: 1.5px solid var(--border);
+          background: var(--bg);
+          color: var(--text);
+          font-size: 0.9rem;
+          font-family: inherit;
+          transition: border-color 0.2s ease, box-shadow 0.2s ease;
+          outline: none;
+        }
+        .zfs-input::placeholder {
+          color: var(--text-muted);
+          opacity: 0.6;
+        }
+        .zfs-input:focus {
+          border-color: var(--primary);
+          box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+        }
+        .zfs-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          width: 100%;
+          padding: 0.85rem 1.5rem;
+          margin-top: 0.25rem;
+          background: linear-gradient(135deg, #0279FF 0%, #00A3F3 100%);
+          color: #fff;
+          font-size: 0.95rem;
+          font-weight: 700;
+          font-family: inherit;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          box-shadow: 0 4px 16px rgba(2, 121, 255, 0.3);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .zfs-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(2, 121, 255, 0.4);
+        }
+        .zfs-btn:active {
+          transform: translateY(0);
+        }
         @media (max-width: 768px) {
           .zfs-grid { grid-template-columns: 1fr !important; }
         }

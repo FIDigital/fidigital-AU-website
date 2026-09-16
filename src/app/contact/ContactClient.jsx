@@ -6,13 +6,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
   Mail, Phone, MapPin, ArrowRight, 
-  ChevronRight, Calendar, MessageSquare, Globe, Building,
+  ChevronRight, Calendar, Globe, Building,
   ShieldCheck, Zap, Users, BarChart3, Clock, Award,
   Sparkles, MousePointer2, Send
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import ZohoFormEmbed from "@/components/ZohoFormEmbed";
+import ZohoFormShort from "@/components/ZohoFormShort";
 import contactUsImg from '@/assets/images/Contact-us.png';
 
 if (typeof window !== "undefined") {
@@ -347,6 +347,9 @@ export default function ContactClient() {
           </div>
         </section>
 
+        {/* ══ ZOHO FORM ═════════════════════════════════════════════════════ */}
+        <ZohoFormShort />
+
         {/* ══ CONTACT & OFFICES ═════════════════════════════════════════════ */}
         <section id="contact-details" className="section-padding" style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}>
           <div className="container">
@@ -443,27 +446,6 @@ export default function ContactClient() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ══ ZOHO FORM ═════════════════════════════════════════════════════ */}
-        <section id="contact-form" className="section-padding" style={{ background: "var(--bg)" }}>
-          <div className="container">
-            <div className="reveal" style={{ textAlign: 'center', marginBottom: '5rem' }}>
-               <div className="hero-badge" style={{ marginBottom: '1.5rem' }}>
-                  <MessageSquare size={16} /> Project Scoping
-               </div>
-               <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', fontWeight: 900, marginBottom: '1.5rem' }}>
-                 Start a Conversation
-               </h2>
-               <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '700px', margin: '0 auto' }}>
-                 Tell us about your project requirements. Our engineering team will review your inquiry and prepare a tailored strategy for your business.
-               </p>
-            </div>
-
-            <div className="reveal premium-card" style={{ maxWidth: '1100px', margin: '0 auto' }}>
-               <ZohoFormEmbed />
             </div>
           </div>
         </section>

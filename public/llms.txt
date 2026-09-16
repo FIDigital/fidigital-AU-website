@@ -10,8 +10,8 @@
 
 ## Industries
 - [Financial Services & Wealth](/financial-services-wealth)
-- [Healthcare & Aged Care](/industries/healthcare-aged-care)
-- [Resources, Mining & Logistics](/industries/resources-mining-logistics)
+- [Healthcare & Aged Care](/healthcare-aged-care)
+- [Resources, Mining & Logistics](/resources-mining-logistics)
 
 ## Technology Stack
 React, React Native, Python, FastAPI, Databricks, Snowflake, Microsoft Fabric, Claude (Anthropic), GPT-4o (Azure OpenAI), n8n, LangChain, Zoho, AWS, Azure

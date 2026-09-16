@@ -74,11 +74,5 @@ export default async function sitemap() {
         priority: r.priority,
     }));
 
-    // LLM discovery files (present in /public)
-    entries.push(
-        { url: `${baseUrl}/llms.txt`, lastModified, changeFrequency: "weekly", priority: 0.5 },
-        { url: `${baseUrl}/llms-full.txt`, lastModified, changeFrequency: "weekly", priority: 0.5 },
-    );
-
     return entries;
 }

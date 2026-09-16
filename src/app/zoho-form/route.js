@@ -218,7 +218,7 @@ export async function GET(request) {
       <input type="hidden" name="zc_gad" id="zc_gad" value="">
       <input type="text" style="display:none;" name="xmIwtLD" value="ac388f9e1e5c20ebb1f3c5b543d13c173243863a7d13f69554145988806b2aaa1d81db73441d5458524c1322d74b4801">
       <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
-      <input type="text" style="display:none;" name="returnURL" value="https://fidigital.com.au/zoho-form/thank-you">
+      <input type="text" style="display:none;" name="returnURL" value="https://fidigital.com.au/thank-you">
       <!-- Do not remove this code. -->
       <input type="text" style="display:none;" id="ldeskuid" name="ldeskuid">
       <input type="text" style="display:none;" id="LDTuvid" name="LDTuvid">
