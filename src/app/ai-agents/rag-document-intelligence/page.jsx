@@ -4,7 +4,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildFaqPage, buildOpenGraph } f
 
 export const metadata = {
   title: 'RAG & Document Intelligence Australia | Enterprise AI Retrieval',
-  alternates: { canonical: 'https://fidigital.com.au/ai-agents/rag-document-intelligence' },
+  alternates: { canonical: 'https://www.fidigital.com.au/ai-agents/rag-document-intelligence' },
   openGraph: buildOpenGraph({ title: 'RAG & Document Intelligence Australia | Enterprise AI Retrieval', description: 'Retrieval-Augmented Generation (RAG) pipelines that connect AI to your institutional knowledge. Contract analysis, policy compliance, document classification, and knowledge retrieval. Claude, GPT-4o, LangChain. Australian data residency.', path: '/ai-agents/rag-document-intelligence' }),
   description: 'Retrieval-Augmented Generation (RAG) pipelines that connect AI to your institutional knowledge. Contract analysis, policy compliance, document classification, and knowledge retrieval. Claude, GPT-4o, LangChain. Australian data residency.',
 };

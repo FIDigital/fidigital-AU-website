@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jso
 
 export const metadata = {
   title: 'AI, Data & Software for Mining, Resources & Logistics Australia',
-  alternates: { canonical: 'https://fidigital.com.au/resources-mining-logistics' },
+  alternates: { canonical: 'https://www.fidigital.com.au/resources-mining-logistics' },
   openGraph: buildOpenGraph({ title: 'AI, Data & Software for Mining, Resources & Logistics Australia', description: 'Telemetry pipelines, predictive maintenance, dispatch optimisation, supply-chain analytics, and field operations apps for Australian resources, mining, and logistics companies.', path: '/resources-mining-logistics' }),
   description: 'Telemetry pipelines, predictive maintenance, dispatch optimisation, supply-chain analytics, and field operations apps for Australian resources, mining, and logistics companies.',
 };

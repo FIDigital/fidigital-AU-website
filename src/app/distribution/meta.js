@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Zoho Distribution Management Solutions | FI Digital Australia",
   description: "Automate and track your distribution supply chain efficiently. Optimize supplier onboarding, purchase orders, and inventory handling natively on Zoho.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/distribution',
+      canonical: 'https://www.fidigital.com.au/distribution',
   },
   openGraph: {
     title: 'Zoho Implementation for Distribution Companies',
     description: 'Transform your distribution outlet with FI Digital’s Zoho CRM. Track low-stock levels, supplier networks, and pipeline accounting flawlessly.',
-    url: 'https://fidigital.com.au/distribution',
+    url: 'https://www.fidigital.com.au/distribution',
     siteName: "FI Digital",
     images: [
       {

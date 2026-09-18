@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumb, buildOpenGraph } from "@/lib/jsonLd";
 export const metadata = {
   title: "Terms of Service",
   description: "Terms of Service for FI Digital Australia. Governing law, engagement contracts, intellectual property, confidentiality, and limitation of liability.",
-  alternates: { canonical: "https://fidigital.com.au/terms" },
+  alternates: { canonical: "https://www.fidigital.com.au/terms" },
   openGraph: buildOpenGraph({ title: "Terms of Service", description: "Terms of Service for FI Digital Australia. Governing law, engagement contracts, intellectual property, confidentiality, and limitation of liability.", path: "/terms" }),
 };
 

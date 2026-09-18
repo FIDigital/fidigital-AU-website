@@ -5,10 +5,10 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
-  Mail, Phone, MapPin, ArrowRight, 
-  ChevronRight, Calendar, Globe, Building,
-  ShieldCheck, Zap, Users, BarChart3, Clock, Award,
-  Sparkles, MousePointer2, Send
+  Mail, Phone, MapPin, ArrowRight,
+  Calendar, Globe, Building,
+  ShieldCheck, Zap, Users,
+  Sparkles
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -337,18 +337,17 @@ export default function ContactClient() {
             </p>
 
             <div className="hero-cta" style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', justifyContent: 'flex-start' }}>
-              <a href="#contact-details" className="btn-main primary">
-                Get Started Now <ArrowRight size={20} />
-              </a>
-              <a href="#contact-form" className="btn-main outline">
-                Send an Inquiry <Send size={20} />
+              <a href="#contact-form" className="btn-main primary">
+                Send an Inquiry <ArrowRight size={20} />
               </a>
             </div>
           </div>
         </section>
 
         {/* ══ ZOHO FORM ═════════════════════════════════════════════════════ */}
-        <ZohoFormShort />
+        <div id="contact-form">
+          <ZohoFormShort />
+        </div>
 
         {/* ══ CONTACT & OFFICES ═════════════════════════════════════════════ */}
         <section id="contact-details" className="section-padding" style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--border)" }}>
@@ -392,20 +391,12 @@ export default function ContactClient() {
                    </p>
                 </div>
 
-                <div className="premium-card" style={{ background: 'var(--bg)', borderStyle: 'dashed', borderWidth: '2px' }}>
-                   <div style={{ display: 'flex', gap: '2rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                      <div className="float-slow" style={{ width: 80, height: 80, background: 'var(--primary)', borderRadius: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', boxShadow: '0 15px 30px rgba(29, 78, 216, 0.3)' }}>
-                        <Calendar size={40} />
-                      </div>
-                      <div style={{ flex: 1, minWidth: '280px' }}>
-                        <h3 style={{ fontSize: '1.5rem', fontWeight: 900, marginBottom: '0.5rem' }}>Discovery Session</h3>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                          Book a free 30-minute deep-dive with one of our senior consultants to scope your technology needs.
-                        </p>
-                        <Link href="/book-discovery" className="btn-main primary" style={{ height: '48px', padding: '0 2rem' }}>
-                          Choose a Slot <ChevronRight size={18} />
-                        </Link>
-                      </div>
+                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', padding: '1.5rem 2rem', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 16 }}>
+                   <Calendar size={24} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
+                   <div style={{ flex: 1 }}>
+                     <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                       Prefer a live conversation? <Link href="/book-discovery" style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>Book a free 30-min discovery call</Link>
+                     </p>
                    </div>
                 </div>
               </div>
@@ -479,17 +470,12 @@ export default function ContactClient() {
             <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 950, color: '#fff', marginBottom: '2rem', lineHeight: 1.1 }}>
               Ready to Accelerate?
             </h2>
-            <p style={{ fontSize: '1.4rem', color: 'rgba(255,255,255,0.9)', maxWidth: '700px', margin: '0 auto 4rem', fontWeight: 500 }}>
-              Connect with us today and let&apos;s discuss how our technology solutions can transform your business operations.
+            <p style={{ fontSize: '1.4rem', color: 'rgba(255,255,255,0.9)', maxWidth: '700px', margin: '0 auto 3rem', fontWeight: 500 }}>
+              Share your project details and our engineering team will respond within one business day.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-               <a href="#contact-form" className="btn-main" style={{ background: '#fff', color: 'var(--primary)', padding: '0 3.5rem' }}>
-                 Start Your Project
-               </a>
-               <Link href="/book-discovery" className="btn-main" style={{ background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)', padding: '0 3.5rem' }}>
-                 Book a Call
-               </Link>
-            </div>
+            <a href="#contact-form" className="btn-main" style={{ background: '#fff', color: 'var(--primary)', padding: '0 3.5rem' }}>
+              Send an Inquiry <ArrowRight size={20} />
+            </a>
           </div>
         </section>
       </main>

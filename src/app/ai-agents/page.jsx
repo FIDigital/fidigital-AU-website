@@ -4,7 +4,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildFaqPage, buildOpenGraph } f
 
 export const metadata = {
   title: 'AI Agents Melbourne & Australia | RAG, Copilots, Workflow Automation',
-  alternates: { canonical: 'https://fidigital.com.au/ai-agents' },
+  alternates: { canonical: 'https://www.fidigital.com.au/ai-agents' },
   openGraph: buildOpenGraph({ title: 'AI Agents Melbourne & Australia | RAG, Copilots, Workflow Automation', description: 'Governed AI agents that read, reason, decide, and act. RAG pipelines. Copilots. Digital workers. Claude, GPT-4o, LangChain, n8n. Australian data residency. Human-in-the-loop guardrails.', path: '/ai-agents' }),
   description: 'Governed AI agents that read, reason, decide, and act. RAG pipelines. Copilots. Digital workers. Claude, GPT-4o, LangChain, n8n. Australian data residency. Human-in-the-loop guardrails.',
 };

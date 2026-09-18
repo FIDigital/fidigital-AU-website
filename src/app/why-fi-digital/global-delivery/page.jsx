@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: "Global Engineering Delivery | FI Digital",
     description: "200+ engineers across Melbourne, Sydney, India, UAE, and UK. Australian-led engagement. Indian engineering depth. Contractual SLAs.",
-    url: "https://fidigital.com.au/why-fi-digital/global-delivery",
+    url: "https://www.fidigital.com.au/why-fi-digital/global-delivery",
     siteName: "FI Digital",
     locale: "en_AU",
     type: "website",

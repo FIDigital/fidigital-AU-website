@@ -12,7 +12,7 @@
  *   <JsonLd data={[buildBreadcrumb([...]), buildService({...})]} />
  */
 
-export const SITE_URL = "https://fidigital.com.au";
+export const SITE_URL = "https://www.fidigital.com.au";
 export const ORG_ID = `${SITE_URL}/#organization`;
 
 /**

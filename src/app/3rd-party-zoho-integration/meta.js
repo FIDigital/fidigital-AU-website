@@ -1,14 +1,14 @@
 export const metadata = {
   title: "3rd Party Zoho Integration Services | FI Digital Australia",
   description: "Seamlessly integrate Zoho with G-Suite, Xero, Shopify, and more. Our 3rd party Zoho integration specialists optimize data sync, analytics and custom workflows.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/3rd-party-zoho-integration',
+      canonical: 'https://www.fidigital.com.au/3rd-party-zoho-integration',
   },
   openGraph: {
     title: 'Top-Rated 3rd Party Zoho Integration & Consulting',
     description: 'We offer quick and reliable 3rd Party Integration services to connect all your essential applications directly into your CRM.',
-    url: 'https://fidigital.com.au/3rd-party-zoho-integration',
+    url: 'https://www.fidigital.com.au/3rd-party-zoho-integration',
     siteName: "FI Digital",
     images: [
       {

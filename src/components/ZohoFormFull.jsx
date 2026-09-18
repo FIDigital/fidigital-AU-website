@@ -28,7 +28,7 @@ export default function ZohoFormFull() {
       <input type="hidden" name="zc_gad" value="" />
       <input type="hidden" name="xmIwtLD" value="6d650e49c8bf22da2119e8bf5cb34675211ca0d40f9018d449a33cd25419cb3a0f82068935026d39630e6ebdc363da87" />
       <input type="hidden" name="actionType" value="TGVhZHM=" />
-      <input type="hidden" name="returnURL" value="https://fidigital.com.au/thank-you" />
+      <input type="hidden" name="returnURL" value="https://www.fidigital.com.au/thank-you" />
       <input type="hidden" name="ldeskuid" value="" />
       <input type="hidden" name="LDTuvid" value="" />
       <input type="hidden" name="aG9uZXlwb3Q" value="" />

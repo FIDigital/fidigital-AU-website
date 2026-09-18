@@ -5,7 +5,7 @@ import { JsonLd, buildBreadcrumb, buildOpenGraph, SITE_URL, ORG_ID } from "@/lib
 export const metadata = {
   title: "Zoho, AI & Data Consulting in Melbourne",
   description: "FI Digital is headquartered in Melbourne at Level 9, 440 Collins Street. Software, data platforms, AI agents, and Zoho consulting for Victorian enterprise.",
-  alternates: { canonical: "https://fidigital.com.au/locations/melbourne" },
+  alternates: { canonical: "https://www.fidigital.com.au/locations/melbourne" },
   openGraph: buildOpenGraph({ title: "Zoho, AI & Data Consulting in Melbourne", description: "FI Digital is headquartered in Melbourne at Level 9, 440 Collins Street. Software, data platforms, AI agents, and Zoho consulting for Victorian enterprise.", path: "/locations/melbourne" }),
 };
 

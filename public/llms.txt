@@ -18,7 +18,7 @@ React, React Native, Python, FastAPI, Databricks, Snowflake, Microsoft Fabric, C
 
 ## Company Details
 - Entity: Digital Synergy Ventures Pty Ltd
-- Website: https://fidigital.com.au
+- Website: https://www.fidigital.com.au
 - UK: https://fidigital.co.uk
 - Team: 200+ engineers (Melbourne, Sydney, India, UAE, UK)
-- Contact: https://fidigital.com.au/contact
+- Contact: https://www.fidigital.com.au/contact

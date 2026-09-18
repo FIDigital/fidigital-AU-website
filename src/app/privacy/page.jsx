@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumb, buildOpenGraph } from "@/lib/jsonLd";
 export const metadata = {
   title: "Privacy Policy",
   description: "Privacy Policy for FI Digital Australia. How we collect, use, and protect personal information in accordance with the Australian Privacy Principles under the Privacy Act 1988 (Cth).",
-  alternates: { canonical: "https://fidigital.com.au/privacy" },
+  alternates: { canonical: "https://www.fidigital.com.au/privacy" },
   openGraph: buildOpenGraph({ title: "Privacy Policy", description: "Privacy Policy for FI Digital Australia. How we collect, use, and protect personal information in accordance with the Australian Privacy Principles under the Privacy Act 1988 (Cth).", path: "/privacy" }),
 };
 

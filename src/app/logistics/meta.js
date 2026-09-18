@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Zoho Logistics Management Software & Solutions | FI Digital",
   description: "Create an agile, responsive logistics chain. Digitize fleet management, automate delivery channels, and achieve real-time shipment updates with Zoho implementation.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/logistics',
+      canonical: 'https://www.fidigital.com.au/logistics',
   },
   openGraph: {
     title: 'Zoho Implementation for Logistics Chains',
     description: 'Provide an edge over competitors by mapping out fleets, workforce metrics, and delivery tracking exclusively natively on Zoho with FI Digital.',
-    url: 'https://fidigital.com.au/logistics',
+    url: 'https://www.fidigital.com.au/logistics',
     siteName: "FI Digital",
     images: [
       {

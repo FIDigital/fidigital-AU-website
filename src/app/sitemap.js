@@ -1,5 +1,5 @@
 export default async function sitemap() {
-    const baseUrl = "https://fidigital.com.au"; // Standardized to primary (non-www) domain
+    const baseUrl = "https://www.fidigital.com.au";
     const lastModified = new Date();
 
     // Real, indexable routes. New pages (e.g. /locations/*, /privacy, /terms) are

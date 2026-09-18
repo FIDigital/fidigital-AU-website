@@ -5,7 +5,7 @@ import { JsonLd, buildBreadcrumb, buildOpenGraph, SITE_URL, ORG_ID } from "@/lib
 export const metadata = {
   title: "Zoho, AI & Data Consulting in Sydney",
   description: "FI Digital supports Sydney and NSW enterprise with software, data platforms, AI agents, and Zoho consulting. Financial services and healthcare specialisation.",
-  alternates: { canonical: "https://fidigital.com.au/locations/sydney" },
+  alternates: { canonical: "https://www.fidigital.com.au/locations/sydney" },
   openGraph: buildOpenGraph({ title: "Zoho, AI & Data Consulting in Sydney", description: "FI Digital supports Sydney and NSW enterprise with software, data platforms, AI agents, and Zoho consulting. Financial services and healthcare specialisation.", path: "/locations/sydney" }),
 };
 

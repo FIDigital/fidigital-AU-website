@@ -26,4 +26,4 @@ Allow: /
 User-agent: Bingbot 
 Allow: / 
 
-Sitemap: https://fidigital.com.au/sitemap.xml
+Sitemap: https://www.fidigital.com.au/sitemap.xml

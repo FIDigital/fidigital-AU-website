@@ -12,6 +12,22 @@ export default function ZohoFormShort() {
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
     const data = new FormData(form);
+
+    // Capture ad-tracking params from URL
+    const url = new URLSearchParams(window.location.search);
+    [
+      ["utm_source", "LEADCF155"],
+      ["utm_medium", "LEADCF157"],
+      ["utm_campaign", "LEADCF156"],
+      ["utm_term", "LEADCF153"],
+      ["utm_content", "LEADCF158"],
+      ["fbclid", "LEADCF154"],
+      ["gclid", "LEADCF159"],
+    ].forEach(([param, field]) => {
+      const val = url.get(param);
+      if (val) data.set(field, val);
+    });
+
     fetch("https://crm.zoho.com/crm/WebToLeadForm", {
       method: "POST",
       body: new URLSearchParams(data),
@@ -97,7 +113,7 @@ export default function ZohoFormShort() {
               <input type="hidden" name="zc_gad" value="" />
               <input type="hidden" name="xmIwtLD" value="6d650e49c8bf22da2119e8bf5cb34675211ca0d40f9018d449a33cd25419cb3a0f82068935026d39630e6ebdc363da87" />
               <input type="hidden" name="actionType" value="TGVhZHM=" />
-              <input type="hidden" name="returnURL" value="https://fidigital.com.au/thank-you" />
+              <input type="hidden" name="returnURL" value="https://www.fidigital.com.au/thank-you" />
               <input type="hidden" name="ldeskuid" value="" />
               <input type="hidden" name="LDTuvid" value="" />
               <input type="hidden" name="aG9uZXlwb3Q" value="" />

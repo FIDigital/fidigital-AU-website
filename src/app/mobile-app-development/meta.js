@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Mobile App Development Melbourne | iOS & Android Apps | FI Digital",
   description: "Transform your app idea into an interactive iOS, Android or Windows mobile application. Native multi-discipline development engineered by FI Digital in Melbourne.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/mobile-app-development',
+      canonical: 'https://www.fidigital.com.au/mobile-app-development',
   },
   openGraph: {
     title: 'Melbourne Mobile Applications Development',
     description: 'Transform deeply into your best self natively. Outpace the competition by mapping workflows exclusively optimally securely with our specialized team.',
-    url: 'https://fidigital.com.au/mobile-app-development',
+    url: 'https://www.fidigital.com.au/mobile-app-development',
     siteName: "FI Digital",
     images: [
       {

@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Digital Transformation Consultant Melbourne | FI Digital",
   description: "Unlock digital opportunities and evolve your existing processes natively with FI Digital's expert consultants in Melbourne. Analyze, optimize, and safely scale today.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/digital-transformation-consultant-melbourne',
+      canonical: 'https://www.fidigital.com.au/digital-transformation-consultant-melbourne',
   },
   openGraph: {
     title: 'Melbourne Digital Transformation Consulting',
     description: 'Transform deeply into your best self natively. Outpace the competition by mapping workflows exclusively optimally securely with our specialized team.',
-    url: 'https://fidigital.com.au/digital-transformation-consultant-melbourne',
+    url: 'https://www.fidigital.com.au/digital-transformation-consultant-melbourne',
     siteName: "FI Digital",
     images: [
       {

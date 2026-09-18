@@ -4,7 +4,7 @@ export const metadata = {
   openGraph: {
     title: "Contact FI Digital Australia | Melbourne Software, Data & AI Consultancy",
     description: "Get in touch with FI Digital. Melbourne HQ. Phone, email, or book a free 30-minute discovery session.",
-    url: "https://fidigital.com.au/contact",
+    url: "https://www.fidigital.com.au/contact",
     siteName: "FI Digital Australia",
     images: [
       {
@@ -18,7 +18,7 @@ export const metadata = {
     type: "website",
   },
   alternates: {
-    canonical: "https://fidigital.com.au/contact",
+    canonical: "https://www.fidigital.com.au/contact",
   }
 };
 

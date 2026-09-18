@@ -58,7 +58,7 @@ export default function IndustriesClient() {
         "@type": "Service",
         "serviceType": "Industry AI Consultatiion",
         "provider": {
-            "@id": "https://fidigital.com.au/#organization"
+            "@id": "https://www.fidigital.com.au/#organization"
         },
         "description": "Bespoke AI and Zoho solutions for Real Estate, Retail, Finance, Healthcare, and Logistics industries in Australia.",
         "areaServed": {

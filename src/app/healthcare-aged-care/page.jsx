@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jso
 
 export const metadata = {
   title: 'AI, Data & Software for Healthcare & Aged Care Australia',
-  alternates: { canonical: 'https://fidigital.com.au/healthcare-aged-care' },
+  alternates: { canonical: 'https://www.fidigital.com.au/healthcare-aged-care' },
   openGraph: buildOpenGraph({ title: 'AI, Data & Software for Healthcare & Aged Care Australia', description: 'Provider operations, rostering, care coordination apps, document automation, and data platforms for Australian healthcare and aged care providers. Australian data residency. ACSC compliant.', path: '/healthcare-aged-care' }),
   description: 'Provider operations, rostering, care coordination apps, document automation, and data platforms for Australian healthcare and aged care providers. Australian data residency. ACSC compliant.',
 };

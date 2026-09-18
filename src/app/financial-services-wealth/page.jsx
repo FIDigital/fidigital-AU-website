@@ -3,7 +3,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jso
 
 export const metadata = {
   title: 'AI, Data & Software for Financial Services Australia',
-  alternates: { canonical: 'https://fidigital.com.au/financial-services-wealth' },
+  alternates: { canonical: 'https://www.fidigital.com.au/financial-services-wealth' },
   openGraph: buildOpenGraph({ title: 'AI, Data & Software for Financial Services Australia', description: 'Fraud detection, KYC/AML automation, data platforms, regulatory reporting, and CRM modernisation for Australian financial services. Databricks. Snowflake. Claude AI. Zoho. APRA and ASIC compliant.', path: '/financial-services-wealth' }),
   description: 'Fraud detection, KYC/AML automation, data platforms, regulatory reporting, and CRM modernisation for Australian financial services. Databricks. Snowflake. Claude AI. Zoho. APRA and ASIC compliant.',
 };

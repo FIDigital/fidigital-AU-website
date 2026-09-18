@@ -1056,7 +1056,7 @@ export default function HomeClient() {
     "@type": "Service",
     "name": "Enterprise AI & Zoho Implementation",
     "provider": {
-      "@id": "https://fidigital.com.au/#organization"
+      "@id": "https://www.fidigital.com.au/#organization"
     },
     "description": "Enterprise-grade Agentic AI and Zoho CRM implementation services in Melbourne and Australia. Specializing in autonomous digital workers and AI orchestration.",
     "areaServed": {

@@ -4,7 +4,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildOpenGraph } from "@/lib/jso
 
 export const metadata = {
   title: "Custom Software Development Australia | Product Engineering",
-  alternates: { canonical: "https://fidigital.com.au/product-engineering" },
+  alternates: { canonical: "https://www.fidigital.com.au/product-engineering" },
   openGraph: buildOpenGraph({ title: "Custom Software Development Australia | Product Engineering", description: "Build web apps, mobile apps, SaaS platforms, and internal tools. React, Python, FastAPI. 200+ engineers. Australian data residency. From MVP to enterprise scale.", path: "/product-engineering" }),
   description: "Build web apps, mobile apps, SaaS platforms, and internal tools. React, Python, FastAPI. 200+ engineers. Australian data residency. From MVP to enterprise scale.",
 };

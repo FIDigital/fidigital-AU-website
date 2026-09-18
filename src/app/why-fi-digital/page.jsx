@@ -3,12 +3,12 @@ import { JsonLd, buildBreadcrumb } from "@/lib/jsonLd";
 
 export const metadata = {
   title: "Why FI Digital | Engineering-Led Transformation Partner Australia",
-  alternates: { canonical: "https://fidigital.com.au/why-fi-digital" },
+  alternates: { canonical: "https://www.fidigital.com.au/why-fi-digital" },
   description: "Engineering-led, not advisory-led. 200+ engineers. 10 years in production. Four integrated service lines. Australian data residency. Contractual SLAs.",
   openGraph: {
     title: "Why FI Digital | Engineering-Led Transformation",
     description: "Engineering-led, not advisory-led. 200+ engineers. 10 years in production. Four integrated service lines. Australian data residency. Contractual SLAs.",
-    url: "https://fidigital.com.au/why-fi-digital",
+    url: "https://www.fidigital.com.au/why-fi-digital",
     siteName: "FI Digital",
     locale: "en_AU",
     type: "website",

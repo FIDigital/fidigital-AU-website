@@ -4,7 +4,7 @@ import { JsonLd, buildBreadcrumb, buildService, buildFaqPage, buildOpenGraph } f
 
 export const metadata = {
   title: 'Business Systems Modernisation Australia | Zoho CRM & Workflow Automation',
-  alternates: { canonical: 'https://fidigital.com.au/business-systems' },
+  alternates: { canonical: 'https://www.fidigital.com.au/business-systems' },
   openGraph: buildOpenGraph({ title: 'Business Systems Modernisation Australia | Zoho CRM & Workflow Automation', description: 'Modernise your business operations with Zoho CRM, Books, Inventory, workflow automation, API integration, and AI layering. Award-winning Zoho Premium Partner. 200+ projects delivered.', path: '/business-systems' }),
   description: 'Modernise your business operations with Zoho CRM, Books, Inventory, workflow automation, API integration, and AI layering. Award-winning Zoho Premium Partner. 200+ projects delivered.',
 };

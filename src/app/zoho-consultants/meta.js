@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Zoho Consultants Australia | Certified Zoho CRM Consulting",
   description: "We are a Zoho Certified Consultant, helping you with the understanding and implementation of Zoho Software. Australia's highest-rated Zoho Consulting Partner.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/zoho-consultants',
+      canonical: 'https://www.fidigital.com.au/zoho-consultants',
   },
   openGraph: {
     title: 'Zoho Consultants & Certified Partners | FI Digital',
     description: 'Expert Zoho CRM Consulting Services in Australia. Partner with us for customized Zoho implementation and strategy alignment to maximize your ROI.',
-    url: 'https://fidigital.com.au/zoho-consultants',
+    url: 'https://www.fidigital.com.au/zoho-consultants',
     siteName: "FI Digital",
     images: [
       {

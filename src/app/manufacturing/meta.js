@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Zoho Manufacturing Solutions | FI Digital Australia",
   description: "Simplify your manufacturing and inventory management with FI Digital’s custom Zoho Solutions for manufacturing operations.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/manufacturing',
+      canonical: 'https://www.fidigital.com.au/manufacturing',
   },
   openGraph: {
     title: 'Zoho Implementation for Manufacturing',
     description: 'Simplify your manufacturing and inventory management. Regulate order management, billing reports, and track mission critical applications.',
-    url: 'https://fidigital.com.au/manufacturing',
+    url: 'https://www.fidigital.com.au/manufacturing',
     siteName: "FI Digital",
     images: [
       {

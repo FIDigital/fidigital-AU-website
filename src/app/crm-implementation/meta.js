@@ -1,14 +1,14 @@
 export const metadata = {
   title: "Zoho CRM Implementation Australia | Setup, Migration & Integration",
   description: "FI Digital is the premier provider of Zoho CRM implementation services in Australia. We customize, integrate and implement robust, powerful CRM platforms.",
-  metadataBase: new URL('https://fidigital.com.au'),
+  metadataBase: new URL('https://www.fidigital.com.au'),
   alternates: {
-      canonical: 'https://fidigital.com.au/crm-implementation',
+      canonical: 'https://www.fidigital.com.au/crm-implementation',
   },
   openGraph: {
     title: 'Top-Rated Zoho CRM Implementation Across Australia',
     description: 'We help you design user-friendly CRM systems to accelerate your business operations. Customized Zoho implementation for scales and sizes.',
-    url: 'https://fidigital.com.au/crm-implementation',
+    url: 'https://www.fidigital.com.au/crm-implementation',
     siteName: "FI Digital",
     images: [
       {

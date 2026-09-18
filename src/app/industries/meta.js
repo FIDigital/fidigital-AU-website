@@ -4,12 +4,12 @@ export const metadata = {
     openGraph: {
         title: 'AI Solutions Built for Your Industry Melbourne | FI Digital',
         description: 'Every industry has unique workflows and regulations. We build AI solutions that understand how your specific industry works in Australia.',
-        url: 'https://fidigital.com.au/industries',
+        url: 'https://www.fidigital.com.au/industries',
         siteName: 'FI Digital AU',
         locale: 'en_AU',
         type: 'website',
     },
     alternates: {
-        canonical: 'https://fidigital.com.au/industries',
+        canonical: 'https://www.fidigital.com.au/industries',
     }
 };

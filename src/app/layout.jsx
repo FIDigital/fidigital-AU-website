@@ -8,7 +8,7 @@ import FloatingContactButton from "@/components/FloatingContactButton";
 import MobileCtaBar from "@/components/MobileCtaBar";
 
 export const metadata = {
-  metadataBase: new URL("https://fidigital.com.au"),
+  metadataBase: new URL("https://www.fidigital.com.au"),
   title: {
     default: "FI Digital AU | AI Agent Architects & Zoho Experts",
     template: "%s | FI Digital AU",
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_AU",
-    url: "https://fidigital.com.au",
+    url: "https://www.fidigital.com.au",
     siteName: "FI Digital AU",
     title: "FI Digital AU | AI Agent Architects & Zoho Experts",
     description: "Leading Australian Zoho partner in Melbourne. We architect intelligent AI agents and automated enterprise workflows.",
@@ -65,11 +65,11 @@ export default function RootLayout({
   const organizationJsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://fidigital.com.au/#organization",
+    "@id": "https://www.fidigital.com.au/#organization",
     "name": "FI Digital Australia",
     "legalName": "Digital Synergy Ventures Pty Ltd",
-    "url": "https://fidigital.com.au",
-    "logo": "https://fidigital.com.au/images/logo.png",
+    "url": "https://www.fidigital.com.au",
+    "logo": "https://www.fidigital.com.au/images/logo.png",
     "description": "Software engineering, data platforms, AI automation, and business systems modernisation for Australian enterprises",
     "foundingDate": "2016",
     "numberOfEmployees": { "@type": "QuantitativeValue", "value": 200 },
@@ -104,14 +104,14 @@ export default function RootLayout({
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "@id": "https://fidigital.com.au/#localbusiness",
+    "@id": "https://www.fidigital.com.au/#localbusiness",
     "name": "FI Digital Australia",
-    "image": "https://fidigital.com.au/images/logo.png",
-    "url": "https://fidigital.com.au",
+    "image": "https://www.fidigital.com.au/images/logo.png",
+    "url": "https://www.fidigital.com.au",
     "telephone": "+61 1300 921 280",
     "email": "support@fidigital.com.au",
     "priceRange": "$$$",
-    "parentOrganization": { "@id": "https://fidigital.com.au/#organization" },
+    "parentOrganization": { "@id": "https://www.fidigital.com.au/#organization" },
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Level 9, 440 Collins Street",
