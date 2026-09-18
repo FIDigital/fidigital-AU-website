@@ -1,10 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle } from "lucide-react";
 
 export default function ZohoFormShort() {
   const [submitted, setSubmitted] = useState(false);
+  const [adData, setAdData] = useState({});
+
+  /* Capture ad-tracking params from URL + persist in sessionStorage.
+     Runs once on mount so values survive page navigation. */
+  useEffect(() => {
+    let store = {};
+    try { store = JSON.parse(sessionStorage.getItem("fi_ad") || "{}"); } catch (e) {}
+    const q = new URLSearchParams(window.location.search);
+    ["gclid", "gbraid", "wbraid", "utm_source", "utm_medium", "utm_campaign",
+     "utm_term", "utm_content", "fbclid"].forEach((k) => {
+      if (q.get(k)) store[k] = q.get(k);
+    });
+    if (!store.landing) store.landing = window.location.href.split("?")[0];
+    if (!store.first_seen) store.first_seen = new Date().toISOString();
+    try { sessionStorage.setItem("fi_ad", JSON.stringify(store)); } catch (e) {}
+    setAdData(store);
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -12,22 +29,6 @@ export default function ZohoFormShort() {
     if (!form.checkValidity()) { form.reportValidity(); return; }
 
     const data = new FormData(form);
-
-    // Capture ad-tracking params from URL
-    const url = new URLSearchParams(window.location.search);
-    [
-      ["utm_source", "LEADCF155"],
-      ["utm_medium", "LEADCF157"],
-      ["utm_campaign", "LEADCF156"],
-      ["utm_term", "LEADCF153"],
-      ["utm_content", "LEADCF158"],
-      ["fbclid", "LEADCF154"],
-      ["gclid", "LEADCF159"],
-    ].forEach(([param, field]) => {
-      const val = url.get(param);
-      if (val) data.set(field, val);
-    });
-
     fetch("https://crm.zoho.com/crm/WebToLeadForm", {
       method: "POST",
       body: new URLSearchParams(data),
@@ -109,8 +110,8 @@ export default function ZohoFormShort() {
               style={{ display: "grid", gap: "1rem", width: "100%" }}
             >
               {/* Hidden fields */}
+              {/* Zoho security/anti-bot fields — DO NOT remove */}
               <input type="hidden" name="xnQsjsdp" value="6e7ad8a6daf4ea054e5ef608a5109284b49720f6036ea3168941efac9fbfb063" />
-              <input type="hidden" name="zc_gad" value="" />
               <input type="hidden" name="xmIwtLD" value="1d3620b7b2439270183167777417067374f5233c22fd568841cad9929169b27afc6f970121d46c9a16d1a6caf3ea4009" />
               <input type="hidden" name="actionType" value="TGVhZHM=" />
               <input type="hidden" name="returnURL" value="https://www.fidigital.com.au/thank-you" />
@@ -119,6 +120,19 @@ export default function ZohoFormShort() {
               <input type="hidden" name="aG9uZXlwb3Q" value="" />
               <select name="LEADCF48" defaultValue="FI Digital" hidden><option value="FI Digital">FI Digital</option></select>
               <select name="Lead Status" defaultValue="New Lead" hidden><option value="New Lead">New Lead</option></select>
+
+              {/* Ad-tracking hidden fields */}
+              <input type="hidden" name="zc_gad"    id="fi_gclid"      value={adData.gclid || ""} />
+              <input type="hidden" name="LEADCF_xx" id="fi_gbraid"     value={adData.gbraid || ""} />
+              <input type="hidden" name="LEADCF_xx" id="fi_wbraid"     value={adData.wbraid || ""} />
+              <input type="hidden" name="LEADCF155" id="fi_source"     value={adData.utm_source || ""} />
+              <input type="hidden" name="LEADCF157" id="fi_medium"     value={adData.utm_medium || ""} />
+              <input type="hidden" name="LEADCF156" id="fi_campaign"   value={adData.utm_campaign || ""} />
+              <input type="hidden" name="LEADCF153" id="fi_term"       value={adData.utm_term || ""} />
+              <input type="hidden" name="LEADCF158" id="fi_content"    value={adData.utm_content || ""} />
+              <input type="hidden" name="LEADCF154" id="fi_fbclid"     value={adData.fbclid || ""} />
+              <input type="hidden" name="LEADCF_xx" id="fi_landing"    value={adData.landing || ""} />
+              <input type="hidden" name="LEADCF_xx" id="fi_first_seen" value={adData.first_seen || ""} />
 
               {/* Name row */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
