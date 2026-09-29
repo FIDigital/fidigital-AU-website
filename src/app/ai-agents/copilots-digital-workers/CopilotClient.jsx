@@ -231,13 +231,6 @@ export default function CopilotClient() {
             </p>
 
             <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:"#6366F1", color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Copilot Discovery Session <ArrowRight size={18} />
-              </Link>
               <Link href="/ai-agents" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
@@ -551,40 +544,6 @@ export default function CopilotClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:"linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(139,92,246,0.08) 100%)",
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to embed AI in your team's workflow?
-              </h2>
-              <p style={{ fontSize:"1.1rem", color:"var(--text-muted)", maxWidth:"580px", margin:"0 auto 2.5rem auto", lineHeight:1.7 }}>
-                Book a free Copilot & Digital Worker Discovery session. We'll scope your highest-value use case and show you what a production copilot looks like in your actual systems.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:"#6366F1", color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Copilot Discovery Session <ArrowRight size={18} />
-                </Link>
-                <Link href="/ai-agents" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  Explore All AI Agent Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

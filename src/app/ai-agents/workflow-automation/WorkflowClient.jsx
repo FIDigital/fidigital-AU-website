@@ -181,13 +181,6 @@ export default function WorkflowClient() {
             </p>
 
             <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:"#10B981", color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Workflow Automation Assessment <ArrowRight size={18} />
-              </Link>
               <Link href="/ai-agents" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
@@ -513,40 +506,6 @@ export default function WorkflowClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:"linear-gradient(135deg, rgba(16,185,129,0.1) 0%, rgba(20,184,166,0.08) 100%)",
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to automate your routine processes?
-              </h2>
-              <p style={{ fontSize:"1.1rem", color:"var(--text-muted)", maxWidth:"580px", margin:"0 auto 2.5rem auto", lineHeight:1.7 }}>
-                Book a free Workflow Automation Discovery session. We'll map your highest-volume manual processes and show you how quickly they can be automated on Australian infrastructure.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:"#10B981", color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Workflow Automation Assessment <ArrowRight size={18} />
-                </Link>
-                <Link href="/ai-agents" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  Explore All AI Agent Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

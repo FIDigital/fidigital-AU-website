@@ -151,13 +151,6 @@ export default function AIAgentsClient() {
             </p>
 
             <div className="hero-btn" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <Link href="/book-discovery" style={{
-                background: "var(--primary)", color: "#fff", padding: "1rem 2rem",
-                borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                display: "inline-flex", alignItems: "center", gap: "0.5rem"
-              }}>
-                Book an AI Readiness Assessment <ArrowRight size={18} />
-              </Link>
               <Link href="/ai-agents/rag-document-intelligence" style={{
                 background: "transparent", color: "var(--text)", padding: "1rem 2rem",
                 borderRadius: "8px", fontWeight: 600, textDecoration: "none",
@@ -447,15 +440,6 @@ export default function AIAgentsClient() {
               <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto 2.5rem auto", lineHeight: 1.7 }}>
                 Book a free AI Readiness Assessment. We will identify the highest-value automation opportunities in your business and outline a governed deployment roadmap.
               </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center", marginBottom: "2.5rem" }}>
-                <Link href="/book-discovery" style={{
-                  background: "var(--primary)", color: "#fff", padding: "1rem 2.25rem",
-                  borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                  display: "inline-flex", alignItems: "center", gap: "0.5rem"
-                }}>
-                  Book an AI Readiness Assessment <ArrowRight size={18} />
-                </Link>
-              </div>
               {/* Sub-page links */}
               <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center" }}>
                 {SUB_PAGES.map((s, i) => (

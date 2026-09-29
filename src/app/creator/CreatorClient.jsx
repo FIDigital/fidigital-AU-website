@@ -95,11 +95,7 @@ export default function CreatorClient() {
               </p>
             </div>
 
-            <div className="hero-btn" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
-                Start Building Your App <ArrowRight size={18} />
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
@@ -205,36 +201,6 @@ export default function CreatorClient() {
                 Explicitly as a prominently widely recognized high-end Zoho Creator Developer exclusively effectively operating explicitly in robust Australia, we meticulously distinctly provide exclusively a profoundly comprehensive exact array structurally of enterprise Zoho Creator scalable solutions entirely designed successfully to definitively precisely enable you strictly to elegantly uniquely design explicitly as well accurately essentially smoothly run dynamically massive database web apps.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══ FINAL CTA SECTION ══════════════ */}
-      <section id="cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-          
-          <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', marginBottom: '3rem', letterSpacing: '-0.02em', lineHeight: 1.2, margin: "0 auto 3rem auto" }}>
-             Connect with our Zoho consultants to create smart business apps using the Zoho Creator Platform!
-          </h2>
-
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              background: 'white',
-              color: 'var(--primary)',
-              padding: '1.1rem 2.5rem',
-              borderRadius: '100px',
-              fontSize: '1.15rem',
-              fontWeight: 800,
-              textDecoration: 'none',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-             }} className="btn-primary-hover">
-              Contact Us <ArrowRight size={20} />
-            </Link>
           </div>
         </div>
       </section>

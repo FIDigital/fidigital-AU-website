@@ -182,23 +182,6 @@ export default function FabricClient() {
               Microsoft Fabric unifies data engineering, data science, real-time analytics, and Power BI reporting in a single governed environment on Azure. FI Digital deploys Fabric for Australian enterprises that run on Azure AD, Power BI, and Microsoft 365. One platform. One data lake. One governance model. Australian data residency on Azure Australia East.
             </p>
 
-            <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Fabric Assessment <ArrowRight size={18} />
-              </Link>
-              <Link href="/data-platforms" style={{
-                background:"transparent", color:"var(--text)", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                border:"1px solid var(--border)"
-              }}>
-                All Data Platform Services <ChevronRight size={18} />
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -477,13 +460,6 @@ export default function FabricClient() {
                   We assess your environment during a Discovery session and recommend Fabric, Databricks, Snowflake, or a hybrid — based on your existing stack, team skills, and regulatory requirements. No vendor bias.
                 </div>
               </div>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"0.85rem 1.5rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem", flexShrink:0
-              }}>
-                Book Discovery <ArrowRight size={16} />
-              </Link>
             </div>
           </div>
         </section>
@@ -518,46 +494,6 @@ export default function FabricClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${TEAL}08 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem", marginBottom:"1.5rem" }}>
-                <div style={{ position:"relative", width:"44px", height:"44px" }}>
-                  <Image src={microsoftFabricImg} alt="Fabric" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
-                </div>
-                <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, margin:0 }}>
-                  Ready to unify your Microsoft data platform?
-                </h2>
-              </div>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"580px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Start with a Microsoft Fabric Assessment. We review your existing Azure environment, Power BI architecture, and data landscape — then design your Fabric deployment before a single line of pipeline code is written.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Microsoft Fabric Assessment <ArrowRight size={18} />
-                </Link>
-                <Link href="/data-platforms" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  Explore All Data Platform Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

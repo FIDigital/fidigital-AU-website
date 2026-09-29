@@ -142,23 +142,6 @@ export default function BusinessSystemsClient() {
               Your business systems work. But they could work better. FI Digital is an award-winning Zoho Premium Partner with 200 plus projects delivered. We modernise your CRM, finance, inventory, and operational systems. Clean up integrations. Layer AI on top of workflows. Connect your business systems to your data platform. Make everything work together instead of against each other.
             </p>
 
-            <div className="hero-btn" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <Link href="/book-discovery" style={{
-                background: "var(--primary)", color: "#fff", padding: "1rem 2rem",
-                borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
-              }}>
-                Get a Free Zoho Health Check <ArrowRight size={18} />
-              </Link>
-              <Link href="/zoho-consultants" style={{
-                background: "transparent", color: "var(--text)", padding: "1rem 2rem",
-                borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                border: "1px solid var(--border)", transition: "all 0.2s"
-              }}>
-                Explore Our Zoho Services <ChevronRight size={18} />
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -428,40 +411,6 @@ export default function BusinessSystemsClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA FOOTER BAND ═══════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background: "linear-gradient(135deg, rgba(29,78,216,0.1) 0%, rgba(16,185,129,0.08) 100%)",
-          borderTop: "1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign: "center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 800, marginBottom: "1.25rem" }}>
-                Ready to modernise your business systems?
-              </h2>
-              <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", maxWidth: "600px", margin: "0 auto 2.5rem auto", lineHeight: 1.7 }}>
-                Book a free systems modernisation assessment. We will audit your current setup and show you exactly where the quick wins are.
-              </p>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem", justifyContent: "center" }}>
-                <Link href="/book-discovery" style={{
-                  background: "var(--primary)", color: "#fff", padding: "1rem 2.25rem",
-                  borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                  display: "inline-flex", alignItems: "center", gap: "0.5rem"
-                }}>
-                  Get a Free Zoho Health Check <ArrowRight size={18} />
-                </Link>
-                <Link href="/zoho-consultants" style={{
-                  background: "transparent", color: "var(--text)", padding: "1rem 2.25rem",
-                  borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                  display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                  border: "1px solid var(--border)"
-                }}>
-                  Explore Our Zoho Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

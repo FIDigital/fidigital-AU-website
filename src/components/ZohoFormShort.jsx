@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -70,6 +71,9 @@ export default function ZohoFormShort() {
           }}>
             Share a few details about your project. Our engineering team will review your inquiry and respond within one business day.
           </p>
+          <a href="/book-discovery" className="zfs-discovery">
+            Prefer a live conversation? <strong>Book a discovery call</strong> <ArrowRight size={16} />
+          </a>
         </div>
 
         {/* Right — form card / thank-you */}
@@ -226,6 +230,20 @@ export default function ZohoFormShort() {
         }
         .zfs-btn:active {
           transform: translateY(0);
+        }
+        .zfs-discovery {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          margin-top: 1.5rem;
+          font-size: 0.95rem;
+          color: var(--primary);
+          text-decoration: none;
+          font-weight: 500;
+          transition: gap 0.2s ease;
+        }
+        .zfs-discovery:hover {
+          gap: 0.65rem;
         }
         @media (max-width: 768px) {
           .zfs-grid { grid-template-columns: 1fr !important; }

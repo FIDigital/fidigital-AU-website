@@ -99,11 +99,7 @@ export default function DigitalTransformationClient() {
               </p>
             </div>
 
-            <div className="hero-btn" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
-                Build Your Roadmap <ArrowRight size={18} />
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
@@ -195,36 +191,6 @@ export default function DigitalTransformationClient() {
              ))}
           </div>
 
-        </div>
-      </section>
-
-      {/* ══ FINAL CTA SECTION ══════════════ */}
-      <section id="cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-          
-          <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', marginBottom: '3rem', letterSpacing: '-0.02em', lineHeight: 1.2, margin: "0 auto 3rem auto" }}>
-             Ready to accelerate your Enterprise?
-          </h2>
-
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              background: 'white',
-              color: 'var(--primary)',
-              padding: '1.1rem 2.5rem',
-              borderRadius: '100px',
-              fontSize: '1.15rem',
-              fontWeight: 800,
-              textDecoration: 'none',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-             }} className="btn-primary-hover">
-              Contact Us <ArrowRight size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 

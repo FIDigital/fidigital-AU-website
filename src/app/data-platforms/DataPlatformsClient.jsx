@@ -56,14 +56,6 @@ export default function DataPlatformsClient() {
             Governed data platforms on Databricks, Snowflake, and Microsoft Fabric. Lakehouse architecture. Medallion pipelines. BI dashboards your board trusts. ESG and regulatory reporting that satisfies APRA and ASIC. <strong style={{ color: 'var(--text)' }}>FI Digital — engineering data foundations for Australian enterprise.</strong>
           </p>
 
-          <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-            <Link href="/book-discovery" className="btn-primary hover-lift">
-              Book a Data Platform Architecture Review <ArrowRight size={20} />
-            </Link>
-            <Link href="/case-studies" className="btn-secondary hover-lift">
-              Explore Case Studies
-            </Link>
-          </div>
         </div>
       </section>
       
@@ -72,8 +64,6 @@ export default function DataPlatformsClient() {
       <DataWhatWeBuildSection />
       <DataPlatformExpertiseSection />
       <DataPlatformsFAQ />
-      <DataPlatformsCTA />
-
         <style jsx>{`
           .data-hero {
             position: relative;
@@ -536,61 +526,3 @@ function DataPlatformsFAQ() {
   );
 }
 
-function DataPlatformsCTA() {
-  return (
-    <section id="data-cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-      <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-        <h2 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-          Ready to Build Your Data Foundation?
-        </h2>
-        <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.25rem', lineHeight: 1.7, marginBottom: '3.5rem', fontWeight: 400 }}>
-          Bring us your fragmented data challenge or your compliance problem. We will provide an honest technical assessment, a lakehouse architecture plan, and a transparent delivery timeline.
-        </p>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/book-discovery" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              background: 'white',
-              color: 'var(--primary)',
-              padding: '1.1rem 2.2rem',
-              borderRadius: '100px',
-              fontSize: '1.1rem',
-              fontWeight: 800,
-              textDecoration: 'none',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-            }} className="btn-primary-hover">
-              Book a Data Platform Assessment <ArrowRight size={20} />
-            </Link>
-          </div>
-          
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.2)', width: '100%', maxWidth: '600px', paddingTop: '2rem' }}>
-            <div style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.8)', fontWeight: 700, marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Explore Our Platform Pages:</div>
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <Link href="/data-platforms/databricks" style={{ padding: '0.75rem 1.5rem', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.3)', color: 'white', textDecoration: 'none', fontWeight: 700, transition: 'all 0.3s ease' }} className="btn-secondary-hover">Databricks</Link>
-              <Link href="/data-platforms/microsoft-fabric" style={{ padding: '0.75rem 1.5rem', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.3)', color: 'white', textDecoration: 'none', fontWeight: 700, transition: 'all 0.3s ease' }} className="btn-secondary-hover">Fabric</Link>
-              <Link href="/data-platforms/snowflake" style={{ padding: '0.75rem 1.5rem', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.3)', color: 'white', textDecoration: 'none', fontWeight: 700, transition: 'all 0.3s ease' }} className="btn-secondary-hover">Snowflake</Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      <style jsx>{`
-        .btn-primary-hover:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-        .btn-secondary-hover:hover {
-          background: rgba(255,255,255,0.15) !important;
-          border-color: rgba(255,255,255,0.6) !important;
-        }
-        @media (max-width: 600px) {
-           h2 { fontSize: '2.5rem' !important; }
-        }
-      `}</style>
-    </section>
-  );
-}

@@ -237,23 +237,6 @@ export default function BIClient() {
               Most Australian businesses have dashboards. Most of them show different numbers to different people, take 20 minutes to load, and require a spreadsheet alongside them to be useful. FI Digital builds BI and reporting systems on top of governed data platforms — Databricks, Snowflake, Microsoft Fabric — that your CFO, board, and operations team agree on and rely on daily.
             </p>
 
-            <div className="hero-btn" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
-              <Link href="/book-discovery" style={{
-                background: PRIMARY, color: "#fff", padding: "1rem 2.25rem",
-                borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                display: "inline-flex", alignItems: "center", gap: "0.5rem"
-              }}>
-                Book a BI Assessment <ArrowRight size={18} />
-              </Link>
-              <Link href="/data-platforms" style={{
-                background: "transparent", color: "var(--text)", padding: "1rem 2.25rem",
-                borderRadius: "8px", fontWeight: 600, textDecoration: "none",
-                display: "inline-flex", alignItems: "center", gap: "0.5rem",
-                border: "1px solid var(--border)"
-              }}>
-                All Data Platform Services <ChevronRight size={18} />
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -578,40 +561,6 @@ export default function BIClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${ACCENT}08 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem", marginBottom:"1.5rem" }}>
-                <BarChart2 size={40} color={PRIMARY} />
-                <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, margin:0 }}>
-                  Stop building reports nobody trusts.
-                </h2>
-              </div>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"580px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Start with a BI Assessment. We review your current reporting landscape, data foundations, and tool stack — then design a governed BI architecture that gives your organisation one version of the truth.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>Book a BI Assessment <ArrowRight size={18} /></Link>
-                <Link href="/data-platforms" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>Explore All Data Platform Services <ChevronRight size={18} /></Link>
-              </div>
             </div>
           </div>
         </section>

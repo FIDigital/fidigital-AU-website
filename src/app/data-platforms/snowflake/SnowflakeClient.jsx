@@ -209,23 +209,6 @@ export default function SnowflakeClient() {
               Snowflake delivers cloud-native data warehousing with industry-leading data sharing, granular access governance, and consumption-based pricing. FI Digital deploys Snowflake on AWS Sydney for Australian data residency. Ideal for financial services, healthcare, and organisations that need to share governed data across organisational boundaries.
             </p>
 
-            <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Snowflake Assessment <ArrowRight size={18} />
-              </Link>
-              <Link href="/data-platforms" style={{
-                background:"transparent", color:"var(--text)", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                border:"1px solid var(--border)"
-              }}>
-                All Data Platform Services <ChevronRight size={18} />
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -525,46 +508,6 @@ export default function SnowflakeClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${DEEP}08 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <div style={{ display:"flex", alignItems:"center", justifyContent:"center", gap:"1rem", marginBottom:"1.5rem", flexWrap:"wrap" }}>
-                <div style={{ position:"relative", width:"44px", height:"44px" }}>
-                  <Image src={snowflakeNobgImg} alt="Snowflake" fill sizes="(max-width: 768px) 40vw, 200px" style={{ objectFit:"contain" }} />
-                </div>
-                <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, margin:0 }}>
-                  Ready to build your Snowflake data platform?
-                </h2>
-              </div>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"580px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Start with a Snowflake Assessment. We review your existing data landscape, design your warehouse and governance architecture, and produce a Platform Design Document — before we write a single line of SQL.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Snowflake Assessment <ArrowRight size={18} />
-                </Link>
-                <Link href="/data-platforms" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  Explore All Data Platform Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

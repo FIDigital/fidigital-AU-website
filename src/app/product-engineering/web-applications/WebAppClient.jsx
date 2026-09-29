@@ -253,13 +253,6 @@ export default function WebAppClient() {
             </p>
 
             <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Discovery Session <ArrowRight size={18} />
-              </Link>
               <Link href="/case-studies#web-applications" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
@@ -596,42 +589,6 @@ export default function WebAppClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${SECONDARY}08 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to build your web application?
-              </h2>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"540px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Book a free Discovery session. We map your requirements, propose an architecture, and give you a clear scope and timeline before you commit.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"10px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  boxShadow:`0 8px 28px ${PRIMARY}40`
-                }}>
-                  Book a Discovery Session <ArrowRight size={17} />
-                </Link>
-                <Link href="/case-studies#web-applications" style={{
-                  background:"var(--card-bg)", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"10px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  boxShadow:"0 2px 10px rgba(0,0,0,0.07)"
-                }}>
-                  View Case Studies <ChevronRight size={17} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

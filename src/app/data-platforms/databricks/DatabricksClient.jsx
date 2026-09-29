@@ -213,23 +213,6 @@ export default function DatabricksClient() {
               FI Digital designs and deploys Databricks lakehouse platforms on Azure Australia East. Medallion architecture. Delta Lake. Unity Catalog for governance. MLflow for ML tracking. Databricks SQL for analyst querying. Production systems for financial services, healthcare, and resources clients. Australian data residency guaranteed.
             </p>
 
-            <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Lakehouse Architecture Review <ArrowRight size={18} />
-              </Link>
-              <Link href="/data-platforms" style={{
-                background:"transparent", color:"var(--text)", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                border:"1px solid var(--border)"
-              }}>
-                All Data Platform Services <ChevronRight size={18} />
-              </Link>
-            </div>
           </div>
         </section>
 
@@ -649,41 +632,6 @@ export default function DatabricksClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${SECONDARY}09 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to build your governed lakehouse?
-              </h2>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"560px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Start with a Databricks Platform Assessment. We audit your existing data landscape, design your Azure environment, and produce a Platform Design Document — before you commit to any engineering spend.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Lakehouse Architecture Review <ArrowRight size={18} />
-                </Link>
-                <Link href="/data-platforms" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  Explore All Data Platform Services <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

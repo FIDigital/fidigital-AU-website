@@ -4,7 +4,7 @@ import Link from 'next/link';
 import gsap from 'gsap';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
-import { ArrowRight, Code2, Cpu, Globe, Layers, ShieldCheck, Zap, Database, Smartphone, Layout } from 'lucide-react';
+import { ArrowRight, Code2, Cpu, Globe, Layers, ShieldCheck, Zap, Database } from 'lucide-react';
 import Image from 'next/image';
 import itSoftwareImg from '@/assets/images/it-software.png';
 import digitalTransformationImg from '@/assets/images/digital-transformation.png';
@@ -101,11 +101,7 @@ export default function BuildClient() {
               </div>
             </div>
 
-            <div className="hero-btn" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
-                Start Your Build <ArrowRight size={18} />
-              </Link>
-            </div>
+
           </div>
         </div>
       </section>
@@ -205,39 +201,6 @@ export default function BuildClient() {
                 With extensive experience in highly regulated sectors like government, we know how to develop in a way that’s not only secure; it’s built to last. Our implementation process is a guarantee against deal-breakers like errors or broken links.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══ FINAL CTA SECTION ══════════════ */}
-      <section id="cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-          
-          <h2 style={{ fontSize: '3rem', fontWeight: 900, color: 'white', marginBottom: '2rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-             Foster Commercial Success
-          </h2>
-          <p style={{ fontSize: "1.2rem", color: "rgba(255,255,255,0.9)", lineHeight: 1.8, margin: "0 auto 3rem auto", maxWidth: "800px" }}>
-             Ready to estable an immediate connect with your users? Our developers are ready to turn every single thought into a woven digital reality.
-          </p>
-
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/contact" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              background: 'white',
-              color: 'var(--primary)',
-              padding: '1.2rem 3rem',
-              borderRadius: '100px',
-              fontSize: '1.2rem',
-              fontWeight: 800,
-              textDecoration: 'none',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-             }} className="btn-primary-hover">
-              Contact Us <ArrowRight size={22} />
-            </Link>
           </div>
         </div>
       </section>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import TrustedBy from "@/components/TrustedBy";
 import Image from 'next/image';
 import { useState } from 'react';
-import { ArrowRight, Code2, Terminal, Smartphone, Database, Layout, Rocket, RefreshCw, Search, Code, CheckCircle, Flag, Headphones, Server, Cloud, Cog, FileText, ChevronDown } from 'lucide-react';
+import { ArrowRight, Code2, Terminal, Smartphone, Database, Layout, Rocket, RefreshCw, Search, Code, CheckCircle, Flag, Headphones, Server, Cloud, Cog, ChevronDown } from 'lucide-react';
 import weBuildImg from '@/assets/images/we-build.png';
 
 // Service card images
@@ -85,11 +85,6 @@ export default function ProductEngineeringClient() {
           </p>
 
           <div className="hero-btn flex flex-wrap gap-4" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/book-discovery" className="btn-primary" style={{
-              background: "var(--primary)", color: "#fff", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
-            }}>
-              Get a Fixed-Price Estimate in 5 Days <ArrowRight size={18} />
-            </Link>
             <Link href="/case-studies" className="btn-secondary" style={{
               background: "rgba(255,255,255,0.05)", border: "1px solid var(--border)", color: "var(--text)", padding: "1rem 2rem", borderRadius: "8px", fontWeight: 600, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "0.5rem", transition: "all 0.2s"
             }}>
@@ -232,7 +227,6 @@ export default function ProductEngineeringClient() {
       <EngineeringApproachSection />
       <TechStackGridSection />
       <ProductEngineeringFAQSection />
-      <ProductEngineeringCTA />
     </>
   );
 }
@@ -748,68 +742,3 @@ function TechStackGridSection() {
   );
 }
 
-function ProductEngineeringCTA() {
-  return (
-    <section id="engineering-cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-      <div className="container" style={{ maxWidth: '850px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-        <h2 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-          Ready to Build?
-        </h2>
-        <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.25rem', lineHeight: 1.7, marginBottom: '3.5rem', fontWeight: 400 }}>
-          Bring us your operational challenge or your product concept. We will give you an honest technical assessment, a clear architecture plan, and a transparent timeline for delivery.
-        </p>
-
-        <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link href="/book-discovery" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            background: 'white',
-            color: 'var(--primary)',
-            padding: '1.1rem 2.2rem',
-            borderRadius: '100px',
-            fontSize: '1.1rem',
-            fontWeight: 800,
-            textDecoration: 'none',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-            transition: 'all 0.3s ease'
-          }} className="btn-primary-hover">
-            Book a Product Engineering Discovery Session <ArrowRight size={20} />
-          </Link>
-          <Link href="/case-studies#product-engineering" style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            background: 'rgba(255,255,255,0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '2px solid rgba(255,255,255,0.3)',
-            color: 'white',
-            padding: '1.1rem 2.2rem',
-            borderRadius: '100px',
-            fontSize: '1.1rem',
-            fontWeight: 800,
-            textDecoration: 'none',
-            transition: 'all 0.3s ease'
-          }} className="btn-secondary-hover">
-            View Product Engineering Case Studies <FileText size={20} />
-          </Link>
-        </div>
-      </div>
-      <style jsx>{`
-        .btn-primary-hover:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-        .btn-secondary-hover:hover {
-          background: rgba(255,255,255,0.2) !important;
-          border-color: rgba(255,255,255,0.5) !important;
-          transform: translateY(-5px);
-        }
-        @media (max-width: 600px) {
-           h2 { fontSize: '2.5rem' !important; }
-        }
-      `}</style>
-    </section>
-  );
-}

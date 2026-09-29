@@ -200,13 +200,6 @@ export default function SaaSMVPClient() {
             </p>
 
             <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Product Discovery Session <ArrowRight size={18} />
-              </Link>
               <Link href="/case-studies#saas-mvp" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
@@ -486,41 +479,6 @@ export default function SaaSMVPClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${SECONDARY}09 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to turn your idea into a product?
-              </h2>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"560px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Book a Product Discovery session. In 90 minutes we will challenge your assumptions, scope the MVP, and give you a clear path from idea to paying customer.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Product Discovery Session <ArrowRight size={18} />
-                </Link>
-                <Link href="/case-studies#saas-mvp" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  View SaaS Case Studies <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>

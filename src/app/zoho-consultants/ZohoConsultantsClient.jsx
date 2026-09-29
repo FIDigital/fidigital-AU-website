@@ -105,11 +105,6 @@ export default function ZohoConsultantsClient() {
               200+ Zoho implementations. Premium Partner since 2018. Zoho Innovator of the Year [PLACEHOLDER: year]. <strong style={{color: "var(--text)"}}>Melbourne-based senior consultants advising Australian mid-market and enterprise.</strong>
             </p>
 
-            <div className="hero-btn" style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-start', flexWrap: 'wrap' }}>
-              <Link href="/book-discovery" className="btn-primary" style={{ height: "42px", padding: "0 1.5rem", fontSize: "0.9rem", display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none", fontWeight: 600 }}>
-                Book a Free Zoho Audit <ArrowRight size={18} />
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -166,37 +161,6 @@ export default function ZohoConsultantsClient() {
           <p style={{ fontSize: "1.1rem", color: "var(--text-muted)", lineHeight: 1.8, margin: "0 auto", maxWidth: "760px" }}>
             [PLACEHOLDER: Insert certification badge images here — Zoho CRM, Books, Creator, Desk, Analytics, Campaigns, Inventory, Projects. Pratik to supply badge files.]
           </p>
-        </div>
-      </section>
-
-      {/* ══ FINAL CTA SECTION ══════════════ */}
-      <section id="cta" style={{ padding: '120px 1.5rem', background: '#1d4ed8', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.1, backgroundImage: 'radial-gradient(circle at right center, rgba(255,255,255,0.8) 0%, transparent 50%)' }}></div>
-        <div className="container" style={{ maxWidth: '900px', textAlign: 'center', position: 'relative', zIndex: 2 }}>
-          <h2 style={{ fontSize: '3.5rem', fontWeight: 900, color: 'white', marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.1 }}>
-            Get expert Zoho consulting
-          </h2>
-          <p style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.25rem', lineHeight: 1.7, marginBottom: '3.5rem', fontWeight: 400 }}>
-            Melbourne-based senior consultants, 200+ implementations, and Premium Partner credentials. Let's discuss your exact requirements today.
-          </p>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href="/book-discovery" style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '0.75rem',
-              background: 'white',
-              color: 'var(--primary)',
-              padding: '1.1rem 2.5rem',
-              borderRadius: '100px',
-              fontSize: '1.15rem',
-              fontWeight: 800,
-              textDecoration: 'none',
-              boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
-              transition: 'all 0.3s ease'
-            }} className="btn-primary-hover">
-              Book a Free Zoho Audit <ArrowRight size={20} />
-            </Link>
-          </div>
         </div>
       </section>
 

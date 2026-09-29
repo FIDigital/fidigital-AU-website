@@ -239,13 +239,6 @@ export default function MobileAppClient() {
             </p>
 
             <div className="hero-cta" style={{ display:"flex", flexWrap:"wrap", gap:"1rem" }}>
-              <Link href="/book-discovery" style={{
-                background:PRIMARY, color:"#fff", padding:"1rem 2rem",
-                borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                display:"inline-flex", alignItems:"center", gap:"0.5rem"
-              }}>
-                Book a Mobile App Discovery Session <ArrowRight size={18} />
-              </Link>
               <Link href="/case-studies#mobile-applications" style={{
                 background:"transparent", color:"var(--text)", padding:"1rem 2rem",
                 borderRadius:"8px", fontWeight:600, textDecoration:"none",
@@ -589,41 +582,6 @@ export default function MobileAppClient() {
                   )}
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ══ CTA ══════════════════════════════════════════════════════ */}
-        <section className="section" style={{
-          background:`linear-gradient(135deg, ${PRIMARY}0d 0%, ${SECONDARY}08 100%)`,
-          borderTop:"1px solid var(--border)"
-        }}>
-          <div className="container" style={{ textAlign:"center" }}>
-            <div className="reveal">
-              <h2 style={{ fontSize:"clamp(1.8rem,4vw,2.8rem)", fontWeight:800, marginBottom:"1.25rem" }}>
-                Ready to build your mobile application?
-              </h2>
-              <p style={{ fontSize:"1.05rem", color:"var(--text-muted)", maxWidth:"560px",
-                margin:"0 auto 2.5rem", lineHeight:1.75 }}>
-                Book a free Discovery session. We'll map your mobile use case, propose an architecture, and show you what offline-first looks like for your specific environment.
-              </p>
-              <div style={{ display:"flex", flexWrap:"wrap", gap:"1rem", justifyContent:"center" }}>
-                <Link href="/book-discovery" style={{
-                  background:PRIMARY, color:"#fff", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem"
-                }}>
-                  Book a Mobile App Discovery Session <ArrowRight size={18} />
-                </Link>
-                <Link href="/case-studies#mobile-applications" style={{
-                  background:"transparent", color:"var(--text)", padding:"1rem 2.25rem",
-                  borderRadius:"8px", fontWeight:600, textDecoration:"none",
-                  display:"inline-flex", alignItems:"center", gap:"0.5rem",
-                  border:"1px solid var(--border)"
-                }}>
-                  View Case Studies <ChevronRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
         </section>
