@@ -57,7 +57,6 @@ export default async function sitemap() {
         // Conversion + proof
         { path: "/case-studies", priority: 0.8, changeFrequency: "weekly" },
         { path: "/contact", priority: 0.9, changeFrequency: "yearly" },
-        { path: "/book-discovery", priority: 0.9, changeFrequency: "yearly" },
 
         // Resources
         { path: "/resources/zoho-modernisation-checklist", priority: 0.6, changeFrequency: "monthly" },
