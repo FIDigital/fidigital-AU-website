@@ -6,12 +6,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import {
   Mail, Phone, MapPin, ArrowRight,
-  Calendar, Globe, Building,
+  Globe, Building,
   ShieldCheck, Zap, Users,
   Sparkles
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import ZohoFormShort from "@/components/ZohoFormShort";
 import contactUsImg from '@/assets/images/Contact-us.png';
 
@@ -391,14 +390,7 @@ export default function ContactClient() {
                    </p>
                 </div>
 
-                <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', padding: '1.5rem 2rem', background: 'var(--bg)', border: '1px solid var(--border)', borderRadius: 16 }}>
-                   <Calendar size={24} style={{ color: 'var(--text-muted)', flexShrink: 0 }} />
-                   <div style={{ flex: 1 }}>
-                     <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
-                       Prefer a live conversation? <Link href="/book-discovery" style={{ color: 'var(--primary)', fontWeight: 700, textDecoration: 'underline', textUnderlineOffset: '3px' }}>Book a free 30-min discovery call</Link>
-                     </p>
-                   </div>
-                </div>
+                
               </div>
 
               {/* Right Column: Office Grid */}

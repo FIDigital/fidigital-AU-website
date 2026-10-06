@@ -71,9 +71,6 @@ export default function ZohoFormShort() {
           }}>
             Share a few details about your project. Our engineering team will review your inquiry and respond within one business day.
           </p>
-          <a href="/book-discovery" className="zfs-discovery">
-            Prefer a live conversation? <strong>Book a discovery call</strong> <ArrowRight size={16} />
-          </a>
         </div>
 
         {/* Right — form card / thank-you */}
@@ -127,16 +124,13 @@ export default function ZohoFormShort() {
 
               {/* Ad-tracking hidden fields */}
               <input type="hidden" name="zc_gad"    id="fi_gclid"      value={adData.gclid || ""} />
-              <input type="hidden" name="LEADCF_xx" id="fi_gbraid"     value={adData.gbraid || ""} />
-              <input type="hidden" name="LEADCF_xx" id="fi_wbraid"     value={adData.wbraid || ""} />
+              <input type="hidden" name="LEADCF159" id="fi_gclid_cf"  value={adData.gclid || ""} />
               <input type="hidden" name="LEADCF155" id="fi_source"     value={adData.utm_source || ""} />
               <input type="hidden" name="LEADCF157" id="fi_medium"     value={adData.utm_medium || ""} />
               <input type="hidden" name="LEADCF156" id="fi_campaign"   value={adData.utm_campaign || ""} />
               <input type="hidden" name="LEADCF153" id="fi_term"       value={adData.utm_term || ""} />
               <input type="hidden" name="LEADCF158" id="fi_content"    value={adData.utm_content || ""} />
               <input type="hidden" name="LEADCF154" id="fi_fbclid"     value={adData.fbclid || ""} />
-              <input type="hidden" name="LEADCF_xx" id="fi_landing"    value={adData.landing || ""} />
-              <input type="hidden" name="LEADCF_xx" id="fi_first_seen" value={adData.first_seen || ""} />
 
               {/* Name row */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
@@ -171,6 +165,12 @@ export default function ZohoFormShort() {
             </form>
           )}
         </div>
+      </div>
+
+      <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
+        <a href="/book-discovery" className="zfs-discovery">
+          Prefer a live conversation? <strong>Book a discovery call</strong> <ArrowRight size={16} />
+        </a>
       </div>
 
       <style>{`
