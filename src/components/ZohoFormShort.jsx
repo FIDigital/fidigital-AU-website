@@ -2,10 +2,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function ZohoFormShort() {
-  const [submitted, setSubmitted] = useState(false);
   const [adData, setAdData] = useState({});
 
   /* Capture ad-tracking params from URL + persist in sessionStorage.
@@ -34,7 +33,7 @@ export default function ZohoFormShort() {
       method: "POST",
       body: new URLSearchParams(data),
       mode: "no-cors",
-    }).finally(() => setSubmitted(true));
+    }).finally(() => window.location.assign("/thank-you"));
   }
 
   return (
@@ -73,7 +72,7 @@ export default function ZohoFormShort() {
           </p>
         </div>
 
-        {/* Right — form card / thank-you */}
+        {/* Right — form card */}
         <div style={{
           background: "var(--card-bg)",
           border: "1px solid var(--border)",
@@ -82,27 +81,7 @@ export default function ZohoFormShort() {
           boxShadow: "0 12px 40px rgba(0,0,0,0.06)",
           minHeight: 380,
           display: "flex",
-          alignItems: submitted ? "center" : "stretch",
-          justifyContent: submitted ? "center" : "stretch",
         }}>
-          {submitted ? (
-            <div style={{ textAlign: "center", padding: "1.5rem 0" }}>
-              <div style={{
-                width: 64, height: 64, borderRadius: "50%",
-                background: "linear-gradient(135deg, rgba(16,185,129,0.15) 0%, rgba(29,78,216,0.12) 100%)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                margin: "0 auto 1.25rem",
-              }}>
-                <CheckCircle size={28} color="var(--primary)" />
-              </div>
-              <h3 style={{ fontSize: "1.5rem", fontWeight: 800, marginBottom: "0.5rem" }}>
-                Thank You!
-              </h3>
-              <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", lineHeight: 1.6 }}>
-                We&apos;ve received your details and will be in touch within one business day.
-              </p>
-            </div>
-          ) : (
             <form
               action="https://crm.zoho.com/crm/WebToLeadForm"
               method="POST"
@@ -163,7 +142,6 @@ export default function ZohoFormShort() {
                 Get in Touch <ArrowRight size={18} />
               </button>
             </form>
-          )}
         </div>
       </div>
 
