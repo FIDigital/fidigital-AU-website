@@ -28,7 +28,7 @@ export default function MobileCtaBar() {
           .mobile-cta-bar {
             position: fixed;
             left: 0;
-            right: 0;
+            right: 76px; /* leave the bottom-right corner free for the SalesIQ chat bubble */
             bottom: 0;
             z-index: 9998;
             display: flex;

@@ -147,7 +147,7 @@ export default function ZohoFormShort() {
 
       <div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center" }}>
         <a href="/book-discovery" className="zfs-discovery">
-          Prefer a live conversation? <strong>Book a discovery call</strong> <ArrowRight size={16} />
+          Prefer to talk? <strong>Book a 30-minute call</strong> <ArrowRight size={16} />
         </a>
       </div>
 
